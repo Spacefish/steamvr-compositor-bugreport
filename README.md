@@ -89,6 +89,8 @@ compositor runs with no `gfxhub` fault and no watchdog abort.
 
 Artifacts: `spirv-dumps/unlit_vs.noubo.spv` (+`.dis`), `unlit_vs.shift0.spv`,
 `unlit_vs.layer1.spv`, and `unlit_vs.spv.orig` for restoring the shipped shader.
+The `workaround/` directory packages the patched shader with `apply.sh` /
+`restore.sh` install scripts.
 
 ## Earlier shader-patch experiments
 
@@ -116,6 +118,7 @@ Artifacts: `spirv-dumps/unlit_vs.noubo.spv` (+`.dis`), `unlit_vs.shift0.spv`,
 
 | Path | Description |
 |---|---|
+| `workaround/` | Patched `unlit_vs.spv` + `apply.sh` / `restore.sh` / `README.md` (SteamVR-side workaround for the crash) |
 | `radv-hang-report/` | **Clean** RADV hang dump (core validation only): `vm_fault.log`, `trace.log`, `pipeline.log`, `registers.log`, `bo_history.log`, `addr_binding_report.log`, `gpu_info.log`, app `.spv` shaders |
 | `crashdumps/` | breakpad minidumps, `amdgpu-devcoredump.txt` (text coredump: fault VA/status, faulting IB, IP register dump, ring contents), and files from the first (GPU-AV) hang dump |
 | `radv-bo-history.log` | `/tmp/radv_bo_history.log` from `RADV_DEBUG=bo_history` (every BO GPU-VA range) |
