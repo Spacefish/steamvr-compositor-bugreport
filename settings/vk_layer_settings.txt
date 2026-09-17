@@ -1,0 +1,12 @@
+khronos_validation.validate_core = true
+khronos_validation.validate_sync = true
+khronos_validation.validate_best_practices = false
+khronos_validation.check_shaders = false
+khronos_validation.gpuav_enable = true
+khronos_validation.gpuav_shader_instrumentation = true
+khronos_validation.gpuav_descriptor_checks = true
+khronos_validation.gpuav_buffer_address_oob = true
+khronos_validation.gpuav_vertex_attribute_fetch_oob = true
+khronos_validation.gpuav_debug_dump_instrumented_shaders = true
+khronos_validation.debug_action = VK_DBG_LAYER_ACTION_LOG_MSG
+khronos_validation.report_flags = error,warn

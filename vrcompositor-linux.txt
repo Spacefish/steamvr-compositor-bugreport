@@ -1,0 +1,1228 @@
+[2026-09-17 03:50:19+0200] srt-logger[96090]: Log opened
+[2026-09-17 03:50:19] vrcompositor-launcher.sh[96064]: Relaunch under vrenv.
+[2026-09-17 03:50:19] vrcompositor-launcher.sh[96064]: exec /home/spacy/.local/share/Steam/steamapps/common/SteamVR/bin/linux64/../vrenv.sh /home/spacy/.local/share/Steam/steamapps/common/SteamVR/bin/linux64/vrcompositor-launcher.sh
+[2026-09-17 03:50:19] vrenv.sh[96064]: steam-runtime-launch-client found in PATH, enabling SRT_LAUNCHER_SERVICE_ALONGSIDE_STEAM
+[2026-09-17 03:50:19] vrenv.sh[96064]: VRCOMPOSITOR_LD_LIBRARY_PATH=/home/spacy/.local/share/Steam/steamapps/common/SteamVR/bin/linux64:/home/spacy/.local/share/Steam/steamapps/common/SteamVR/bin/linux64/qt/lib:/home/spacy/.local/share/Steam/steamapps/common/SteamVR/bin/linux64:/home/spacy/.steam/root/ubuntu12_32/steam-runtime/pinned_libs_32:/home/spacy/.steam/root/ubuntu12_32/steam-runtime/pinned_libs_64:/opt/rocm-7.2.3/lib:/usr/lib/x86_64-linux-gnu/libfakeroot:/usr/lib/i386-linux-gnu:/usr/local/lib:/usr/lib/x86_64-linux-gnu:/usr/lib32:/usr/libx32:/lib:/home/spacy/.steam/root/ubuntu12_32/steam-runtime/lib/i386-linux-gnu:/home/spacy/.steam/root/ubuntu12_32/steam-runtime/usr/lib/i386-linux-gnu:/home/spacy/.steam/root/ubuntu12_32/steam-runtime/lib/x86_64-linux-gnu:/home/spacy/.steam/root/ubuntu12_32/steam-runtime/usr/lib/x86_64-linux-gnu:/home/spacy/.steam/root/ubuntu12_32/steam-runtime/lib:/home/spacy/.steam/root/ubuntu12_32/steam-runtime/usr/lib
+[2026-09-17 03:50:19] vrenv.sh[96064]: exec /home/spacy/.local/share/Steam/steamapps/common/SteamVR/bin/linux64/vrcompositor-launcher.sh
+[2026-09-17 03:50:19] vrcompositor-launcher.sh[96064]: Detected scout LDLP runtime.
+[2026-09-17 03:50:19] vrcompositor-launcher.sh[96064]: exec /home/spacy/.local/share/Steam/steamapps/common/SteamVR/bin/linux64/vrcompositor-launcher
+[2026-09-17 03:50:19] Using vrcompositor capability proxy
+[2026-09-17 03:50:19] Launching /home/spacy/.local/share/Steam/steamapps/common/SteamVR/bin/linux64/vrcompositor
+[2026-09-17 03:50:19] Using breakpad crash handler
+[2026-09-17 03:50:19] Setting breakpad minidump AppID = 250820
+[2026-09-17 03:50:19] Forcing breakpad minidump interfaces to load
+[2026-09-17 03:50:19] Looking up breakpad interfaces from steamclient
+[2026-09-17 03:50:19] Calling BreakpadMiniDumpSystemInit
+[2026-09-17 03:50:19] 09/17 03:50:19 minidumps folder is set to /tmp/dumps
+[2026-09-17 03:50:19] 09/17 03:50:19 Init: Installing breakpad exception handler for appid(250820)/version(2.17.10)/tid(96064)
+[2026-09-17 03:50:19] Validation Warning: [ VALIDATION-SETTINGS ] | MessageID = 0x7f1922d7
+[2026-09-17 03:50:19] vkCreateInstance(): Both GPU Assisted Validation and Normal Core Check Validation are enabled, this is not recommend as it  will be very slow. Once all errors in Core Check are solved, please disable, then only use GPU-AV for best performance.
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Warning: [ VALIDATION-SETTINGS ] | MessageID = 0x7f1922d7
+[2026-09-17 03:50:19] vkCreateInstance(): Shader Validation was explicitly turned off, but the SPIR-V still needs to be parsed/stored, but not validated, in order for Sync Validation to get read/write information out the SPIR-V.
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Warning: [ WARNING-Setting-Limit-Adjusted ] | MessageID = 0x86fe6721
+[2026-09-17 03:50:19] vkCreateDevice(): Warning that validation is adjusting settings:
+[2026-09-17 03:50:19] 	Adding a VkPhysicalDeviceVulkanMemoryModelFeatures to pNext with vulkanMemoryModel and vulkanMemoryModelDeviceScope set to VK_TRUE
+[2026-09-17 03:50:19] 	Adding a VkPhysicalDeviceBufferDeviceAddressFeatures to pNext with bufferDeviceAddress set to VK_TRUE
+[2026-09-17 03:50:19] 	Adding a VkPhysicalDeviceScalarBlockLayoutFeatures to pNext with scalarBlockLayout set to VK_TRUE
+[2026-09-17 03:50:19] 	Adding a VkPhysicalDevice8BitStorageFeatures to pNext with storageBuffer8BitAccess set to VK_TRUE
+[2026-09-17 03:50:19] 	Adding a VkPhysicalDevice16BitStorageFeatures to pNext with storageBuffer16BitAccess set to VK_TRUE
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Warning: [ WARNING-Setting-Limit-Adjusted ] | MessageID = 0x86fe6721
+[2026-09-17 03:50:19] vkCreateDevice(): Warning that validation is adjusting settings:
+[2026-09-17 03:50:19] 	Ray Query validation option was enabled, but the rayQuery feature is not supported. [Disabling gpuav_validate_ray_query]
+[2026-09-17 03:50:19] 	Ray Hit Object validation option was enabled, but the rayTracingInvocationReorder feature is not supported. [Disabling gpuav_validate_ray_hit_object]
+[2026-09-17 03:50:19] 	Mesh Shading validation option was enabled, but the meshShader feature is not supported. [Disabling gpuav_mesh_shading]
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ SYNC-HAZARD-WRITE-AFTER-WRITE ] | MessageID = 0x5c0ec5d6
+[2026-09-17 03:50:19] vkCmdUpdateBuffer(): WRITE_AFTER_WRITE hazard detected. vkCmdUpdateBuffer writes to dstBuffer VkBuffer 0x2e300000002e3, which was previously written by another vkCmdUpdateBuffer[CommandBuffer[0]] command. 
+[2026-09-17 03:50:19] The current synchronization allows VK_ACCESS_2_UNIFORM_READ_BIT accesses at VK_PIPELINE_STAGE_2_VERTEX_SHADER_BIT, but to prevent this hazard, it must allow VK_ACCESS_2_TRANSFER_WRITE_BIT accesses at VK_PIPELINE_STAGE_2_CLEAR_BIT.
+[2026-09-17 03:50:19] Buffer access region: {
+[2026-09-17 03:50:19]   offset = 0
+[2026-09-17 03:50:19]   size = 816
+[2026-09-17 03:50:19] }
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkCommandBuffer 0x5d84fbe27f60
+[2026-09-17 03:50:19]     [1] VkBuffer 0x2e300000002e3
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ SYNC-HAZARD-WRITE-AFTER-WRITE ] | MessageID = 0x5c0ec5d6
+[2026-09-17 03:50:19] vkCmdUpdateBuffer(): WRITE_AFTER_WRITE hazard detected. vkCmdUpdateBuffer writes to dstBuffer VkBuffer 0x2e300000002e3, which was previously written by another vkCmdUpdateBuffer[CommandBuffer[0]] command. 
+[2026-09-17 03:50:19] The current synchronization allows VK_ACCESS_2_UNIFORM_READ_BIT accesses at VK_PIPELINE_STAGE_2_VERTEX_SHADER_BIT, but to prevent this hazard, it must allow VK_ACCESS_2_TRANSFER_WRITE_BIT accesses at VK_PIPELINE_STAGE_2_CLEAR_BIT.
+[2026-09-17 03:50:19] Buffer access region: {
+[2026-09-17 03:50:19]   offset = 0
+[2026-09-17 03:50:19]   size = 816
+[2026-09-17 03:50:19] }
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkCommandBuffer 0x5d84fbe27f60
+[2026-09-17 03:50:19]     [1] VkBuffer 0x2e300000002e3
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ SYNC-HAZARD-WRITE-AFTER-WRITE ] | MessageID = 0x5c0ec5d6
+[2026-09-17 03:50:19] vkCmdUpdateBuffer(): WRITE_AFTER_WRITE hazard detected. vkCmdUpdateBuffer writes to dstBuffer VkBuffer 0x2e300000002e3, which was previously written by another vkCmdUpdateBuffer[CommandBuffer[0]] command. 
+[2026-09-17 03:50:19] The current synchronization allows VK_ACCESS_2_UNIFORM_READ_BIT accesses at VK_PIPELINE_STAGE_2_VERTEX_SHADER_BIT, but to prevent this hazard, it must allow VK_ACCESS_2_TRANSFER_WRITE_BIT accesses at VK_PIPELINE_STAGE_2_CLEAR_BIT.
+[2026-09-17 03:50:19] Buffer access region: {
+[2026-09-17 03:50:19]   offset = 0
+[2026-09-17 03:50:19]   size = 816
+[2026-09-17 03:50:19] }
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkCommandBuffer 0x5d84fbe27f60
+[2026-09-17 03:50:19]     [1] VkBuffer 0x2e300000002e3
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ SYNC-HAZARD-WRITE-AFTER-WRITE ] | MessageID = 0x5c0ec5d6
+[2026-09-17 03:50:19] vkCmdUpdateBuffer(): WRITE_AFTER_WRITE hazard detected. vkCmdUpdateBuffer writes to dstBuffer VkBuffer 0x2e300000002e3, which was previously written by another vkCmdUpdateBuffer[CommandBuffer[0]] command. 
+[2026-09-17 03:50:19] The current synchronization allows VK_ACCESS_2_UNIFORM_READ_BIT accesses at VK_PIPELINE_STAGE_2_VERTEX_SHADER_BIT, but to prevent this hazard, it must allow VK_ACCESS_2_TRANSFER_WRITE_BIT accesses at VK_PIPELINE_STAGE_2_CLEAR_BIT.
+[2026-09-17 03:50:19] Buffer access region: {
+[2026-09-17 03:50:19]   offset = 0
+[2026-09-17 03:50:19]   size = 816
+[2026-09-17 03:50:19] }
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkCommandBuffer 0x5d84fbe27f60
+[2026-09-17 03:50:19]     [1] VkBuffer 0x2e300000002e3
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ SYNC-HAZARD-WRITE-AFTER-WRITE ] | MessageID = 0x5c0ec5d6
+[2026-09-17 03:50:19] vkCmdUpdateBuffer(): WRITE_AFTER_WRITE hazard detected. vkCmdUpdateBuffer writes to dstBuffer VkBuffer 0x2e300000002e3, which was previously written by another vkCmdUpdateBuffer[CommandBuffer[0]] command. 
+[2026-09-17 03:50:19] The current synchronization allows VK_ACCESS_2_UNIFORM_READ_BIT accesses at VK_PIPELINE_STAGE_2_VERTEX_SHADER_BIT, but to prevent this hazard, it must allow VK_ACCESS_2_TRANSFER_WRITE_BIT accesses at VK_PIPELINE_STAGE_2_CLEAR_BIT.
+[2026-09-17 03:50:19] Buffer access region: {
+[2026-09-17 03:50:19]   offset = 0
+[2026-09-17 03:50:19]   size = 816
+[2026-09-17 03:50:19] }
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkCommandBuffer 0x5d84fbe27f60
+[2026-09-17 03:50:19]     [1] VkBuffer 0x2e300000002e3
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ SYNC-HAZARD-WRITE-AFTER-WRITE ] | MessageID = 0x5c0ec5d6
+[2026-09-17 03:50:19] vkCmdUpdateBuffer(): WRITE_AFTER_WRITE hazard detected. vkCmdUpdateBuffer writes to dstBuffer VkBuffer 0x2e300000002e3, which was previously written by another vkCmdUpdateBuffer[CommandBuffer[0]] command. 
+[2026-09-17 03:50:19] The current synchronization allows VK_ACCESS_2_UNIFORM_READ_BIT accesses at VK_PIPELINE_STAGE_2_VERTEX_SHADER_BIT, but to prevent this hazard, it must allow VK_ACCESS_2_TRANSFER_WRITE_BIT accesses at VK_PIPELINE_STAGE_2_CLEAR_BIT.
+[2026-09-17 03:50:19] Buffer access region: {
+[2026-09-17 03:50:19]   offset = 0
+[2026-09-17 03:50:19]   size = 816
+[2026-09-17 03:50:19] }
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkCommandBuffer 0x5d84fbe27f60
+[2026-09-17 03:50:19]     [1] VkBuffer 0x2e300000002e3
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ SYNC-HAZARD-WRITE-AFTER-WRITE ] | MessageID = 0x5c0ec5d6
+[2026-09-17 03:50:19] vkCmdUpdateBuffer(): WRITE_AFTER_WRITE hazard detected. vkCmdUpdateBuffer writes to dstBuffer VkBuffer 0x2e300000002e3, which was previously written by another vkCmdUpdateBuffer[CommandBuffer[0]] command. 
+[2026-09-17 03:50:19] The current synchronization allows VK_ACCESS_2_UNIFORM_READ_BIT accesses at VK_PIPELINE_STAGE_2_VERTEX_SHADER_BIT, but to prevent this hazard, it must allow VK_ACCESS_2_TRANSFER_WRITE_BIT accesses at VK_PIPELINE_STAGE_2_CLEAR_BIT.
+[2026-09-17 03:50:19] Buffer access region: {
+[2026-09-17 03:50:19]   offset = 0
+[2026-09-17 03:50:19]   size = 816
+[2026-09-17 03:50:19] }
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkCommandBuffer 0x5d84fbe27f60
+[2026-09-17 03:50:19]     [1] VkBuffer 0x2e300000002e3
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ SYNC-HAZARD-WRITE-AFTER-WRITE ] | MessageID = 0x5c0ec5d6
+[2026-09-17 03:50:19] vkCmdUpdateBuffer(): WRITE_AFTER_WRITE hazard detected. vkCmdUpdateBuffer writes to dstBuffer VkBuffer 0x2e300000002e3, which was previously written by another vkCmdUpdateBuffer[CommandBuffer[0]] command. 
+[2026-09-17 03:50:19] The current synchronization allows VK_ACCESS_2_UNIFORM_READ_BIT accesses at VK_PIPELINE_STAGE_2_VERTEX_SHADER_BIT, but to prevent this hazard, it must allow VK_ACCESS_2_TRANSFER_WRITE_BIT accesses at VK_PIPELINE_STAGE_2_CLEAR_BIT.
+[2026-09-17 03:50:19] Buffer access region: {
+[2026-09-17 03:50:19]   offset = 0
+[2026-09-17 03:50:19]   size = 816
+[2026-09-17 03:50:19] }
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkCommandBuffer 0x5d84fbe27f60
+[2026-09-17 03:50:19]     [1] VkBuffer 0x2e300000002e3
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ SYNC-HAZARD-WRITE-AFTER-WRITE ] | MessageID = 0x5c0ec5d6
+[2026-09-17 03:50:19] vkCmdUpdateBuffer(): WRITE_AFTER_WRITE hazard detected. vkCmdUpdateBuffer writes to dstBuffer VkBuffer 0x2e300000002e3, which was previously written by another vkCmdUpdateBuffer[CommandBuffer[0]] command. 
+[2026-09-17 03:50:19] The current synchronization allows VK_ACCESS_2_UNIFORM_READ_BIT accesses at VK_PIPELINE_STAGE_2_VERTEX_SHADER_BIT, but to prevent this hazard, it must allow VK_ACCESS_2_TRANSFER_WRITE_BIT accesses at VK_PIPELINE_STAGE_2_CLEAR_BIT.
+[2026-09-17 03:50:19] Buffer access region: {
+[2026-09-17 03:50:19]   offset = 0
+[2026-09-17 03:50:19]   size = 816
+[2026-09-17 03:50:19] }
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkCommandBuffer 0x5d84fbe27f60
+[2026-09-17 03:50:19]     [1] VkBuffer 0x2e300000002e3
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ SYNC-HAZARD-WRITE-AFTER-WRITE ] | MessageID = 0x5c0ec5d6
+[2026-09-17 03:50:19] (Warning - This VUID has now been reported 10 times, which is the duplicate_message_limit value, this will be the last time reporting it).
+[2026-09-17 03:50:19] vkCmdUpdateBuffer(): WRITE_AFTER_WRITE hazard detected. vkCmdUpdateBuffer writes to dstBuffer VkBuffer 0x2e300000002e3, which was previously written by another vkCmdUpdateBuffer[CommandBuffer[0]] command. 
+[2026-09-17 03:50:19] The current synchronization allows VK_ACCESS_2_UNIFORM_READ_BIT accesses at VK_PIPELINE_STAGE_2_VERTEX_SHADER_BIT, but to prevent this hazard, it must allow VK_ACCESS_2_TRANSFER_WRITE_BIT accesses at VK_PIPELINE_STAGE_2_CLEAR_BIT.
+[2026-09-17 03:50:19] Buffer access region: {
+[2026-09-17 03:50:19]   offset = 0
+[2026-09-17 03:50:19]   size = 816
+[2026-09-17 03:50:19] }
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkCommandBuffer 0x5d84fbe27f60
+[2026-09-17 03:50:19]     [1] VkBuffer 0x2e300000002e3
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkResetFences-pFences-01123 ] | MessageID = 0x68a5074e
+[2026-09-17 03:50:19] vkResetFences(): pFences[0] (VkFence 0x2c700000002c7) is in use.
+[2026-09-17 03:50:19] The Vulkan spec states: Each element of pFences must not be currently associated with any queue command that has not yet completed execution on that queue (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-vkResetFences-pFences-01123)
+[2026-09-17 03:50:19] Objects: 1
+[2026-09-17 03:50:19]     [0] VkFence 0x2c700000002c7
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkResetFences-pFences-01123 ] | MessageID = 0x68a5074e
+[2026-09-17 03:50:19] vkResetFences(): pFences[0] (VkFence 0x2c800000002c8) is in use.
+[2026-09-17 03:50:19] The Vulkan spec states: Each element of pFences must not be currently associated with any queue command that has not yet completed execution on that queue (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-vkResetFences-pFences-01123)
+[2026-09-17 03:50:19] Objects: 1
+[2026-09-17 03:50:19]     [0] VkFence 0x2c800000002c8
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkResetFences-pFences-01123 ] | MessageID = 0x68a5074e
+[2026-09-17 03:50:19] vkResetFences(): pFences[0] (VkFence 0x2c900000002c9) is in use.
+[2026-09-17 03:50:19] The Vulkan spec states: Each element of pFences must not be currently associated with any queue command that has not yet completed execution on that queue (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-vkResetFences-pFences-01123)
+[2026-09-17 03:50:19] Objects: 1
+[2026-09-17 03:50:19]     [0] VkFence 0x2c900000002c9
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkResetFences-pFences-01123 ] | MessageID = 0x68a5074e
+[2026-09-17 03:50:19] vkResetFences(): pFences[0] (VkFence 0x2ca00000002ca) is in use.
+[2026-09-17 03:50:19] The Vulkan spec states: Each element of pFences must not be currently associated with any queue command that has not yet completed execution on that queue (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-vkResetFences-pFences-01123)
+[2026-09-17 03:50:19] Objects: 1
+[2026-09-17 03:50:19]     [0] VkFence 0x2ca00000002ca
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkResetFences-pFences-01123 ] | MessageID = 0x68a5074e
+[2026-09-17 03:50:19] vkResetFences(): pFences[0] (VkFence 0x2cb00000002cb) is in use.
+[2026-09-17 03:50:19] The Vulkan spec states: Each element of pFences must not be currently associated with any queue command that has not yet completed execution on that queue (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-vkResetFences-pFences-01123)
+[2026-09-17 03:50:19] Objects: 1
+[2026-09-17 03:50:19]     [0] VkFence 0x2cb00000002cb
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkResetFences-pFences-01123 ] | MessageID = 0x68a5074e
+[2026-09-17 03:50:19] vkResetFences(): pFences[0] (VkFence 0x2cc00000002cc) is in use.
+[2026-09-17 03:50:19] The Vulkan spec states: Each element of pFences must not be currently associated with any queue command that has not yet completed execution on that queue (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-vkResetFences-pFences-01123)
+[2026-09-17 03:50:19] Objects: 1
+[2026-09-17 03:50:19]     [0] VkFence 0x2cc00000002cc
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkResetFences-pFences-01123 ] | MessageID = 0x68a5074e
+[2026-09-17 03:50:19] vkResetFences(): pFences[0] (VkFence 0x2cd00000002cd) is in use.
+[2026-09-17 03:50:19] The Vulkan spec states: Each element of pFences must not be currently associated with any queue command that has not yet completed execution on that queue (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-vkResetFences-pFences-01123)
+[2026-09-17 03:50:19] Objects: 1
+[2026-09-17 03:50:19]     [0] VkFence 0x2cd00000002cd
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkResetFences-pFences-01123 ] | MessageID = 0x68a5074e
+[2026-09-17 03:50:19] vkResetFences(): pFences[0] (VkFence 0x2ce00000002ce) is in use.
+[2026-09-17 03:50:19] The Vulkan spec states: Each element of pFences must not be currently associated with any queue command that has not yet completed execution on that queue (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-vkResetFences-pFences-01123)
+[2026-09-17 03:50:19] Objects: 1
+[2026-09-17 03:50:19]     [0] VkFence 0x2ce00000002ce
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkResetFences-pFences-01123 ] | MessageID = 0x68a5074e
+[2026-09-17 03:50:19] vkResetFences(): pFences[0] (VkFence 0x2cf00000002cf) is in use.
+[2026-09-17 03:50:19] The Vulkan spec states: Each element of pFences must not be currently associated with any queue command that has not yet completed execution on that queue (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-vkResetFences-pFences-01123)
+[2026-09-17 03:50:19] Objects: 1
+[2026-09-17 03:50:19]     [0] VkFence 0x2cf00000002cf
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-02721 ] | MessageID = 0x24afafc5
+[2026-09-17 03:50:19] [ Debug region: CommandBuffer[9] ] vkCmdDrawIndexed(): Vertex index 1680, using VK_VERTEX_INPUT_RATE_VERTEX, has caused an OOB access within a bound vertex buffer.
+[2026-09-17 03:50:19] Vertex Buffer (VkBuffer 0x2df00000002df) binding info:
+[2026-09-17 03:50:19]   - Binding: 0
+[2026-09-17 03:50:19]   - Offset: 0 bytes
+[2026-09-17 03:50:19]   - Effective Size: 26896 bytes
+[2026-09-17 03:50:19]   - Vertices Count: 1680
+[2026-09-17 03:50:19]   - Stride: 16 bytes
+[2026-09-17 03:50:19] The following VkVertexInputAttributeDescription caused OOB access:
+[2026-09-17 03:50:19]   - Location: 2
+[2026-09-17 03:50:19]   - Binding: 0
+[2026-09-17 03:50:19]   - Format: VK_FORMAT_R32_SFLOAT
+[2026-09-17 03:50:19]   - Offset: 16 bytes
+[2026-09-17 03:50:19] Index Buffer (VkBuffer 0x2e100000002e1) binding info:
+[2026-09-17 03:50:19]   - Type: VK_INDEX_TYPE_UINT16
+[2026-09-17 03:50:19]   - Offset: 0 bytes
+[2026-09-17 03:50:19]   - Size: 19200 bytes (sizeof(VK_INDEX_TYPE_UINT16) * 9600)
+[2026-09-17 03:50:19] Note: Vertex buffer binding size is the effective, valid one, based on how the VkBuffer was created and the vkCmdBindVertexBuffers parameters. So it can be clamped up to 0 if binding was invalid.
+[2026-09-17 03:50:19] Stage = Vertex. Vertex Index = 1680 Instance Index = 0. 
+[2026-09-17 03:50:19] Command buffer (0x5d84fc9ded40)
+[2026-09-17 03:50:19] 	Draw Index 0
+[2026-09-17 03:50:19] Shader Module (0x1c100000001c1) (internal ID 1)
+[2026-09-17 03:50:19] (This check was instrumented at the start of your entrypoint function)
+[2026-09-17 03:50:19] The Vulkan spec states: If the robustBufferAccess feature is not enabled, and that pipeline was created without enabling VK_PIPELINE_ROBUSTNESS_BUFFER_BEHAVIOR_ROBUST_BUFFER_ACCESS for vertexInputs, then for a given vertex buffer binding, any attribute data fetched must be entirely contained within the corresponding vertex buffer binding, as described in Vertex Input Description (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-02721)
+[2026-09-17 03:50:19] Objects: 4
+[2026-09-17 03:50:19]     [0] VkQueue 0x5d84faf88740
+[2026-09-17 03:50:19]     [1] VkCommandBuffer 0x5d84fc9ded40
+[2026-09-17 03:50:19]     [2] VkPipeline 0x3010000000301
+[2026-09-17 03:50:19]     [3] VkRenderPass 0x2fa00000002fa
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-02721 ] | MessageID = 0x24afafc5
+[2026-09-17 03:50:19] [ Debug region: CommandBuffer[9] ] vkCmdDrawIndexed(): Vertex index 1680, using VK_VERTEX_INPUT_RATE_VERTEX, has caused an OOB access within a bound vertex buffer.
+[2026-09-17 03:50:19] Vertex Buffer (VkBuffer 0x2df00000002df) binding info:
+[2026-09-17 03:50:19]   - Binding: 0
+[2026-09-17 03:50:19]   - Offset: 0 bytes
+[2026-09-17 03:50:19]   - Effective Size: 26896 bytes
+[2026-09-17 03:50:19]   - Vertices Count: 1680
+[2026-09-17 03:50:19]   - Stride: 16 bytes
+[2026-09-17 03:50:19] The following VkVertexInputAttributeDescription caused OOB access:
+[2026-09-17 03:50:19]   - Location: 2
+[2026-09-17 03:50:19]   - Binding: 0
+[2026-09-17 03:50:19]   - Format: VK_FORMAT_R32_SFLOAT
+[2026-09-17 03:50:19]   - Offset: 16 bytes
+[2026-09-17 03:50:19] Index Buffer (VkBuffer 0x2e100000002e1) binding info:
+[2026-09-17 03:50:19]   - Type: VK_INDEX_TYPE_UINT16
+[2026-09-17 03:50:19]   - Offset: 0 bytes
+[2026-09-17 03:50:19]   - Size: 19200 bytes (sizeof(VK_INDEX_TYPE_UINT16) * 9600)
+[2026-09-17 03:50:19] Note: Vertex buffer binding size is the effective, valid one, based on how the VkBuffer was created and the vkCmdBindVertexBuffers parameters. So it can be clamped up to 0 if binding was invalid.
+[2026-09-17 03:50:19] Stage = Vertex. Vertex Index = 1680 Instance Index = 0. 
+[2026-09-17 03:50:19] Command buffer (0x5d84fc9ded40)
+[2026-09-17 03:50:19] 	Draw Index 1
+[2026-09-17 03:50:19] Shader Module (0x1c100000001c1) (internal ID 1)
+[2026-09-17 03:50:19] (This check was instrumented at the start of your entrypoint function)
+[2026-09-17 03:50:19] The Vulkan spec states: If the robustBufferAccess feature is not enabled, and that pipeline was created without enabling VK_PIPELINE_ROBUSTNESS_BUFFER_BEHAVIOR_ROBUST_BUFFER_ACCESS for vertexInputs, then for a given vertex buffer binding, any attribute data fetched must be entirely contained within the corresponding vertex buffer binding, as described in Vertex Input Description (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-02721)
+[2026-09-17 03:50:19] Objects: 4
+[2026-09-17 03:50:19]     [0] VkQueue 0x5d84faf88740
+[2026-09-17 03:50:19]     [1] VkCommandBuffer 0x5d84fc9ded40
+[2026-09-17 03:50:19]     [2] VkPipeline 0x3010000000301
+[2026-09-17 03:50:19]     [3] VkRenderPass 0x2fa00000002fa
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-02721 ] | MessageID = 0x24afafc5
+[2026-09-17 03:50:19] [ Debug region: CommandBuffer[9] ] vkCmdDrawIndexed(): Vertex index 1680, using VK_VERTEX_INPUT_RATE_VERTEX, has caused an OOB access within a bound vertex buffer.
+[2026-09-17 03:50:19] Vertex Buffer (VkBuffer 0x2df00000002df) binding info:
+[2026-09-17 03:50:19]   - Binding: 0
+[2026-09-17 03:50:19]   - Offset: 0 bytes
+[2026-09-17 03:50:19]   - Effective Size: 26896 bytes
+[2026-09-17 03:50:19]   - Vertices Count: 1680
+[2026-09-17 03:50:19]   - Stride: 16 bytes
+[2026-09-17 03:50:19] The following VkVertexInputAttributeDescription caused OOB access:
+[2026-09-17 03:50:19]   - Location: 2
+[2026-09-17 03:50:19]   - Binding: 0
+[2026-09-17 03:50:19]   - Format: VK_FORMAT_R32_SFLOAT
+[2026-09-17 03:50:19]   - Offset: 16 bytes
+[2026-09-17 03:50:19] Index Buffer (VkBuffer 0x2e100000002e1) binding info:
+[2026-09-17 03:50:19]   - Type: VK_INDEX_TYPE_UINT16
+[2026-09-17 03:50:19]   - Offset: 0 bytes
+[2026-09-17 03:50:19]   - Size: 19200 bytes (sizeof(VK_INDEX_TYPE_UINT16) * 9600)
+[2026-09-17 03:50:19] Note: Vertex buffer binding size is the effective, valid one, based on how the VkBuffer was created and the vkCmdBindVertexBuffers parameters. So it can be clamped up to 0 if binding was invalid.
+[2026-09-17 03:50:19] Stage = Vertex. Vertex Index = 1680 Instance Index = 0. 
+[2026-09-17 03:50:19] Command buffer (0x5d84fc9ded40)
+[2026-09-17 03:50:19] 	Draw Index 2
+[2026-09-17 03:50:19] Shader Module (0x1c100000001c1) (internal ID 1)
+[2026-09-17 03:50:19] (This check was instrumented at the start of your entrypoint function)
+[2026-09-17 03:50:19] The Vulkan spec states: If the robustBufferAccess feature is not enabled, and that pipeline was created without enabling VK_PIPELINE_ROBUSTNESS_BUFFER_BEHAVIOR_ROBUST_BUFFER_ACCESS for vertexInputs, then for a given vertex buffer binding, any attribute data fetched must be entirely contained within the corresponding vertex buffer binding, as described in Vertex Input Description (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-02721)
+[2026-09-17 03:50:19] Objects: 4
+[2026-09-17 03:50:19]     [0] VkQueue 0x5d84faf88740
+[2026-09-17 03:50:19]     [1] VkCommandBuffer 0x5d84fc9ded40
+[2026-09-17 03:50:19]     [2] VkPipeline 0x3010000000301
+[2026-09-17 03:50:19]     [3] VkRenderPass 0x2fa00000002fa
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-02721 ] | MessageID = 0x24afafc5
+[2026-09-17 03:50:19] [ Debug region: CommandBuffer[9] ] vkCmdDrawIndexed(): Vertex index 1680, using VK_VERTEX_INPUT_RATE_VERTEX, has caused an OOB access within a bound vertex buffer.
+[2026-09-17 03:50:19] Vertex Buffer (VkBuffer 0x2df00000002df) binding info:
+[2026-09-17 03:50:19]   - Binding: 0
+[2026-09-17 03:50:19]   - Offset: 0 bytes
+[2026-09-17 03:50:19]   - Effective Size: 26896 bytes
+[2026-09-17 03:50:19]   - Vertices Count: 1680
+[2026-09-17 03:50:19]   - Stride: 16 bytes
+[2026-09-17 03:50:19] The following VkVertexInputAttributeDescription caused OOB access:
+[2026-09-17 03:50:19]   - Location: 2
+[2026-09-17 03:50:19]   - Binding: 0
+[2026-09-17 03:50:19]   - Format: VK_FORMAT_R32_SFLOAT
+[2026-09-17 03:50:19]   - Offset: 16 bytes
+[2026-09-17 03:50:19] Index Buffer (VkBuffer 0x2e100000002e1) binding info:
+[2026-09-17 03:50:19]   - Type: VK_INDEX_TYPE_UINT16
+[2026-09-17 03:50:19]   - Offset: 0 bytes
+[2026-09-17 03:50:19]   - Size: 19200 bytes (sizeof(VK_INDEX_TYPE_UINT16) * 9600)
+[2026-09-17 03:50:19] Note: Vertex buffer binding size is the effective, valid one, based on how the VkBuffer was created and the vkCmdBindVertexBuffers parameters. So it can be clamped up to 0 if binding was invalid.
+[2026-09-17 03:50:19] Stage = Vertex. Vertex Index = 1680 Instance Index = 0. 
+[2026-09-17 03:50:19] Command buffer (0x5d84fc9ded40)
+[2026-09-17 03:50:19] 	Draw Index 3
+[2026-09-17 03:50:19] Shader Module (0x1c100000001c1) (internal ID 1)
+[2026-09-17 03:50:19] (This check was instrumented at the start of your entrypoint function)
+[2026-09-17 03:50:19] The Vulkan spec states: If the robustBufferAccess feature is not enabled, and that pipeline was created without enabling VK_PIPELINE_ROBUSTNESS_BUFFER_BEHAVIOR_ROBUST_BUFFER_ACCESS for vertexInputs, then for a given vertex buffer binding, any attribute data fetched must be entirely contained within the corresponding vertex buffer binding, as described in Vertex Input Description (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-02721)
+[2026-09-17 03:50:19] Objects: 4
+[2026-09-17 03:50:19]     [0] VkQueue 0x5d84faf88740
+[2026-09-17 03:50:19]     [1] VkCommandBuffer 0x5d84fc9ded40
+[2026-09-17 03:50:19]     [2] VkPipeline 0x3010000000301
+[2026-09-17 03:50:19]     [3] VkRenderPass 0x2fa00000002fa
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-02721 ] | MessageID = 0x24afafc5
+[2026-09-17 03:50:19] [ Debug region: CommandBuffer[9] ] vkCmdDrawIndexed(): Vertex index 1680, using VK_VERTEX_INPUT_RATE_VERTEX, has caused an OOB access within a bound vertex buffer.
+[2026-09-17 03:50:19] Vertex Buffer (VkBuffer 0x2df00000002df) binding info:
+[2026-09-17 03:50:19]   - Binding: 0
+[2026-09-17 03:50:19]   - Offset: 0 bytes
+[2026-09-17 03:50:19]   - Effective Size: 26896 bytes
+[2026-09-17 03:50:19]   - Vertices Count: 1680
+[2026-09-17 03:50:19]   - Stride: 16 bytes
+[2026-09-17 03:50:19] The following VkVertexInputAttributeDescription caused OOB access:
+[2026-09-17 03:50:19]   - Location: 2
+[2026-09-17 03:50:19]   - Binding: 0
+[2026-09-17 03:50:19]   - Format: VK_FORMAT_R32_SFLOAT
+[2026-09-17 03:50:19]   - Offset: 16 bytes
+[2026-09-17 03:50:19] Index Buffer (VkBuffer 0x2e100000002e1) binding info:
+[2026-09-17 03:50:19]   - Type: VK_INDEX_TYPE_UINT16
+[2026-09-17 03:50:19]   - Offset: 0 bytes
+[2026-09-17 03:50:19]   - Size: 19200 bytes (sizeof(VK_INDEX_TYPE_UINT16) * 9600)
+[2026-09-17 03:50:19] Note: Vertex buffer binding size is the effective, valid one, based on how the VkBuffer was created and the vkCmdBindVertexBuffers parameters. So it can be clamped up to 0 if binding was invalid.
+[2026-09-17 03:50:19] Stage = Vertex. Vertex Index = 1680 Instance Index = 0. 
+[2026-09-17 03:50:19] Command buffer (0x5d84fc9ded40)
+[2026-09-17 03:50:19] 	Draw Index 4
+[2026-09-17 03:50:19] Shader Module (0x1c100000001c1) (internal ID 1)
+[2026-09-17 03:50:19] (This check was instrumented at the start of your entrypoint function)
+[2026-09-17 03:50:19] The Vulkan spec states: If the robustBufferAccess feature is not enabled, and that pipeline was created without enabling VK_PIPELINE_ROBUSTNESS_BUFFER_BEHAVIOR_ROBUST_BUFFER_ACCESS for vertexInputs, then for a given vertex buffer binding, any attribute data fetched must be entirely contained within the corresponding vertex buffer binding, as described in Vertex Input Description (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-02721)
+[2026-09-17 03:50:19] Objects: 4
+[2026-09-17 03:50:19]     [0] VkQueue 0x5d84faf88740
+[2026-09-17 03:50:19]     [1] VkCommandBuffer 0x5d84fc9ded40
+[2026-09-17 03:50:19]     [2] VkPipeline 0x3010000000301
+[2026-09-17 03:50:19]     [3] VkRenderPass 0x2fa00000002fa
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-02721 ] | MessageID = 0x24afafc5
+[2026-09-17 03:50:19] [ Debug region: CommandBuffer[9] ] vkCmdDrawIndexed(): Vertex index 1680, using VK_VERTEX_INPUT_RATE_VERTEX, has caused an OOB access within a bound vertex buffer.
+[2026-09-17 03:50:19] Vertex Buffer (VkBuffer 0x2df00000002df) binding info:
+[2026-09-17 03:50:19]   - Binding: 0
+[2026-09-17 03:50:19]   - Offset: 0 bytes
+[2026-09-17 03:50:19]   - Effective Size: 26896 bytes
+[2026-09-17 03:50:19]   - Vertices Count: 1680
+[2026-09-17 03:50:19]   - Stride: 16 bytes
+[2026-09-17 03:50:19] The following VkVertexInputAttributeDescription caused OOB access:
+[2026-09-17 03:50:19]   - Location: 2
+[2026-09-17 03:50:19]   - Binding: 0
+[2026-09-17 03:50:19]   - Format: VK_FORMAT_R32_SFLOAT
+[2026-09-17 03:50:19]   - Offset: 16 bytes
+[2026-09-17 03:50:19] Index Buffer (VkBuffer 0x2e100000002e1) binding info:
+[2026-09-17 03:50:19]   - Type: VK_INDEX_TYPE_UINT16
+[2026-09-17 03:50:19]   - Offset: 0 bytes
+[2026-09-17 03:50:19]   - Size: 19200 bytes (sizeof(VK_INDEX_TYPE_UINT16) * 9600)
+[2026-09-17 03:50:19] Note: Vertex buffer binding size is the effective, valid one, based on how the VkBuffer was created and the vkCmdBindVertexBuffers parameters. So it can be clamped up to 0 if binding was invalid.
+[2026-09-17 03:50:19] Stage = Vertex. Vertex Index = 1680 Instance Index = 0. 
+[2026-09-17 03:50:19] Command buffer (0x5d84fc9ded40)
+[2026-09-17 03:50:19] 	Draw Index 5
+[2026-09-17 03:50:19] Shader Module (0x1c100000001c1) (internal ID 1)
+[2026-09-17 03:50:19] (This check was instrumented at the start of your entrypoint function)
+[2026-09-17 03:50:19] The Vulkan spec states: If the robustBufferAccess feature is not enabled, and that pipeline was created without enabling VK_PIPELINE_ROBUSTNESS_BUFFER_BEHAVIOR_ROBUST_BUFFER_ACCESS for vertexInputs, then for a given vertex buffer binding, any attribute data fetched must be entirely contained within the corresponding vertex buffer binding, as described in Vertex Input Description (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-02721)
+[2026-09-17 03:50:19] Objects: 4
+[2026-09-17 03:50:19]     [0] VkQueue 0x5d84faf88740
+[2026-09-17 03:50:19]     [1] VkCommandBuffer 0x5d84fc9ded40
+[2026-09-17 03:50:19]     [2] VkPipeline 0x3010000000301
+[2026-09-17 03:50:19]     [3] VkRenderPass 0x2fa00000002fa
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-02721 ] | MessageID = 0x24afafc5
+[2026-09-17 03:50:19] [ Debug region: CommandBuffer[9] ] vkCmdDrawIndexed(): Vertex index 1680, using VK_VERTEX_INPUT_RATE_VERTEX, has caused an OOB access within a bound vertex buffer.
+[2026-09-17 03:50:19] Vertex Buffer (VkBuffer 0x2df00000002df) binding info:
+[2026-09-17 03:50:19]   - Binding: 0
+[2026-09-17 03:50:19]   - Offset: 0 bytes
+[2026-09-17 03:50:19]   - Effective Size: 26896 bytes
+[2026-09-17 03:50:19]   - Vertices Count: 1680
+[2026-09-17 03:50:19]   - Stride: 16 bytes
+[2026-09-17 03:50:19] The following VkVertexInputAttributeDescription caused OOB access:
+[2026-09-17 03:50:19]   - Location: 2
+[2026-09-17 03:50:19]   - Binding: 0
+[2026-09-17 03:50:19]   - Format: VK_FORMAT_R32_SFLOAT
+[2026-09-17 03:50:19]   - Offset: 16 bytes
+[2026-09-17 03:50:19] Index Buffer (VkBuffer 0x2e100000002e1) binding info:
+[2026-09-17 03:50:19]   - Type: VK_INDEX_TYPE_UINT16
+[2026-09-17 03:50:19]   - Offset: 0 bytes
+[2026-09-17 03:50:19]   - Size: 19200 bytes (sizeof(VK_INDEX_TYPE_UINT16) * 9600)
+[2026-09-17 03:50:19] Note: Vertex buffer binding size is the effective, valid one, based on how the VkBuffer was created and the vkCmdBindVertexBuffers parameters. So it can be clamped up to 0 if binding was invalid.
+[2026-09-17 03:50:19] Stage = Vertex. Vertex Index = 1680 Instance Index = 0. 
+[2026-09-17 03:50:19] Command buffer (0x5d84fc9ded40)
+[2026-09-17 03:50:19] 	Draw Index 6
+[2026-09-17 03:50:19] Shader Module (0x1c100000001c1) (internal ID 1)
+[2026-09-17 03:50:19] (This check was instrumented at the start of your entrypoint function)
+[2026-09-17 03:50:19] The Vulkan spec states: If the robustBufferAccess feature is not enabled, and that pipeline was created without enabling VK_PIPELINE_ROBUSTNESS_BUFFER_BEHAVIOR_ROBUST_BUFFER_ACCESS for vertexInputs, then for a given vertex buffer binding, any attribute data fetched must be entirely contained within the corresponding vertex buffer binding, as described in Vertex Input Description (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-02721)
+[2026-09-17 03:50:19] Objects: 4
+[2026-09-17 03:50:19]     [0] VkQueue 0x5d84faf88740
+[2026-09-17 03:50:19]     [1] VkCommandBuffer 0x5d84fc9ded40
+[2026-09-17 03:50:19]     [2] VkPipeline 0x3010000000301
+[2026-09-17 03:50:19]     [3] VkRenderPass 0x2fa00000002fa
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-02721 ] | MessageID = 0x24afafc5
+[2026-09-17 03:50:19] [ Debug region: CommandBuffer[9] ] vkCmdDrawIndexed(): Vertex index 1680, using VK_VERTEX_INPUT_RATE_VERTEX, has caused an OOB access within a bound vertex buffer.
+[2026-09-17 03:50:19] Vertex Buffer (VkBuffer 0x2df00000002df) binding info:
+[2026-09-17 03:50:19]   - Binding: 0
+[2026-09-17 03:50:19]   - Offset: 0 bytes
+[2026-09-17 03:50:19]   - Effective Size: 26896 bytes
+[2026-09-17 03:50:19]   - Vertices Count: 1680
+[2026-09-17 03:50:19]   - Stride: 16 bytes
+[2026-09-17 03:50:19] The following VkVertexInputAttributeDescription caused OOB access:
+[2026-09-17 03:50:19]   - Location: 2
+[2026-09-17 03:50:19]   - Binding: 0
+[2026-09-17 03:50:19]   - Format: VK_FORMAT_R32_SFLOAT
+[2026-09-17 03:50:19]   - Offset: 16 bytes
+[2026-09-17 03:50:19] Index Buffer (VkBuffer 0x2e100000002e1) binding info:
+[2026-09-17 03:50:19]   - Type: VK_INDEX_TYPE_UINT16
+[2026-09-17 03:50:19]   - Offset: 0 bytes
+[2026-09-17 03:50:19]   - Size: 19200 bytes (sizeof(VK_INDEX_TYPE_UINT16) * 9600)
+[2026-09-17 03:50:19] Note: Vertex buffer binding size is the effective, valid one, based on how the VkBuffer was created and the vkCmdBindVertexBuffers parameters. So it can be clamped up to 0 if binding was invalid.
+[2026-09-17 03:50:19] Stage = Vertex. Vertex Index = 1680 Instance Index = 0. 
+[2026-09-17 03:50:19] Command buffer (0x5d84fc9ded40)
+[2026-09-17 03:50:19] 	Draw Index 7
+[2026-09-17 03:50:19] Shader Module (0x1c100000001c1) (internal ID 1)
+[2026-09-17 03:50:19] (This check was instrumented at the start of your entrypoint function)
+[2026-09-17 03:50:19] The Vulkan spec states: If the robustBufferAccess feature is not enabled, and that pipeline was created without enabling VK_PIPELINE_ROBUSTNESS_BUFFER_BEHAVIOR_ROBUST_BUFFER_ACCESS for vertexInputs, then for a given vertex buffer binding, any attribute data fetched must be entirely contained within the corresponding vertex buffer binding, as described in Vertex Input Description (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-02721)
+[2026-09-17 03:50:19] Objects: 4
+[2026-09-17 03:50:19]     [0] VkQueue 0x5d84faf88740
+[2026-09-17 03:50:19]     [1] VkCommandBuffer 0x5d84fc9ded40
+[2026-09-17 03:50:19]     [2] VkPipeline 0x3010000000301
+[2026-09-17 03:50:19]     [3] VkRenderPass 0x2fa00000002fa
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-02721 ] | MessageID = 0x24afafc5
+[2026-09-17 03:50:19] [ Debug region: CommandBuffer[9] ] vkCmdDrawIndexed(): Vertex index 1680, using VK_VERTEX_INPUT_RATE_VERTEX, has caused an OOB access within a bound vertex buffer.
+[2026-09-17 03:50:19] Vertex Buffer (VkBuffer 0x2df00000002df) binding info:
+[2026-09-17 03:50:19]   - Binding: 0
+[2026-09-17 03:50:19]   - Offset: 0 bytes
+[2026-09-17 03:50:19]   - Effective Size: 26896 bytes
+[2026-09-17 03:50:19]   - Vertices Count: 1680
+[2026-09-17 03:50:19]   - Stride: 16 bytes
+[2026-09-17 03:50:19] The following VkVertexInputAttributeDescription caused OOB access:
+[2026-09-17 03:50:19]   - Location: 2
+[2026-09-17 03:50:19]   - Binding: 0
+[2026-09-17 03:50:19]   - Format: VK_FORMAT_R32_SFLOAT
+[2026-09-17 03:50:19]   - Offset: 16 bytes
+[2026-09-17 03:50:19] Index Buffer (VkBuffer 0x2e100000002e1) binding info:
+[2026-09-17 03:50:19]   - Type: VK_INDEX_TYPE_UINT16
+[2026-09-17 03:50:19]   - Offset: 0 bytes
+[2026-09-17 03:50:19]   - Size: 19200 bytes (sizeof(VK_INDEX_TYPE_UINT16) * 9600)
+[2026-09-17 03:50:19] Note: Vertex buffer binding size is the effective, valid one, based on how the VkBuffer was created and the vkCmdBindVertexBuffers parameters. So it can be clamped up to 0 if binding was invalid.
+[2026-09-17 03:50:19] Stage = Vertex. Vertex Index = 1680 Instance Index = 0. 
+[2026-09-17 03:50:19] Command buffer (0x5d84fc9ded40)
+[2026-09-17 03:50:19] 	Draw Index 8
+[2026-09-17 03:50:19] Shader Module (0x1c100000001c1) (internal ID 1)
+[2026-09-17 03:50:19] (This check was instrumented at the start of your entrypoint function)
+[2026-09-17 03:50:19] The Vulkan spec states: If the robustBufferAccess feature is not enabled, and that pipeline was created without enabling VK_PIPELINE_ROBUSTNESS_BUFFER_BEHAVIOR_ROBUST_BUFFER_ACCESS for vertexInputs, then for a given vertex buffer binding, any attribute data fetched must be entirely contained within the corresponding vertex buffer binding, as described in Vertex Input Description (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-02721)
+[2026-09-17 03:50:19] Objects: 4
+[2026-09-17 03:50:19]     [0] VkQueue 0x5d84faf88740
+[2026-09-17 03:50:19]     [1] VkCommandBuffer 0x5d84fc9ded40
+[2026-09-17 03:50:19]     [2] VkPipeline 0x3010000000301
+[2026-09-17 03:50:19]     [3] VkRenderPass 0x2fa00000002fa
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-02721 ] | MessageID = 0x24afafc5
+[2026-09-17 03:50:19] (Warning - This VUID has now been reported 10 times, which is the duplicate_message_limit value, this will be the last time reporting it).
+[2026-09-17 03:50:19] [ Debug region: CommandBuffer[9] ] vkCmdDrawIndexed(): Vertex index 1680, using VK_VERTEX_INPUT_RATE_VERTEX, has caused an OOB access within a bound vertex buffer.
+[2026-09-17 03:50:19] Vertex Buffer (VkBuffer 0x2df00000002df) binding info:
+[2026-09-17 03:50:19]   - Binding: 0
+[2026-09-17 03:50:19]   - Offset: 0 bytes
+[2026-09-17 03:50:19]   - Effective Size: 26896 bytes
+[2026-09-17 03:50:19]   - Vertices Count: 1680
+[2026-09-17 03:50:19]   - Stride: 16 bytes
+[2026-09-17 03:50:19] The following VkVertexInputAttributeDescription caused OOB access:
+[2026-09-17 03:50:19]   - Location: 2
+[2026-09-17 03:50:19]   - Binding: 0
+[2026-09-17 03:50:19]   - Format: VK_FORMAT_R32_SFLOAT
+[2026-09-17 03:50:19]   - Offset: 16 bytes
+[2026-09-17 03:50:19] Index Buffer (VkBuffer 0x2e100000002e1) binding info:
+[2026-09-17 03:50:19]   - Type: VK_INDEX_TYPE_UINT16
+[2026-09-17 03:50:19]   - Offset: 0 bytes
+[2026-09-17 03:50:19]   - Size: 19200 bytes (sizeof(VK_INDEX_TYPE_UINT16) * 9600)
+[2026-09-17 03:50:19] Note: Vertex buffer binding size is the effective, valid one, based on how the VkBuffer was created and the vkCmdBindVertexBuffers parameters. So it can be clamped up to 0 if binding was invalid.
+[2026-09-17 03:50:19] Stage = Vertex. Vertex Index = 1680 Instance Index = 0. 
+[2026-09-17 03:50:19] Command buffer (0x5d84fc9ded40)
+[2026-09-17 03:50:19] 	Draw Index 9
+[2026-09-17 03:50:19] Shader Module (0x1c100000001c1) (internal ID 1)
+[2026-09-17 03:50:19] (This check was instrumented at the start of your entrypoint function)
+[2026-09-17 03:50:19] The Vulkan spec states: If the robustBufferAccess feature is not enabled, and that pipeline was created without enabling VK_PIPELINE_ROBUSTNESS_BUFFER_BEHAVIOR_ROBUST_BUFFER_ACCESS for vertexInputs, then for a given vertex buffer binding, any attribute data fetched must be entirely contained within the corresponding vertex buffer binding, as described in Vertex Input Description (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-02721)
+[2026-09-17 03:50:19] Objects: 4
+[2026-09-17 03:50:19]     [0] VkQueue 0x5d84faf88740
+[2026-09-17 03:50:19]     [1] VkCommandBuffer 0x5d84fc9ded40
+[2026-09-17 03:50:19]     [2] VkPipeline 0x3010000000301
+[2026-09-17 03:50:19]     [3] VkRenderPass 0x2fa00000002fa
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkAcquireNextImageKHR-semaphore-01286 ] | MessageID = 0xe9e4b2a9
+[2026-09-17 03:50:19] vkAcquireNextImageKHR(): Semaphore must not be currently signaled.
+[2026-09-17 03:50:19] The Vulkan spec states: If semaphore is not VK_NULL_HANDLE, it must be unsignaled (https://docs.vulkan.org/spec/latest/chapters/VK_KHR_surface/wsi.html#VUID-vkAcquireNextImageKHR-semaphore-01286)
+[2026-09-17 03:50:19] Objects: 1
+[2026-09-17 03:50:19]     [0] VkSemaphore 0x11d000000011d
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Warning: [ Undefined-Value-Layer-Written ] | MessageID = 0x1fc55805
+[2026-09-17 03:50:19] vkCmdDrawIndexed(): Shader stage VK_SHADER_STAGE_VERTEX_BIT writes to Layer (gl_Layer) but the framebuffer was created with VkFramebufferCreateInfo::layer of 1, this write will have an undefined value set to it.
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkCommandBuffer 0x5d84fbd96940
+[2026-09-17 03:50:19]     [1] VkPipeline 0xa0b0000000a0b
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-08114 ] | MessageID = 0x3f6fd836
+[2026-09-17 03:50:19] vkCmdDrawIndexed(): the descriptor [VkDescriptorSet 0xa080000000a08, Set 0, Binding 9, Index 1] is being used in draw but has never been updated via vkUpdateDescriptorSets() or a similar call.
+[2026-09-17 03:50:19] The Vulkan spec states: Descriptors in each bound descriptor set, specified via vkCmdBindDescriptorSets, must be valid if they are accessed as described by descriptor validity by the VkPipeline bound to the pipeline bind point used by this command and the bound VkPipeline was not created with VK_PIPELINE_CREATE_DESCRIPTOR_BUFFER_BIT_EXT (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-08114)
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkPipeline 0xa0b0000000a0b
+[2026-09-17 03:50:19]     [1] VkDescriptorSet 0xa080000000a08
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Warning: [ Undefined-Value-Layer-Written ] | MessageID = 0x1fc55805
+[2026-09-17 03:50:19] vkCmdDrawIndexed(): Shader stage VK_SHADER_STAGE_VERTEX_BIT writes to Layer (gl_Layer) but the framebuffer was created with VkFramebufferCreateInfo::layer of 1, this write will have an undefined value set to it.
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkCommandBuffer 0x5d84fbd96940
+[2026-09-17 03:50:19]     [1] VkPipeline 0xa360000000a36
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-08114 ] | MessageID = 0x3f6fd836
+[2026-09-17 03:50:19] vkCmdDrawIndexed(): the descriptor [VkDescriptorSet 0xa330000000a33, Set 0, Binding 9, Index 1] is being used in draw but has never been updated via vkUpdateDescriptorSets() or a similar call.
+[2026-09-17 03:50:19] The Vulkan spec states: Descriptors in each bound descriptor set, specified via vkCmdBindDescriptorSets, must be valid if they are accessed as described by descriptor validity by the VkPipeline bound to the pipeline bind point used by this command and the bound VkPipeline was not created with VK_PIPELINE_CREATE_DESCRIPTOR_BUFFER_BIT_EXT (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-08114)
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkPipeline 0xa360000000a36
+[2026-09-17 03:50:19]     [1] VkDescriptorSet 0xa330000000a33
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDraw-None-08114 ] | MessageID = 0x2ba3a98e
+[2026-09-17 03:50:19] vkCmdDraw(): the descriptor [VkDescriptorSet 0xa460000000a46, Set 0, Binding 9, Index 1] is being used in draw but has never been updated via vkUpdateDescriptorSets() or a similar call.
+[2026-09-17 03:50:19] The Vulkan spec states: Descriptors in each bound descriptor set, specified via vkCmdBindDescriptorSets, must be valid if they are accessed as described by descriptor validity by the VkPipeline bound to the pipeline bind point used by this command and the bound VkPipeline was not created with VK_PIPELINE_CREATE_DESCRIPTOR_BUFFER_BIT_EXT (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDraw-None-08114)
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkPipeline 0xa490000000a49
+[2026-09-17 03:50:19]     [1] VkDescriptorSet 0xa460000000a46
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkAcquireNextImageKHR-semaphore-01779 ] | MessageID = 0x5717e75b
+[2026-09-17 03:50:19] vkAcquireNextImageKHR(): Semaphore must not have any pending operations.
+[2026-09-17 03:50:19] The Vulkan spec states: If semaphore is not VK_NULL_HANDLE, it must not have any uncompleted signal or wait operations pending (https://docs.vulkan.org/spec/latest/chapters/VK_KHR_surface/wsi.html#VUID-vkAcquireNextImageKHR-semaphore-01779)
+[2026-09-17 03:50:19] Objects: 1
+[2026-09-17 03:50:19]     [0] VkSemaphore 0x11d000000011d
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Warning: [ Undefined-Value-Layer-Written ] | MessageID = 0x1fc55805
+[2026-09-17 03:50:19] vkCmdDrawIndexed(): Shader stage VK_SHADER_STAGE_VERTEX_BIT writes to Layer (gl_Layer) but the framebuffer was created with VkFramebufferCreateInfo::layer of 1, this write will have an undefined value set to it.
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkCommandBuffer 0x5d84fb269590
+[2026-09-17 03:50:19]     [1] VkPipeline 0xa5a0000000a5a
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-08114 ] | MessageID = 0x3f6fd836
+[2026-09-17 03:50:19] vkCmdDrawIndexed(): the descriptor [VkDescriptorSet 0xa570000000a57, Set 0, Binding 9, Index 1] is being used in draw but has never been updated via vkUpdateDescriptorSets() or a similar call.
+[2026-09-17 03:50:19] The Vulkan spec states: Descriptors in each bound descriptor set, specified via vkCmdBindDescriptorSets, must be valid if they are accessed as described by descriptor validity by the VkPipeline bound to the pipeline bind point used by this command and the bound VkPipeline was not created with VK_PIPELINE_CREATE_DESCRIPTOR_BUFFER_BIT_EXT (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-08114)
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkPipeline 0xa5a0000000a5a
+[2026-09-17 03:50:19]     [1] VkDescriptorSet 0xa570000000a57
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDraw-None-08114 ] | MessageID = 0x2ba3a98e
+[2026-09-17 03:50:19] vkCmdDraw(): the descriptor [VkDescriptorSet 0xa650000000a65, Set 0, Binding 9, Index 1] is being used in draw but has never been updated via vkUpdateDescriptorSets() or a similar call.
+[2026-09-17 03:50:19] The Vulkan spec states: Descriptors in each bound descriptor set, specified via vkCmdBindDescriptorSets, must be valid if they are accessed as described by descriptor validity by the VkPipeline bound to the pipeline bind point used by this command and the bound VkPipeline was not created with VK_PIPELINE_CREATE_DESCRIPTOR_BUFFER_BIT_EXT (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDraw-None-08114)
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkPipeline 0xa680000000a68
+[2026-09-17 03:50:19]     [1] VkDescriptorSet 0xa650000000a65
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Warning: [ Undefined-Value-Layer-Written ] | MessageID = 0x1fc55805
+[2026-09-17 03:50:19] vkCmdDrawIndexed(): Shader stage VK_SHADER_STAGE_VERTEX_BIT writes to Layer (gl_Layer) but the framebuffer was created with VkFramebufferCreateInfo::layer of 1, this write will have an undefined value set to it.
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkCommandBuffer 0x5d84fb269590
+[2026-09-17 03:50:19]     [1] VkPipeline 0xa740000000a74
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-08114 ] | MessageID = 0x3f6fd836
+[2026-09-17 03:50:19] vkCmdDrawIndexed(): the descriptor [VkDescriptorSet 0xa710000000a71, Set 0, Binding 9, Index 1] is being used in draw but has never been updated via vkUpdateDescriptorSets() or a similar call.
+[2026-09-17 03:50:19] The Vulkan spec states: Descriptors in each bound descriptor set, specified via vkCmdBindDescriptorSets, must be valid if they are accessed as described by descriptor validity by the VkPipeline bound to the pipeline bind point used by this command and the bound VkPipeline was not created with VK_PIPELINE_CREATE_DESCRIPTOR_BUFFER_BIT_EXT (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-08114)
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkPipeline 0xa740000000a74
+[2026-09-17 03:50:19]     [1] VkDescriptorSet 0xa710000000a71
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkQueueSubmit-pSignalSemaphores-00067 ] | MessageID = 0x539277af
+[2026-09-17 03:50:19] vkQueueSubmit(): pSubmits[0].pSignalSemaphores[0] (VkSemaphore 0x11e000000011e) is being signaled by VkQueue 0x5d84faf88740, but it may still be in use by VkSwapchainKHR 0xf000000000f.
+[2026-09-17 03:50:19] Most recently acquired image indices: [0], 1.
+[2026-09-17 03:50:19] (Brackets mark the last use of VkSemaphore 0x11e000000011e in a presentation operation.)
+[2026-09-17 03:50:19] Swapchain image 0 was presented but was not re-acquired, so VkSemaphore 0x11e000000011e may still be in use and cannot be safely reused with image index 1.
+[2026-09-17 03:50:19] Vulkan insight: See https://docs.vulkan.org/guide/latest/swapchain_semaphore_reuse.html for details on swapchain semaphore reuse. Examples of possible approaches:
+[2026-09-17 03:50:19]    a) Use a separate semaphore per swapchain image. Index these semaphores using the index of the acquired image.
+[2026-09-17 03:50:19]    b) Consider the VK_KHR_swapchain_maintenance1 extension. It allows using a VkFence with the presentation operation.
+[2026-09-17 03:50:19] The Vulkan spec states: Each binary semaphore element of the pSignalSemaphores member of any element of pSubmits must be unsignaled when the semaphore signal operation it defines is executed on the device (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkQueueSubmit-pSignalSemaphores-00067)
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkSemaphore 0x11e000000011e
+[2026-09-17 03:50:19]     [1] VkQueue 0x5d84faf88740
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDraw-None-08114 ] | MessageID = 0x2ba3a98e
+[2026-09-17 03:50:19] vkCmdDraw(): the descriptor [VkDescriptorSet 0xa460000000a46, Set 0, Binding 9, Index 1] is being used in draw but has never been updated via vkUpdateDescriptorSets() or a similar call.
+[2026-09-17 03:50:19] The Vulkan spec states: Descriptors in each bound descriptor set, specified via vkCmdBindDescriptorSets, must be valid if they are accessed as described by descriptor validity by the VkPipeline bound to the pipeline bind point used by this command and the bound VkPipeline was not created with VK_PIPELINE_CREATE_DESCRIPTOR_BUFFER_BIT_EXT (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDraw-None-08114)
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkPipeline 0xa490000000a49
+[2026-09-17 03:50:19]     [1] VkDescriptorSet 0xa460000000a46
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkAcquireNextImageKHR-semaphore-01779 ] | MessageID = 0x5717e75b
+[2026-09-17 03:50:19] vkAcquireNextImageKHR(): Semaphore must not have any pending operations.
+[2026-09-17 03:50:19] The Vulkan spec states: If semaphore is not VK_NULL_HANDLE, it must not have any uncompleted signal or wait operations pending (https://docs.vulkan.org/spec/latest/chapters/VK_KHR_surface/wsi.html#VUID-vkAcquireNextImageKHR-semaphore-01779)
+[2026-09-17 03:50:19] Objects: 1
+[2026-09-17 03:50:19]     [0] VkSemaphore 0x11d000000011d
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Warning: [ Undefined-Value-Layer-Written ] | MessageID = 0x1fc55805
+[2026-09-17 03:50:19] vkCmdDrawIndexed(): Shader stage VK_SHADER_STAGE_VERTEX_BIT writes to Layer (gl_Layer) but the framebuffer was created with VkFramebufferCreateInfo::layer of 1, this write will have an undefined value set to it.
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkCommandBuffer 0x5d84fb2751b0
+[2026-09-17 03:50:19]     [1] VkPipeline 0xa5a0000000a5a
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-08114 ] | MessageID = 0x3f6fd836
+[2026-09-17 03:50:19] vkCmdDrawIndexed(): the descriptor [VkDescriptorSet 0xa570000000a57, Set 0, Binding 9, Index 1] is being used in draw but has never been updated via vkUpdateDescriptorSets() or a similar call.
+[2026-09-17 03:50:19] The Vulkan spec states: Descriptors in each bound descriptor set, specified via vkCmdBindDescriptorSets, must be valid if they are accessed as described by descriptor validity by the VkPipeline bound to the pipeline bind point used by this command and the bound VkPipeline was not created with VK_PIPELINE_CREATE_DESCRIPTOR_BUFFER_BIT_EXT (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-08114)
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkPipeline 0xa5a0000000a5a
+[2026-09-17 03:50:19]     [1] VkDescriptorSet 0xa570000000a57
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDraw-None-08114 ] | MessageID = 0x2ba3a98e
+[2026-09-17 03:50:19] vkCmdDraw(): the descriptor [VkDescriptorSet 0xa650000000a65, Set 0, Binding 9, Index 1] is being used in draw but has never been updated via vkUpdateDescriptorSets() or a similar call.
+[2026-09-17 03:50:19] The Vulkan spec states: Descriptors in each bound descriptor set, specified via vkCmdBindDescriptorSets, must be valid if they are accessed as described by descriptor validity by the VkPipeline bound to the pipeline bind point used by this command and the bound VkPipeline was not created with VK_PIPELINE_CREATE_DESCRIPTOR_BUFFER_BIT_EXT (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDraw-None-08114)
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkPipeline 0xa680000000a68
+[2026-09-17 03:50:19]     [1] VkDescriptorSet 0xa650000000a65
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Warning: [ Undefined-Value-Layer-Written ] | MessageID = 0x1fc55805
+[2026-09-17 03:50:19] vkCmdDrawIndexed(): Shader stage VK_SHADER_STAGE_VERTEX_BIT writes to Layer (gl_Layer) but the framebuffer was created with VkFramebufferCreateInfo::layer of 1, this write will have an undefined value set to it.
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkCommandBuffer 0x5d84fb2751b0
+[2026-09-17 03:50:19]     [1] VkPipeline 0xa740000000a74
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-08114 ] | MessageID = 0x3f6fd836
+[2026-09-17 03:50:19] vkCmdDrawIndexed(): the descriptor [VkDescriptorSet 0xa710000000a71, Set 0, Binding 9, Index 1] is being used in draw but has never been updated via vkUpdateDescriptorSets() or a similar call.
+[2026-09-17 03:50:19] The Vulkan spec states: Descriptors in each bound descriptor set, specified via vkCmdBindDescriptorSets, must be valid if they are accessed as described by descriptor validity by the VkPipeline bound to the pipeline bind point used by this command and the bound VkPipeline was not created with VK_PIPELINE_CREATE_DESCRIPTOR_BUFFER_BIT_EXT (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-08114)
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkPipeline 0xa740000000a74
+[2026-09-17 03:50:19]     [1] VkDescriptorSet 0xa710000000a71
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkQueueSubmit-pSignalSemaphores-00067 ] | MessageID = 0x539277af
+[2026-09-17 03:50:19] vkQueueSubmit(): pSubmits[0].pSignalSemaphores[0] (VkSemaphore 0x11e000000011e) is being signaled by VkQueue 0x5d84faf88740, but it may still be in use by VkSwapchainKHR 0xf000000000f.
+[2026-09-17 03:50:19] Most recently acquired image indices: 0, [1], 2.
+[2026-09-17 03:50:19] (Brackets mark the last use of VkSemaphore 0x11e000000011e in a presentation operation.)
+[2026-09-17 03:50:19] Swapchain image 1 was presented but was not re-acquired, so VkSemaphore 0x11e000000011e may still be in use and cannot be safely reused with image index 2.
+[2026-09-17 03:50:19] Vulkan insight: See https://docs.vulkan.org/guide/latest/swapchain_semaphore_reuse.html for details on swapchain semaphore reuse. Examples of possible approaches:
+[2026-09-17 03:50:19]    a) Use a separate semaphore per swapchain image. Index these semaphores using the index of the acquired image.
+[2026-09-17 03:50:19]    b) Consider the VK_KHR_swapchain_maintenance1 extension. It allows using a VkFence with the presentation operation.
+[2026-09-17 03:50:19] The Vulkan spec states: Each binary semaphore element of the pSignalSemaphores member of any element of pSubmits must be unsignaled when the semaphore signal operation it defines is executed on the device (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkQueueSubmit-pSignalSemaphores-00067)
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkSemaphore 0x11e000000011e
+[2026-09-17 03:50:19]     [1] VkQueue 0x5d84faf88740
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDraw-None-08114 ] | MessageID = 0x2ba3a98e
+[2026-09-17 03:50:19] vkCmdDraw(): the descriptor [VkDescriptorSet 0xa460000000a46, Set 0, Binding 9, Index 1] is being used in draw but has never been updated via vkUpdateDescriptorSets() or a similar call.
+[2026-09-17 03:50:19] The Vulkan spec states: Descriptors in each bound descriptor set, specified via vkCmdBindDescriptorSets, must be valid if they are accessed as described by descriptor validity by the VkPipeline bound to the pipeline bind point used by this command and the bound VkPipeline was not created with VK_PIPELINE_CREATE_DESCRIPTOR_BUFFER_BIT_EXT (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDraw-None-08114)
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkPipeline 0xa490000000a49
+[2026-09-17 03:50:19]     [1] VkDescriptorSet 0xa460000000a46
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkAcquireNextImageKHR-semaphore-01779 ] | MessageID = 0x5717e75b
+[2026-09-17 03:50:19] vkAcquireNextImageKHR(): Semaphore must not have any pending operations.
+[2026-09-17 03:50:19] The Vulkan spec states: If semaphore is not VK_NULL_HANDLE, it must not have any uncompleted signal or wait operations pending (https://docs.vulkan.org/spec/latest/chapters/VK_KHR_surface/wsi.html#VUID-vkAcquireNextImageKHR-semaphore-01779)
+[2026-09-17 03:50:19] Objects: 1
+[2026-09-17 03:50:19]     [0] VkSemaphore 0x11d000000011d
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Warning: [ Undefined-Value-Layer-Written ] | MessageID = 0x1fc55805
+[2026-09-17 03:50:19] vkCmdDrawIndexed(): Shader stage VK_SHADER_STAGE_VERTEX_BIT writes to Layer (gl_Layer) but the framebuffer was created with VkFramebufferCreateInfo::layer of 1, this write will have an undefined value set to it.
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkCommandBuffer 0x5d84fb280dd0
+[2026-09-17 03:50:19]     [1] VkPipeline 0xa5a0000000a5a
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-08114 ] | MessageID = 0x3f6fd836
+[2026-09-17 03:50:19] vkCmdDrawIndexed(): the descriptor [VkDescriptorSet 0xa570000000a57, Set 0, Binding 9, Index 1] is being used in draw but has never been updated via vkUpdateDescriptorSets() or a similar call.
+[2026-09-17 03:50:19] The Vulkan spec states: Descriptors in each bound descriptor set, specified via vkCmdBindDescriptorSets, must be valid if they are accessed as described by descriptor validity by the VkPipeline bound to the pipeline bind point used by this command and the bound VkPipeline was not created with VK_PIPELINE_CREATE_DESCRIPTOR_BUFFER_BIT_EXT (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-08114)
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkPipeline 0xa5a0000000a5a
+[2026-09-17 03:50:19]     [1] VkDescriptorSet 0xa570000000a57
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDraw-None-08114 ] | MessageID = 0x2ba3a98e
+[2026-09-17 03:50:19] vkCmdDraw(): the descriptor [VkDescriptorSet 0xa650000000a65, Set 0, Binding 9, Index 1] is being used in draw but has never been updated via vkUpdateDescriptorSets() or a similar call.
+[2026-09-17 03:50:19] The Vulkan spec states: Descriptors in each bound descriptor set, specified via vkCmdBindDescriptorSets, must be valid if they are accessed as described by descriptor validity by the VkPipeline bound to the pipeline bind point used by this command and the bound VkPipeline was not created with VK_PIPELINE_CREATE_DESCRIPTOR_BUFFER_BIT_EXT (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDraw-None-08114)
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkPipeline 0xa680000000a68
+[2026-09-17 03:50:19]     [1] VkDescriptorSet 0xa650000000a65
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Warning: [ Undefined-Value-Layer-Written ] | MessageID = 0x1fc55805
+[2026-09-17 03:50:19] vkCmdDrawIndexed(): Shader stage VK_SHADER_STAGE_VERTEX_BIT writes to Layer (gl_Layer) but the framebuffer was created with VkFramebufferCreateInfo::layer of 1, this write will have an undefined value set to it.
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkCommandBuffer 0x5d84fb280dd0
+[2026-09-17 03:50:19]     [1] VkPipeline 0xa740000000a74
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-08114 ] | MessageID = 0x3f6fd836
+[2026-09-17 03:50:19] vkCmdDrawIndexed(): the descriptor [VkDescriptorSet 0xa710000000a71, Set 0, Binding 9, Index 1] is being used in draw but has never been updated via vkUpdateDescriptorSets() or a similar call.
+[2026-09-17 03:50:19] The Vulkan spec states: Descriptors in each bound descriptor set, specified via vkCmdBindDescriptorSets, must be valid if they are accessed as described by descriptor validity by the VkPipeline bound to the pipeline bind point used by this command and the bound VkPipeline was not created with VK_PIPELINE_CREATE_DESCRIPTOR_BUFFER_BIT_EXT (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-08114)
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkPipeline 0xa740000000a74
+[2026-09-17 03:50:19]     [1] VkDescriptorSet 0xa710000000a71
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-10068 ] | MessageID = 0xac3b712
+[2026-09-17 03:50:19] [ Debug region: CommandBuffer[0]::Warp: L::Scene::Scene / Lens Distortion ] vkCmdDrawIndexed(): (set = 0, binding = 9) Index of 2 used to index descriptor array of length 1.
+[2026-09-17 03:50:19] Stage = Fragment.  Fragment coord (x,y) = (350.5, 1018.5). 
+[2026-09-17 03:50:19] Command buffer (0x5d84fbd96940)
+[2026-09-17 03:50:19] 	Draw Index 0
+[2026-09-17 03:50:19] Shader Module (0x6f000000006f) (internal ID 4)
+[2026-09-17 03:50:19] SPIR-V Instruction: %642 = OpImageSampleImplicitLod %9 %640 %555
+[2026-09-17 03:50:19] (Unable to find shader source, build shader with debug info to get source information)
+[2026-09-17 03:50:19] The Vulkan spec states: For each array of resources that is used by a bound shader, the indices used to access members of the array must be less than the descriptor count for the identified binding in the descriptor sets used by this command (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-10068)
+[2026-09-17 03:50:19] Objects: 4
+[2026-09-17 03:50:19]     [0] VkQueue 0x5d84faf88740
+[2026-09-17 03:50:19]     [1] VkCommandBuffer 0x5d84fbd96940
+[2026-09-17 03:50:19]     [2] VkPipeline 0xa0b0000000a0b
+[2026-09-17 03:50:19]     [3] VkRenderPass 0xa040000000a04
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-10068 ] | MessageID = 0xac3b712
+[2026-09-17 03:50:19] [ Debug region: CommandBuffer[0]::Warp: L::Scene::Scene / Lens Distortion ] vkCmdDrawIndexed(): (set = 0, binding = 9) Index of 2 used to index descriptor array of length 1.
+[2026-09-17 03:50:19] Stage = Fragment.  Fragment coord (x,y) = (351.5, 1018.5). 
+[2026-09-17 03:50:19] Command buffer (0x5d84fbd96940)
+[2026-09-17 03:50:19] 	Draw Index 0
+[2026-09-17 03:50:19] Shader Module (0x6f000000006f) (internal ID 4)
+[2026-09-17 03:50:19] SPIR-V Instruction: %642 = OpImageSampleImplicitLod %9 %640 %555
+[2026-09-17 03:50:19] (Unable to find shader source, build shader with debug info to get source information)
+[2026-09-17 03:50:19] The Vulkan spec states: For each array of resources that is used by a bound shader, the indices used to access members of the array must be less than the descriptor count for the identified binding in the descriptor sets used by this command (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-10068)
+[2026-09-17 03:50:19] Objects: 4
+[2026-09-17 03:50:19]     [0] VkQueue 0x5d84faf88740
+[2026-09-17 03:50:19]     [1] VkCommandBuffer 0x5d84fbd96940
+[2026-09-17 03:50:19]     [2] VkPipeline 0xa0b0000000a0b
+[2026-09-17 03:50:19]     [3] VkRenderPass 0xa040000000a04
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-10068 ] | MessageID = 0xac3b712
+[2026-09-17 03:50:19] [ Debug region: CommandBuffer[0]::Warp: L::Scene::Scene / Lens Distortion ] vkCmdDrawIndexed(): (set = 0, binding = 9) Index of 2 used to index descriptor array of length 1.
+[2026-09-17 03:50:19] Stage = Fragment.  Fragment coord (x,y) = (350.5, 1019.5). 
+[2026-09-17 03:50:19] Command buffer (0x5d84fbd96940)
+[2026-09-17 03:50:19] 	Draw Index 0
+[2026-09-17 03:50:19] Shader Module (0x6f000000006f) (internal ID 4)
+[2026-09-17 03:50:19] SPIR-V Instruction: %642 = OpImageSampleImplicitLod %9 %640 %555
+[2026-09-17 03:50:19] (Unable to find shader source, build shader with debug info to get source information)
+[2026-09-17 03:50:19] The Vulkan spec states: For each array of resources that is used by a bound shader, the indices used to access members of the array must be less than the descriptor count for the identified binding in the descriptor sets used by this command (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-10068)
+[2026-09-17 03:50:19] Objects: 4
+[2026-09-17 03:50:19]     [0] VkQueue 0x5d84faf88740
+[2026-09-17 03:50:19]     [1] VkCommandBuffer 0x5d84fbd96940
+[2026-09-17 03:50:19]     [2] VkPipeline 0xa0b0000000a0b
+[2026-09-17 03:50:19]     [3] VkRenderPass 0xa040000000a04
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-10068 ] | MessageID = 0xac3b712
+[2026-09-17 03:50:19] [ Debug region: CommandBuffer[0]::Warp: L::Scene::Scene / Lens Distortion ] vkCmdDrawIndexed(): (set = 0, binding = 9) Index of 2 used to index descriptor array of length 1.
+[2026-09-17 03:50:19] Stage = Fragment.  Fragment coord (x,y) = (351.5, 1019.5). 
+[2026-09-17 03:50:19] Command buffer (0x5d84fbd96940)
+[2026-09-17 03:50:19] 	Draw Index 0
+[2026-09-17 03:50:19] Shader Module (0x6f000000006f) (internal ID 4)
+[2026-09-17 03:50:19] SPIR-V Instruction: %642 = OpImageSampleImplicitLod %9 %640 %555
+[2026-09-17 03:50:19] (Unable to find shader source, build shader with debug info to get source information)
+[2026-09-17 03:50:19] The Vulkan spec states: For each array of resources that is used by a bound shader, the indices used to access members of the array must be less than the descriptor count for the identified binding in the descriptor sets used by this command (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-10068)
+[2026-09-17 03:50:19] Objects: 4
+[2026-09-17 03:50:19]     [0] VkQueue 0x5d84faf88740
+[2026-09-17 03:50:19]     [1] VkCommandBuffer 0x5d84fbd96940
+[2026-09-17 03:50:19]     [2] VkPipeline 0xa0b0000000a0b
+[2026-09-17 03:50:19]     [3] VkRenderPass 0xa040000000a04
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-10068 ] | MessageID = 0xac3b712
+[2026-09-17 03:50:19] [ Debug region: CommandBuffer[0]::Warp: L::Scene::Scene / Lens Distortion ] vkCmdDrawIndexed(): (set = 0, binding = 9) Index of 2 used to index descriptor array of length 1.
+[2026-09-17 03:50:19] Stage = Fragment.  Fragment coord (x,y) = (348.5, 1020.5). 
+[2026-09-17 03:50:19] Command buffer (0x5d84fbd96940)
+[2026-09-17 03:50:19] 	Draw Index 0
+[2026-09-17 03:50:19] Shader Module (0x6f000000006f) (internal ID 4)
+[2026-09-17 03:50:19] SPIR-V Instruction: %642 = OpImageSampleImplicitLod %9 %640 %555
+[2026-09-17 03:50:19] (Unable to find shader source, build shader with debug info to get source information)
+[2026-09-17 03:50:19] The Vulkan spec states: For each array of resources that is used by a bound shader, the indices used to access members of the array must be less than the descriptor count for the identified binding in the descriptor sets used by this command (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-10068)
+[2026-09-17 03:50:19] Objects: 4
+[2026-09-17 03:50:19]     [0] VkQueue 0x5d84faf88740
+[2026-09-17 03:50:19]     [1] VkCommandBuffer 0x5d84fbd96940
+[2026-09-17 03:50:19]     [2] VkPipeline 0xa0b0000000a0b
+[2026-09-17 03:50:19]     [3] VkRenderPass 0xa040000000a04
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-10068 ] | MessageID = 0xac3b712
+[2026-09-17 03:50:19] [ Debug region: CommandBuffer[0]::Warp: L::Scene::Scene / Lens Distortion ] vkCmdDrawIndexed(): (set = 0, binding = 9) Index of 2 used to index descriptor array of length 1.
+[2026-09-17 03:50:19] Stage = Fragment.  Fragment coord (x,y) = (349.5, 1020.5). 
+[2026-09-17 03:50:19] Command buffer (0x5d84fbd96940)
+[2026-09-17 03:50:19] 	Draw Index 0
+[2026-09-17 03:50:19] Shader Module (0x6f000000006f) (internal ID 4)
+[2026-09-17 03:50:19] SPIR-V Instruction: %642 = OpImageSampleImplicitLod %9 %640 %555
+[2026-09-17 03:50:19] (Unable to find shader source, build shader with debug info to get source information)
+[2026-09-17 03:50:19] The Vulkan spec states: For each array of resources that is used by a bound shader, the indices used to access members of the array must be less than the descriptor count for the identified binding in the descriptor sets used by this command (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-10068)
+[2026-09-17 03:50:19] Objects: 4
+[2026-09-17 03:50:19]     [0] VkQueue 0x5d84faf88740
+[2026-09-17 03:50:19]     [1] VkCommandBuffer 0x5d84fbd96940
+[2026-09-17 03:50:19]     [2] VkPipeline 0xa0b0000000a0b
+[2026-09-17 03:50:19]     [3] VkRenderPass 0xa040000000a04
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-10068 ] | MessageID = 0xac3b712
+[2026-09-17 03:50:19] [ Debug region: CommandBuffer[0]::Warp: R::Scene::Scene / Lens Distortion ] vkCmdDrawIndexed(): (set = 0, binding = 9) Index of 2 used to index descriptor array of length 1.
+[2026-09-17 03:50:19] Stage = Fragment.  Fragment coord (x,y) = (1672.5, 1000.5). 
+[2026-09-17 03:50:19] Command buffer (0x5d84fbd96940)
+[2026-09-17 03:50:19] 	Draw Index 4
+[2026-09-17 03:50:19] Shader Module (0x6f000000006f) (internal ID 12)
+[2026-09-17 03:50:19] SPIR-V Instruction: %642 = OpImageSampleImplicitLod %9 %640 %555
+[2026-09-17 03:50:19] (Unable to find shader source, build shader with debug info to get source information)
+[2026-09-17 03:50:19] The Vulkan spec states: For each array of resources that is used by a bound shader, the indices used to access members of the array must be less than the descriptor count for the identified binding in the descriptor sets used by this command (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-10068)
+[2026-09-17 03:50:19] Objects: 4
+[2026-09-17 03:50:19]     [0] VkQueue 0x5d84faf88740
+[2026-09-17 03:50:19]     [1] VkCommandBuffer 0x5d84fbd96940
+[2026-09-17 03:50:19]     [2] VkPipeline 0xa360000000a36
+[2026-09-17 03:50:19]     [3] VkRenderPass 0xa040000000a04
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-10068 ] | MessageID = 0xac3b712
+[2026-09-17 03:50:19] [ Debug region: CommandBuffer[0]::Warp: R::Scene::Scene / Lens Distortion ] vkCmdDrawIndexed(): (set = 0, binding = 9) Index of 2 used to index descriptor array of length 1.
+[2026-09-17 03:50:19] Stage = Fragment.  Fragment coord (x,y) = (1673.5, 1000.5). 
+[2026-09-17 03:50:19] Command buffer (0x5d84fbd96940)
+[2026-09-17 03:50:19] 	Draw Index 4
+[2026-09-17 03:50:19] Shader Module (0x6f000000006f) (internal ID 12)
+[2026-09-17 03:50:19] SPIR-V Instruction: %642 = OpImageSampleImplicitLod %9 %640 %555
+[2026-09-17 03:50:19] (Unable to find shader source, build shader with debug info to get source information)
+[2026-09-17 03:50:19] The Vulkan spec states: For each array of resources that is used by a bound shader, the indices used to access members of the array must be less than the descriptor count for the identified binding in the descriptor sets used by this command (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-10068)
+[2026-09-17 03:50:19] Objects: 4
+[2026-09-17 03:50:19]     [0] VkQueue 0x5d84faf88740
+[2026-09-17 03:50:19]     [1] VkCommandBuffer 0x5d84fbd96940
+[2026-09-17 03:50:19]     [2] VkPipeline 0xa360000000a36
+[2026-09-17 03:50:19]     [3] VkRenderPass 0xa040000000a04
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-10068 ] | MessageID = 0xac3b712
+[2026-09-17 03:50:19] [ Debug region: CommandBuffer[0]::Warp: R::Scene::Scene / Lens Distortion ] vkCmdDrawIndexed(): (set = 0, binding = 9) Index of 2 used to index descriptor array of length 1.
+[2026-09-17 03:50:19] Stage = Fragment.  Fragment coord (x,y) = (1672.5, 1001.5). 
+[2026-09-17 03:50:19] Command buffer (0x5d84fbd96940)
+[2026-09-17 03:50:19] 	Draw Index 4
+[2026-09-17 03:50:19] Shader Module (0x6f000000006f) (internal ID 12)
+[2026-09-17 03:50:19] SPIR-V Instruction: %642 = OpImageSampleImplicitLod %9 %640 %555
+[2026-09-17 03:50:19] (Unable to find shader source, build shader with debug info to get source information)
+[2026-09-17 03:50:19] The Vulkan spec states: For each array of resources that is used by a bound shader, the indices used to access members of the array must be less than the descriptor count for the identified binding in the descriptor sets used by this command (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-10068)
+[2026-09-17 03:50:19] Objects: 4
+[2026-09-17 03:50:19]     [0] VkQueue 0x5d84faf88740
+[2026-09-17 03:50:19]     [1] VkCommandBuffer 0x5d84fbd96940
+[2026-09-17 03:50:19]     [2] VkPipeline 0xa360000000a36
+[2026-09-17 03:50:19]     [3] VkRenderPass 0xa040000000a04
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-10068 ] | MessageID = 0xac3b712
+[2026-09-17 03:50:19] (Warning - This VUID has now been reported 10 times, which is the duplicate_message_limit value, this will be the last time reporting it).
+[2026-09-17 03:50:19] [ Debug region: CommandBuffer[0]::Warp: R::Scene::Scene / Lens Distortion ] vkCmdDrawIndexed(): (set = 0, binding = 9) Index of 2 used to index descriptor array of length 1.
+[2026-09-17 03:50:19] Stage = Fragment.  Fragment coord (x,y) = (1673.5, 1001.5). 
+[2026-09-17 03:50:19] Command buffer (0x5d84fbd96940)
+[2026-09-17 03:50:19] 	Draw Index 4
+[2026-09-17 03:50:19] Shader Module (0x6f000000006f) (internal ID 12)
+[2026-09-17 03:50:19] SPIR-V Instruction: %642 = OpImageSampleImplicitLod %9 %640 %555
+[2026-09-17 03:50:19] (Unable to find shader source, build shader with debug info to get source information)
+[2026-09-17 03:50:19] The Vulkan spec states: For each array of resources that is used by a bound shader, the indices used to access members of the array must be less than the descriptor count for the identified binding in the descriptor sets used by this command (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-10068)
+[2026-09-17 03:50:19] Objects: 4
+[2026-09-17 03:50:19]     [0] VkQueue 0x5d84faf88740
+[2026-09-17 03:50:19]     [1] VkCommandBuffer 0x5d84fbd96940
+[2026-09-17 03:50:19]     [2] VkPipeline 0xa360000000a36
+[2026-09-17 03:50:19]     [3] VkRenderPass 0xa040000000a04
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDraw-None-08114 ] | MessageID = 0x2ba3a98e
+[2026-09-17 03:50:19] vkCmdDraw(): the descriptor [VkDescriptorSet 0xa460000000a46, Set 0, Binding 9, Index 1] is being used in draw but has never been updated via vkUpdateDescriptorSets() or a similar call.
+[2026-09-17 03:50:19] The Vulkan spec states: Descriptors in each bound descriptor set, specified via vkCmdBindDescriptorSets, must be valid if they are accessed as described by descriptor validity by the VkPipeline bound to the pipeline bind point used by this command and the bound VkPipeline was not created with VK_PIPELINE_CREATE_DESCRIPTOR_BUFFER_BIT_EXT (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDraw-None-08114)
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkPipeline 0xa490000000a49
+[2026-09-17 03:50:19]     [1] VkDescriptorSet 0xa460000000a46
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Warning: [ Undefined-Value-Layer-Written ] | MessageID = 0x1fc55805
+[2026-09-17 03:50:19] vkCmdDrawIndexed(): Shader stage VK_SHADER_STAGE_VERTEX_BIT writes to Layer (gl_Layer) but the framebuffer was created with VkFramebufferCreateInfo::layer of 1, this write will have an undefined value set to it.
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkCommandBuffer 0x5d84fbcc4e60
+[2026-09-17 03:50:19]     [1] VkPipeline 0xa5a0000000a5a
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-08114 ] | MessageID = 0x3f6fd836
+[2026-09-17 03:50:19] vkCmdDrawIndexed(): the descriptor [VkDescriptorSet 0xa570000000a57, Set 0, Binding 9, Index 1] is being used in draw but has never been updated via vkUpdateDescriptorSets() or a similar call.
+[2026-09-17 03:50:19] The Vulkan spec states: Descriptors in each bound descriptor set, specified via vkCmdBindDescriptorSets, must be valid if they are accessed as described by descriptor validity by the VkPipeline bound to the pipeline bind point used by this command and the bound VkPipeline was not created with VK_PIPELINE_CREATE_DESCRIPTOR_BUFFER_BIT_EXT (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-08114)
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkPipeline 0xa5a0000000a5a
+[2026-09-17 03:50:19]     [1] VkDescriptorSet 0xa570000000a57
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDraw-None-08114 ] | MessageID = 0x2ba3a98e
+[2026-09-17 03:50:19] vkCmdDraw(): the descriptor [VkDescriptorSet 0xa650000000a65, Set 0, Binding 9, Index 1] is being used in draw but has never been updated via vkUpdateDescriptorSets() or a similar call.
+[2026-09-17 03:50:19] The Vulkan spec states: Descriptors in each bound descriptor set, specified via vkCmdBindDescriptorSets, must be valid if they are accessed as described by descriptor validity by the VkPipeline bound to the pipeline bind point used by this command and the bound VkPipeline was not created with VK_PIPELINE_CREATE_DESCRIPTOR_BUFFER_BIT_EXT (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDraw-None-08114)
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkPipeline 0xa680000000a68
+[2026-09-17 03:50:19]     [1] VkDescriptorSet 0xa650000000a65
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Warning: [ Undefined-Value-Layer-Written ] | MessageID = 0x1fc55805
+[2026-09-17 03:50:19] (Warning - This VUID has now been reported 10 times, which is the duplicate_message_limit value, this will be the last time reporting it).
+[2026-09-17 03:50:19] vkCmdDrawIndexed(): Shader stage VK_SHADER_STAGE_VERTEX_BIT writes to Layer (gl_Layer) but the framebuffer was created with VkFramebufferCreateInfo::layer of 1, this write will have an undefined value set to it.
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkCommandBuffer 0x5d84fbcc4e60
+[2026-09-17 03:50:19]     [1] VkPipeline 0xa740000000a74
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDrawIndexed-None-08114 ] | MessageID = 0x3f6fd836
+[2026-09-17 03:50:19] (Warning - This VUID has now been reported 10 times, which is the duplicate_message_limit value, this will be the last time reporting it).
+[2026-09-17 03:50:19] vkCmdDrawIndexed(): the descriptor [VkDescriptorSet 0xa710000000a71, Set 0, Binding 9, Index 1] is being used in draw but has never been updated via vkUpdateDescriptorSets() or a similar call.
+[2026-09-17 03:50:19] The Vulkan spec states: Descriptors in each bound descriptor set, specified via vkCmdBindDescriptorSets, must be valid if they are accessed as described by descriptor validity by the VkPipeline bound to the pipeline bind point used by this command and the bound VkPipeline was not created with VK_PIPELINE_CREATE_DESCRIPTOR_BUFFER_BIT_EXT (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDrawIndexed-None-08114)
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkPipeline 0xa740000000a74
+[2026-09-17 03:50:19]     [1] VkDescriptorSet 0xa710000000a71
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDraw-None-08114 ] | MessageID = 0x2ba3a98e
+[2026-09-17 03:50:19] vkCmdDraw(): the descriptor [VkDescriptorSet 0xa460000000a46, Set 0, Binding 9, Index 1] is being used in draw but has never been updated via vkUpdateDescriptorSets() or a similar call.
+[2026-09-17 03:50:19] The Vulkan spec states: Descriptors in each bound descriptor set, specified via vkCmdBindDescriptorSets, must be valid if they are accessed as described by descriptor validity by the VkPipeline bound to the pipeline bind point used by this command and the bound VkPipeline was not created with VK_PIPELINE_CREATE_DESCRIPTOR_BUFFER_BIT_EXT (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDraw-None-08114)
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkPipeline 0xa490000000a49
+[2026-09-17 03:50:19]     [1] VkDescriptorSet 0xa460000000a46
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkAcquireNextImageKHR-semaphore-01779 ] | MessageID = 0x5717e75b
+[2026-09-17 03:50:19] vkAcquireNextImageKHR(): Semaphore must not have any pending operations.
+[2026-09-17 03:50:19] The Vulkan spec states: If semaphore is not VK_NULL_HANDLE, it must not have any uncompleted signal or wait operations pending (https://docs.vulkan.org/spec/latest/chapters/VK_KHR_surface/wsi.html#VUID-vkAcquireNextImageKHR-semaphore-01779)
+[2026-09-17 03:50:19] Objects: 1
+[2026-09-17 03:50:19]     [0] VkSemaphore 0x11d000000011d
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkCmdDraw-None-08114 ] | MessageID = 0x2ba3a98e
+[2026-09-17 03:50:19] (Warning - This VUID has now been reported 10 times, which is the duplicate_message_limit value, this will be the last time reporting it).
+[2026-09-17 03:50:19] vkCmdDraw(): the descriptor [VkDescriptorSet 0xa650000000a65, Set 0, Binding 9, Index 1] is being used in draw but has never been updated via vkUpdateDescriptorSets() or a similar call.
+[2026-09-17 03:50:19] The Vulkan spec states: Descriptors in each bound descriptor set, specified via vkCmdBindDescriptorSets, must be valid if they are accessed as described by descriptor validity by the VkPipeline bound to the pipeline bind point used by this command and the bound VkPipeline was not created with VK_PIPELINE_CREATE_DESCRIPTOR_BUFFER_BIT_EXT (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDraw-None-08114)
+[2026-09-17 03:50:19] Objects: 2
+[2026-09-17 03:50:19]     [0] VkPipeline 0xa680000000a68
+[2026-09-17 03:50:19]     [1] VkDescriptorSet 0xa650000000a65
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkAcquireNextImageKHR-semaphore-01779 ] | MessageID = 0x5717e75b
+[2026-09-17 03:50:19] vkAcquireNextImageKHR(): Semaphore must not have any pending operations.
+[2026-09-17 03:50:19] The Vulkan spec states: If semaphore is not VK_NULL_HANDLE, it must not have any uncompleted signal or wait operations pending (https://docs.vulkan.org/spec/latest/chapters/VK_KHR_surface/wsi.html#VUID-vkAcquireNextImageKHR-semaphore-01779)
+[2026-09-17 03:50:19] Objects: 1
+[2026-09-17 03:50:19]     [0] VkSemaphore 0x11d000000011d
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:19] Validation Error: [ VUID-vkAcquireNextImageKHR-semaphore-01779 ] | MessageID = 0x5717e75b
+[2026-09-17 03:50:19] vkAcquireNextImageKHR(): Semaphore must not have any pending operations.
+[2026-09-17 03:50:19] The Vulkan spec states: If semaphore is not VK_NULL_HANDLE, it must not have any uncompleted signal or wait operations pending (https://docs.vulkan.org/spec/latest/chapters/VK_KHR_surface/wsi.html#VUID-vkAcquireNextImageKHR-semaphore-01779)
+[2026-09-17 03:50:19] Objects: 1
+[2026-09-17 03:50:19]     [0] VkSemaphore 0x11d000000011d
+[2026-09-17 03:50:19] 
+[2026-09-17 03:50:20] Validation Error: [ VUID-vkAcquireNextImageKHR-semaphore-01779 ] | MessageID = 0x5717e75b
+[2026-09-17 03:50:20] vkAcquireNextImageKHR(): Semaphore must not have any pending operations.
+[2026-09-17 03:50:20] The Vulkan spec states: If semaphore is not VK_NULL_HANDLE, it must not have any uncompleted signal or wait operations pending (https://docs.vulkan.org/spec/latest/chapters/VK_KHR_surface/wsi.html#VUID-vkAcquireNextImageKHR-semaphore-01779)
+[2026-09-17 03:50:20] Objects: 1
+[2026-09-17 03:50:20]     [0] VkSemaphore 0x11d000000011d
+[2026-09-17 03:50:20] 
+[2026-09-17 03:50:20] Validation Error: [ VUID-vkAcquireNextImageKHR-semaphore-01779 ] | MessageID = 0x5717e75b
+[2026-09-17 03:50:20] vkAcquireNextImageKHR(): Semaphore must not have any pending operations.
+[2026-09-17 03:50:20] The Vulkan spec states: If semaphore is not VK_NULL_HANDLE, it must not have any uncompleted signal or wait operations pending (https://docs.vulkan.org/spec/latest/chapters/VK_KHR_surface/wsi.html#VUID-vkAcquireNextImageKHR-semaphore-01779)
+[2026-09-17 03:50:20] Objects: 1
+[2026-09-17 03:50:20]     [0] VkSemaphore 0x11d000000011d
+[2026-09-17 03:50:20] 
+[2026-09-17 03:50:20] Validation Error: [ VUID-vkResetFences-pFences-01123 ] | MessageID = 0x68a5074e
+[2026-09-17 03:50:20] (Warning - This VUID has now been reported 10 times, which is the duplicate_message_limit value, this will be the last time reporting it).
+[2026-09-17 03:50:20] vkResetFences(): pFences[0] (VkFence 0x1710000000171) is in use.
+[2026-09-17 03:50:20] The Vulkan spec states: Each element of pFences must not be currently associated with any queue command that has not yet completed execution on that queue (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-vkResetFences-pFences-01123)
+[2026-09-17 03:50:20] Objects: 1
+[2026-09-17 03:50:20]     [0] VkFence 0x1710000000171
+[2026-09-17 03:50:20] 
+[2026-09-17 03:50:20] Validation Error: [ VUID-vkAcquireNextImageKHR-semaphore-01779 ] | MessageID = 0x5717e75b
+[2026-09-17 03:50:20] vkAcquireNextImageKHR(): Semaphore must not have any pending operations.
+[2026-09-17 03:50:20] The Vulkan spec states: If semaphore is not VK_NULL_HANDLE, it must not have any uncompleted signal or wait operations pending (https://docs.vulkan.org/spec/latest/chapters/VK_KHR_surface/wsi.html#VUID-vkAcquireNextImageKHR-semaphore-01779)
+[2026-09-17 03:50:20] Objects: 1
+[2026-09-17 03:50:20]     [0] VkSemaphore 0x11d000000011d
+[2026-09-17 03:50:20] 
+[2026-09-17 03:50:20] Validation Error: [ VUID-vkAcquireNextImageKHR-semaphore-01779 ] | MessageID = 0x5717e75b
+[2026-09-17 03:50:20] (Warning - This VUID has now been reported 10 times, which is the duplicate_message_limit value, this will be the last time reporting it).
+[2026-09-17 03:50:20] vkAcquireNextImageKHR(): Semaphore must not have any pending operations.
+[2026-09-17 03:50:20] The Vulkan spec states: If semaphore is not VK_NULL_HANDLE, it must not have any uncompleted signal or wait operations pending (https://docs.vulkan.org/spec/latest/chapters/VK_KHR_surface/wsi.html#VUID-vkAcquireNextImageKHR-semaphore-01779)
+[2026-09-17 03:50:20] Objects: 1
+[2026-09-17 03:50:20]     [0] VkSemaphore 0x11d000000011d
+[2026-09-17 03:50:20] 
+[2026-09-17 03:50:20] Validation Error: [ VUID-vkResetCommandBuffer-commandBuffer-00045 ] | MessageID = 0x1e7883ea
+[2026-09-17 03:50:20] vkResetCommandBuffer(): (VkCommandBuffer 0x5d84fb2751b0) is in use.
+[2026-09-17 03:50:20] The Vulkan spec states: commandBuffer must not be in the pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkResetCommandBuffer-commandBuffer-00045)
+[2026-09-17 03:50:20] Objects: 2
+[2026-09-17 03:50:20]     [0] VkCommandBuffer 0x5d84fb2751b0
+[2026-09-17 03:50:20]     [1] VkCommandPool 0x240000000024
+[2026-09-17 03:50:20] 
+[2026-09-17 03:50:20] Validation Error: [ VUID-vkResetCommandBuffer-commandBuffer-00045 ] | MessageID = 0x1e7883ea
+[2026-09-17 03:50:20] vkResetCommandBuffer(): (VkCommandBuffer 0x5d84fbcc4e60) is in use.
+[2026-09-17 03:50:20] The Vulkan spec states: commandBuffer must not be in the pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkResetCommandBuffer-commandBuffer-00045)
+[2026-09-17 03:50:20] Objects: 2
+[2026-09-17 03:50:20]     [0] VkCommandBuffer 0x5d84fbcc4e60
+[2026-09-17 03:50:20]     [1] VkCommandPool 0x240000000024
+[2026-09-17 03:50:20] 
+[2026-09-17 03:50:20] Validation Error: [ VUID-vkResetCommandBuffer-commandBuffer-00045 ] | MessageID = 0x1e7883ea
+[2026-09-17 03:50:20] vkResetCommandBuffer(): (VkCommandBuffer 0x5d84fbd96940) is in use.
+[2026-09-17 03:50:20] The Vulkan spec states: commandBuffer must not be in the pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkResetCommandBuffer-commandBuffer-00045)
+[2026-09-17 03:50:20] Objects: 2
+[2026-09-17 03:50:20]     [0] VkCommandBuffer 0x5d84fbd96940
+[2026-09-17 03:50:20]     [1] VkCommandPool 0x240000000024
+[2026-09-17 03:50:20] 
+[2026-09-17 03:50:20] Validation Error: [ VUID-vkResetCommandBuffer-commandBuffer-00045 ] | MessageID = 0x1e7883ea
+[2026-09-17 03:50:20] vkResetCommandBuffer(): (VkCommandBuffer 0x5d84fb2751b0) is in use.
+[2026-09-17 03:50:20] The Vulkan spec states: commandBuffer must not be in the pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkResetCommandBuffer-commandBuffer-00045)
+[2026-09-17 03:50:20] Objects: 2
+[2026-09-17 03:50:20]     [0] VkCommandBuffer 0x5d84fb2751b0
+[2026-09-17 03:50:20]     [1] VkCommandPool 0x240000000024
+[2026-09-17 03:50:20] 
+[2026-09-17 03:50:20] Validation Error: [ VUID-vkBeginCommandBuffer-commandBuffer-00049 ] | MessageID = 0x84029a9f
+[2026-09-17 03:50:20] vkBeginCommandBuffer(): on active VkCommandBuffer 0x5d84fb2751b0 before it has completed. You must check command buffer fence before this call.
+[2026-09-17 03:50:20] The Vulkan spec states: commandBuffer must not be in the recording or pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkBeginCommandBuffer-commandBuffer-00049)
+[2026-09-17 03:50:20] Objects: 1
+[2026-09-17 03:50:20]     [0] VkCommandBuffer 0x5d84fb2751b0
+[2026-09-17 03:50:20] 
+[2026-09-17 03:50:21] Validation Error: [ VUID-vkResetCommandBuffer-commandBuffer-00045 ] | MessageID = 0x1e7883ea
+[2026-09-17 03:50:21] vkResetCommandBuffer(): (VkCommandBuffer 0x5d84fb27afc0) is in use.
+[2026-09-17 03:50:21] The Vulkan spec states: commandBuffer must not be in the pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkResetCommandBuffer-commandBuffer-00045)
+[2026-09-17 03:50:21] Objects: 2
+[2026-09-17 03:50:21]     [0] VkCommandBuffer 0x5d84fb27afc0
+[2026-09-17 03:50:21]     [1] VkCommandPool 0x240000000024
+[2026-09-17 03:50:21] 
+[2026-09-17 03:50:21] Validation Error: [ VUID-vkBeginCommandBuffer-commandBuffer-00049 ] | MessageID = 0x84029a9f
+[2026-09-17 03:50:21] vkBeginCommandBuffer(): on active VkCommandBuffer 0x5d84fb27afc0 before it has completed. You must check command buffer fence before this call.
+[2026-09-17 03:50:21] The Vulkan spec states: commandBuffer must not be in the recording or pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkBeginCommandBuffer-commandBuffer-00049)
+[2026-09-17 03:50:21] Objects: 1
+[2026-09-17 03:50:21]     [0] VkCommandBuffer 0x5d84fb27afc0
+[2026-09-17 03:50:21] 
+[2026-09-17 03:50:21] Validation Error: [ VUID-vkQueueSubmit-pCommandBuffers-00071 ] | MessageID = 0x2e2f4d65
+[2026-09-17 03:50:21] vkQueueSubmit(): pSubmits[0].pCommandBuffers[0] VkCommandBuffer 0x5d84fb27afc0 is already in use and is not marked for simultaneous use.
+[2026-09-17 03:50:21] The Vulkan spec states: If any element of the pCommandBuffers member of any element of pSubmits was not recorded with the VK_COMMAND_BUFFER_USAGE_SIMULTANEOUS_USE_BIT, it must not be in the pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkQueueSubmit-pCommandBuffers-00071)
+[2026-09-17 03:50:21] 
+[2026-09-17 03:50:21] Validation Error: [ VUID-vkResetCommandBuffer-commandBuffer-00045 ] | MessageID = 0x1e7883ea
+[2026-09-17 03:50:21] vkResetCommandBuffer(): (VkCommandBuffer 0x5d84fb280dd0) is in use.
+[2026-09-17 03:50:21] The Vulkan spec states: commandBuffer must not be in the pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkResetCommandBuffer-commandBuffer-00045)
+[2026-09-17 03:50:21] Objects: 2
+[2026-09-17 03:50:21]     [0] VkCommandBuffer 0x5d84fb280dd0
+[2026-09-17 03:50:21]     [1] VkCommandPool 0x240000000024
+[2026-09-17 03:50:21] 
+[2026-09-17 03:50:21] Validation Error: [ VUID-vkBeginCommandBuffer-commandBuffer-00049 ] | MessageID = 0x84029a9f
+[2026-09-17 03:50:21] vkBeginCommandBuffer(): on active VkCommandBuffer 0x5d84fb280dd0 before it has completed. You must check command buffer fence before this call.
+[2026-09-17 03:50:21] The Vulkan spec states: commandBuffer must not be in the recording or pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkBeginCommandBuffer-commandBuffer-00049)
+[2026-09-17 03:50:21] Objects: 1
+[2026-09-17 03:50:21]     [0] VkCommandBuffer 0x5d84fb280dd0
+[2026-09-17 03:50:21] 
+[2026-09-17 03:50:21] Validation Error: [ VUID-vkResetCommandBuffer-commandBuffer-00045 ] | MessageID = 0x1e7883ea
+[2026-09-17 03:50:21] vkResetCommandBuffer(): (VkCommandBuffer 0x5d84fbcd0a10) is in use.
+[2026-09-17 03:50:21] The Vulkan spec states: commandBuffer must not be in the pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkResetCommandBuffer-commandBuffer-00045)
+[2026-09-17 03:50:21] Objects: 2
+[2026-09-17 03:50:21]     [0] VkCommandBuffer 0x5d84fbcd0a10
+[2026-09-17 03:50:21]     [1] VkCommandPool 0x240000000024
+[2026-09-17 03:50:21] 
+[2026-09-17 03:50:21] Validation Error: [ VUID-vkResetCommandBuffer-commandBuffer-00045 ] | MessageID = 0x1e7883ea
+[2026-09-17 03:50:21] vkResetCommandBuffer(): (VkCommandBuffer 0x5d84fbd9c4c0) is in use.
+[2026-09-17 03:50:21] The Vulkan spec states: commandBuffer must not be in the pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkResetCommandBuffer-commandBuffer-00045)
+[2026-09-17 03:50:21] Objects: 2
+[2026-09-17 03:50:21]     [0] VkCommandBuffer 0x5d84fbd9c4c0
+[2026-09-17 03:50:21]     [1] VkCommandPool 0x240000000024
+[2026-09-17 03:50:21] 
+[2026-09-17 03:50:21] Validation Error: [ VUID-vkBeginCommandBuffer-commandBuffer-00049 ] | MessageID = 0x84029a9f
+[2026-09-17 03:50:21] vkBeginCommandBuffer(): on active VkCommandBuffer 0x5d84fbd9c4c0 before it has completed. You must check command buffer fence before this call.
+[2026-09-17 03:50:21] The Vulkan spec states: commandBuffer must not be in the recording or pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkBeginCommandBuffer-commandBuffer-00049)
+[2026-09-17 03:50:21] Objects: 1
+[2026-09-17 03:50:21]     [0] VkCommandBuffer 0x5d84fbd9c4c0
+[2026-09-17 03:50:21] 
+[2026-09-17 03:50:21] Validation Error: [ VUID-vkQueueSubmit-pCommandBuffers-00071 ] | MessageID = 0x2e2f4d65
+[2026-09-17 03:50:21] vkQueueSubmit(): pSubmits[0].pCommandBuffers[0] VkCommandBuffer 0x5d84fbd9c4c0 is already in use and is not marked for simultaneous use.
+[2026-09-17 03:50:21] The Vulkan spec states: If any element of the pCommandBuffers member of any element of pSubmits was not recorded with the VK_COMMAND_BUFFER_USAGE_SIMULTANEOUS_USE_BIT, it must not be in the pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkQueueSubmit-pCommandBuffers-00071)
+[2026-09-17 03:50:21] 
+[2026-09-17 03:50:22] Validation Error: [ VUID-vkResetCommandBuffer-commandBuffer-00045 ] | MessageID = 0x1e7883ea
+[2026-09-17 03:50:22] vkResetCommandBuffer(): (VkCommandBuffer 0x5d84fbccaba0) is in use.
+[2026-09-17 03:50:22] The Vulkan spec states: commandBuffer must not be in the pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkResetCommandBuffer-commandBuffer-00045)
+[2026-09-17 03:50:22] Objects: 2
+[2026-09-17 03:50:22]     [0] VkCommandBuffer 0x5d84fbccaba0
+[2026-09-17 03:50:22]     [1] VkCommandPool 0x240000000024
+[2026-09-17 03:50:22] 
+[2026-09-17 03:50:22] Validation Error: [ VUID-vkBeginCommandBuffer-commandBuffer-00049 ] | MessageID = 0x84029a9f
+[2026-09-17 03:50:22] vkBeginCommandBuffer(): on active VkCommandBuffer 0x5d84fbccaba0 before it has completed. You must check command buffer fence before this call.
+[2026-09-17 03:50:22] The Vulkan spec states: commandBuffer must not be in the recording or pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkBeginCommandBuffer-commandBuffer-00049)
+[2026-09-17 03:50:22] Objects: 1
+[2026-09-17 03:50:22]     [0] VkCommandBuffer 0x5d84fbccaba0
+[2026-09-17 03:50:22] 
+[2026-09-17 03:50:22] Validation Error: [ VUID-vkQueueSubmit-pCommandBuffers-00071 ] | MessageID = 0x2e2f4d65
+[2026-09-17 03:50:22] vkQueueSubmit(): pSubmits[0].pCommandBuffers[0] VkCommandBuffer 0x5d84fbccaba0 is already in use and is not marked for simultaneous use.
+[2026-09-17 03:50:22] The Vulkan spec states: If any element of the pCommandBuffers member of any element of pSubmits was not recorded with the VK_COMMAND_BUFFER_USAGE_SIMULTANEOUS_USE_BIT, it must not be in the pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkQueueSubmit-pCommandBuffers-00071)
+[2026-09-17 03:50:22] 
+[2026-09-17 03:50:22] Validation Error: [ VUID-vkResetCommandBuffer-commandBuffer-00045 ] | MessageID = 0x1e7883ea
+[2026-09-17 03:50:22] (Warning - This VUID has now been reported 10 times, which is the duplicate_message_limit value, this will be the last time reporting it).
+[2026-09-17 03:50:22] vkResetCommandBuffer(): (VkCommandBuffer 0x5d84fbcd0a10) is in use.
+[2026-09-17 03:50:22] The Vulkan spec states: commandBuffer must not be in the pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkResetCommandBuffer-commandBuffer-00045)
+[2026-09-17 03:50:22] Objects: 2
+[2026-09-17 03:50:22]     [0] VkCommandBuffer 0x5d84fbcd0a10
+[2026-09-17 03:50:22]     [1] VkCommandPool 0x240000000024
+[2026-09-17 03:50:22] 
+[2026-09-17 03:50:23] Validation Error: [ VUID-vkBeginCommandBuffer-commandBuffer-00049 ] | MessageID = 0x84029a9f
+[2026-09-17 03:50:23] vkBeginCommandBuffer(): on active VkCommandBuffer 0x5d84fbcbfc20 before it has completed. You must check command buffer fence before this call.
+[2026-09-17 03:50:23] The Vulkan spec states: commandBuffer must not be in the recording or pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkBeginCommandBuffer-commandBuffer-00049)
+[2026-09-17 03:50:23] Objects: 1
+[2026-09-17 03:50:23]     [0] VkCommandBuffer 0x5d84fbcbfc20
+[2026-09-17 03:50:23] 
+[2026-09-17 03:50:23] Validation Error: [ VUID-vkQueueSubmit-pCommandBuffers-00071 ] | MessageID = 0x2e2f4d65
+[2026-09-17 03:50:23] vkQueueSubmit(): pSubmits[0].pCommandBuffers[0] VkCommandBuffer 0x5d84fbcbfc20 is already in use and is not marked for simultaneous use.
+[2026-09-17 03:50:23] The Vulkan spec states: If any element of the pCommandBuffers member of any element of pSubmits was not recorded with the VK_COMMAND_BUFFER_USAGE_SIMULTANEOUS_USE_BIT, it must not be in the pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkQueueSubmit-pCommandBuffers-00071)
+[2026-09-17 03:50:23] 
+[2026-09-17 03:50:23] Validation Error: [ VUID-VkImageMemoryBarrier-oldLayout-01197 ] | MessageID = 0x124ffb34
+[2026-09-17 03:50:23] vkCmdPipelineBarrier(): pImageMemoryBarriers[0].image (VkImage 0xced0000000ced[NewSharedVulkanImageHelper]) cannot transition the layout of aspect=1, level=0, layer=0 from VK_IMAGE_LAYOUT_GENERAL when the previous known layout is VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL.
+[2026-09-17 03:50:23] The Vulkan spec states: If layouts are not ignored, oldLayout must be VK_IMAGE_LAYOUT_UNDEFINED or the current layout of the image subresources affected by the barrier (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-VkImageMemoryBarrier-oldLayout-01197)
+[2026-09-17 03:50:23] Objects: 2
+[2026-09-17 03:50:23]     [0] VkCommandBuffer 0x5d84fb2751b0
+[2026-09-17 03:50:23]     [1] VkImage 0xced0000000ced[NewSharedVulkanImageHelper]
+[2026-09-17 03:50:23] 
+[2026-09-17 03:50:24] Validation Error: [ VUID-VkImageMemoryBarrier-oldLayout-01197 ] | MessageID = 0x124ffb34
+[2026-09-17 03:50:24] vkCmdPipelineBarrier(): pImageMemoryBarriers[0].image (VkImage 0xced0000000ced[NewSharedVulkanImageHelper]) cannot transition the layout of aspect=1, level=0, layer=0 from VK_IMAGE_LAYOUT_GENERAL when the previous known layout is VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL.
+[2026-09-17 03:50:24] The Vulkan spec states: If layouts are not ignored, oldLayout must be VK_IMAGE_LAYOUT_UNDEFINED or the current layout of the image subresources affected by the barrier (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-VkImageMemoryBarrier-oldLayout-01197)
+[2026-09-17 03:50:24] Objects: 2
+[2026-09-17 03:50:24]     [0] VkCommandBuffer 0x5d84fb2751b0
+[2026-09-17 03:50:24]     [1] VkImage 0xced0000000ced[NewSharedVulkanImageHelper]
+[2026-09-17 03:50:24] 
+[2026-09-17 03:50:26] Validation Error: [ VUID-VkImageMemoryBarrier-oldLayout-01197 ] | MessageID = 0x124ffb34
+[2026-09-17 03:50:26] vkCmdPipelineBarrier(): pImageMemoryBarriers[0].image (VkImage 0xced0000000ced[NewSharedVulkanImageHelper]) cannot transition the layout of aspect=1, level=0, layer=0 from VK_IMAGE_LAYOUT_GENERAL when the previous known layout is VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL.
+[2026-09-17 03:50:26] The Vulkan spec states: If layouts are not ignored, oldLayout must be VK_IMAGE_LAYOUT_UNDEFINED or the current layout of the image subresources affected by the barrier (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-VkImageMemoryBarrier-oldLayout-01197)
+[2026-09-17 03:50:26] Objects: 2
+[2026-09-17 03:50:26]     [0] VkCommandBuffer 0x5d84fb269590
+[2026-09-17 03:50:26]     [1] VkImage 0xced0000000ced[NewSharedVulkanImageHelper]
+[2026-09-17 03:50:26] 
+[2026-09-17 03:50:26] Validation Error: [ VUID-VkImageMemoryBarrier-oldLayout-01197 ] | MessageID = 0x124ffb34
+[2026-09-17 03:50:26] vkCmdPipelineBarrier(): pImageMemoryBarriers[0].image (VkImage 0xced0000000ced[NewSharedVulkanImageHelper]) cannot transition the layout of aspect=1, level=0, layer=0 from VK_IMAGE_LAYOUT_GENERAL when the previous known layout is VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL.
+[2026-09-17 03:50:26] The Vulkan spec states: If layouts are not ignored, oldLayout must be VK_IMAGE_LAYOUT_UNDEFINED or the current layout of the image subresources affected by the barrier (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-VkImageMemoryBarrier-oldLayout-01197)
+[2026-09-17 03:50:26] Objects: 2
+[2026-09-17 03:50:26]     [0] VkCommandBuffer 0x5d84fb280dd0
+[2026-09-17 03:50:26]     [1] VkImage 0xced0000000ced[NewSharedVulkanImageHelper]
+[2026-09-17 03:50:26] 
+[2026-09-17 03:50:29] Validation Error: [ VUID-VkImageMemoryBarrier-oldLayout-01197 ] | MessageID = 0x124ffb34
+[2026-09-17 03:50:29] vkCmdPipelineBarrier(): pImageMemoryBarriers[0].image (VkImage 0xb560000000b56[NewSharedVulkanImageHelper]) cannot transition the layout of aspect=1, level=0, layer=0 from VK_IMAGE_LAYOUT_GENERAL when the previous known layout is VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL.
+[2026-09-17 03:50:29] The Vulkan spec states: If layouts are not ignored, oldLayout must be VK_IMAGE_LAYOUT_UNDEFINED or the current layout of the image subresources affected by the barrier (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-VkImageMemoryBarrier-oldLayout-01197)
+[2026-09-17 03:50:29] Objects: 2
+[2026-09-17 03:50:29]     [0] VkCommandBuffer 0x5d84fb280dd0
+[2026-09-17 03:50:29]     [1] VkImage 0xb560000000b56[NewSharedVulkanImageHelper]
+[2026-09-17 03:50:29] 
+[2026-09-17 03:50:30] Validation Error: [ VUID-vkCmdDraw-imageLayout-00344 ] | MessageID = 0xf062410c
+[2026-09-17 03:50:30] vkCmdDraw(): Cannot use VkImage 0x9df00000009df[Blur:ping] (layer 0, mip 1) with specific layout VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL (specified by sampled image descriptor [VkDescriptorSet 0x12cd00000012cd, Set 0, Binding 9, Index 0]) that doesn't match the previous known layout VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL.
+[2026-09-17 03:50:30] The Vulkan spec states: If an image descriptor is accessed by a shader, the VkImageLayout must match the subresource accessible from the VkImageView as defined by the image layout matching rules (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDraw-imageLayout-00344)
+[2026-09-17 03:50:30] Objects: 4
+[2026-09-17 03:50:30]     [0] VkPipeline 0x12d000000012d0
+[2026-09-17 03:50:30]     [1] VkDescriptorSet 0x12cd00000012cd
+[2026-09-17 03:50:30]     [2] VkImage 0x9df00000009df[Blur:ping]
+[2026-09-17 03:50:30]     [3] VkImageView 0x9e700000009e7[ImageViewLOD1]
+[2026-09-17 03:50:30] 
+[2026-09-17 03:50:30] Validation Error: [ VUID-vkCmdDraw-imageLayout-00344 ] | MessageID = 0xf062410c
+[2026-09-17 03:50:30] vkCmdDraw(): Cannot use VkImage 0x9e200000009e2[Blur:pong] (layer 0, mip 1) with specific layout VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL (specified by sampled image descriptor [VkDescriptorSet 0x12d800000012d8, Set 0, Binding 9, Index 0]) that doesn't match the previous known layout VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL.
+[2026-09-17 03:50:30] The Vulkan spec states: If an image descriptor is accessed by a shader, the VkImageLayout must match the subresource accessible from the VkImageView as defined by the image layout matching rules (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDraw-imageLayout-00344)
+[2026-09-17 03:50:30] Objects: 4
+[2026-09-17 03:50:30]     [0] VkPipeline 0x12db00000012db
+[2026-09-17 03:50:30]     [1] VkDescriptorSet 0x12d800000012d8
+[2026-09-17 03:50:30]     [2] VkImage 0x9e200000009e2[Blur:pong]
+[2026-09-17 03:50:30]     [3] VkImageView 0x9e800000009e8[ImageViewLOD1]
+[2026-09-17 03:50:30] 
+[2026-09-17 03:50:30] Validation Error: [ VUID-vkCmdDraw-imageLayout-00344 ] | MessageID = 0xf062410c
+[2026-09-17 03:50:30] vkCmdDraw(): Cannot use VkImage 0x9df00000009df[Blur:ping] (layer 0, mip 2) with specific layout VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL (specified by sampled image descriptor [VkDescriptorSet 0x12e200000012e2, Set 0, Binding 9, Index 0]) that doesn't match the previous known layout VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL.
+[2026-09-17 03:50:30] The Vulkan spec states: If an image descriptor is accessed by a shader, the VkImageLayout must match the subresource accessible from the VkImageView as defined by the image layout matching rules (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDraw-imageLayout-00344)
+[2026-09-17 03:50:30] Objects: 4
+[2026-09-17 03:50:30]     [0] VkPipeline 0x12e500000012e5
+[2026-09-17 03:50:30]     [1] VkDescriptorSet 0x12e200000012e2
+[2026-09-17 03:50:30]     [2] VkImage 0x9df00000009df[Blur:ping]
+[2026-09-17 03:50:30]     [3] VkImageView 0x9e900000009e9[ImageViewLOD2]
+[2026-09-17 03:50:30] 
+[2026-09-17 03:50:30] Validation Error: [ VUID-vkCmdDraw-imageLayout-00344 ] | MessageID = 0xf062410c
+[2026-09-17 03:50:30] vkCmdDraw(): Cannot use VkImage 0x9e200000009e2[Blur:pong] (layer 0, mip 2) with specific layout VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL (specified by sampled image descriptor [VkDescriptorSet 0x12ed00000012ed, Set 0, Binding 9, Index 0]) that doesn't match the previous known layout VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL.
+[2026-09-17 03:50:30] The Vulkan spec states: If an image descriptor is accessed by a shader, the VkImageLayout must match the subresource accessible from the VkImageView as defined by the image layout matching rules (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDraw-imageLayout-00344)
+[2026-09-17 03:50:30] Objects: 4
+[2026-09-17 03:50:30]     [0] VkPipeline 0x12f100000012f1
+[2026-09-17 03:50:30]     [1] VkDescriptorSet 0x12ed00000012ed
+[2026-09-17 03:50:30]     [2] VkImage 0x9e200000009e2[Blur:pong]
+[2026-09-17 03:50:30]     [3] VkImageView 0x9ea00000009ea[ImageViewLOD2]
+[2026-09-17 03:50:30] 
+[2026-09-17 03:50:30] Validation Error: [ VUID-vkCmdDraw-imageLayout-00344 ] | MessageID = 0xf062410c
+[2026-09-17 03:50:30] vkCmdDraw(): Cannot use VkImage 0x9df00000009df[Blur:ping] (layer 0, mip 3) with specific layout VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL (specified by sampled image descriptor [VkDescriptorSet 0x12f800000012f8, Set 0, Binding 9, Index 0]) that doesn't match the previous known layout VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL.
+[2026-09-17 03:50:30] The Vulkan spec states: If an image descriptor is accessed by a shader, the VkImageLayout must match the subresource accessible from the VkImageView as defined by the image layout matching rules (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDraw-imageLayout-00344)
+[2026-09-17 03:50:30] Objects: 4
+[2026-09-17 03:50:30]     [0] VkPipeline 0x12fb00000012fb
+[2026-09-17 03:50:30]     [1] VkDescriptorSet 0x12f800000012f8
+[2026-09-17 03:50:30]     [2] VkImage 0x9df00000009df[Blur:ping]
+[2026-09-17 03:50:30]     [3] VkImageView 0x9eb00000009eb[ImageViewLOD3]
+[2026-09-17 03:50:30] 
+[2026-09-17 03:50:30] Validation Error: [ VUID-vkCmdDraw-imageLayout-00344 ] | MessageID = 0xf062410c
+[2026-09-17 03:50:30] vkCmdDraw(): Cannot use VkImage 0x9e200000009e2[Blur:pong] (layer 0, mip 3) with specific layout VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL (specified by sampled image descriptor [VkDescriptorSet 0x13030000001303, Set 0, Binding 9, Index 0]) that doesn't match the previous known layout VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL.
+[2026-09-17 03:50:30] The Vulkan spec states: If an image descriptor is accessed by a shader, the VkImageLayout must match the subresource accessible from the VkImageView as defined by the image layout matching rules (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDraw-imageLayout-00344)
+[2026-09-17 03:50:30] Objects: 4
+[2026-09-17 03:50:30]     [0] VkPipeline 0x13060000001306
+[2026-09-17 03:50:30]     [1] VkDescriptorSet 0x13030000001303
+[2026-09-17 03:50:30]     [2] VkImage 0x9e200000009e2[Blur:pong]
+[2026-09-17 03:50:30]     [3] VkImageView 0x9ec00000009ec[ImageViewLOD3]
+[2026-09-17 03:50:30] 
+[2026-09-17 03:50:30] Validation Error: [ VUID-vkCmdDraw-imageLayout-00344 ] | MessageID = 0xf062410c
+[2026-09-17 03:50:30] vkCmdDraw(): Cannot use VkImage 0x9df00000009df[Blur:ping] (layer 0, mip 4) with specific layout VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL (specified by sampled image descriptor [VkDescriptorSet 0x130d000000130d, Set 0, Binding 9, Index 0]) that doesn't match the previous known layout VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL.
+[2026-09-17 03:50:30] The Vulkan spec states: If an image descriptor is accessed by a shader, the VkImageLayout must match the subresource accessible from the VkImageView as defined by the image layout matching rules (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDraw-imageLayout-00344)
+[2026-09-17 03:50:30] Objects: 4
+[2026-09-17 03:50:30]     [0] VkPipeline 0x13100000001310
+[2026-09-17 03:50:30]     [1] VkDescriptorSet 0x130d000000130d
+[2026-09-17 03:50:30]     [2] VkImage 0x9df00000009df[Blur:ping]
+[2026-09-17 03:50:30]     [3] VkImageView 0x9ed00000009ed[ImageViewLOD4]
+[2026-09-17 03:50:30] 
+[2026-09-17 03:50:30] Validation Error: [ VUID-vkCmdDraw-imageLayout-00344 ] | MessageID = 0xf062410c
+[2026-09-17 03:50:30] vkCmdDraw(): Cannot use VkImage 0x9e200000009e2[Blur:pong] (layer 0, mip 4) with specific layout VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL (specified by sampled image descriptor [VkDescriptorSet 0x13180000001318, Set 0, Binding 9, Index 0]) that doesn't match the previous known layout VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL.
+[2026-09-17 03:50:30] The Vulkan spec states: If an image descriptor is accessed by a shader, the VkImageLayout must match the subresource accessible from the VkImageView as defined by the image layout matching rules (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDraw-imageLayout-00344)
+[2026-09-17 03:50:30] Objects: 4
+[2026-09-17 03:50:30]     [0] VkPipeline 0x131b000000131b
+[2026-09-17 03:50:30]     [1] VkDescriptorSet 0x13180000001318
+[2026-09-17 03:50:30]     [2] VkImage 0x9e200000009e2[Blur:pong]
+[2026-09-17 03:50:30]     [3] VkImageView 0x9ee00000009ee[ImageViewLOD4]
+[2026-09-17 03:50:30] 
+[2026-09-17 03:50:30] Validation Error: [ VUID-vkCmdDraw-imageLayout-00344 ] | MessageID = 0xf062410c
+[2026-09-17 03:50:30] vkCmdDraw(): Cannot use VkImage 0x9df00000009df[Blur:ping] (layer 0, mip 5) with specific layout VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL (specified by sampled image descriptor [VkDescriptorSet 0x13220000001322, Set 0, Binding 9, Index 0]) that doesn't match the previous known layout VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL.
+[2026-09-17 03:50:30] The Vulkan spec states: If an image descriptor is accessed by a shader, the VkImageLayout must match the subresource accessible from the VkImageView as defined by the image layout matching rules (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDraw-imageLayout-00344)
+[2026-09-17 03:50:30] Objects: 4
+[2026-09-17 03:50:30]     [0] VkPipeline 0x13250000001325
+[2026-09-17 03:50:30]     [1] VkDescriptorSet 0x13220000001322
+[2026-09-17 03:50:30]     [2] VkImage 0x9df00000009df[Blur:ping]
+[2026-09-17 03:50:30]     [3] VkImageView 0x9ef00000009ef[ImageViewLOD5]
+[2026-09-17 03:50:30] 
+[2026-09-17 03:50:30] Validation Error: [ VUID-vkCmdDraw-imageLayout-00344 ] | MessageID = 0xf062410c
+[2026-09-17 03:50:30] (Warning - This VUID has now been reported 10 times, which is the duplicate_message_limit value, this will be the last time reporting it).
+[2026-09-17 03:50:30] vkCmdDraw(): Cannot use VkImage 0x9e200000009e2[Blur:pong] (layer 0, mip 5) with specific layout VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL (specified by sampled image descriptor [VkDescriptorSet 0x132d000000132d, Set 0, Binding 9, Index 0]) that doesn't match the previous known layout VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL.
+[2026-09-17 03:50:30] The Vulkan spec states: If an image descriptor is accessed by a shader, the VkImageLayout must match the subresource accessible from the VkImageView as defined by the image layout matching rules (https://docs.vulkan.org/spec/latest/chapters/drawing.html#VUID-vkCmdDraw-imageLayout-00344)
+[2026-09-17 03:50:30] Objects: 4
+[2026-09-17 03:50:30]     [0] VkPipeline 0x13300000001330
+[2026-09-17 03:50:30]     [1] VkDescriptorSet 0x132d000000132d
+[2026-09-17 03:50:30]     [2] VkImage 0x9e200000009e2[Blur:pong]
+[2026-09-17 03:50:30]     [3] VkImageView 0x9f000000009f0[ImageViewLOD5]
+[2026-09-17 03:50:30] 
+[2026-09-17 03:50:37] assert_20260917035037_4.dmp[96617]: Uploading dump (out-of-process)
+[2026-09-17 03:50:37] /tmp/dumps/assert_20260917035037_4.dmp
+[2026-09-17 03:50:37] crash_20260917035037_5.dmp[96620]: Uploading dump (out-of-process)
+[2026-09-17 03:50:37] /tmp/dumps/crash_20260917035037_5.dmp
+[2026-09-17 03:50:40] crash_20260917035037_5.dmp[96620]: Finished uploading minidump (out-of-process): success = yes
+[2026-09-17 03:50:40] crash_20260917035037_5.dmp[96620]: response: CrashID=bp-46d9bee4-d840-4b99-ab7c-c22af2260916
+[2026-09-17 03:50:40] crash_20260917035037_5.dmp[96620]: file ''/tmp/dumps/crash_20260917035037_5.dmp'', upload yes: ''CrashID=bp-46d9bee4-d840-4b99-ab7c-c22af2260916''
+[2026-09-17 03:50:41] assert_20260917035037_4.dmp[96617]: Finished uploading minidump (out-of-process): success = yes
+[2026-09-17 03:50:41] assert_20260917035037_4.dmp[96617]: response: CrashID=bp-e83564e1-61e4-4a2f-bbd2-892c22260916
+[2026-09-17 03:50:41] assert_20260917035037_4.dmp[96617]: file ''/tmp/dumps/assert_20260917035037_4.dmp'', upload yes: ''CrashID=bp-e83564e1-61e4-4a2f-bbd2-892c22260916''

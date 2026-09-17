@@ -1,0 +1,344 @@
+Validation Error: [ VUID-vkAcquireNextImageKHR-semaphore-01286 ] | MessageID = 0xe9e4b2a9
+vkAcquireNextImageKHR(): Semaphore must not be currently signaled.
+The Vulkan spec states: If semaphore is not VK_NULL_HANDLE, it must be unsignaled (https://docs.vulkan.org/spec/latest/chapters/VK_KHR_surface/wsi.html#VUID-vkAcquireNextImageKHR-semaphore-01286)
+Objects: 1
+    [0] VkSemaphore 0x1150000000115
+
+Validation Error: [ VUID-vkAcquireNextImageKHR-semaphore-01779 ] | MessageID = 0x5717e75b
+vkAcquireNextImageKHR(): Semaphore must not have any pending operations.
+The Vulkan spec states: If semaphore is not VK_NULL_HANDLE, it must not have any uncompleted signal or wait operations pending (https://docs.vulkan.org/spec/latest/chapters/VK_KHR_surface/wsi.html#VUID-vkAcquireNextImageKHR-semaphore-01779)
+Objects: 1
+    [0] VkSemaphore 0x1150000000115
+
+Validation Error: [ VUID-vkQueueSubmit-pSignalSemaphores-00067 ] | MessageID = 0x539277af
+vkQueueSubmit(): pSubmits[0].pSignalSemaphores[0] (VkSemaphore 0x1160000000116) is being signaled by VkQueue 0x6426d3fb64d0, but it may still be in use by VkSwapchainKHR 0x70000000007.
+Most recently acquired image indices: [0], 1.
+(Brackets mark the last use of VkSemaphore 0x1160000000116 in a presentation operation.)
+Swapchain image 0 was presented but was not re-acquired, so VkSemaphore 0x1160000000116 may still be in use and cannot be safely reused with image index 1.
+Vulkan insight: See https://docs.vulkan.org/guide/latest/swapchain_semaphore_reuse.html for details on swapchain semaphore reuse. Examples of possible approaches:
+   a) Use a separate semaphore per swapchain image. Index these semaphores using the index of the acquired image.
+   b) Consider the VK_KHR_swapchain_maintenance1 extension. It allows using a VkFence with the presentation operation.
+The Vulkan spec states: Each binary semaphore element of the pSignalSemaphores member of any element of pSubmits must be unsignaled when the semaphore signal operation it defines is executed on the device (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkQueueSubmit-pSignalSemaphores-00067)
+Objects: 2
+    [0] VkSemaphore 0x1160000000116
+    [1] VkQueue 0x6426d3fb64d0
+
+Validation Error: [ VUID-vkAcquireNextImageKHR-semaphore-01779 ] | MessageID = 0x5717e75b
+vkAcquireNextImageKHR(): Semaphore must not have any pending operations.
+The Vulkan spec states: If semaphore is not VK_NULL_HANDLE, it must not have any uncompleted signal or wait operations pending (https://docs.vulkan.org/spec/latest/chapters/VK_KHR_surface/wsi.html#VUID-vkAcquireNextImageKHR-semaphore-01779)
+Objects: 1
+    [0] VkSemaphore 0x1150000000115
+
+Validation Error: [ VUID-vkQueueSubmit-pSignalSemaphores-00067 ] | MessageID = 0x539277af
+vkQueueSubmit(): pSubmits[0].pSignalSemaphores[0] (VkSemaphore 0x1160000000116) is being signaled by VkQueue 0x6426d3fb64d0, but it may still be in use by VkSwapchainKHR 0x70000000007.
+Most recently acquired image indices: 0, [1], 2.
+(Brackets mark the last use of VkSemaphore 0x1160000000116 in a presentation operation.)
+Swapchain image 1 was presented but was not re-acquired, so VkSemaphore 0x1160000000116 may still be in use and cannot be safely reused with image index 2.
+Vulkan insight: See https://docs.vulkan.org/guide/latest/swapchain_semaphore_reuse.html for details on swapchain semaphore reuse. Examples of possible approaches:
+   a) Use a separate semaphore per swapchain image. Index these semaphores using the index of the acquired image.
+   b) Consider the VK_KHR_swapchain_maintenance1 extension. It allows using a VkFence with the presentation operation.
+The Vulkan spec states: Each binary semaphore element of the pSignalSemaphores member of any element of pSubmits must be unsignaled when the semaphore signal operation it defines is executed on the device (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkQueueSubmit-pSignalSemaphores-00067)
+Objects: 2
+    [0] VkSemaphore 0x1160000000116
+    [1] VkQueue 0x6426d3fb64d0
+
+Validation Error: [ VUID-vkAcquireNextImageKHR-semaphore-01779 ] | MessageID = 0x5717e75b
+vkAcquireNextImageKHR(): Semaphore must not have any pending operations.
+The Vulkan spec states: If semaphore is not VK_NULL_HANDLE, it must not have any uncompleted signal or wait operations pending (https://docs.vulkan.org/spec/latest/chapters/VK_KHR_surface/wsi.html#VUID-vkAcquireNextImageKHR-semaphore-01779)
+Objects: 1
+    [0] VkSemaphore 0x1150000000115
+
+Validation Error: [ VUID-vkAcquireNextImageKHR-semaphore-01779 ] | MessageID = 0x5717e75b
+vkAcquireNextImageKHR(): Semaphore must not have any pending operations.
+The Vulkan spec states: If semaphore is not VK_NULL_HANDLE, it must not have any uncompleted signal or wait operations pending (https://docs.vulkan.org/spec/latest/chapters/VK_KHR_surface/wsi.html#VUID-vkAcquireNextImageKHR-semaphore-01779)
+Objects: 1
+    [0] VkSemaphore 0x1150000000115
+
+Validation Error: [ VUID-vkAcquireNextImageKHR-semaphore-01779 ] | MessageID = 0x5717e75b
+vkAcquireNextImageKHR(): Semaphore must not have any pending operations.
+The Vulkan spec states: If semaphore is not VK_NULL_HANDLE, it must not have any uncompleted signal or wait operations pending (https://docs.vulkan.org/spec/latest/chapters/VK_KHR_surface/wsi.html#VUID-vkAcquireNextImageKHR-semaphore-01779)
+Objects: 1
+    [0] VkSemaphore 0x1150000000115
+
+Validation Error: [ VUID-vkResetFences-pFences-01123 ] | MessageID = 0x68a5074e
+vkResetFences(): pFences[0] (VkFence 0x1180000000118) is in use.
+The Vulkan spec states: Each element of pFences must not be currently associated with any queue command that has not yet completed execution on that queue (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-vkResetFences-pFences-01123)
+Objects: 1
+    [0] VkFence 0x1180000000118
+
+Validation Error: [ VUID-vkAcquireNextImageKHR-semaphore-01779 ] | MessageID = 0x5717e75b
+vkAcquireNextImageKHR(): Semaphore must not have any pending operations.
+The Vulkan spec states: If semaphore is not VK_NULL_HANDLE, it must not have any uncompleted signal or wait operations pending (https://docs.vulkan.org/spec/latest/chapters/VK_KHR_surface/wsi.html#VUID-vkAcquireNextImageKHR-semaphore-01779)
+Objects: 1
+    [0] VkSemaphore 0x1150000000115
+
+Validation Error: [ VUID-vkResetFences-pFences-01123 ] | MessageID = 0x68a5074e
+vkResetFences(): pFences[0] (VkFence 0x1190000000119) is in use.
+The Vulkan spec states: Each element of pFences must not be currently associated with any queue command that has not yet completed execution on that queue (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-vkResetFences-pFences-01123)
+Objects: 1
+    [0] VkFence 0x1190000000119
+
+Validation Error: [ VUID-vkResetFences-pFences-01123 ] | MessageID = 0x68a5074e
+vkResetFences(): pFences[0] (VkFence 0x11a000000011a) is in use.
+The Vulkan spec states: Each element of pFences must not be currently associated with any queue command that has not yet completed execution on that queue (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-vkResetFences-pFences-01123)
+Objects: 1
+    [0] VkFence 0x11a000000011a
+
+Validation Error: [ VUID-vkAcquireNextImageKHR-semaphore-01779 ] | MessageID = 0x5717e75b
+vkAcquireNextImageKHR(): Semaphore must not have any pending operations.
+The Vulkan spec states: If semaphore is not VK_NULL_HANDLE, it must not have any uncompleted signal or wait operations pending (https://docs.vulkan.org/spec/latest/chapters/VK_KHR_surface/wsi.html#VUID-vkAcquireNextImageKHR-semaphore-01779)
+Objects: 1
+    [0] VkSemaphore 0x1150000000115
+
+Validation Error: [ VUID-vkResetFences-pFences-01123 ] | MessageID = 0x68a5074e
+vkResetFences(): pFences[0] (VkFence 0x11b000000011b) is in use.
+The Vulkan spec states: Each element of pFences must not be currently associated with any queue command that has not yet completed execution on that queue (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-vkResetFences-pFences-01123)
+Objects: 1
+    [0] VkFence 0x11b000000011b
+
+Validation Error: [ VUID-vkResetFences-pFences-01123 ] | MessageID = 0x68a5074e
+vkResetFences(): pFences[0] (VkFence 0x11c000000011c) is in use.
+The Vulkan spec states: Each element of pFences must not be currently associated with any queue command that has not yet completed execution on that queue (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-vkResetFences-pFences-01123)
+Objects: 1
+    [0] VkFence 0x11c000000011c
+
+Validation Error: [ VUID-vkAcquireNextImageKHR-semaphore-01779 ] | MessageID = 0x5717e75b
+vkAcquireNextImageKHR(): Semaphore must not have any pending operations.
+The Vulkan spec states: If semaphore is not VK_NULL_HANDLE, it must not have any uncompleted signal or wait operations pending (https://docs.vulkan.org/spec/latest/chapters/VK_KHR_surface/wsi.html#VUID-vkAcquireNextImageKHR-semaphore-01779)
+Objects: 1
+    [0] VkSemaphore 0x1150000000115
+
+Validation Error: [ VUID-vkResetFences-pFences-01123 ] | MessageID = 0x68a5074e
+vkResetFences(): pFences[0] (VkFence 0x11d000000011d) is in use.
+The Vulkan spec states: Each element of pFences must not be currently associated with any queue command that has not yet completed execution on that queue (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-vkResetFences-pFences-01123)
+Objects: 1
+    [0] VkFence 0x11d000000011d
+
+Validation Error: [ VUID-vkResetFences-pFences-01123 ] | MessageID = 0x68a5074e
+vkResetFences(): pFences[0] (VkFence 0x11e000000011e) is in use.
+The Vulkan spec states: Each element of pFences must not be currently associated with any queue command that has not yet completed execution on that queue (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-vkResetFences-pFences-01123)
+Objects: 1
+    [0] VkFence 0x11e000000011e
+
+Validation Error: [ VUID-vkAcquireNextImageKHR-semaphore-01779 ] | MessageID = 0x5717e75b
+vkAcquireNextImageKHR(): Semaphore must not have any pending operations.
+The Vulkan spec states: If semaphore is not VK_NULL_HANDLE, it must not have any uncompleted signal or wait operations pending (https://docs.vulkan.org/spec/latest/chapters/VK_KHR_surface/wsi.html#VUID-vkAcquireNextImageKHR-semaphore-01779)
+Objects: 1
+    [0] VkSemaphore 0x1150000000115
+
+Validation Error: [ VUID-vkResetFences-pFences-01123 ] | MessageID = 0x68a5074e
+vkResetFences(): pFences[0] (VkFence 0x11f000000011f) is in use.
+The Vulkan spec states: Each element of pFences must not be currently associated with any queue command that has not yet completed execution on that queue (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-vkResetFences-pFences-01123)
+Objects: 1
+    [0] VkFence 0x11f000000011f
+
+Validation Error: [ VUID-vkResetFences-pFences-01123 ] | MessageID = 0x68a5074e
+vkResetFences(): pFences[0] (VkFence 0x1200000000120) is in use.
+The Vulkan spec states: Each element of pFences must not be currently associated with any queue command that has not yet completed execution on that queue (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-vkResetFences-pFences-01123)
+Objects: 1
+    [0] VkFence 0x1200000000120
+
+Validation Error: [ VUID-vkAcquireNextImageKHR-semaphore-01779 ] | MessageID = 0x5717e75b
+(Warning - This VUID has now been reported 10 times, which is the duplicate_message_limit value, this will be the last time reporting it).
+vkAcquireNextImageKHR(): Semaphore must not have any pending operations.
+The Vulkan spec states: If semaphore is not VK_NULL_HANDLE, it must not have any uncompleted signal or wait operations pending (https://docs.vulkan.org/spec/latest/chapters/VK_KHR_surface/wsi.html#VUID-vkAcquireNextImageKHR-semaphore-01779)
+Objects: 1
+    [0] VkSemaphore 0x1150000000115
+
+Validation Error: [ VUID-vkResetFences-pFences-01123 ] | MessageID = 0x68a5074e
+(Warning - This VUID has now been reported 10 times, which is the duplicate_message_limit value, this will be the last time reporting it).
+vkResetFences(): pFences[0] (VkFence 0x1210000000121) is in use.
+The Vulkan spec states: Each element of pFences must not be currently associated with any queue command that has not yet completed execution on that queue (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-vkResetFences-pFences-01123)
+Objects: 1
+    [0] VkFence 0x1210000000121
+
+Validation Error: [ VUID-vkResetCommandBuffer-commandBuffer-00045 ] | MessageID = 0x1e7883ea
+vkResetCommandBuffer(): (VkCommandBuffer 0x6426d441abb0) is in use.
+The Vulkan spec states: commandBuffer must not be in the pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkResetCommandBuffer-commandBuffer-00045)
+Objects: 2
+    [0] VkCommandBuffer 0x6426d441abb0
+    [1] VkCommandPool 0x1c000000001c
+
+Validation Error: [ VUID-vkResetCommandBuffer-commandBuffer-00045 ] | MessageID = 0x1e7883ea
+vkResetCommandBuffer(): (VkCommandBuffer 0x6426d4420730) is in use.
+The Vulkan spec states: commandBuffer must not be in the pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkResetCommandBuffer-commandBuffer-00045)
+Objects: 2
+    [0] VkCommandBuffer 0x6426d4420730
+    [1] VkCommandPool 0x1c000000001c
+
+Validation Error: [ VUID-vkResetCommandBuffer-commandBuffer-00045 ] | MessageID = 0x1e7883ea
+vkResetCommandBuffer(): (VkCommandBuffer 0x6426d442be30) is in use.
+The Vulkan spec states: commandBuffer must not be in the pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkResetCommandBuffer-commandBuffer-00045)
+Objects: 2
+    [0] VkCommandBuffer 0x6426d442be30
+    [1] VkCommandPool 0x1c000000001c
+
+Validation Error: [ VUID-vkResetCommandBuffer-commandBuffer-00045 ] | MessageID = 0x1e7883ea
+vkResetCommandBuffer(): (VkCommandBuffer 0x6426d4276880) is in use.
+The Vulkan spec states: commandBuffer must not be in the pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkResetCommandBuffer-commandBuffer-00045)
+Objects: 2
+    [0] VkCommandBuffer 0x6426d4276880
+    [1] VkCommandPool 0x1c000000001c
+
+Validation Error: [ VUID-vkResetCommandBuffer-commandBuffer-00045 ] | MessageID = 0x1e7883ea
+vkResetCommandBuffer(): (VkCommandBuffer 0x6426d4276880) is in use.
+The Vulkan spec states: commandBuffer must not be in the pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkResetCommandBuffer-commandBuffer-00045)
+Objects: 2
+    [0] VkCommandBuffer 0x6426d4276880
+    [1] VkCommandPool 0x1c000000001c
+
+Validation Error: [ VUID-vkResetCommandBuffer-commandBuffer-00045 ] | MessageID = 0x1e7883ea
+vkResetCommandBuffer(): (VkCommandBuffer 0x6426d44319b0) is in use.
+The Vulkan spec states: commandBuffer must not be in the pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkResetCommandBuffer-commandBuffer-00045)
+Objects: 2
+    [0] VkCommandBuffer 0x6426d44319b0
+    [1] VkCommandPool 0x1c000000001c
+
+Validation Error: [ VUID-vkResetCommandBuffer-commandBuffer-00045 ] | MessageID = 0x1e7883ea
+vkResetCommandBuffer(): (VkCommandBuffer 0x6426d442be30) is in use.
+The Vulkan spec states: commandBuffer must not be in the pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkResetCommandBuffer-commandBuffer-00045)
+Objects: 2
+    [0] VkCommandBuffer 0x6426d442be30
+    [1] VkCommandPool 0x1c000000001c
+
+Validation Error: [ VUID-vkResetCommandBuffer-commandBuffer-00045 ] | MessageID = 0x1e7883ea
+vkResetCommandBuffer(): (VkCommandBuffer 0x6426d4411b70) is in use.
+The Vulkan spec states: commandBuffer must not be in the pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkResetCommandBuffer-commandBuffer-00045)
+Objects: 2
+    [0] VkCommandBuffer 0x6426d4411b70
+    [1] VkCommandPool 0x1c000000001c
+
+Validation Error: [ VUID-vkBeginCommandBuffer-commandBuffer-00049 ] | MessageID = 0x84029a9f
+vkBeginCommandBuffer(): on active VkCommandBuffer 0x6426d4411b70 before it has completed. You must check command buffer fence before this call.
+The Vulkan spec states: commandBuffer must not be in the recording or pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkBeginCommandBuffer-commandBuffer-00049)
+Objects: 1
+    [0] VkCommandBuffer 0x6426d4411b70
+
+Validation Error: [ VUID-vkQueueSubmit-pCommandBuffers-00071 ] | MessageID = 0x2e2f4d65
+vkQueueSubmit(): pSubmits[0].pCommandBuffers[0] VkCommandBuffer 0x6426d4411b70 is already in use and is not marked for simultaneous use.
+The Vulkan spec states: If any element of the pCommandBuffers member of any element of pSubmits was not recorded with the VK_COMMAND_BUFFER_USAGE_SIMULTANEOUS_USE_BIT, it must not be in the pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkQueueSubmit-pCommandBuffers-00071)
+
+Validation Error: [ VUID-vkResetCommandBuffer-commandBuffer-00045 ] | MessageID = 0x1e7883ea
+vkResetCommandBuffer(): (VkCommandBuffer 0x6426d4415b30) is in use.
+The Vulkan spec states: commandBuffer must not be in the pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkResetCommandBuffer-commandBuffer-00045)
+Objects: 2
+    [0] VkCommandBuffer 0x6426d4415b30
+    [1] VkCommandPool 0x1c000000001c
+
+Validation Error: [ VUID-vkBeginCommandBuffer-commandBuffer-00049 ] | MessageID = 0x84029a9f
+vkBeginCommandBuffer(): on active VkCommandBuffer 0x6426d4415b30 before it has completed. You must check command buffer fence before this call.
+The Vulkan spec states: commandBuffer must not be in the recording or pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkBeginCommandBuffer-commandBuffer-00049)
+Objects: 1
+    [0] VkCommandBuffer 0x6426d4415b30
+
+Validation Error: [ VUID-vkResetCommandBuffer-commandBuffer-00045 ] | MessageID = 0x1e7883ea
+(Warning - This VUID has now been reported 10 times, which is the duplicate_message_limit value, this will be the last time reporting it).
+vkResetCommandBuffer(): (VkCommandBuffer 0x6426d441abb0) is in use.
+The Vulkan spec states: commandBuffer must not be in the pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkResetCommandBuffer-commandBuffer-00045)
+Objects: 2
+    [0] VkCommandBuffer 0x6426d441abb0
+    [1] VkCommandPool 0x1c000000001c
+
+Validation Error: [ VUID-vkBeginCommandBuffer-commandBuffer-00049 ] | MessageID = 0x84029a9f
+vkBeginCommandBuffer(): on active VkCommandBuffer 0x6426d4287b00 before it has completed. You must check command buffer fence before this call.
+The Vulkan spec states: commandBuffer must not be in the recording or pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkBeginCommandBuffer-commandBuffer-00049)
+Objects: 1
+    [0] VkCommandBuffer 0x6426d4287b00
+
+Validation Error: [ VUID-vkQueueSubmit-pCommandBuffers-00071 ] | MessageID = 0x2e2f4d65
+vkQueueSubmit(): pSubmits[0].pCommandBuffers[0] VkCommandBuffer 0x6426d4287b00 is already in use and is not marked for simultaneous use.
+The Vulkan spec states: If any element of the pCommandBuffers member of any element of pSubmits was not recorded with the VK_COMMAND_BUFFER_USAGE_SIMULTANEOUS_USE_BIT, it must not be in the pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkQueueSubmit-pCommandBuffers-00071)
+
+Validation Error: [ VUID-vkBeginCommandBuffer-commandBuffer-00049 ] | MessageID = 0x84029a9f
+vkBeginCommandBuffer(): on active VkCommandBuffer 0x6426d4415b30 before it has completed. You must check command buffer fence before this call.
+The Vulkan spec states: commandBuffer must not be in the recording or pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkBeginCommandBuffer-commandBuffer-00049)
+Objects: 1
+    [0] VkCommandBuffer 0x6426d4415b30
+
+Validation Error: [ VUID-vkBeginCommandBuffer-commandBuffer-00049 ] | MessageID = 0x84029a9f
+vkBeginCommandBuffer(): on active VkCommandBuffer 0x6426d4287b00 before it has completed. You must check command buffer fence before this call.
+The Vulkan spec states: commandBuffer must not be in the recording or pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkBeginCommandBuffer-commandBuffer-00049)
+Objects: 1
+    [0] VkCommandBuffer 0x6426d4287b00
+
+Validation Error: [ VUID-vkBeginCommandBuffer-commandBuffer-00049 ] | MessageID = 0x84029a9f
+vkBeginCommandBuffer(): on active VkCommandBuffer 0x6426d441abb0 before it has completed. You must check command buffer fence before this call.
+The Vulkan spec states: commandBuffer must not be in the recording or pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkBeginCommandBuffer-commandBuffer-00049)
+Objects: 1
+    [0] VkCommandBuffer 0x6426d441abb0
+
+Validation Error: [ VUID-vkBeginCommandBuffer-commandBuffer-00049 ] | MessageID = 0x84029a9f
+vkBeginCommandBuffer(): on active VkCommandBuffer 0x6426d4276880 before it has completed. You must check command buffer fence before this call.
+The Vulkan spec states: commandBuffer must not be in the recording or pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkBeginCommandBuffer-commandBuffer-00049)
+Objects: 1
+    [0] VkCommandBuffer 0x6426d4276880
+
+Validation Error: [ VUID-vkBeginCommandBuffer-commandBuffer-00049 ] | MessageID = 0x84029a9f
+vkBeginCommandBuffer(): on active VkCommandBuffer 0x6426d44262b0 before it has completed. You must check command buffer fence before this call.
+The Vulkan spec states: commandBuffer must not be in the recording or pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkBeginCommandBuffer-commandBuffer-00049)
+Objects: 1
+    [0] VkCommandBuffer 0x6426d44262b0
+
+Validation Error: [ VUID-vkBeginCommandBuffer-commandBuffer-00049 ] | MessageID = 0x84029a9f
+vkBeginCommandBuffer(): on active VkCommandBuffer 0x6426d4411b70 before it has completed. You must check command buffer fence before this call.
+The Vulkan spec states: commandBuffer must not be in the recording or pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkBeginCommandBuffer-commandBuffer-00049)
+Objects: 1
+    [0] VkCommandBuffer 0x6426d4411b70
+
+Validation Error: [ VUID-vkBeginCommandBuffer-commandBuffer-00049 ] | MessageID = 0x84029a9f
+(Warning - This VUID has now been reported 10 times, which is the duplicate_message_limit value, this will be the last time reporting it).
+vkBeginCommandBuffer(): on active VkCommandBuffer 0x6426d4411b70 before it has completed. You must check command buffer fence before this call.
+The Vulkan spec states: commandBuffer must not be in the recording or pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkBeginCommandBuffer-commandBuffer-00049)
+Objects: 1
+    [0] VkCommandBuffer 0x6426d4411b70
+
+Validation Error: [ VUID-vkQueueSubmit-pCommandBuffers-00071 ] | MessageID = 0x2e2f4d65
+vkQueueSubmit(): pSubmits[0].pCommandBuffers[0] VkCommandBuffer 0x6426d427c400 is already in use and is not marked for simultaneous use.
+The Vulkan spec states: If any element of the pCommandBuffers member of any element of pSubmits was not recorded with the VK_COMMAND_BUFFER_USAGE_SIMULTANEOUS_USE_BIT, it must not be in the pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkQueueSubmit-pCommandBuffers-00071)
+
+Validation Error: [ VUID-vkQueueSubmit-pCommandBuffers-00071 ] | MessageID = 0x2e2f4d65
+vkQueueSubmit(): pSubmits[0].pCommandBuffers[0] VkCommandBuffer 0x6426d441abb0 is already in use and is not marked for simultaneous use.
+The Vulkan spec states: If any element of the pCommandBuffers member of any element of pSubmits was not recorded with the VK_COMMAND_BUFFER_USAGE_SIMULTANEOUS_USE_BIT, it must not be in the pending state (https://docs.vulkan.org/spec/latest/chapters/cmdbuffers.html#VUID-vkQueueSubmit-pCommandBuffers-00071)
+
+Validation Error: [ VUID-VkImageMemoryBarrier-oldLayout-01197 ] | MessageID = 0x124ffb34
+vkCmdPipelineBarrier(): pImageMemoryBarriers[0].image (VkImage 0x6ed00000006ed[NewSharedVulkanImageHelper]) cannot transition the layout of aspect=1, level=0, layer=0 from VK_IMAGE_LAYOUT_GENERAL when the previous known layout is VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL.
+The Vulkan spec states: If layouts are not ignored, oldLayout must be VK_IMAGE_LAYOUT_UNDEFINED or the current layout of the image subresources affected by the barrier (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-VkImageMemoryBarrier-oldLayout-01197)
+Objects: 2
+    [0] VkCommandBuffer 0x6426d4281f80
+    [1] VkImage 0x6ed00000006ed[NewSharedVulkanImageHelper]
+
+Validation Error: [ VUID-VkImageMemoryBarrier-oldLayout-01197 ] | MessageID = 0x124ffb34
+vkCmdPipelineBarrier(): pImageMemoryBarriers[0].image (VkImage 0x6ed00000006ed[NewSharedVulkanImageHelper]) cannot transition the layout of aspect=1, level=0, layer=0 from VK_IMAGE_LAYOUT_GENERAL when the previous known layout is VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL.
+The Vulkan spec states: If layouts are not ignored, oldLayout must be VK_IMAGE_LAYOUT_UNDEFINED or the current layout of the image subresources affected by the barrier (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-VkImageMemoryBarrier-oldLayout-01197)
+Objects: 2
+    [0] VkCommandBuffer 0x6426d428d680
+    [1] VkImage 0x6ed00000006ed[NewSharedVulkanImageHelper]
+
+Validation Error: [ VUID-VkImageMemoryBarrier-oldLayout-01197 ] | MessageID = 0x124ffb34
+vkCmdPipelineBarrier(): pImageMemoryBarriers[0].image (VkImage 0x6ed00000006ed[NewSharedVulkanImageHelper]) cannot transition the layout of aspect=1, level=0, layer=0 from VK_IMAGE_LAYOUT_GENERAL when the previous known layout is VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL.
+The Vulkan spec states: If layouts are not ignored, oldLayout must be VK_IMAGE_LAYOUT_UNDEFINED or the current layout of the image subresources affected by the barrier (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-VkImageMemoryBarrier-oldLayout-01197)
+Objects: 2
+    [0] VkCommandBuffer 0x6426d442be30
+    [1] VkImage 0x6ed00000006ed[NewSharedVulkanImageHelper]
+
+Validation Error: [ VUID-VkImageMemoryBarrier-oldLayout-01197 ] | MessageID = 0x124ffb34
+vkCmdPipelineBarrier(): pImageMemoryBarriers[0].image (VkImage 0x6ed00000006ed[NewSharedVulkanImageHelper]) cannot transition the layout of aspect=1, level=0, layer=0 from VK_IMAGE_LAYOUT_GENERAL when the previous known layout is VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL.
+The Vulkan spec states: If layouts are not ignored, oldLayout must be VK_IMAGE_LAYOUT_UNDEFINED or the current layout of the image subresources affected by the barrier (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-VkImageMemoryBarrier-oldLayout-01197)
+Objects: 2
+    [0] VkCommandBuffer 0x6426d4281f80
+    [1] VkImage 0x6ed00000006ed[NewSharedVulkanImageHelper]
+
+Validation Error: [ VUID-VkImageMemoryBarrier-oldLayout-01197 ] | MessageID = 0x124ffb34
+vkCmdPipelineBarrier(): pImageMemoryBarriers[0].image (VkImage 0x6ed00000006ed[NewSharedVulkanImageHelper]) cannot transition the layout of aspect=1, level=0, layer=0 from VK_IMAGE_LAYOUT_GENERAL when the previous known layout is VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL.
+The Vulkan spec states: If layouts are not ignored, oldLayout must be VK_IMAGE_LAYOUT_UNDEFINED or the current layout of the image subresources affected by the barrier (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-VkImageMemoryBarrier-oldLayout-01197)
+Objects: 2
+    [0] VkCommandBuffer 0x6426d4420730
+    [1] VkImage 0x6ed00000006ed[NewSharedVulkanImageHelper]
+
+Validation Error: [ VUID-VkImageMemoryBarrier-oldLayout-01197 ] | MessageID = 0x124ffb34
+vkCmdPipelineBarrier(): pImageMemoryBarriers[0].image (VkImage 0x6ed00000006ed[NewSharedVulkanImageHelper]) cannot transition the layout of aspect=1, level=0, layer=0 from VK_IMAGE_LAYOUT_GENERAL when the previous known layout is VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL.
+The Vulkan spec states: If layouts are not ignored, oldLayout must be VK_IMAGE_LAYOUT_UNDEFINED or the current layout of the image subresources affected by the barrier (https://docs.vulkan.org/spec/latest/chapters/synchronization.html#VUID-VkImageMemoryBarrier-oldLayout-01197)
+Objects: 2
+    [0] VkCommandBuffer 0x6426d4415b30
+    [1] VkImage 0x6ed00000006ed[NewSharedVulkanImageHelper]
+

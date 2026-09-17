@@ -1,0 +1,43 @@
+=== uname ===
+Linux egal-12 7.3.0-rc1-spacy2026090103 #18 SMP PREEMPT_DYNAMIC Tue Sep  1 11:14:09 CEST 2026 x86_64 GNU/Linux
+
+=== os-release ===
+PRETTY_NAME="Ubuntu 26.04.1 LTS"
+NAME="Ubuntu"
+VERSION_ID="26.04"
+VERSION="26.04.1 LTS (Resolute Raccoon)"
+VERSION_CODENAME=resolute
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=resolute
+LOGO=ubuntu-logo
+
+=== GPU ===
+0d:00.0 VGA compatible controller [0300]: Advanced Micro Devices, Inc. [AMD/ATI] Navi 32 [Radeon RX 7700 XT / 7800 XT] [1002:747e] (rev c8)
+
+=== SteamVR version ===
+1789498647
+
+=== mesa ===
+ii  mesa-vulkan-drivers:i386  26.0.8-1ubuntu0.3 i386         Mesa Vulkan graphics drivers
+
+=== Vulkan ICDs ===
+asahi_icd.json
+gfxstream_vk_icd.json
+intel_hasvk_icd.json
+intel_icd.json
+lvp_icd.json
+nouveau_icd.json
+radeon_icd.json
+virtio_icd.json
+
+=== VVL (patched build) ===
+3786adc state_tracker: do not block in vkGetFenceStatus
+vulkan-sdk-1.4.341.0-1-g3786adc
+
+=== SteamVR version (from log) ===
+version(2.17.10)

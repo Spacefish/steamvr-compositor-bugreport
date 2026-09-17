@@ -1,0 +1,190 @@
+Thu Sep 17 2026 03:50:19.121773 [Info] - //==============================================================================================
+Thu Sep 17 2026 03:50:19.121809 [Info] - ================================================================================================
+Thu Sep 17 2026 03:50:19.121820 [Info] - ================================================================================================
+Thu Sep 17 2026 03:50:19.121854 [Info] - vrcompositor 2.17.10 startup with PID=96064, config=/home/spacy/.local/share/Steam/config, runtime=/home/spacy/.local/share/Steam/steamapps/common/SteamVR, arch=linux64
+Thu Sep 17 2026 03:50:19.121867 [Info] - VR compositor 2.17.10 (v1789498647) Mixed starting up
+Thu Sep 17 2026 03:50:19.129775 [Info] - CIPCPipe::ConnectPipe(SteamVR_Namespace) attempting connect to /steamvr/SteamVR_Namespace
+Thu Sep 17 2026 03:50:19.129829 [Info] - CSharedResourceNamespaceClient::Init(): received namespace data 96034
+Thu Sep 17 2026 03:50:19.129857 [Info] - CIPCPipe::CreatePipe(VR_CompositorPipe_96034) bound to /steamvr/VR_CompositorPipe_96034
+Thu Sep 17 2026 03:50:19.130406 [Info] - Set fd limit to: 65535
+Thu Sep 17 2026 03:50:19.131762 [Info] - [Settings] Load Json Settings from /home/spacy/.local/share/Steam/config/steamvr.vrsettings
+Thu Sep 17 2026 03:50:19.132391 [Info] - Events created
+Thu Sep 17 2026 03:50:19.132672 [Info] - RENDERDOC API Not Found
+Thu Sep 17 2026 03:50:19.132739 [Info] - Found bad mirror window settings: 
+Thu Sep 17 2026 03:50:19.132749 [Info] - Creating CHmdWindowSDL!
+Thu Sep 17 2026 03:50:19.132792 [Info] - CHmdWindowSDL: Using Wayland
+Thu Sep 17 2026 03:50:19.169352 [Info] - WaylandHMDState: Got interface: wp_drm_lease_device_v1
+Thu Sep 17 2026 03:50:19.169718 [Info] - WaylandHMDLeaseDevice::LeaseDevice_DrmFD: /dev/dri/card1
+Thu Sep 17 2026 03:50:19.182097 [Info] - WaylandHMDLeaseConnector::LeaseConnector_Done
+Thu Sep 17 2026 03:50:19.182144 [Info] - WaylandHMDLeaseDevice::LeaseDevice_Done
+Thu Sep 17 2026 03:50:19.184525 [Info] - Instance layers available:
+Thu Sep 17 2026 03:50:19.184543 [Info] -  - VK_LAYER_VALVE_steam_fossilize_32, version 4206799
+Thu Sep 17 2026 03:50:19.184550 [Info] -  - VK_LAYER_VALVE_steam_overlay_32, version 4206799
+Thu Sep 17 2026 03:50:19.184557 [Info] -  - VK_LAYER_VALVE_steam_overlay_64, version 4206799
+Thu Sep 17 2026 03:50:19.184564 [Info] -  - VK_LAYER_VALVE_steam_fossilize_64, version 4206799
+Thu Sep 17 2026 03:50:19.184571 [Info] -  - VK_LAYER_FROG_gamescope_wsi_x86_64, version 4206813
+Thu Sep 17 2026 03:50:19.184578 [Info] -  - VK_LAYER_MESA_anti_lag, version 4210991
+Thu Sep 17 2026 03:50:19.184585 [Info] -  - VK_LAYER_MESA_device_select, version 4210991
+Thu Sep 17 2026 03:50:19.184592 [Info] -  - VK_LAYER_ForceColorAttachment, version 4206592
+Thu Sep 17 2026 03:50:19.184598 [Info] -  - VK_LAYER_MESA_screenshot, version 4210991
+Thu Sep 17 2026 03:50:19.184605 [Info] -  - VK_LAYER_MESA_overlay, version 4210991
+Thu Sep 17 2026 03:50:19.184612 [Info] -  - VK_LAYER_INTEL_nullhw, version 4198473
+Thu Sep 17 2026 03:50:19.184619 [Info] -  - VK_LAYER_KHRONOS_validation, version 4211029
+Thu Sep 17 2026 03:50:19.186701 [Info] - Instance extensions available:
+Thu Sep 17 2026 03:50:19.186718 [Info] -  - VK_KHR_device_group_creation, version 1
+Thu Sep 17 2026 03:50:19.186726 [Info] -  - VK_KHR_display, version 23
+Thu Sep 17 2026 03:50:19.186734 [Info] -  - VK_KHR_external_fence_capabilities, version 1
+Thu Sep 17 2026 03:50:19.186740 [Info] -  - VK_KHR_external_memory_capabilities, version 1
+Thu Sep 17 2026 03:50:19.186748 [Info] -  - VK_KHR_external_semaphore_capabilities, version 1
+Thu Sep 17 2026 03:50:19.186754 [Info] -  - VK_KHR_get_display_properties2, version 1
+Thu Sep 17 2026 03:50:19.186761 [Info] -  - VK_KHR_get_physical_device_properties2, version 2
+Thu Sep 17 2026 03:50:19.186768 [Info] -  - VK_KHR_get_surface_capabilities2, version 1
+Thu Sep 17 2026 03:50:19.186775 [Info] -  - VK_KHR_surface, version 25
+Thu Sep 17 2026 03:50:19.186781 [Info] -  - VK_KHR_surface_maintenance1, version 1
+Thu Sep 17 2026 03:50:19.186788 [Info] -  - VK_KHR_surface_protected_capabilities, version 1
+Thu Sep 17 2026 03:50:19.186803 [Info] -  - VK_KHR_wayland_surface, version 6
+Thu Sep 17 2026 03:50:19.186810 [Info] -  - VK_KHR_xcb_surface, version 6
+Thu Sep 17 2026 03:50:19.186817 [Info] -  - VK_KHR_xlib_surface, version 6
+Thu Sep 17 2026 03:50:19.186824 [Info] -  - VK_EXT_acquire_drm_display, version 1
+Thu Sep 17 2026 03:50:19.186832 [Info] -  - VK_EXT_acquire_xlib_display, version 1
+Thu Sep 17 2026 03:50:19.186839 [Info] -  - VK_EXT_debug_report, version 10
+Thu Sep 17 2026 03:50:19.186847 [Info] -  - VK_EXT_debug_utils, version 2
+Thu Sep 17 2026 03:50:19.186854 [Info] -  - VK_EXT_direct_mode_display, version 1
+Thu Sep 17 2026 03:50:19.186861 [Info] -  - VK_EXT_display_surface_counter, version 1
+Thu Sep 17 2026 03:50:19.186867 [Info] -  - VK_EXT_headless_surface, version 1
+Thu Sep 17 2026 03:50:19.186874 [Info] -  - VK_EXT_surface_maintenance1, version 1
+Thu Sep 17 2026 03:50:19.186881 [Info] -  - VK_EXT_swapchain_colorspace, version 5
+Thu Sep 17 2026 03:50:19.186888 [Info] -  - VK_KHR_portability_enumeration, version 1
+Thu Sep 17 2026 03:50:19.186896 [Info] -  - VK_LUNARG_direct_driver_loading, version 1
+Thu Sep 17 2026 03:50:19.186903 [Info] -  - VK_EXT_layer_settings, version 2
+Thu Sep 17 2026 03:50:19.186914 [Info] - SDL version: 2.32.10
+Thu Sep 17 2026 03:50:19.186926 [Info] - Direct mode features: present
+Thu Sep 17 2026 03:50:19.186933 [Info] - Requesting 10 instance extensions:
+Thu Sep 17 2026 03:50:19.186940 [Info] -  - VK_KHR_surface
+Thu Sep 17 2026 03:50:19.186948 [Info] -  - VK_KHR_xlib_surface
+Thu Sep 17 2026 03:50:19.186955 [Info] -  - VK_KHR_display
+Thu Sep 17 2026 03:50:19.186961 [Info] -  - VK_EXT_direct_mode_display
+Thu Sep 17 2026 03:50:19.186968 [Info] -  - VK_EXT_display_surface_counter
+Thu Sep 17 2026 03:50:19.186975 [Info] -  - VK_KHR_external_memory_capabilities
+Thu Sep 17 2026 03:50:19.186983 [Info] -  - VK_KHR_external_semaphore_capabilities
+Thu Sep 17 2026 03:50:19.186990 [Info] -  - VK_KHR_get_physical_device_properties2
+Thu Sep 17 2026 03:50:19.186996 [Info] -  - VK_EXT_debug_utils
+Thu Sep 17 2026 03:50:19.187003 [Info] -  - VK_EXT_acquire_drm_display
+Thu Sep 17 2026 03:50:19.199904 [Info] - HMD deviceUUID is d00000000
+Thu Sep 17 2026 03:50:19.200131 [Info] - Tried to find direct display through Wayland: 0x10000000001
+Thu Sep 17 2026 03:50:19.200153 [Info] - Trying to match desired rate of 120.019005Hz.
+Thu Sep 17 2026 03:50:19.200161 [Info] - 4 modes on display:
+Thu Sep 17 2026 03:50:19.200172 [Info] -  - 0: 2880x1600@90.003006Hz
+Thu Sep 17 2026 03:50:19.200180 [Info] -  - 1: 2880x1600@144.000000Hz
+Thu Sep 17 2026 03:50:19.200188 [Info] -  - 2: 2880x1600@120.019005Hz
+Thu Sep 17 2026 03:50:19.200195 [Info] -  - 3: 2880x1600@79.999001Hz
+Thu Sep 17 2026 03:50:19.200202 [Info] - Selected mode 2.
+Thu Sep 17 2026 03:50:19.200736 [Info] - WaylandHMDLeaseConnector::LeaseConnector_Withdrawn
+Thu Sep 17 2026 03:50:19.200748 [Info] - WaylandHMDLeaseDevice::LeaseDevice_Done
+Thu Sep 17 2026 03:50:19.215120 [Info] - Acquired drm display!
+Thu Sep 17 2026 03:50:19.215182 [Info] - Direct mode surface: 0x60000000006
+Thu Sep 17 2026 03:50:19.215216 [Info] - Requesting 24 device extensions:
+Thu Sep 17 2026 03:50:19.215225 [Info] -  - VK_EXT_custom_border_color
+Thu Sep 17 2026 03:50:19.215232 [Info] -  - VK_EXT_extended_dynamic_state
+Thu Sep 17 2026 03:50:19.215239 [Info] -  - VK_EXT_host_query_reset
+Thu Sep 17 2026 03:50:19.215246 [Info] -  - VK_KHR_create_renderpass2
+Thu Sep 17 2026 03:50:19.215253 [Info] -  - VK_KHR_dedicated_allocation
+Thu Sep 17 2026 03:50:19.215260 [Info] -  - VK_KHR_external_memory
+Thu Sep 17 2026 03:50:19.215267 [Info] -  - VK_KHR_external_memory_fd
+Thu Sep 17 2026 03:50:19.215276 [Info] -  - VK_KHR_external_semaphore
+Thu Sep 17 2026 03:50:19.215283 [Info] -  - VK_KHR_external_semaphore_fd
+Thu Sep 17 2026 03:50:19.215290 [Info] -  - VK_KHR_get_memory_requirements2
+Thu Sep 17 2026 03:50:19.215297 [Info] -  - VK_KHR_image_format_list
+Thu Sep 17 2026 03:50:19.215305 [Info] -  - VK_KHR_maintenance1
+Thu Sep 17 2026 03:50:19.215312 [Info] -  - VK_KHR_sampler_ycbcr_conversion
+Thu Sep 17 2026 03:50:19.215324 [Info] -  - VK_KHR_swapchain
+Thu Sep 17 2026 03:50:19.215330 [Info] -  - VK_KHR_swapchain_mutable_format
+Thu Sep 17 2026 03:50:19.215337 [Info] -  - VK_KHR_timeline_semaphore
+Thu Sep 17 2026 03:50:19.215344 [Info] -  - VK_EXT_display_control
+Thu Sep 17 2026 03:50:19.215350 [Info] -  - VK_KHR_external_memory_fd
+Thu Sep 17 2026 03:50:19.215358 [Info] -  - VK_KHR_external_semaphore_fd
+Thu Sep 17 2026 03:50:19.215366 [Info] -  - VK_EXT_global_priority
+Thu Sep 17 2026 03:50:19.215374 [Info] -  - VK_EXT_extended_dynamic_state3
+Thu Sep 17 2026 03:50:19.215381 [Info] -  - VK_EXT_sample_locations
+Thu Sep 17 2026 03:50:19.215387 [Info] -  - VK_KHR_present_id
+Thu Sep 17 2026 03:50:19.215395 [Info] -  - VK_KHR_present_wait
+Thu Sep 17 2026 03:50:19.215407 [Info] - Global priority query enabled: 1
+Thu Sep 17 2026 03:50:19.215414 [Info] - Attempting to enable async support...
+Thu Sep 17 2026 03:50:19.215422 [Info] - Enabling async support!
+Thu Sep 17 2026 03:50:19.215431 [Info] - Vulkan fillModeNonSolid: yes
+Thu Sep 17 2026 03:50:19.215438 [Info] - Vulkan wideLines: yes
+Thu Sep 17 2026 03:50:19.217601 [Info] - Vulkan wait-for-present-ID support is present, and will be used
+Thu Sep 17 2026 03:50:19.217624 [Info] - m_pVkInstance : 0x5d84faffc870
+Thu Sep 17 2026 03:50:19.217634 [Info] - m_pVkPhysicalDevice : 0x5d84fb124b10
+Thu Sep 17 2026 03:50:19.217641 [Info] - m_pVkDevice : 0x5d84fb230a10
+Thu Sep 17 2026 03:50:19.217648 [Info] - m_pVkGraphicsQueue : 0x5d84faf88740
+Thu Sep 17 2026 03:50:19.217655 [Info] - m_pVkComputeQueue : 0x5d84fb012330
+Thu Sep 17 2026 03:50:19.218135 [Info] - HMD swapchain mode:2 format:44 colorspace:0 count:3
+Thu Sep 17 2026 03:50:19.218438 [Info] - Direct mode: enabled
+Thu Sep 17 2026 03:50:19.218851 [Info] - Mirror swapchain mode:0 format:44 colorspace:0 count:4
+Thu Sep 17 2026 03:50:19.220013 [Info] - CGraphicsDevice Init...
+Thu Sep 17 2026 03:50:19.220170 [Info] - Headset is using direct mode
+Thu Sep 17 2026 03:50:19.220184 [Info] - Initializing timing resources
+Thu Sep 17 2026 03:50:19.220255 [Info] - Using Vulkan Renderer
+Thu Sep 17 2026 03:50:19.220272 [Info] - Initializing CVulkanVRRenderer
+Thu Sep 17 2026 03:50:19.220304 [Info] - Debug utils: enabled
+Thu Sep 17 2026 03:50:19.236019 [Info] - Initialized Vulkan transfer ring buffer, mapped at offset 0x0x7fd2a4000000.
+Thu Sep 17 2026 03:50:19.238156 [Info] - Supports dmabuf formats + modifiers? - Yes!
+Thu Sep 17 2026 03:50:19.238289 [Info] - Updated HMD Prop_DisplayFrequency_Float to 120.018997
+Thu Sep 17 2026 03:50:19.238353 [Info] - ****************************************** Begin GPU speed ******************************************
+Thu Sep 17 2026 03:50:19.238363 [Info] - GPU Vendor: "AMD Radeon RX 7800 XT (RADV NAVI32)" GPU Driver: "109051912"
+Thu Sep 17 2026 03:50:19.238620 [Info] - Initializing CVulkanVRRenderer
+Thu Sep 17 2026 03:50:19.238674 [Info] - Debug utils: enabled
+Thu Sep 17 2026 03:50:19.254219 [Info] - Initialized Vulkan transfer ring buffer, mapped at offset 0x0x7fd294000000.
+Thu Sep 17 2026 03:50:19.256258 [Info] - Supports dmabuf formats + modifiers? - Yes!
+Thu Sep 17 2026 03:50:19.687696 [Info] - MeasureGpuMegaPixelsPerSecond(20): Returning 984 MP/sec. Total CPU time 0.45 seconds.
+Thu Sep 17 2026 03:50:19.693507 [Info] - GPU speed from average of 6 median samples: 1321
+Thu Sep 17 2026 03:50:19.693844 [Info] - ******************************************* End GPU speed *******************************************
+Thu Sep 17 2026 03:50:19.693904 [Info] - HMD driver recommended: 2016x2240 120.0Hz HiddenArea(24.88%) = 814 MP/sec
+Thu Sep 17 2026 03:50:19.693914 [Info] - Raw ideal render target scale = 1.62
+Thu Sep 17 2026 03:50:19.693922 [Info] - Clamping render target scale to 1.5x total area.
+Thu Sep 17 2026 03:50:19.694009 [Info] - New result of GetRecommendedRenderTargetSize for current app: 2468x2740
+Thu Sep 17 2026 03:50:19.694024 [Info] - Creating samplers
+Thu Sep 17 2026 03:50:19.694119 [Info] - Creating util resources
+Thu Sep 17 2026 03:50:19.694846 [Info] - Creating constant buffers
+Thu Sep 17 2026 03:50:19.695660 [Info] - Creating systemlayer textures (w=2568,h=2852)
+Thu Sep 17 2026 03:50:19.696117 [Info] - Creating/Updating distortion surfaces (mesh resolution 49)
+Thu Sep 17 2026 03:50:19.706159 [Info] - Warp mesh (left eye) covers 81.58% of its viewport (shrink wrap saved 1.95%)
+Thu Sep 17 2026 03:50:19.716470 [Info] - Warp mesh (right eye) covers 81.43% of its viewport (shrink wrap saved 1.91%)
+Thu Sep 17 2026 03:50:19.732395 [Info] - Initializing camera
+Thu Sep 17 2026 03:50:19.732444 [Info] - Tracked Camera: Unexpected or not-specified number of cameras (propertyError=0, 0).
+Thu Sep 17 2026 03:50:19.732453 [Info] - D3D11 Camera Initialization failure.
+Thu Sep 17 2026 03:50:19.732459 [Info] - Done initializing CGraphicsDevice resources
+Thu Sep 17 2026 03:50:19.732468 [Info] - Loading MC resources
+Thu Sep 17 2026 03:50:19.732635 [Info] - Distort initialized
+Thu Sep 17 2026 03:50:19.733063 [Info] - Loading background skybox texture async '/home/spacy/.local/share/Steam/steamapps/common/SteamVR/resources/backgrounds/aurorasky.png'
+Thu Sep 17 2026 03:50:19.733086 [Info] - Loading reflection skybox texture async '/home/spacy/.local/share/Steam/steamapps/common/SteamVR/resources/reflections/dashboard_lights.png'
+Thu Sep 17 2026 03:50:19.734068 [Info] - System layer initialized
+Thu Sep 17 2026 03:50:19.734124 [Info] - Frame manager initialized
+Thu Sep 17 2026 03:50:19.734134 [Info] - Audio devices initialized
+Thu Sep 17 2026 03:50:19.734301 [Info] - Set thread 0x7fd29bfff6c0 priority to: -15
+Thu Sep 17 2026 03:50:19.734440 [Info] - External connection from /home/spacy/.local/share/Steam/ubuntu12_32/steam 14413
+Thu Sep 17 2026 03:50:19.734487 [Info] - External connection from /home/spacy/.local/share/Steam/steamapps/common/SteamVR/bin/linux64/vrstartup 95896
+Thu Sep 17 2026 03:50:19.734662 [Info] - Driver requests system layer use app poses.
+Thu Sep 17 2026 03:50:19.734684 [Info] - Set thread 0x7fd2c81296c0 priority to: 15
+Thu Sep 17 2026 03:50:19.734782 [Info] - Set thread 0x7fd2c822a6c0 priority to: 15
+Thu Sep 17 2026 03:50:19.734799 [Info] - Compositor render thread started
+Thu Sep 17 2026 03:50:19.734830 [Info] - Not starting NewFrameHandler thread on Linux
+Thu Sep 17 2026 03:50:19.734874 [Info] - Startup Complete (0.604466 seconds)
+Thu Sep 17 2026 03:50:19.757790 [Info] - External connection from /home/spacy/.local/share/Steam/steamapps/common/SteamVR/bin/linux64/vrdashboard 96136
+Thu Sep 17 2026 03:50:19.782390 [Error] - WaitForPendingPresent: failed to wait for present
+Thu Sep 17 2026 03:50:19.791960 [Info] - External connection from /home/spacy/.local/share/Steam/steamapps/common/SteamVR/bin/vrwebhelper/linux64/vrwebhelper 96138
+Thu Sep 17 2026 03:50:19.824279 [Error] - WaitForPendingPresent: failed to wait for present
+Thu Sep 17 2026 03:50:19.839101 [Info] - External connection from /home/spacy/.local/share/Steam/ubuntu12_64/steamwebhelper 14682
+Thu Sep 17 2026 03:50:19.870794 [Error] - WaitForPendingPresent: failed to wait for present
+Thu Sep 17 2026 03:50:20.607399 [Info] - External connection from /home/spacy/.local/share/Steam/steamapps/common/SteamVR/bin/vrwebhelper/linux64/vrwebhelper 96295
+Thu Sep 17 2026 03:50:20.612274 [Info] - External connection from /home/spacy/.local/share/Steam/steamapps/common/SteamVR/bin/vrwebhelper/linux64/vrwebhelper 96294
+Thu Sep 17 2026 03:50:20.612319 [Info] - External connection from /home/spacy/.local/share/Steam/steamapps/common/SteamVR/bin/vrwebhelper/linux64/vrwebhelper 96301
+Thu Sep 17 2026 03:50:20.995263 [Info] - External connection from /home/spacy/.local/share/Steam/steamapps/common/SteamVR/bin/linux64/vrmonitor 96142
+Thu Sep 17 2026 03:50:21.245333 [Info] - Socket closed
+Thu Sep 17 2026 03:50:21.245410 [Info] - Unable to read message from socket: 0
+Thu Sep 17 2026 03:50:21.245437 [Info] - Process vrstartup (95896) disconnected (Thread(0x0x7fd2a0000c10/0x0x7f)
+Thu Sep 17 2026 03:50:21.245452 [Info] - Lost pipe connection from vrstartup (95896)
+Thu Sep 17 2026 03:50:22.205294 [Info] - VREvent_ChaperoneUniverseHasChanged -> StandingCoordinateSystemUpdate
+Thu Sep 17 2026 03:50:22.258569 [Info] - External connection from /home/spacy/.local/share/Steam/steamapps/common/SteamVR/bin/vrwebhelper/linux64/vrwebhelper 96495
+Thu Sep 17 2026 03:50:37.790400 [Info] - Failed Watchdog timeout in thread Render in Present after 6.791718 seconds. Aborting.

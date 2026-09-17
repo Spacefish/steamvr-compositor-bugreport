@@ -1,0 +1,1866 @@
+[Mi Sep 16 23:49:29 2026] Linux version 7.3.0-rc1-spacy2026090103 (spacy@egal-12) (gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0, GNU ld (GNU Binutils for Ubuntu) 2.46) #18 SMP PREEMPT_DYNAMIC Tue Sep  1 11:14:09 CEST 2026
+[Mi Sep 16 23:49:29 2026] Command line: BOOT_IMAGE=/vmlinuz-7.3.0-rc1-spacy2026090103 root=UUID=ba18f908-4e35-46d1-bbfc-46d7dc709c14 ro quiet mitigations=off mem_encrypt=on initcall_blacklist=acpi_cpufreq_init amd_pstate.shared_mem=1 crashkernel=2G-4G:320M,4G-32G:512M,32G-64G:1024M,64G-128G:2048M,128G-:4096M
+[Mi Sep 16 23:49:29 2026] KERNEL supported cpus:
+[Mi Sep 16 23:49:29 2026]   Intel GenuineIntel
+[Mi Sep 16 23:49:29 2026]   AMD AuthenticAMD
+[Mi Sep 16 23:49:29 2026]   Hygon HygonGenuine
+[Mi Sep 16 23:49:29 2026]   Centaur CentaurHauls
+[Mi Sep 16 23:49:29 2026]   zhaoxin   Shanghai  
+[Mi Sep 16 23:49:29 2026] BIOS-provided physical RAM map:
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [mem 0x0000000000000000-0x000000000009ffff]  System RAM
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [mem 0x00000000000a0000-0x00000000000fffff]  device reserved
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [mem 0x0000000000100000-0x0000000009afefff]  System RAM
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [mem 0x0000000009aff000-0x0000000009ffffff]  device reserved
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [mem 0x000000000a000000-0x000000000a1fffff]  System RAM
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [mem 0x000000000a200000-0x000000000a210fff]  ACPI NVS
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [mem 0x000000000a211000-0x00000000b7547fff]  System RAM
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [mem 0x00000000b7548000-0x00000000b7554fff]  ACPI data
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [mem 0x00000000b7555000-0x00000000bb963fff]  System RAM
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [mem 0x00000000bb964000-0x00000000bd0cefff]  device reserved
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [mem 0x00000000bd0cf000-0x00000000bd111fff]  ACPI data
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [mem 0x00000000bd112000-0x00000000bd433fff]  ACPI NVS
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [mem 0x00000000bd434000-0x00000000bdffefff]  device reserved
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [mem 0x00000000bdfff000-0x00000000beffffff]  System RAM
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [mem 0x00000000bf000000-0x00000000bfffffff]  device reserved
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [gap 0x00000000c0000000-0x00000000efffffff]
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [mem 0x00000000f0000000-0x00000000f7ffffff]  device reserved
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [gap 0x00000000f8000000-0x00000000fd1fffff]
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [mem 0x00000000fd200000-0x00000000fd2fffff]  device reserved
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [gap 0x00000000fd300000-0x00000000fd3fffff]
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [mem 0x00000000fd400000-0x00000000fd5fffff]  device reserved
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [gap 0x00000000fd600000-0x00000000fe9fffff]
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [mem 0x00000000fea00000-0x00000000fea0ffff]  device reserved
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [gap 0x00000000fea10000-0x00000000feb7ffff]
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [mem 0x00000000feb80000-0x00000000fec01fff]  device reserved
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [gap 0x00000000fec02000-0x00000000fec0ffff]
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [mem 0x00000000fec10000-0x00000000fec10fff]  device reserved
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [gap 0x00000000fec11000-0x00000000fecfffff]
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [mem 0x00000000fed00000-0x00000000fed00fff]  device reserved
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [gap 0x00000000fed01000-0x00000000fed3ffff]
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [mem 0x00000000fed40000-0x00000000fed44fff]  device reserved
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [gap 0x00000000fed45000-0x00000000fed7ffff]
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [mem 0x00000000fed80000-0x00000000fed8ffff]  device reserved
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [gap 0x00000000fed90000-0x00000000fedc1fff]
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [mem 0x00000000fedc2000-0x00000000fedcffff]  device reserved
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [gap 0x00000000fedd0000-0x00000000fedd3fff]
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [mem 0x00000000fedd4000-0x00000000fedd5fff]  device reserved
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [gap 0x00000000fedd6000-0x00000000feffffff]
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [mem 0x00000000ff000000-0x00000000ffffffff]  device reserved
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [mem 0x0000000100000000-0x0000000c3f37ffff]  System RAM
+[Mi Sep 16 23:49:29 2026] BIOS-e820: [mem 0x0000000c3f380000-0x0000000c3fffffff]  device reserved
+[Mi Sep 16 23:49:29 2026] NX (Execute Disable) protection: active
+[Mi Sep 16 23:49:29 2026] APIC: Static calls initialized
+[Mi Sep 16 23:49:29 2026] efi: EFI v2.7 by American Megatrends
+[Mi Sep 16 23:49:29 2026] efi: ACPI=0xbd41b000 ACPI 2.0=0xbd41b014 TPMFinalLog=0xbd3e5000 SMBIOS=0xbde24000 SMBIOS 3.0=0xbde23000 MEMATTR=0xb9e92018 ESRT=0xb838a598 MOKvar=0xbde6e000 INITRD=0xb75ff798 RNG=0xbd0db018 TPMEventLog=0xb7548018 
+[Mi Sep 16 23:49:29 2026] random: crng init done
+[Mi Sep 16 23:49:29 2026] efi: Remove mem281: MMIO range=[0xf0000000-0xf7ffffff] (128MB) from e820 map
+[Mi Sep 16 23:49:29 2026] e820: remove [mem 0xf0000000-0xf7ffffff] device reserved
+[Mi Sep 16 23:49:29 2026] efi: Remove mem282: MMIO range=[0xfd200000-0xfd2fffff] (1MB) from e820 map
+[Mi Sep 16 23:49:29 2026] e820: remove [mem 0xfd200000-0xfd2fffff] device reserved
+[Mi Sep 16 23:49:29 2026] efi: Remove mem283: MMIO range=[0xfd400000-0xfd5fffff] (2MB) from e820 map
+[Mi Sep 16 23:49:29 2026] e820: remove [mem 0xfd400000-0xfd5fffff] device reserved
+[Mi Sep 16 23:49:29 2026] efi: Not removing mem284: MMIO range=[0xfea00000-0xfea0ffff] (64KB) from e820 map
+[Mi Sep 16 23:49:29 2026] efi: Remove mem285: MMIO range=[0xfeb80000-0xfec01fff] (0MB) from e820 map
+[Mi Sep 16 23:49:29 2026] e820: remove [mem 0xfeb80000-0xfec01fff] device reserved
+[Mi Sep 16 23:49:29 2026] efi: Not removing mem286: MMIO range=[0xfec10000-0xfec10fff] (4KB) from e820 map
+[Mi Sep 16 23:49:29 2026] efi: Not removing mem287: MMIO range=[0xfed00000-0xfed00fff] (4KB) from e820 map
+[Mi Sep 16 23:49:29 2026] efi: Not removing mem288: MMIO range=[0xfed40000-0xfed44fff] (20KB) from e820 map
+[Mi Sep 16 23:49:29 2026] efi: Not removing mem289: MMIO range=[0xfed80000-0xfed8ffff] (64KB) from e820 map
+[Mi Sep 16 23:49:29 2026] efi: Not removing mem290: MMIO range=[0xfedc2000-0xfedcffff] (56KB) from e820 map
+[Mi Sep 16 23:49:29 2026] efi: Not removing mem291: MMIO range=[0xfedd4000-0xfedd5fff] (8KB) from e820 map
+[Mi Sep 16 23:49:29 2026] efi: Remove mem292: MMIO range=[0xff000000-0xffffffff] (16MB) from e820 map
+[Mi Sep 16 23:49:29 2026] e820: remove [mem 0xff000000-0xffffffff] device reserved
+[Mi Sep 16 23:49:29 2026] DMI: SMBIOS 3.2.0 present.
+[Mi Sep 16 23:49:29 2026] DMI: To Be Filled By O.E.M. X570 Pro4/X570 Pro4, BIOS P5.61 02/22/2024
+[Mi Sep 16 23:49:29 2026] DMI: Memory slots populated: 4/4
+[Mi Sep 16 23:49:29 2026] tsc: Fast TSC calibration using PIT
+[Mi Sep 16 23:49:29 2026] tsc: Detected 3593.306 MHz processor
+[Mi Sep 16 23:49:29 2026] e820: update [mem 0x00000000-0x00000fff] System RAM ==> device reserved
+[Mi Sep 16 23:49:29 2026] e820: remove [mem 0x000a0000-0x000fffff] System RAM
+[Mi Sep 16 23:49:29 2026] last_pfn = 0xc3f380 max_arch_pfn = 0x400000000
+[Mi Sep 16 23:49:29 2026] total RAM covered: 3071M
+[Mi Sep 16 23:49:29 2026] Found optimal setting for mtrr clean up
+[Mi Sep 16 23:49:29 2026]  gran_size: 64K 	chunk_size: 64M 	num_reg: 3  	lose cover RAM: 0G
+[Mi Sep 16 23:49:29 2026] MTRR map: 8 entries (4 fixed + 4 variable; max 21), built from 9 variable MTRRs
+[Mi Sep 16 23:49:29 2026] x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT  
+[Mi Sep 16 23:49:29 2026] e820: update [mem 0xbd1c0000-0xbd1cffff] System RAM ==> device reserved
+[Mi Sep 16 23:49:29 2026] e820: update [mem 0xc0000000-0xffffffff] System RAM ==> device reserved
+[Mi Sep 16 23:49:29 2026] last_pfn = 0xbf000 max_arch_pfn = 0x400000000
+[Mi Sep 16 23:49:29 2026] esrt: Reserving ESRT space from 0x00000000b838a598 to 0x00000000b838a5d0.
+[Mi Sep 16 23:49:29 2026] e820: update [mem 0xb838a000-0xb838afff] System RAM ==> device reserved
+[Mi Sep 16 23:49:29 2026] Using GB pages for direct mapping
+[Mi Sep 16 23:49:29 2026] Secure boot disabled
+[Mi Sep 16 23:49:29 2026] RAMDISK: [mem 0xa439f000-0xaafe9fff]
+[Mi Sep 16 23:49:29 2026] ACPI: Early table checksum verification disabled
+[Mi Sep 16 23:49:29 2026] ACPI: RSDP 0x00000000BD41B014 000024 (v02 ALASKA)
+[Mi Sep 16 23:49:29 2026] ACPI: XSDT 0x00000000BD41A728 0000D4 (v01 ALASKA A M I    01072009 AMI  01000013)
+[Mi Sep 16 23:49:29 2026] ACPI: FACP 0x00000000BD10B000 000114 (v06 ALASKA A M I    01072009 AMI  00010013)
+[Mi Sep 16 23:49:29 2026] ACPI: DSDT 0x00000000BD104000 006698 (v02 ALASKA A M I    01072009 INTL 20120913)
+[Mi Sep 16 23:49:29 2026] ACPI: FACS 0x00000000BD415000 000040
+[Mi Sep 16 23:49:29 2026] ACPI: SSDT 0x00000000BD111000 00092A (v02 AMD    AmdTable 00000002 MSFT 04000000)
+[Mi Sep 16 23:49:29 2026] ACPI: SSDT 0x00000000BD10D000 003B45 (v02 AMD    AMD AOD  00000001 INTL 20120913)
+[Mi Sep 16 23:49:29 2026] ACPI: SSDT 0x00000000BD10C000 0000FC (v02 ALASKA CPUSSDT  01072009 AMI  01072009)
+[Mi Sep 16 23:49:29 2026] ACPI: FIDT 0x00000000BD103000 00009C (v01 ALASKA A M I    01072009 AMI  00010013)
+[Mi Sep 16 23:49:29 2026] ACPI: MCFG 0x00000000BD102000 00003C (v01 ALASKA A M I    01072009 MSFT 00010013)
+[Mi Sep 16 23:49:29 2026] ACPI: AAFT 0x00000000BD101000 0000F1 (v01 ALASKA OEMAAFT  01072009 MSFT 00000097)
+[Mi Sep 16 23:49:29 2026] ACPI: HPET 0x00000000BD100000 000038 (v01 ALASKA A M I    01072009 AMI  00000005)
+[Mi Sep 16 23:49:29 2026] ACPI: SSDT 0x00000000BD0FF000 000024 (v01 AMD    BIXBY    00001000 INTL 20120913)
+[Mi Sep 16 23:49:29 2026] ACPI: IVRS 0x00000000BD0FE000 0000D0 (v02 AMD    AmdTable 00000001 AMD  00000001)
+[Mi Sep 16 23:49:29 2026] ACPI: FPDT 0x00000000BD0FD000 000044 (v01 ALASKA A M I    01072009 AMI  01000013)
+[Mi Sep 16 23:49:29 2026] ACPI: VFCT 0x00000000BD0EE000 00E284 (v01 ALASKA A M I    00000001 AMD  33504F47)
+[Mi Sep 16 23:49:29 2026] ACPI: BGRT 0x00000000BD0ED000 000038 (v01 ALASKA A M I    01072009 AMI  00010013)
+[Mi Sep 16 23:49:29 2026] ACPI: TPM2 0x00000000BD0EC000 00004C (v04 ALASKA A M I    00000001 AMI  00000000)
+[Mi Sep 16 23:49:29 2026] ACPI: PCCT 0x00000000BD0EB000 00006E (v02 AMD    AmdTable 00000001 AMD  00000001)
+[Mi Sep 16 23:49:29 2026] ACPI: SSDT 0x00000000BD0E6000 004043 (v02 AMD    AmdTable 00000001 AMD  00000001)
+[Mi Sep 16 23:49:29 2026] ACPI: CRAT 0x00000000BD0E5000 000F50 (v01 AMD    AmdTable 00000001 AMD  00000001)
+[Mi Sep 16 23:49:29 2026] ACPI: CDIT 0x00000000BD0E4000 000029 (v01 AMD    AmdTable 00000001 AMD  00000001)
+[Mi Sep 16 23:49:29 2026] ACPI: SSDT 0x00000000BD0E0000 00382E (v02 AMD    QOGIRN   00000001 INTL 20120913)
+[Mi Sep 16 23:49:29 2026] ACPI: WSMT 0x00000000BD0DF000 000028 (v01 ALASKA A M I    01072009 AMI  00010013)
+[Mi Sep 16 23:49:29 2026] ACPI: APIC 0x00000000BD0DE000 00015E (v03 ALASKA A M I    01072009 AMI  00010013)
+[Mi Sep 16 23:49:29 2026] ACPI: SSDT 0x00000000BD0DC000 0010AF (v02 AMD    QOGIRC   00000001 INTL 20120913)
+[Mi Sep 16 23:49:29 2026] ACPI: Reserving FACP table memory at [mem 0xbd10b000-0xbd10b113]
+[Mi Sep 16 23:49:29 2026] ACPI: Reserving DSDT table memory at [mem 0xbd104000-0xbd10a697]
+[Mi Sep 16 23:49:29 2026] ACPI: Reserving FACS table memory at [mem 0xbd415000-0xbd41503f]
+[Mi Sep 16 23:49:29 2026] ACPI: Reserving SSDT table memory at [mem 0xbd111000-0xbd111929]
+[Mi Sep 16 23:49:29 2026] ACPI: Reserving SSDT table memory at [mem 0xbd10d000-0xbd110b44]
+[Mi Sep 16 23:49:29 2026] ACPI: Reserving SSDT table memory at [mem 0xbd10c000-0xbd10c0fb]
+[Mi Sep 16 23:49:29 2026] ACPI: Reserving FIDT table memory at [mem 0xbd103000-0xbd10309b]
+[Mi Sep 16 23:49:29 2026] ACPI: Reserving MCFG table memory at [mem 0xbd102000-0xbd10203b]
+[Mi Sep 16 23:49:29 2026] ACPI: Reserving AAFT table memory at [mem 0xbd101000-0xbd1010f0]
+[Mi Sep 16 23:49:29 2026] ACPI: Reserving HPET table memory at [mem 0xbd100000-0xbd100037]
+[Mi Sep 16 23:49:29 2026] ACPI: Reserving SSDT table memory at [mem 0xbd0ff000-0xbd0ff023]
+[Mi Sep 16 23:49:29 2026] ACPI: Reserving IVRS table memory at [mem 0xbd0fe000-0xbd0fe0cf]
+[Mi Sep 16 23:49:29 2026] ACPI: Reserving FPDT table memory at [mem 0xbd0fd000-0xbd0fd043]
+[Mi Sep 16 23:49:29 2026] ACPI: Reserving VFCT table memory at [mem 0xbd0ee000-0xbd0fc283]
+[Mi Sep 16 23:49:29 2026] ACPI: Reserving BGRT table memory at [mem 0xbd0ed000-0xbd0ed037]
+[Mi Sep 16 23:49:29 2026] ACPI: Reserving TPM2 table memory at [mem 0xbd0ec000-0xbd0ec04b]
+[Mi Sep 16 23:49:29 2026] ACPI: Reserving PCCT table memory at [mem 0xbd0eb000-0xbd0eb06d]
+[Mi Sep 16 23:49:29 2026] ACPI: Reserving SSDT table memory at [mem 0xbd0e6000-0xbd0ea042]
+[Mi Sep 16 23:49:29 2026] ACPI: Reserving CRAT table memory at [mem 0xbd0e5000-0xbd0e5f4f]
+[Mi Sep 16 23:49:29 2026] ACPI: Reserving CDIT table memory at [mem 0xbd0e4000-0xbd0e4028]
+[Mi Sep 16 23:49:29 2026] ACPI: Reserving SSDT table memory at [mem 0xbd0e0000-0xbd0e382d]
+[Mi Sep 16 23:49:29 2026] ACPI: Reserving WSMT table memory at [mem 0xbd0df000-0xbd0df027]
+[Mi Sep 16 23:49:29 2026] ACPI: Reserving APIC table memory at [mem 0xbd0de000-0xbd0de15d]
+[Mi Sep 16 23:49:29 2026] ACPI: Reserving SSDT table memory at [mem 0xbd0dc000-0xbd0dd0ae]
+[Mi Sep 16 23:49:29 2026] No NUMA configuration found
+[Mi Sep 16 23:49:29 2026] Faking a node at [mem 0x0000000000000000-0x0000000c3f37ffff]
+[Mi Sep 16 23:49:29 2026] NODE_DATA(0) allocated [mem 0xc3f354f80-0xc3f37ffff]
+[Mi Sep 16 23:49:29 2026] crashkernel reserved: 0x0000000064000000 - 0x00000000a4000000 (1024 MB)
+[Mi Sep 16 23:49:29 2026] ACPI: PM-Timer IO Port: 0x808
+[Mi Sep 16 23:49:29 2026] ACPI: LAPIC_NMI (acpi_id[0xff] high edge lint[0x1])
+[Mi Sep 16 23:49:29 2026] IOAPIC[0]: apic_id 17, version 33, address 0xfec00000, GSI 0-23
+[Mi Sep 16 23:49:29 2026] IOAPIC[1]: apic_id 18, version 33, address 0xfec01000, GSI 24-55
+[Mi Sep 16 23:49:29 2026] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[Mi Sep 16 23:49:29 2026] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 low level)
+[Mi Sep 16 23:49:29 2026] ACPI: Using ACPI (MADT) for SMP configuration information
+[Mi Sep 16 23:49:29 2026] ACPI: HPET id: 0x10228201 base: 0xfed00000
+[Mi Sep 16 23:49:29 2026] e820: update [mem 0xb8341000-0xb8381fff] System RAM ==> device reserved
+[Mi Sep 16 23:49:29 2026] CPU topo: Max. logical packages:   1
+[Mi Sep 16 23:49:29 2026] CPU topo: Max. logical nodes:      1
+[Mi Sep 16 23:49:29 2026] CPU topo: Num. nodes per package:  1
+[Mi Sep 16 23:49:29 2026] CPU topo: Max. logical dies:       1
+[Mi Sep 16 23:49:29 2026] CPU topo: Max. dies per package:   1
+[Mi Sep 16 23:49:29 2026] CPU topo: Max. threads per core:   2
+[Mi Sep 16 23:49:29 2026] CPU topo: Num. cores per package:     8
+[Mi Sep 16 23:49:29 2026] CPU topo: Num. threads per package:  16
+[Mi Sep 16 23:49:29 2026] CPU topo: Allowing 16 present CPUs plus 0 hotplug CPUs
+[Mi Sep 16 23:49:29 2026] PM: hibernation: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[Mi Sep 16 23:49:29 2026] PM: hibernation: Registered nosave memory: [mem 0x000a0000-0x000fffff]
+[Mi Sep 16 23:49:29 2026] PM: hibernation: Registered nosave memory: [mem 0x09aff000-0x09ffffff]
+[Mi Sep 16 23:49:29 2026] PM: hibernation: Registered nosave memory: [mem 0x0a200000-0x0a210fff]
+[Mi Sep 16 23:49:29 2026] PM: hibernation: Registered nosave memory: [mem 0xb7548000-0xb7554fff]
+[Mi Sep 16 23:49:29 2026] PM: hibernation: Registered nosave memory: [mem 0xb8341000-0xb8381fff]
+[Mi Sep 16 23:49:29 2026] PM: hibernation: Registered nosave memory: [mem 0xb838a000-0xb838afff]
+[Mi Sep 16 23:49:29 2026] PM: hibernation: Registered nosave memory: [mem 0xbb964000-0xbdffefff]
+[Mi Sep 16 23:49:29 2026] PM: hibernation: Registered nosave memory: [mem 0xbf000000-0xffffffff]
+[Mi Sep 16 23:49:29 2026] [gap 0xc0000000-0xfe9fffff] available for PCI devices
+[Mi Sep 16 23:49:29 2026] Booting paravirtualized kernel on bare hardware
+[Mi Sep 16 23:49:29 2026] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1910969940391419 ns
+[Mi Sep 16 23:49:29 2026] Zone ranges:
+[Mi Sep 16 23:49:29 2026]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[Mi Sep 16 23:49:29 2026]   DMA32    [mem 0x0000000001000000-0x00000000ffffffff]
+[Mi Sep 16 23:49:29 2026]   Normal   [mem 0x0000000100000000-0x0000000c3f37ffff]
+[Mi Sep 16 23:49:29 2026]   Device   empty
+[Mi Sep 16 23:49:29 2026] Movable zone start for each node
+[Mi Sep 16 23:49:29 2026] Early memory node ranges
+[Mi Sep 16 23:49:29 2026]   node   0: [mem 0x0000000000001000-0x000000000009ffff]
+[Mi Sep 16 23:49:29 2026]   node   0: [mem 0x0000000000100000-0x0000000009afefff]
+[Mi Sep 16 23:49:29 2026]   node   0: [mem 0x000000000a000000-0x000000000a1fffff]
+[Mi Sep 16 23:49:29 2026]   node   0: [mem 0x000000000a211000-0x00000000b7547fff]
+[Mi Sep 16 23:49:29 2026]   node   0: [mem 0x00000000b7555000-0x00000000bb963fff]
+[Mi Sep 16 23:49:29 2026]   node   0: [mem 0x00000000bdfff000-0x00000000beffffff]
+[Mi Sep 16 23:49:29 2026]   node   0: [mem 0x0000000100000000-0x0000000c3f37ffff]
+[Mi Sep 16 23:49:29 2026] Initmem setup node 0 [mem 0x0000000000001000-0x0000000c3f37ffff]
+[Mi Sep 16 23:49:29 2026] On node 0, zone DMA: 1 pages in unavailable ranges
+[Mi Sep 16 23:49:29 2026] On node 0, zone DMA: 96 pages in unavailable ranges
+[Mi Sep 16 23:49:29 2026] On node 0, zone DMA32: 1281 pages in unavailable ranges
+[Mi Sep 16 23:49:29 2026] On node 0, zone DMA32: 17 pages in unavailable ranges
+[Mi Sep 16 23:49:29 2026] On node 0, zone DMA32: 13 pages in unavailable ranges
+[Mi Sep 16 23:49:29 2026] On node 0, zone DMA32: 9883 pages in unavailable ranges
+[Mi Sep 16 23:49:29 2026] On node 0, zone Normal: 4096 pages in unavailable ranges
+[Mi Sep 16 23:49:29 2026] On node 0, zone Normal: 3200 pages in unavailable ranges
+[Mi Sep 16 23:49:29 2026] setup_percpu: NR_CPUS:8192 nr_cpumask_bits:16 nr_cpu_ids:16 nr_node_ids:1
+[Mi Sep 16 23:49:29 2026] percpu: Embedded 85 pages/cpu s225280 r8192 d114688 u524288
+[Mi Sep 16 23:49:29 2026] pcpu-alloc: s225280 r8192 d114688 u524288 alloc=1*2097152
+[Mi Sep 16 23:49:29 2026] pcpu-alloc: [0] 00 01 02 03 [0] 04 05 06 07 
+[Mi Sep 16 23:49:29 2026] pcpu-alloc: [0] 08 09 10 11 [0] 12 13 14 15 
+[Mi Sep 16 23:49:29 2026] Kernel command line: BOOT_IMAGE=/vmlinuz-7.3.0-rc1-spacy2026090103 root=UUID=ba18f908-4e35-46d1-bbfc-46d7dc709c14 ro quiet mitigations=off mem_encrypt=on initcall_blacklist=acpi_cpufreq_init amd_pstate.shared_mem=1 crashkernel=2G-4G:320M,4G-32G:512M,32G-64G:1024M,64G-128G:2048M,128G-:4096M
+[Mi Sep 16 23:49:29 2026] blacklisting initcall acpi_cpufreq_init
+[Mi Sep 16 23:49:29 2026] Unknown kernel command line parameters "mem_encrypt=on", will be passed to user space.
+[Mi Sep 16 23:49:29 2026] printk: log buffer data + meta data: 262144 + 1114112 = 1376256 bytes
+[Mi Sep 16 23:49:29 2026] Dentry cache hash table entries: 8388608 (order: 14, 67108864 bytes, linear)
+[Mi Sep 16 23:49:29 2026] Inode-cache hash table entries: 4194304 (order: 13, 33554432 bytes, linear)
+[Mi Sep 16 23:49:29 2026] software IO TLB: area num 16.
+[Mi Sep 16 23:49:29 2026] Fallback order for Node 0: 0 
+[Mi Sep 16 23:49:29 2026] Built 1 zonelists, mobility grouping on.  Total pages: 12564325
+[Mi Sep 16 23:49:29 2026] Policy zone: Normal
+[Mi Sep 16 23:49:29 2026] mem auto-init: stack:all(zero), heap alloc:on, heap free:off
+[Mi Sep 16 23:49:29 2026] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=16, Nodes=1
+[Mi Sep 16 23:49:29 2026] ftrace: allocating 60506 entries in 238 pages
+[Mi Sep 16 23:49:29 2026] ftrace: allocated 238 pages with 6 groups
+[Mi Sep 16 23:49:29 2026] Dynamic Preempt: full
+[Mi Sep 16 23:49:29 2026] rcu: Preemptible hierarchical RCU implementation.
+[Mi Sep 16 23:49:29 2026] rcu: 	RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=16.
+[Mi Sep 16 23:49:29 2026] 	Trampoline variant of Tasks RCU enabled.
+[Mi Sep 16 23:49:29 2026] 	Rude variant of Tasks RCU enabled.
+[Mi Sep 16 23:49:29 2026] 	Tracing variant of Tasks RCU enabled.
+[Mi Sep 16 23:49:29 2026] rcu: RCU calculated value of scheduler-enlistment delay is 100 jiffies.
+[Mi Sep 16 23:49:29 2026] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=16
+[Mi Sep 16 23:49:29 2026] RCU Tasks: Setting shift to 4 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=16.
+[Mi Sep 16 23:49:29 2026] RCU Tasks Rude: Setting shift to 4 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=16.
+[Mi Sep 16 23:49:29 2026] NR_IRQS: 524544, nr_irqs: 1096, preallocated irqs: 16
+[Mi Sep 16 23:49:29 2026] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[Mi Sep 16 23:49:29 2026] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
+[Mi Sep 16 23:49:29 2026] Console: colour dummy device 80x25
+[Mi Sep 16 23:49:29 2026] printk: legacy console [tty0] enabled
+[Mi Sep 16 23:49:29 2026] ACPI: Core revision 20260408
+[Mi Sep 16 23:49:29 2026] clocksource: hpet: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 133484873504 ns
+[Mi Sep 16 23:49:29 2026] APIC: Switch to symmetric I/O mode setup
+[Mi Sep 16 23:49:29 2026] AMD-Vi: Using global IVHD EFR:0x58f77ef22294a5a, EFR2:0x0
+[Mi Sep 16 23:49:29 2026] x2apic: IRQ remapping doesn't support X2APIC mode
+[Mi Sep 16 23:49:29 2026] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+[Mi Sep 16 23:49:29 2026] clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x33cb9f4386f, max_idle_ns: 440795240352 ns
+[Mi Sep 16 23:49:29 2026] Calibrating delay loop (skipped), value calculated using timer frequency.. 7186.61 BogoMIPS (lpj=3593306)
+[Mi Sep 16 23:49:29 2026] x86/cpu: User Mode Instruction Prevention (UMIP) activated
+[Mi Sep 16 23:49:29 2026] LVT offset 1 assigned for vector 0xf9
+[Mi Sep 16 23:49:29 2026] LVT offset 2 assigned for vector 0xf4
+[Mi Sep 16 23:49:29 2026] Last level iTLB entries: 4KB 1024, 2MB 1024, 4MB 512
+[Mi Sep 16 23:49:29 2026] Last level dTLB entries: 4KB 2048, 2MB 2048, 4MB 1024, 1GB 0
+[Mi Sep 16 23:49:29 2026] process: using mwait in idle threads
+[Mi Sep 16 23:49:29 2026] mitigations: Enabled attack vectors: SMT mitigations: off
+[Mi Sep 16 23:49:29 2026] Speculative Store Bypass: Vulnerable
+[Mi Sep 16 23:49:29 2026] Spectre V2 : Vulnerable
+[Mi Sep 16 23:49:29 2026] RETBleed: Vulnerable
+[Mi Sep 16 23:49:29 2026] Spectre V2 : User space: Vulnerable
+[Mi Sep 16 23:49:29 2026] Speculative Return Stack Overflow: Vulnerable
+[Mi Sep 16 23:49:29 2026] VMSCAPE: Vulnerable
+[Mi Sep 16 23:49:29 2026] Spectre V1 : Vulnerable: __user pointer sanitization and usercopy barriers only; no swapgs barriers
+[Mi Sep 16 23:49:29 2026] x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+[Mi Sep 16 23:49:29 2026] x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
+[Mi Sep 16 23:49:29 2026] x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
+[Mi Sep 16 23:49:29 2026] x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+[Mi Sep 16 23:49:29 2026] x86/fpu: Enabled xstate features 0x7, context size is 832 bytes, using 'compacted' format.
+[Mi Sep 16 23:49:29 2026] Memory Encryption Features active: AMD SME
+[Mi Sep 16 23:49:29 2026] pid_max: default: 32768 minimum: 301
+[Mi Sep 16 23:49:29 2026] landlock: Up and running.
+[Mi Sep 16 23:49:29 2026] Yama: becoming mindful.
+[Mi Sep 16 23:49:29 2026] AppArmor: AppArmor initialized
+[Mi Sep 16 23:49:29 2026] debugfs: Unable to create file 'net_refcnt@(____ptrval____)', debugfs is not initialized yet
+[Mi Sep 16 23:49:29 2026] stackdepot: allocating hash table of 1048576 entries via kvcalloc
+[Mi Sep 16 23:49:29 2026] stackdepot: allocating space for 8192 stack pools via kvcalloc
+[Mi Sep 16 23:49:29 2026] debugfs: Unable to create file 'net_notrefcnt@(____ptrval____)', debugfs is not initialized yet
+[Mi Sep 16 23:49:29 2026] Mount-cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[Mi Sep 16 23:49:29 2026] Mountpoint-cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[Mi Sep 16 23:49:29 2026] VFS: Finished mounting rootfs on nullfs
+[Mi Sep 16 23:49:29 2026] smpboot: CPU0: AMD Ryzen 7 3700X 8-Core Processor (family: 0x17, model: 0x71, stepping: 0x0)
+[Mi Sep 16 23:49:29 2026] Performance Events: Fam17h+ core perfctr, AMD PMU driver.
+[Mi Sep 16 23:49:29 2026] ... version:                   0
+[Mi Sep 16 23:49:29 2026] ... bit width:                 48
+[Mi Sep 16 23:49:29 2026] ... generic counters:          6
+[Mi Sep 16 23:49:29 2026] ... generic bitmap:            000000000000003f
+[Mi Sep 16 23:49:29 2026] ... fixed-purpose counters:    0
+[Mi Sep 16 23:49:29 2026] ... fixed-purpose bitmap:      0000000000000000
+[Mi Sep 16 23:49:29 2026] ... value mask:                0000ffffffffffff
+[Mi Sep 16 23:49:29 2026] ... max period:                00007fffffffffff
+[Mi Sep 16 23:49:29 2026] ... global_ctrl mask:          000000000000003f
+[Mi Sep 16 23:49:29 2026] signal: max sigframe size: 1776
+[Mi Sep 16 23:49:29 2026] rcu: Hierarchical SRCU implementation.
+[Mi Sep 16 23:49:29 2026] rcu: 	Max phase no-delay instances is 400.
+[Mi Sep 16 23:49:29 2026] Timer migration: 2 hierarchy levels; 8 children per group; 2 crossnode level
+[Mi Sep 16 23:49:29 2026] NMI watchdog: Enabled. Permanently consumes one hw-PMU counter.
+[Mi Sep 16 23:49:29 2026] smp: Bringing up secondary CPUs ...
+[Mi Sep 16 23:49:29 2026] smpboot: x86: Booting SMP configuration:
+[Mi Sep 16 23:49:29 2026] .... node  #0, CPUs:        #1  #2  #3  #4  #5  #6  #7  #8  #9 #10 #11 #12 #13 #14 #15
+[Mi Sep 16 23:49:29 2026] smp: Brought up 1 node, 16 CPUs
+[Mi Sep 16 23:49:29 2026] smpboot: Total of 16 processors activated (114985.79 BogoMIPS)
+[Mi Sep 16 23:49:29 2026] Memory: 47952052K/50257300K available (23519K kernel code, 4963K rwdata, 16336K rodata, 5296K init, 5912K bss, 2260120K reserved, 0K cma-reserved)
+[Mi Sep 16 23:49:29 2026] devtmpfs: initialized
+[Mi Sep 16 23:49:29 2026] x86/mm: Memory block size: 128MB
+[Mi Sep 16 23:49:29 2026] ACPI: PM: Registering ACPI NVS region [mem 0x0a200000-0x0a210fff] (69632 bytes)
+[Mi Sep 16 23:49:29 2026] ACPI: PM: Registering ACPI NVS region [mem 0xbd112000-0xbd433fff] (3284992 bytes)
+[Mi Sep 16 23:49:29 2026] posixtimers hash table entries: 8192 (order: 5, 131072 bytes, linear)
+[Mi Sep 16 23:49:29 2026] futex hash table entries: 4096 (262144 bytes on 1 NUMA nodes, total 256 KiB, linear).
+[Mi Sep 16 23:49:29 2026] PM: RTC time: 21:49:28, date: 2026-09-16
+[Mi Sep 16 23:49:29 2026] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[Mi Sep 16 23:49:29 2026] DMA: preallocated 4096 KiB GFP_KERNEL pool for atomic allocations
+[Mi Sep 16 23:49:29 2026] DMA: preallocated 4096 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+[Mi Sep 16 23:49:29 2026] DMA: preallocated 4096 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+[Mi Sep 16 23:49:29 2026] audit: initializing netlink subsys (disabled)
+[Mi Sep 16 23:49:29 2026] audit: type=2000 audit(1789595368.162:1): state=initialized audit_enabled=0 res=1
+[Mi Sep 16 23:49:29 2026] thermal_sys: Registered thermal governor 'fair_share'
+[Mi Sep 16 23:49:29 2026] thermal_sys: Registered thermal governor 'bang_bang'
+[Mi Sep 16 23:49:29 2026] thermal_sys: Registered thermal governor 'step_wise'
+[Mi Sep 16 23:49:29 2026] thermal_sys: Registered thermal governor 'user_space'
+[Mi Sep 16 23:49:29 2026] thermal_sys: Registered thermal governor 'power_allocator'
+[Mi Sep 16 23:49:29 2026] cpuidle: using governor ladder
+[Mi Sep 16 23:49:29 2026] cpuidle: using governor menu
+[Mi Sep 16 23:49:29 2026] Detected 1 PCC Subspaces
+[Mi Sep 16 23:49:29 2026] Registering PCC driver as Mailbox controller
+[Mi Sep 16 23:49:29 2026] efi: Freeing EFI boot services memory: 85332K
+[Mi Sep 16 23:49:29 2026] acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+[Mi Sep 16 23:49:29 2026] PCI: ECAM [mem 0xf0000000-0xf7ffffff] (base 0xf0000000) for domain 0000 [bus 00-7f]
+[Mi Sep 16 23:49:29 2026] PCI: Using configuration type 1 for base access
+[Mi Sep 16 23:49:29 2026] kprobes: kprobe jump-optimization is enabled. All kprobes are optimized if possible.
+[Mi Sep 16 23:49:29 2026] HugeTLB: registered 1.00 GiB page size, pre-allocated 0 pages
+[Mi Sep 16 23:49:29 2026] HugeTLB: 16380 KiB vmemmap can be freed for a 1.00 GiB page
+[Mi Sep 16 23:49:29 2026] HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+[Mi Sep 16 23:49:29 2026] HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+[Mi Sep 16 23:49:29 2026] ACPI: Added _OSI(Module Device)
+[Mi Sep 16 23:49:29 2026] ACPI: Added _OSI(Processor Device)
+[Mi Sep 16 23:49:29 2026] ACPI: Added _OSI(Processor Aggregator Device)
+[Mi Sep 16 23:49:29 2026] ACPI: 8 ACPI AML tables successfully acquired and loaded
+[Mi Sep 16 23:49:29 2026] ACPI: [Firmware Bug]: BIOS _OSI(Linux) query ignored
+[Mi Sep 16 23:49:29 2026] ACPI: \_SB_: platform _OSC: OS support mask [006e7eff]
+[Mi Sep 16 23:49:29 2026] ACPI: Interpreter enabled
+[Mi Sep 16 23:49:29 2026] ACPI: PM: (supports S0 S3 S4 S5)
+[Mi Sep 16 23:49:29 2026] ACPI: Using IOAPIC for interrupt routing
+[Mi Sep 16 23:49:29 2026] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[Mi Sep 16 23:49:29 2026] PCI: Ignoring E820 reservations for host bridge windows
+[Mi Sep 16 23:49:29 2026] ACPI: Enabled 2 GPEs in block 00 to 1F
+[Mi Sep 16 23:49:29 2026] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[Mi Sep 16 23:49:29 2026] acpi PNP0A08:00: _OSC: OS supports [ExtendedConfig ASPM ClockPM Segments MSI EDR HPX-Type3]
+[Mi Sep 16 23:49:29 2026] acpi PNP0A08:00: _OSC: OS now controls [PCIeHotplug SHPCHotplug PME AER PCIeCapability LTR DPC]
+[Mi Sep 16 23:49:29 2026] acpi PNP0A08:00: [Firmware Info]: ECAM [mem 0xf0000000-0xf7ffffff] for domain 0000 [bus 00-7f] only partially covers this bridge
+[Mi Sep 16 23:49:29 2026] PCI host bridge to bus 0000:00
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:00: root bus resource [io  0x0000-0x03af window]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:00: root bus resource [io  0x03e0-0x0cf7 window]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:00: root bus resource [io  0x03b0-0x03df window]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000dffff window]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:00: root bus resource [mem 0xc0000000-0xfcffffff window]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:00: root bus resource [mem 0xc40000000-0x7fffffffff window]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:00: root bus resource [bus 00-ff]
+[Mi Sep 16 23:49:29 2026] pci 0000:00:00.0: [1022:1480] type 00 class 0x060000 conventional PCI endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:00:00.2: [1022:1481] type 00 class 0x080600 conventional PCI endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:00:01.0: [1022:1482] type 00 class 0x060000 conventional PCI endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:00:01.2: [1022:1483] type 01 class 0x060400 PCIe Root Port
+[Mi Sep 16 23:49:29 2026] pci 0000:00:01.2: PCI bridge to [bus 01-09]
+[Mi Sep 16 23:49:29 2026] pci 0000:00:01.2:   bridge window [io  0xf000-0xffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:00:01.2:   bridge window [mem 0xfc100000-0xfc8fffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:00:01.2: enabling Extended Tags
+[Mi Sep 16 23:49:29 2026] pci 0000:00:01.2: PME# supported from D0 D3hot D3cold
+[Mi Sep 16 23:49:29 2026] pci 0000:00:01.3: [1022:1483] type 01 class 0x060400 PCIe Root Port
+[Mi Sep 16 23:49:29 2026] pci 0000:00:01.3: PCI bridge to [bus 0a]
+[Mi Sep 16 23:49:29 2026] pci 0000:00:01.3:   bridge window [mem 0xfcf00000-0xfcffffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:00:01.3: PME# supported from D0 D3hot D3cold
+[Mi Sep 16 23:49:29 2026] pci 0000:00:02.0: [1022:1482] type 00 class 0x060000 conventional PCI endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:00:03.0: [1022:1482] type 00 class 0x060000 conventional PCI endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:00:03.1: [1022:1483] type 01 class 0x060400 PCIe Root Port
+[Mi Sep 16 23:49:29 2026] pci 0000:00:03.1: PCI bridge to [bus 0b-0d]
+[Mi Sep 16 23:49:29 2026] pci 0000:00:03.1:   bridge window [io  0xe000-0xefff]
+[Mi Sep 16 23:49:29 2026] pci 0000:00:03.1:   bridge window [mem 0xfcc00000-0xfcefffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:00:03.1:   bridge window [mem 0x7800000000-0x7c0fffffff 64bit pref]
+[Mi Sep 16 23:49:29 2026] pci 0000:00:03.1: PME# supported from D0 D3hot D3cold
+[Mi Sep 16 23:49:29 2026] pci 0000:00:04.0: [1022:1482] type 00 class 0x060000 conventional PCI endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:00:05.0: [1022:1482] type 00 class 0x060000 conventional PCI endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:00:07.0: [1022:1482] type 00 class 0x060000 conventional PCI endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:00:07.1: [1022:1484] type 01 class 0x060400 PCIe Root Port
+[Mi Sep 16 23:49:29 2026] pci 0000:00:07.1: PCI bridge to [bus 0e]
+[Mi Sep 16 23:49:29 2026] pci 0000:00:07.1: enabling Extended Tags
+[Mi Sep 16 23:49:29 2026] pci 0000:00:07.1: PME# supported from D0 D3hot D3cold
+[Mi Sep 16 23:49:29 2026] pci 0000:00:08.0: [1022:1482] type 00 class 0x060000 conventional PCI endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:00:08.1: [1022:1484] type 01 class 0x060400 PCIe Root Port
+[Mi Sep 16 23:49:29 2026] pci 0000:00:08.1: PCI bridge to [bus 0f]
+[Mi Sep 16 23:49:29 2026] pci 0000:00:08.1:   bridge window [mem 0xfc900000-0xfcbfffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:00:08.1: enabling Extended Tags
+[Mi Sep 16 23:49:29 2026] pci 0000:00:08.1: PME# supported from D0 D3hot D3cold
+[Mi Sep 16 23:49:29 2026] pci 0000:00:14.0: [1022:790b] type 00 class 0x0c0500 conventional PCI endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:00:14.3: [1022:790e] type 00 class 0x060100 conventional PCI endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:00:18.0: [1022:1440] type 00 class 0x060000 conventional PCI endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:00:18.1: [1022:1441] type 00 class 0x060000 conventional PCI endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:00:18.2: [1022:1442] type 00 class 0x060000 conventional PCI endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:00:18.3: [1022:1443] type 00 class 0x060000 conventional PCI endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:00:18.4: [1022:1444] type 00 class 0x060000 conventional PCI endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:00:18.5: [1022:1445] type 00 class 0x060000 conventional PCI endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:00:18.6: [1022:1446] type 00 class 0x060000 conventional PCI endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:00:18.7: [1022:1447] type 00 class 0x060000 conventional PCI endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:01:00.0: [1022:57ad] type 01 class 0x060400 PCIe Switch Upstream Port
+[Mi Sep 16 23:49:29 2026] pci 0000:01:00.0: PCI bridge to [bus 02-09]
+[Mi Sep 16 23:49:29 2026] pci 0000:01:00.0:   bridge window [io  0xf000-0xffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:01:00.0:   bridge window [mem 0xfc100000-0xfc8fffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:01:00.0: enabling Extended Tags
+[Mi Sep 16 23:49:29 2026] pci 0000:01:00.0: PME# supported from D0 D3hot D3cold
+[Mi Sep 16 23:49:29 2026] pci 0000:01:00.0: 63.012 Gb/s available PCIe bandwidth, limited by 16.0 GT/s PCIe x4 link at 0000:00:01.2 (capable of 126.024 Gb/s with 16.0 GT/s PCIe x8 link)
+[Mi Sep 16 23:49:29 2026] pci 0000:00:01.2: PCI bridge to [bus 01-09]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:01.0: [1022:57a3] type 01 class 0x060400 PCIe Switch Downstream Port
+[Mi Sep 16 23:49:29 2026] pci 0000:02:01.0: PCI bridge to [bus 03]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:01.0:   bridge window [mem 0xfc800000-0xfc8fffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:01.0: enabling Extended Tags
+[Mi Sep 16 23:49:29 2026] pci 0000:02:01.0: PME# supported from D0 D3hot D3cold
+[Mi Sep 16 23:49:29 2026] pci 0000:02:02.0: [1022:57a3] type 01 class 0x060400 PCIe Switch Downstream Port
+[Mi Sep 16 23:49:29 2026] pci 0000:02:02.0: PCI bridge to [bus 04]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:02.0:   bridge window [mem 0xfc700000-0xfc7fffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:02.0: enabling Extended Tags
+[Mi Sep 16 23:49:29 2026] pci 0000:02:02.0: PME# supported from D0 D3hot D3cold
+[Mi Sep 16 23:49:29 2026] pci 0000:02:05.0: [1022:57a3] type 01 class 0x060400 PCIe Switch Downstream Port
+[Mi Sep 16 23:49:29 2026] pci 0000:02:05.0: PCI bridge to [bus 05]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:05.0:   bridge window [mem 0xfc600000-0xfc6fffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:05.0: enabling Extended Tags
+[Mi Sep 16 23:49:29 2026] pci 0000:02:05.0: PME# supported from D0 D3hot D3cold
+[Mi Sep 16 23:49:29 2026] pci 0000:02:06.0: [1022:57a3] type 01 class 0x060400 PCIe Switch Downstream Port
+[Mi Sep 16 23:49:29 2026] pci 0000:02:06.0: PCI bridge to [bus 06]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:06.0:   bridge window [io  0xf000-0xffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:06.0:   bridge window [mem 0xfc500000-0xfc5fffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:06.0: enabling Extended Tags
+[Mi Sep 16 23:49:29 2026] pci 0000:02:06.0: PME# supported from D0 D3hot D3cold
+[Mi Sep 16 23:49:29 2026] pci 0000:02:08.0: [1022:57a4] type 01 class 0x060400 PCIe Switch Downstream Port
+[Mi Sep 16 23:49:29 2026] pci 0000:02:08.0: PCI bridge to [bus 07]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:08.0:   bridge window [mem 0xfc100000-0xfc2fffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:08.0: enabling Extended Tags
+[Mi Sep 16 23:49:29 2026] pci 0000:02:08.0: PME# supported from D0 D3hot D3cold
+[Mi Sep 16 23:49:29 2026] pci 0000:02:09.0: [1022:57a4] type 01 class 0x060400 PCIe Switch Downstream Port
+[Mi Sep 16 23:49:29 2026] pci 0000:02:09.0: PCI bridge to [bus 08]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:09.0:   bridge window [mem 0xfc400000-0xfc4fffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:09.0: enabling Extended Tags
+[Mi Sep 16 23:49:29 2026] pci 0000:02:09.0: PME# supported from D0 D3hot D3cold
+[Mi Sep 16 23:49:29 2026] pci 0000:02:0a.0: [1022:57a4] type 01 class 0x060400 PCIe Switch Downstream Port
+[Mi Sep 16 23:49:29 2026] pci 0000:02:0a.0: PCI bridge to [bus 09]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:0a.0:   bridge window [mem 0xfc300000-0xfc3fffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:0a.0: enabling Extended Tags
+[Mi Sep 16 23:49:29 2026] pci 0000:02:0a.0: PME# supported from D0 D3hot D3cold
+[Mi Sep 16 23:49:29 2026] pci 0000:01:00.0: PCI bridge to [bus 02-09]
+[Mi Sep 16 23:49:29 2026] pci 0000:03:00.0: [1987:5012] type 00 class 0x010802 PCIe Endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:03:00.0: BAR 0 [mem 0xfc800000-0xfc803fff 64bit]
+[Mi Sep 16 23:49:29 2026] pci 0000:03:00.0: enabling Extended Tags
+[Mi Sep 16 23:49:29 2026] pci 0000:02:01.0: PCI bridge to [bus 03]
+[Mi Sep 16 23:49:29 2026] pci 0000:04:00.0: [c0a9:5421] type 00 class 0x010802 PCIe Endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:04:00.0: BAR 0 [mem 0xfc700000-0xfc703fff 64bit]
+[Mi Sep 16 23:49:29 2026] pci 0000:04:00.0: enabling Extended Tags
+[Mi Sep 16 23:49:29 2026] pci 0000:02:02.0: PCI bridge to [bus 04]
+[Mi Sep 16 23:49:29 2026] pci 0000:05:00.0: [8086:2725] type 00 class 0x028000 PCIe Endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:05:00.0: BAR 0 [mem 0xfc600000-0xfc603fff 64bit]
+[Mi Sep 16 23:49:29 2026] pci 0000:05:00.0: PME# supported from D0 D3hot D3cold
+[Mi Sep 16 23:49:29 2026] pci 0000:02:05.0: PCI bridge to [bus 05]
+[Mi Sep 16 23:49:29 2026] pci 0000:06:00.0: [8086:1539] type 00 class 0x020000 PCIe Endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:06:00.0: BAR 0 [mem 0xfc500000-0xfc51ffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:06:00.0: BAR 2 [io  0xf000-0xf01f]
+[Mi Sep 16 23:49:29 2026] pci 0000:06:00.0: BAR 3 [mem 0xfc520000-0xfc523fff]
+[Mi Sep 16 23:49:29 2026] pci 0000:06:00.0: PME# supported from D0 D3hot D3cold
+[Mi Sep 16 23:49:29 2026] pci 0000:02:06.0: PCI bridge to [bus 06]
+[Mi Sep 16 23:49:29 2026] pci 0000:07:00.0: [1022:1485] type 00 class 0x130000 PCIe Endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:07:00.0: enabling Extended Tags
+[Mi Sep 16 23:49:29 2026] pci 0000:07:00.0: 63.012 Gb/s available PCIe bandwidth, limited by 16.0 GT/s PCIe x4 link at 0000:00:01.2 (capable of 252.048 Gb/s with 16.0 GT/s PCIe x16 link)
+[Mi Sep 16 23:49:29 2026] pci 0000:07:00.1: [1022:149c] type 00 class 0x0c0330 PCIe Endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:07:00.1: BAR 0 [mem 0xfc200000-0xfc2fffff 64bit]
+[Mi Sep 16 23:49:29 2026] pci 0000:07:00.1: enabling Extended Tags
+[Mi Sep 16 23:49:29 2026] pci 0000:07:00.1: PME# supported from D0 D3hot D3cold
+[Mi Sep 16 23:49:29 2026] pci 0000:07:00.3: [1022:149c] type 00 class 0x0c0330 PCIe Endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:07:00.3: BAR 0 [mem 0xfc100000-0xfc1fffff 64bit]
+[Mi Sep 16 23:49:29 2026] pci 0000:07:00.3: enabling Extended Tags
+[Mi Sep 16 23:49:29 2026] pci 0000:07:00.3: PME# supported from D0 D3hot D3cold
+[Mi Sep 16 23:49:29 2026] pci 0000:02:08.0: PCI bridge to [bus 07]
+[Mi Sep 16 23:49:29 2026] pci 0000:08:00.0: [1022:7901] type 00 class 0x010601 PCIe Endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:08:00.0: BAR 5 [mem 0xfc400000-0xfc4007ff]
+[Mi Sep 16 23:49:29 2026] pci 0000:08:00.0: enabling Extended Tags
+[Mi Sep 16 23:49:29 2026] pci 0000:08:00.0: PME# supported from D3hot D3cold
+[Mi Sep 16 23:49:29 2026] pci 0000:08:00.0: 63.012 Gb/s available PCIe bandwidth, limited by 16.0 GT/s PCIe x4 link at 0000:00:01.2 (capable of 252.048 Gb/s with 16.0 GT/s PCIe x16 link)
+[Mi Sep 16 23:49:29 2026] pci 0000:02:09.0: PCI bridge to [bus 08]
+[Mi Sep 16 23:49:29 2026] pci 0000:09:00.0: [1022:7901] type 00 class 0x010601 PCIe Endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:09:00.0: BAR 5 [mem 0xfc300000-0xfc3007ff]
+[Mi Sep 16 23:49:29 2026] pci 0000:09:00.0: enabling Extended Tags
+[Mi Sep 16 23:49:29 2026] pci 0000:09:00.0: PME# supported from D3hot D3cold
+[Mi Sep 16 23:49:29 2026] pci 0000:09:00.0: 63.012 Gb/s available PCIe bandwidth, limited by 16.0 GT/s PCIe x4 link at 0000:00:01.2 (capable of 252.048 Gb/s with 16.0 GT/s PCIe x16 link)
+[Mi Sep 16 23:49:29 2026] pci 0000:02:0a.0: PCI bridge to [bus 09]
+[Mi Sep 16 23:49:29 2026] pci 0000:0a:00.0: [144d:a80a] type 00 class 0x010802 PCIe Endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:0a:00.0: BAR 0 [mem 0xfcf00000-0xfcf03fff 64bit]
+[Mi Sep 16 23:49:29 2026] pci 0000:00:01.3: PCI bridge to [bus 0a]
+[Mi Sep 16 23:49:29 2026] pci 0000:0b:00.0: [1002:1478] type 01 class 0x060400 PCIe Switch Upstream Port
+[Mi Sep 16 23:49:29 2026] pci 0000:0b:00.0: BAR 0 [mem 0xfce00000-0xfce03fff]
+[Mi Sep 16 23:49:29 2026] pci 0000:0b:00.0: PCI bridge to [bus 0c-0d]
+[Mi Sep 16 23:49:29 2026] pci 0000:0b:00.0:   bridge window [io  0xe000-0xefff]
+[Mi Sep 16 23:49:29 2026] pci 0000:0b:00.0:   bridge window [mem 0xfcc00000-0xfcdfffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:0b:00.0:   bridge window [mem 0x7800000000-0x7c0fffffff 64bit pref]
+[Mi Sep 16 23:49:29 2026] pci 0000:0b:00.0: PME# supported from D0 D3hot D3cold
+[Mi Sep 16 23:49:29 2026] pci 0000:00:03.1: PCI bridge to [bus 0b-0d]
+[Mi Sep 16 23:49:29 2026] pci 0000:0c:00.0: [1002:1479] type 01 class 0x060400 PCIe Switch Downstream Port
+[Mi Sep 16 23:49:29 2026] pci 0000:0c:00.0: PCI bridge to [bus 0d]
+[Mi Sep 16 23:49:29 2026] pci 0000:0c:00.0:   bridge window [io  0xe000-0xefff]
+[Mi Sep 16 23:49:29 2026] pci 0000:0c:00.0:   bridge window [mem 0xfcc00000-0xfcdfffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:0c:00.0:   bridge window [mem 0x7800000000-0x7c0fffffff 64bit pref]
+[Mi Sep 16 23:49:29 2026] pci 0000:0c:00.0: PME# supported from D0 D3hot D3cold
+[Mi Sep 16 23:49:29 2026] pci 0000:0b:00.0: PCI bridge to [bus 0c-0d]
+[Mi Sep 16 23:49:29 2026] pci 0000:0d:00.0: [1002:747e] type 00 class 0x030000 PCIe Legacy Endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:0d:00.0: BAR 0 [mem 0x7800000000-0x7bffffffff 64bit pref]
+[Mi Sep 16 23:49:29 2026] pci 0000:0d:00.0: BAR 2 [mem 0x7c00000000-0x7c0fffffff 64bit pref]
+[Mi Sep 16 23:49:29 2026] pci 0000:0d:00.0: BAR 4 [io  0xe000-0xe0ff]
+[Mi Sep 16 23:49:29 2026] pci 0000:0d:00.0: BAR 5 [mem 0xfcc00000-0xfccfffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:0d:00.0: ROM [mem 0xfcd00000-0xfcd1ffff pref]
+[Mi Sep 16 23:49:29 2026] pci 0000:0d:00.0: PME# supported from D1 D2 D3hot D3cold
+[Mi Sep 16 23:49:29 2026] pci 0000:0d:00.1: [1002:ab30] type 00 class 0x040300 PCIe Legacy Endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:0d:00.1: BAR 0 [mem 0xfcd20000-0xfcd23fff]
+[Mi Sep 16 23:49:29 2026] pci 0000:0d:00.1: PME# supported from D1 D2 D3hot D3cold
+[Mi Sep 16 23:49:29 2026] pci 0000:0c:00.0: PCI bridge to [bus 0d]
+[Mi Sep 16 23:49:29 2026] pci 0000:0e:00.0: [1022:148a] type 00 class 0x130000 PCIe Endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:0e:00.0: enabling Extended Tags
+[Mi Sep 16 23:49:29 2026] pci 0000:00:07.1: PCI bridge to [bus 0e]
+[Mi Sep 16 23:49:29 2026] pci 0000:0f:00.0: [1022:1485] type 00 class 0x130000 PCIe Endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:0f:00.0: enabling Extended Tags
+[Mi Sep 16 23:49:29 2026] pci 0000:0f:00.1: [1022:1486] type 00 class 0x108000 PCIe Endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:0f:00.1: BAR 2 [mem 0xfca00000-0xfcafffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:0f:00.1: BAR 5 [mem 0xfcb08000-0xfcb09fff]
+[Mi Sep 16 23:49:29 2026] pci 0000:0f:00.1: enabling Extended Tags
+[Mi Sep 16 23:49:29 2026] pci 0000:0f:00.3: [1022:149c] type 00 class 0x0c0330 PCIe Endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:0f:00.3: BAR 0 [mem 0xfc900000-0xfc9fffff 64bit]
+[Mi Sep 16 23:49:29 2026] pci 0000:0f:00.3: enabling Extended Tags
+[Mi Sep 16 23:49:29 2026] pci 0000:0f:00.3: PME# supported from D0 D3hot D3cold
+[Mi Sep 16 23:49:29 2026] pci 0000:0f:00.4: [1022:1487] type 00 class 0x040300 PCIe Endpoint
+[Mi Sep 16 23:49:29 2026] pci 0000:0f:00.4: BAR 0 [mem 0xfcb00000-0xfcb07fff]
+[Mi Sep 16 23:49:29 2026] pci 0000:0f:00.4: enabling Extended Tags
+[Mi Sep 16 23:49:29 2026] pci 0000:0f:00.4: PME# supported from D0 D3hot D3cold
+[Mi Sep 16 23:49:29 2026] pci 0000:00:08.1: PCI bridge to [bus 0f]
+[Mi Sep 16 23:49:29 2026] ACPI: PCI: Interrupt link LNKA configured for IRQ 0
+[Mi Sep 16 23:49:29 2026] ACPI: PCI: Interrupt link LNKB configured for IRQ 0
+[Mi Sep 16 23:49:29 2026] ACPI: PCI: Interrupt link LNKC configured for IRQ 0
+[Mi Sep 16 23:49:29 2026] ACPI: PCI: Interrupt link LNKD configured for IRQ 0
+[Mi Sep 16 23:49:29 2026] ACPI: PCI: Interrupt link LNKE configured for IRQ 0
+[Mi Sep 16 23:49:29 2026] ACPI: PCI: Interrupt link LNKF configured for IRQ 0
+[Mi Sep 16 23:49:29 2026] ACPI: PCI: Interrupt link LNKG configured for IRQ 0
+[Mi Sep 16 23:49:29 2026] ACPI: PCI: Interrupt link LNKH configured for IRQ 0
+[Mi Sep 16 23:49:29 2026] iommu: Default domain type: Translated
+[Mi Sep 16 23:49:29 2026] iommu: DMA domain TLB invalidation policy: lazy mode
+[Mi Sep 16 23:49:29 2026] SCSI subsystem initialized
+[Mi Sep 16 23:49:29 2026] libata version 3.00 loaded.
+[Mi Sep 16 23:49:29 2026] ACPI: bus type USB registered
+[Mi Sep 16 23:49:29 2026] usbcore: registered new interface driver usbfs
+[Mi Sep 16 23:49:29 2026] usbcore: registered new interface driver hub
+[Mi Sep 16 23:49:29 2026] usbcore: registered new device driver usb
+[Mi Sep 16 23:49:29 2026] pps_core: LinuxPPS API ver. 1 registered
+[Mi Sep 16 23:49:29 2026] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[Mi Sep 16 23:49:29 2026] PTP clock support registered
+[Mi Sep 16 23:49:29 2026] EDAC MC: Ver: 3.0.0
+[Mi Sep 16 23:49:29 2026] efivars: Registered efivars operations
+[Mi Sep 16 23:49:29 2026] NetLabel: Initializing
+[Mi Sep 16 23:49:29 2026] NetLabel:  domain hash size = 128
+[Mi Sep 16 23:49:29 2026] NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+[Mi Sep 16 23:49:29 2026] NetLabel:  unlabeled traffic allowed by default
+[Mi Sep 16 23:49:29 2026] mctp: management component transport protocol core
+[Mi Sep 16 23:49:29 2026] NET: Registered PF_MCTP protocol family
+[Mi Sep 16 23:49:29 2026] PCI: Using ACPI for IRQ routing
+[Mi Sep 16 23:49:29 2026] PCI: pci_cache_line_size set to 64 bytes
+[Mi Sep 16 23:49:29 2026] e820: register RAM buffer resource [mem 0x09aff000-0x0bffffff]
+[Mi Sep 16 23:49:29 2026] e820: register RAM buffer resource [mem 0x0a200000-0x0bffffff]
+[Mi Sep 16 23:49:29 2026] e820: register RAM buffer resource [mem 0xb7548000-0xb7ffffff]
+[Mi Sep 16 23:49:29 2026] e820: register RAM buffer resource [mem 0xb8341000-0xbbffffff]
+[Mi Sep 16 23:49:29 2026] e820: register RAM buffer resource [mem 0xb838a000-0xbbffffff]
+[Mi Sep 16 23:49:29 2026] e820: register RAM buffer resource [mem 0xbb964000-0xbbffffff]
+[Mi Sep 16 23:49:29 2026] e820: register RAM buffer resource [mem 0xbf000000-0xbfffffff]
+[Mi Sep 16 23:49:29 2026] e820: register RAM buffer resource [mem 0xc3f380000-0xc3fffffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:0d:00.0: vgaarb: setting as boot VGA device
+[Mi Sep 16 23:49:29 2026] pci 0000:0d:00.0: vgaarb: bridge control possible
+[Mi Sep 16 23:49:29 2026] pci 0000:0d:00.0: vgaarb: VGA device added: decodes=io+mem,owns=none,locks=none
+[Mi Sep 16 23:49:29 2026] vgaarb: loaded
+[Mi Sep 16 23:49:29 2026] hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0
+[Mi Sep 16 23:49:29 2026] hpet0: 3 comparators, 32-bit 14.318180 MHz counter
+[Mi Sep 16 23:49:29 2026] clocksource: Switched to clocksource tsc-early
+[Mi Sep 16 23:49:29 2026] VFS: Disk quotas dquot_6.6.0
+[Mi Sep 16 23:49:29 2026] VFS: Dquot-cache hash table entries: 512 (4096 bytes)
+[Mi Sep 16 23:49:29 2026] AppArmor: AppArmor Filesystem Enabled
+[Mi Sep 16 23:49:29 2026] acpi PNP0C01:00: Reserved [mem 0xf0000000-0xf7ffffff]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:00: Reserved [mem 0xfeb80000-0xfebfffff]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:01: Reserved [mem 0xfd200000-0xfd2fffff]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:02: Reserved [io  0x0280-0x028f]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:02: Reserved [io  0x0290-0x029f]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:02: Reserved [io  0x02a0-0x02af]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:02: Reserved [io  0x02b0-0x02bf]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Skipped [io  0x0010-0x001f]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Skipped [io  0x0022-0x003f]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Skipped [io  0x0063]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Skipped [io  0x0065]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Skipped [io  0x0067-0x006f]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Skipped [io  0x0072-0x007f]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Skipped [io  0x0080]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Skipped [io  0x0084-0x0086]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Skipped [io  0x0088]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Skipped [io  0x008c-0x008e]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Skipped [io  0x0090-0x009f]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Skipped [io  0x00a2-0x00bf]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Skipped [io  0x00b1]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Skipped [io  0x00e0-0x00ef]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Reserved [io  0x04d0-0x04d1]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Reserved [io  0x040b]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Reserved [io  0x04d6]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Reserved [io  0x0c00-0x0c01]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Reserved [io  0x0c14]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Reserved [io  0x0c50-0x0c51]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Reserved [io  0x0c52]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Reserved [io  0x0c6c]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Reserved [io  0x0c6f]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Reserved [io  0x0cd8-0x0cdf]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Reserved [io  0x0800-0x089f]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Reserved [io  0x0b00-0x0b0f]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Reserved [io  0x0b20-0x0b3f]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Reserved [io  0x0900-0x090f]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Reserved [io  0x0910-0x091f]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Could not reserve [mem 0xfec00000-0xfec00fff]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Could not reserve [mem 0xfec01000-0xfec01fff]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Reserved [mem 0xfedc0000-0xfedc0fff]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Reserved [mem 0xfee00000-0xfee00fff]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Could not reserve [mem 0xfed80000-0xfed8ffff]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Reserved [mem 0xfec10000-0xfec10fff]
+[Mi Sep 16 23:49:29 2026] acpi PNP0C02:03: Reserved [mem 0xff000000-0xffffffff]
+[Mi Sep 16 23:49:29 2026] pnp: PnP ACPI init
+[Mi Sep 16 23:49:29 2026] pnp 00:00: [dma 0 disabled]
+[Mi Sep 16 23:49:29 2026] pnp: PnP ACPI: found 1 devices
+[Mi Sep 16 23:49:29 2026] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+[Mi Sep 16 23:49:29 2026] NET: Registered PF_INET protocol family
+[Mi Sep 16 23:49:29 2026] IP idents hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[Mi Sep 16 23:49:29 2026] tcp_listen_portaddr_hash hash table entries: 32768 (order: 7, 524288 bytes, linear)
+[Mi Sep 16 23:49:29 2026] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[Mi Sep 16 23:49:29 2026] TCP established hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+[Mi Sep 16 23:49:29 2026] TCP bind hash table entries: 65536 (order: 9, 2097152 bytes, linear)
+[Mi Sep 16 23:49:29 2026] TCP: Hash tables configured (established 524288 bind 65536)
+[Mi Sep 16 23:49:29 2026] MPTCP token hash table entries: 65536 (order: 9, 1572864 bytes, linear)
+[Mi Sep 16 23:49:29 2026] UDP hash table entries: 32768 (order: 9, 2097152 bytes, linear)
+[Mi Sep 16 23:49:29 2026] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[Mi Sep 16 23:49:29 2026] NET: Registered PF_XDP protocol family
+[Mi Sep 16 23:49:29 2026] pci 0000:02:01.0: PCI bridge to [bus 03]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:01.0:   bridge window [mem 0xfc800000-0xfc8fffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:02.0: PCI bridge to [bus 04]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:02.0:   bridge window [mem 0xfc700000-0xfc7fffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:05.0: PCI bridge to [bus 05]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:05.0:   bridge window [mem 0xfc600000-0xfc6fffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:06.0: PCI bridge to [bus 06]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:06.0:   bridge window [io  0xf000-0xffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:06.0:   bridge window [mem 0xfc500000-0xfc5fffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:08.0: PCI bridge to [bus 07]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:08.0:   bridge window [mem 0xfc100000-0xfc2fffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:09.0: PCI bridge to [bus 08]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:09.0:   bridge window [mem 0xfc400000-0xfc4fffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:0a.0: PCI bridge to [bus 09]
+[Mi Sep 16 23:49:29 2026] pci 0000:02:0a.0:   bridge window [mem 0xfc300000-0xfc3fffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:01:00.0: PCI bridge to [bus 02-09]
+[Mi Sep 16 23:49:29 2026] pci 0000:01:00.0:   bridge window [io  0xf000-0xffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:01:00.0:   bridge window [mem 0xfc100000-0xfc8fffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:00:01.2: PCI bridge to [bus 01-09]
+[Mi Sep 16 23:49:29 2026] pci 0000:00:01.2:   bridge window [io  0xf000-0xffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:00:01.2:   bridge window [mem 0xfc100000-0xfc8fffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:00:01.3: PCI bridge to [bus 0a]
+[Mi Sep 16 23:49:29 2026] pci 0000:00:01.3:   bridge window [mem 0xfcf00000-0xfcffffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:0c:00.0: PCI bridge to [bus 0d]
+[Mi Sep 16 23:49:29 2026] pci 0000:0c:00.0:   bridge window [io  0xe000-0xefff]
+[Mi Sep 16 23:49:29 2026] pci 0000:0c:00.0:   bridge window [mem 0xfcc00000-0xfcdfffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:0c:00.0:   bridge window [mem 0x7800000000-0x7c0fffffff 64bit pref]
+[Mi Sep 16 23:49:29 2026] pci 0000:0b:00.0: PCI bridge to [bus 0c-0d]
+[Mi Sep 16 23:49:29 2026] pci 0000:0b:00.0:   bridge window [io  0xe000-0xefff]
+[Mi Sep 16 23:49:29 2026] pci 0000:0b:00.0:   bridge window [mem 0xfcc00000-0xfcdfffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:0b:00.0:   bridge window [mem 0x7800000000-0x7c0fffffff 64bit pref]
+[Mi Sep 16 23:49:29 2026] pci 0000:00:03.1: PCI bridge to [bus 0b-0d]
+[Mi Sep 16 23:49:29 2026] pci 0000:00:03.1:   bridge window [io  0xe000-0xefff]
+[Mi Sep 16 23:49:29 2026] pci 0000:00:03.1:   bridge window [mem 0xfcc00000-0xfcefffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:00:03.1:   bridge window [mem 0x7800000000-0x7c0fffffff 64bit pref]
+[Mi Sep 16 23:49:29 2026] pci 0000:00:07.1: PCI bridge to [bus 0e]
+[Mi Sep 16 23:49:29 2026] pci 0000:00:08.1: PCI bridge to [bus 0f]
+[Mi Sep 16 23:49:29 2026] pci 0000:00:08.1:   bridge window [mem 0xfc900000-0xfcbfffff]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:00: resource 4 [io  0x0000-0x03af window]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:00: resource 5 [io  0x03e0-0x0cf7 window]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:00: resource 6 [io  0x03b0-0x03df window]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:00: resource 7 [io  0x0d00-0xffff window]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:00: resource 8 [mem 0x000a0000-0x000dffff window]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:00: resource 9 [mem 0xc0000000-0xfcffffff window]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:00: resource 10 [mem 0xc40000000-0x7fffffffff window]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:01: resource 0 [io  0xf000-0xffff]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:01: resource 1 [mem 0xfc100000-0xfc8fffff]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:02: resource 0 [io  0xf000-0xffff]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:02: resource 1 [mem 0xfc100000-0xfc8fffff]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:03: resource 1 [mem 0xfc800000-0xfc8fffff]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:04: resource 1 [mem 0xfc700000-0xfc7fffff]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:05: resource 1 [mem 0xfc600000-0xfc6fffff]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:06: resource 0 [io  0xf000-0xffff]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:06: resource 1 [mem 0xfc500000-0xfc5fffff]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:07: resource 1 [mem 0xfc100000-0xfc2fffff]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:08: resource 1 [mem 0xfc400000-0xfc4fffff]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:09: resource 1 [mem 0xfc300000-0xfc3fffff]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:0a: resource 1 [mem 0xfcf00000-0xfcffffff]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:0b: resource 0 [io  0xe000-0xefff]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:0b: resource 1 [mem 0xfcc00000-0xfcefffff]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:0b: resource 2 [mem 0x7800000000-0x7c0fffffff 64bit pref]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:0c: resource 0 [io  0xe000-0xefff]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:0c: resource 1 [mem 0xfcc00000-0xfcdfffff]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:0c: resource 2 [mem 0x7800000000-0x7c0fffffff 64bit pref]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:0d: resource 0 [io  0xe000-0xefff]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:0d: resource 1 [mem 0xfcc00000-0xfcdfffff]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:0d: resource 2 [mem 0x7800000000-0x7c0fffffff 64bit pref]
+[Mi Sep 16 23:49:29 2026] pci_bus 0000:0f: resource 1 [mem 0xfc900000-0xfcbfffff]
+[Mi Sep 16 23:49:29 2026] pci 0000:0d:00.1: D0 power state depends on 0000:0d:00.0
+[Mi Sep 16 23:49:29 2026] PCI: CLS 64 bytes, default 64
+[Mi Sep 16 23:49:29 2026] pci 0000:00:00.2: AMD-Vi: IOMMU performance counters supported
+[Mi Sep 16 23:49:29 2026] Trying to unpack rootfs image as initramfs...
+[Mi Sep 16 23:49:29 2026] pci 0000:00:01.0: Adding to iommu group 0
+[Mi Sep 16 23:49:29 2026] pci 0000:00:01.2: Adding to iommu group 1
+[Mi Sep 16 23:49:29 2026] pci 0000:00:01.3: Adding to iommu group 2
+[Mi Sep 16 23:49:29 2026] pci 0000:00:02.0: Adding to iommu group 3
+[Mi Sep 16 23:49:29 2026] pci 0000:00:03.0: Adding to iommu group 4
+[Mi Sep 16 23:49:29 2026] pci 0000:00:03.1: Adding to iommu group 5
+[Mi Sep 16 23:49:29 2026] pci 0000:00:04.0: Adding to iommu group 6
+[Mi Sep 16 23:49:29 2026] pci 0000:00:05.0: Adding to iommu group 7
+[Mi Sep 16 23:49:29 2026] pci 0000:00:07.0: Adding to iommu group 8
+[Mi Sep 16 23:49:29 2026] pci 0000:00:07.1: Adding to iommu group 9
+[Mi Sep 16 23:49:29 2026] pci 0000:00:08.0: Adding to iommu group 10
+[Mi Sep 16 23:49:29 2026] pci 0000:00:08.1: Adding to iommu group 11
+[Mi Sep 16 23:49:29 2026] pci 0000:00:14.0: Adding to iommu group 12
+[Mi Sep 16 23:49:29 2026] pci 0000:00:14.3: Adding to iommu group 12
+[Mi Sep 16 23:49:29 2026] pci 0000:00:18.0: Adding to iommu group 13
+[Mi Sep 16 23:49:29 2026] pci 0000:00:18.1: Adding to iommu group 13
+[Mi Sep 16 23:49:29 2026] pci 0000:00:18.2: Adding to iommu group 13
+[Mi Sep 16 23:49:29 2026] pci 0000:00:18.3: Adding to iommu group 13
+[Mi Sep 16 23:49:29 2026] pci 0000:00:18.4: Adding to iommu group 13
+[Mi Sep 16 23:49:29 2026] pci 0000:00:18.5: Adding to iommu group 13
+[Mi Sep 16 23:49:29 2026] pci 0000:00:18.6: Adding to iommu group 13
+[Mi Sep 16 23:49:29 2026] pci 0000:00:18.7: Adding to iommu group 13
+[Mi Sep 16 23:49:29 2026] pci 0000:01:00.0: Adding to iommu group 14
+[Mi Sep 16 23:49:29 2026] pci 0000:02:01.0: Adding to iommu group 15
+[Mi Sep 16 23:49:29 2026] pci 0000:02:02.0: Adding to iommu group 16
+[Mi Sep 16 23:49:29 2026] pci 0000:02:05.0: Adding to iommu group 17
+[Mi Sep 16 23:49:29 2026] pci 0000:02:06.0: Adding to iommu group 18
+[Mi Sep 16 23:49:29 2026] pci 0000:02:08.0: Adding to iommu group 19
+[Mi Sep 16 23:49:29 2026] pci 0000:02:09.0: Adding to iommu group 20
+[Mi Sep 16 23:49:29 2026] pci 0000:02:0a.0: Adding to iommu group 21
+[Mi Sep 16 23:49:29 2026] pci 0000:03:00.0: Adding to iommu group 22
+[Mi Sep 16 23:49:29 2026] pci 0000:04:00.0: Adding to iommu group 23
+[Mi Sep 16 23:49:29 2026] pci 0000:05:00.0: Adding to iommu group 24
+[Mi Sep 16 23:49:29 2026] pci 0000:06:00.0: Adding to iommu group 25
+[Mi Sep 16 23:49:29 2026] pci 0000:07:00.0: Adding to iommu group 19
+[Mi Sep 16 23:49:29 2026] pci 0000:07:00.1: Adding to iommu group 19
+[Mi Sep 16 23:49:29 2026] pci 0000:07:00.3: Adding to iommu group 19
+[Mi Sep 16 23:49:29 2026] pci 0000:08:00.0: Adding to iommu group 20
+[Mi Sep 16 23:49:29 2026] pci 0000:09:00.0: Adding to iommu group 21
+[Mi Sep 16 23:49:29 2026] pci 0000:0a:00.0: Adding to iommu group 26
+[Mi Sep 16 23:49:29 2026] pci 0000:0b:00.0: Adding to iommu group 27
+[Mi Sep 16 23:49:29 2026] pci 0000:0c:00.0: Adding to iommu group 28
+[Mi Sep 16 23:49:29 2026] pci 0000:0d:00.0: Adding to iommu group 29
+[Mi Sep 16 23:49:29 2026] pci 0000:0d:00.1: Adding to iommu group 30
+[Mi Sep 16 23:49:29 2026] pci 0000:0e:00.0: Adding to iommu group 31
+[Mi Sep 16 23:49:29 2026] pci 0000:0f:00.0: Adding to iommu group 32
+[Mi Sep 16 23:49:29 2026] pci 0000:0f:00.1: Adding to iommu group 33
+[Mi Sep 16 23:49:29 2026] pci 0000:0f:00.3: Adding to iommu group 34
+[Mi Sep 16 23:49:29 2026] pci 0000:0f:00.4: Adding to iommu group 35
+[Mi Sep 16 23:49:29 2026] AMD-Vi: Extended features (0x58f77ef22294a5a, 0x0): PPR NX GT IA PC GA_vAPIC
+[Mi Sep 16 23:49:29 2026] AMD-Vi: Interrupt remapping enabled
+[Mi Sep 16 23:49:29 2026] PCI-DMA: Using software bounce buffering for IO (SWIOTLB)
+[Mi Sep 16 23:49:29 2026] software IO TLB: mapped [mem 0x00000000b3478000-0x00000000b7478000] (64MB)
+[Mi Sep 16 23:49:29 2026] LVT offset 0 assigned for vector 0x400
+[Mi Sep 16 23:49:29 2026] perf: AMD IBS detected (0x000003ff)
+[Mi Sep 16 23:49:29 2026] perf/amd_iommu: Detected AMD IOMMU #0 (2 banks, 4 counters/bank).
+[Mi Sep 16 23:49:29 2026] Initialise system trusted keyrings
+[Mi Sep 16 23:49:29 2026] Key type blacklist registered
+[Mi Sep 16 23:49:29 2026] workingset: timestamp_bits=36 (anon: 31) max_order=24 bucket_order=0 (anon: 0)
+[Mi Sep 16 23:49:29 2026] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[Mi Sep 16 23:49:29 2026] fuse: init (API version 7.46)
+[Mi Sep 16 23:49:29 2026] integrity: Platform Keyring initialized
+[Mi Sep 16 23:49:29 2026] integrity: Machine keyring initialized
+[Mi Sep 16 23:49:29 2026] Key type asymmetric registered
+[Mi Sep 16 23:49:29 2026] Asymmetric key parser 'x509' registered
+[Mi Sep 16 23:49:29 2026] krb5: 
+[Mi Sep 16 23:49:29 2026] krb5: Running selftests
+[Mi Sep 16 23:49:29 2026] krb5: Running aes128-cts-hmac-sha256-128 prf
+[Mi Sep 16 23:49:29 2026] krb5: Running aes256-cts-hmac-sha384-192 prf
+[Mi Sep 16 23:49:29 2026] krb5: Running aes128-cts-hmac-sha256-128 key
+[Mi Sep 16 23:49:29 2026] krb5: Running aes256-cts-hmac-sha384-192 key
+[Mi Sep 16 23:49:29 2026] krb5: Running camellia128-cts-cmac key
+[Mi Sep 16 23:49:29 2026] Freeing initrd memory: 110892K
+[Mi Sep 16 23:49:29 2026] krb5: Running camellia256-cts-cmac key
+[Mi Sep 16 23:49:29 2026] krb5: Running aes128-cts-hmac-sha256-128 enc no plain
+[Mi Sep 16 23:49:29 2026] krb5: Running aes128-cts-hmac-sha256-128 enc plain<block
+[Mi Sep 16 23:49:29 2026] krb5: Running aes128-cts-hmac-sha256-128 enc plain==block
+[Mi Sep 16 23:49:29 2026] krb5: Running aes128-cts-hmac-sha256-128 enc plain>block
+[Mi Sep 16 23:49:29 2026] krb5: Running aes256-cts-hmac-sha384-192 enc no plain
+[Mi Sep 16 23:49:29 2026] krb5: Running aes256-cts-hmac-sha384-192 enc plain<block
+[Mi Sep 16 23:49:29 2026] krb5: Running aes256-cts-hmac-sha384-192 enc plain==block
+[Mi Sep 16 23:49:29 2026] krb5: Running aes256-cts-hmac-sha384-192 enc plain>block
+[Mi Sep 16 23:49:29 2026] krb5: Running camellia128-cts-cmac enc no plain
+[Mi Sep 16 23:49:29 2026] camellia_x86_64: module verification failed: signature and/or required key missing - tainting kernel
+[Mi Sep 16 23:49:29 2026] ref failed
+[Mi Sep 16 23:49:29 2026] krb5: Running camellia128-cts-cmac enc 1 plain
+[Mi Sep 16 23:49:29 2026] krb5: Running camellia128-cts-cmac enc 9 plain
+[Mi Sep 16 23:49:29 2026] krb5: Running camellia128-cts-cmac enc 13 plain
+[Mi Sep 16 23:49:29 2026] krb5: Running camellia128-cts-cmac enc 30 plain
+[Mi Sep 16 23:49:29 2026] krb5: Running camellia256-cts-cmac enc no plain
+[Mi Sep 16 23:49:29 2026] krb5: Running camellia256-cts-cmac enc 1 plain
+[Mi Sep 16 23:49:29 2026] krb5: Running camellia256-cts-cmac enc 9 plain
+[Mi Sep 16 23:49:29 2026] krb5: Running camellia256-cts-cmac enc 13 plain
+[Mi Sep 16 23:49:29 2026] krb5: Running camellia256-cts-cmac enc 30 plain
+[Mi Sep 16 23:49:29 2026] krb5: Running aes128-cts-hmac-sha256-128 mic
+[Mi Sep 16 23:49:29 2026] krb5: Running aes256-cts-hmac-sha384-192 mic
+[Mi Sep 16 23:49:29 2026] krb5: Running camellia128-cts-cmac mic abc
+[Mi Sep 16 23:49:29 2026] krb5: Running camellia128-cts-cmac mic ABC
+[Mi Sep 16 23:49:29 2026] krb5: Running camellia256-cts-cmac mic 123
+[Mi Sep 16 23:49:29 2026] krb5: Running camellia256-cts-cmac mic !@#
+[Mi Sep 16 23:49:29 2026] krb5: Selftests succeeded
+[Mi Sep 16 23:49:29 2026] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 241)
+[Mi Sep 16 23:49:29 2026] io scheduler mq-deadline registered
+[Mi Sep 16 23:49:29 2026] pcieport 0000:00:01.2: PME: Signaling with IRQ 28
+[Mi Sep 16 23:49:29 2026] pcieport 0000:00:01.2: AER: enabled with IRQ 28
+[Mi Sep 16 23:49:29 2026] pcieport 0000:00:01.3: PME: Signaling with IRQ 29
+[Mi Sep 16 23:49:29 2026] pcieport 0000:00:01.3: AER: enabled with IRQ 29
+[Mi Sep 16 23:49:29 2026] pcieport 0000:00:03.1: PME: Signaling with IRQ 30
+[Mi Sep 16 23:49:29 2026] pcieport 0000:00:03.1: AER: enabled with IRQ 30
+[Mi Sep 16 23:49:29 2026] pcieport 0000:00:07.1: PME: Signaling with IRQ 32
+[Mi Sep 16 23:49:29 2026] pcieport 0000:00:07.1: AER: enabled with IRQ 32
+[Mi Sep 16 23:49:29 2026] pcieport 0000:00:08.1: PME: Signaling with IRQ 33
+[Mi Sep 16 23:49:29 2026] pcieport 0000:00:08.1: AER: enabled with IRQ 33
+[Mi Sep 16 23:49:29 2026] input: Power Button as /devices/platform/PNP0C0C:00/input/input0
+[Mi Sep 16 23:49:29 2026] ACPI: button: Power Button [PWRB]
+[Mi Sep 16 23:49:29 2026] input: Power Button as /devices/platform/LNXPWRBN:00/input/input1
+[Mi Sep 16 23:49:29 2026] ACPI: button: Power Button [PWRF]
+[Mi Sep 16 23:49:29 2026] Monitor-Mwait will be used to enter C-1 state
+[Mi Sep 16 23:49:29 2026] Estimated ratio of average max frequency by base frequency (times 1024): 1141
+[Mi Sep 16 23:49:29 2026] Serial: 8250/16550 driver, 32 ports, IRQ sharing enabled
+[Mi Sep 16 23:49:29 2026] 00:00: ttyS0 I/O:0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+[Mi Sep 16 23:49:29 2026] tpm_crb_acpi MSFT0101:00: Disabling hwrng
+[Mi Sep 16 23:49:29 2026] ACPI: bus type drm_connector registered
+[Mi Sep 16 23:49:29 2026] loop: module loaded
+[Mi Sep 16 23:49:29 2026] tun: Universal TUN/TAP device driver, 1.6
+[Mi Sep 16 23:49:29 2026] PPP generic driver version 2.4.2
+[Mi Sep 16 23:49:29 2026] xhci_hcd 0000:07:00.1: xHCI Host Controller
+[Mi Sep 16 23:49:29 2026] xhci_hcd 0000:07:00.1: new USB bus registered, assigned bus number 1
+[Mi Sep 16 23:49:29 2026] xhci_hcd 0000:07:00.1: hcc params 0x0278ffe5 hci version 0x110 quirks 0x0000000000000010
+[Mi Sep 16 23:49:29 2026] xhci_hcd 0000:07:00.1: xHCI Host Controller
+[Mi Sep 16 23:49:29 2026] xhci_hcd 0000:07:00.1: new USB bus registered, assigned bus number 2
+[Mi Sep 16 23:49:29 2026] xhci_hcd 0000:07:00.1: Host supports USB 3.1 Enhanced SuperSpeed
+[Mi Sep 16 23:49:29 2026] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 7.03
+[Mi Sep 16 23:49:29 2026] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[Mi Sep 16 23:49:29 2026] usb usb1: Product: xHCI Host Controller
+[Mi Sep 16 23:49:29 2026] usb usb1: Manufacturer: Linux 7.3.0-rc1-spacy2026090103 xhci-hcd
+[Mi Sep 16 23:49:29 2026] usb usb1: SerialNumber: 0000:07:00.1
+[Mi Sep 16 23:49:29 2026] hub 1-0:1.0: USB hub found
+[Mi Sep 16 23:49:29 2026] hub 1-0:1.0: 6 ports detected
+[Mi Sep 16 23:49:29 2026] usb usb2: We don't know the algorithms for LPM for this host, disabling LPM.
+[Mi Sep 16 23:49:29 2026] usb usb2: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 7.03
+[Mi Sep 16 23:49:29 2026] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[Mi Sep 16 23:49:29 2026] usb usb2: Product: xHCI Host Controller
+[Mi Sep 16 23:49:29 2026] usb usb2: Manufacturer: Linux 7.3.0-rc1-spacy2026090103 xhci-hcd
+[Mi Sep 16 23:49:29 2026] usb usb2: SerialNumber: 0000:07:00.1
+[Mi Sep 16 23:49:29 2026] hub 2-0:1.0: USB hub found
+[Mi Sep 16 23:49:29 2026] hub 2-0:1.0: 4 ports detected
+[Mi Sep 16 23:49:29 2026] xhci_hcd 0000:07:00.3: xHCI Host Controller
+[Mi Sep 16 23:49:29 2026] xhci_hcd 0000:07:00.3: new USB bus registered, assigned bus number 3
+[Mi Sep 16 23:49:29 2026] xhci_hcd 0000:07:00.3: hcc params 0x0278ffe5 hci version 0x110 quirks 0x0000000000000010
+[Mi Sep 16 23:49:29 2026] xhci_hcd 0000:07:00.3: xHCI Host Controller
+[Mi Sep 16 23:49:29 2026] xhci_hcd 0000:07:00.3: new USB bus registered, assigned bus number 4
+[Mi Sep 16 23:49:29 2026] xhci_hcd 0000:07:00.3: Host supports USB 3.1 Enhanced SuperSpeed
+[Mi Sep 16 23:49:29 2026] usb usb3: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 7.03
+[Mi Sep 16 23:49:29 2026] usb usb3: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[Mi Sep 16 23:49:29 2026] usb usb3: Product: xHCI Host Controller
+[Mi Sep 16 23:49:29 2026] usb usb3: Manufacturer: Linux 7.3.0-rc1-spacy2026090103 xhci-hcd
+[Mi Sep 16 23:49:29 2026] usb usb3: SerialNumber: 0000:07:00.3
+[Mi Sep 16 23:49:29 2026] hub 3-0:1.0: USB hub found
+[Mi Sep 16 23:49:29 2026] hub 3-0:1.0: 6 ports detected
+[Mi Sep 16 23:49:29 2026] usb usb4: We don't know the algorithms for LPM for this host, disabling LPM.
+[Mi Sep 16 23:49:29 2026] usb usb4: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 7.03
+[Mi Sep 16 23:49:29 2026] usb usb4: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[Mi Sep 16 23:49:29 2026] usb usb4: Product: xHCI Host Controller
+[Mi Sep 16 23:49:29 2026] usb usb4: Manufacturer: Linux 7.3.0-rc1-spacy2026090103 xhci-hcd
+[Mi Sep 16 23:49:29 2026] usb usb4: SerialNumber: 0000:07:00.3
+[Mi Sep 16 23:49:29 2026] hub 4-0:1.0: USB hub found
+[Mi Sep 16 23:49:29 2026] hub 4-0:1.0: 4 ports detected
+[Mi Sep 16 23:49:29 2026] xhci_hcd 0000:0f:00.3: xHCI Host Controller
+[Mi Sep 16 23:49:29 2026] xhci_hcd 0000:0f:00.3: new USB bus registered, assigned bus number 5
+[Mi Sep 16 23:49:29 2026] xhci_hcd 0000:0f:00.3: hcc params 0x0278ffe5 hci version 0x110 quirks 0x0000000000000010
+[Mi Sep 16 23:49:29 2026] xhci_hcd 0000:0f:00.3: xHCI Host Controller
+[Mi Sep 16 23:49:29 2026] xhci_hcd 0000:0f:00.3: new USB bus registered, assigned bus number 6
+[Mi Sep 16 23:49:29 2026] xhci_hcd 0000:0f:00.3: Host supports USB 3.1 Enhanced SuperSpeed
+[Mi Sep 16 23:49:29 2026] usb usb5: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 7.03
+[Mi Sep 16 23:49:29 2026] usb usb5: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[Mi Sep 16 23:49:29 2026] usb usb5: Product: xHCI Host Controller
+[Mi Sep 16 23:49:29 2026] usb usb5: Manufacturer: Linux 7.3.0-rc1-spacy2026090103 xhci-hcd
+[Mi Sep 16 23:49:29 2026] usb usb5: SerialNumber: 0000:0f:00.3
+[Mi Sep 16 23:49:29 2026] hub 5-0:1.0: USB hub found
+[Mi Sep 16 23:49:29 2026] hub 5-0:1.0: 4 ports detected
+[Mi Sep 16 23:49:29 2026] usb usb6: We don't know the algorithms for LPM for this host, disabling LPM.
+[Mi Sep 16 23:49:29 2026] usb usb6: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 7.03
+[Mi Sep 16 23:49:29 2026] usb usb6: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[Mi Sep 16 23:49:29 2026] usb usb6: Product: xHCI Host Controller
+[Mi Sep 16 23:49:29 2026] usb usb6: Manufacturer: Linux 7.3.0-rc1-spacy2026090103 xhci-hcd
+[Mi Sep 16 23:49:29 2026] usb usb6: SerialNumber: 0000:0f:00.3
+[Mi Sep 16 23:49:29 2026] hub 6-0:1.0: USB hub found
+[Mi Sep 16 23:49:29 2026] hub 6-0:1.0: 4 ports detected
+[Mi Sep 16 23:49:29 2026] i8042: PNP: No PS/2 controller found.
+[Mi Sep 16 23:49:29 2026] mousedev: PS/2 mouse device common for all mice
+[Mi Sep 16 23:49:29 2026] rtc_cmos PNP0B00:00: RTC can wake from S4
+[Mi Sep 16 23:49:29 2026] rtc_cmos PNP0B00:00: registered as rtc0
+[Mi Sep 16 23:49:29 2026] rtc_cmos PNP0B00:00: setting system clock to 2026-09-16T21:49:28 UTC (1789595368)
+[Mi Sep 16 23:49:29 2026] rtc_cmos PNP0B00:00: alarms up to one month, y3k, 114 bytes nvram
+[Mi Sep 16 23:49:29 2026] i2c_dev: i2c /dev entries driver
+[Mi Sep 16 23:49:29 2026] device-mapper: core: CONFIG_IMA_DISABLE_HTABLE is disabled. Duplicate IMA measurements will not be recorded in the IMA log.
+[Mi Sep 16 23:49:29 2026] device-mapper: uevent: version 1.0.3
+[Mi Sep 16 23:49:29 2026] device-mapper: ioctl: 4.50.0-ioctl (2025-04-28) initialised: dm-devel@lists.linux.dev
+[Mi Sep 16 23:49:30 2026] simple-framebuffer simple-framebuffer.0: [drm] Registered 1 planes with drm panic
+[Mi Sep 16 23:49:30 2026] [drm] Initialized simpledrm 1.0.0 for simple-framebuffer.0 on minor 0
+[Mi Sep 16 23:49:30 2026] fbcon: Deferring console take-over
+[Mi Sep 16 23:49:30 2026] simple-framebuffer simple-framebuffer.0: [drm] fb0: simpledrmdrmfb frame buffer device
+[Mi Sep 16 23:49:30 2026] drop_monitor: Initializing network drop monitor service
+[Mi Sep 16 23:49:30 2026] NET: Registered PF_INET6 protocol family
+[Mi Sep 16 23:49:30 2026] Segment Routing with IPv6
+[Mi Sep 16 23:49:30 2026] In-situ OAM (IOAM) with IPv6
+[Mi Sep 16 23:49:30 2026] NET: Registered PF_PACKET protocol family
+[Mi Sep 16 23:49:30 2026] Key type dns_resolver registered
+[Mi Sep 16 23:49:30 2026] x86/amd: Previous system reset reason [0x08000800]: an uncorrected error caused a data fabric sync flood event
+[Mi Sep 16 23:49:30 2026] mce: [Hardware Error]: CPU 0: Machine Check: 0 Bank 17: faa000000007082b
+[Mi Sep 16 23:49:30 2026] fbcon: Taking over console
+[Mi Sep 16 23:49:30 2026] mce: [Hardware Error]: TSC 0 MISC d01a000001000000 SYND 5d001004 IPID 9600050f00 
+[Mi Sep 16 23:49:30 2026] mce: [Hardware Error]: PROCESSOR 2:870f10 TIME 1789595368 SOCKET 0 APIC 0 microcode 0
+[Mi Sep 16 23:49:30 2026] Console: switching to colour frame buffer device 100x37
+[Mi Sep 16 23:49:30 2026] microcode: Current revision: 0x08701034
+[Mi Sep 16 23:49:30 2026] microcode: Updated early from: 0x08701033
+[Mi Sep 16 23:49:30 2026] resctrl: L3 allocation detected
+[Mi Sep 16 23:49:30 2026] resctrl: MB allocation detected
+[Mi Sep 16 23:49:30 2026] resctrl: L3 monitoring detected
+[Mi Sep 16 23:49:30 2026] IPI shorthand broadcast: enabled
+[Mi Sep 16 23:49:30 2026] sched_clock: Marking stable (794959179, 1242978)->(812323870, -16121713)
+[Mi Sep 16 23:49:30 2026] registered taskstats version 1
+[Mi Sep 16 23:49:30 2026] Loading compiled-in X.509 certificates
+[Mi Sep 16 23:49:30 2026] Loaded X.509 cert 'Build time autogenerated kernel key: 4f240dd49a873357a08aa1cfb01f611f5c20063a'
+[Mi Sep 16 23:49:30 2026] Demotion targets for Node 0: null
+[Mi Sep 16 23:49:30 2026] Key type .fscrypt registered
+[Mi Sep 16 23:49:30 2026] Key type fscrypt-provisioning registered
+[Mi Sep 16 23:49:30 2026] Key type big_key registered
+[Mi Sep 16 23:49:30 2026] Key type trusted registered
+[Mi Sep 16 23:49:30 2026] Key type encrypted registered
+[Mi Sep 16 23:49:30 2026] AppArmor: AppArmor sha256 policy hashing enabled
+[Mi Sep 16 23:49:30 2026] Loading compiled-in module X.509 certificates
+[Mi Sep 16 23:49:30 2026] Loaded X.509 cert 'Build time autogenerated kernel key: 4f240dd49a873357a08aa1cfb01f611f5c20063a'
+[Mi Sep 16 23:49:30 2026] ima: Allocated hash algorithm: sha256
+[Mi Sep 16 23:49:30 2026] ima: No architecture policies found
+[Mi Sep 16 23:49:30 2026] evm: Initialising EVM extended attributes:
+[Mi Sep 16 23:49:30 2026] evm: security.selinux
+[Mi Sep 16 23:49:30 2026] evm: security.SMACK64
+[Mi Sep 16 23:49:30 2026] evm: security.SMACK64EXEC
+[Mi Sep 16 23:49:30 2026] evm: security.SMACK64TRANSMUTE
+[Mi Sep 16 23:49:30 2026] evm: security.SMACK64MMAP
+[Mi Sep 16 23:49:30 2026] evm: security.apparmor
+[Mi Sep 16 23:49:30 2026] evm: security.ima
+[Mi Sep 16 23:49:30 2026] evm: security.capability
+[Mi Sep 16 23:49:30 2026] evm: HMAC attrs: 0x1
+[Mi Sep 16 23:49:30 2026] integrity: Loading X.509 certificate: UEFI:db
+[Mi Sep 16 23:49:30 2026] integrity: Loaded X.509 cert 'Microsoft Corporation UEFI CA 2011: 13adbf4309bd82709c8cd54f316ed522988a1bd4'
+[Mi Sep 16 23:49:30 2026] integrity: Loading X.509 certificate: UEFI:db
+[Mi Sep 16 23:49:30 2026] integrity: Loaded X.509 cert 'Microsoft Windows Production PCA 2011: a92902398e16c49778cd90f99e4f9ae17c55af53'
+[Mi Sep 16 23:49:30 2026] integrity: Loading X.509 certificate: UEFI:db
+[Mi Sep 16 23:49:30 2026] integrity: Loaded X.509 cert 'Microsoft UEFI CA 2023: 81aa6b3244c935bce0d6628af39827421e32497d'
+[Mi Sep 16 23:49:30 2026] integrity: Loading X.509 certificate: UEFI:db
+[Mi Sep 16 23:49:30 2026] integrity: Loaded X.509 cert 'Microsoft Option ROM UEFI CA 2023: 514fbf937fa46fb57bf07af8bed84b3b864b1711'
+[Mi Sep 16 23:49:30 2026] PM:   Magic number: 10:238:854
+[Mi Sep 16 23:49:30 2026] memory memory301: hash matches
+[Mi Sep 16 23:49:30 2026] initcall acpi_cpufreq_init blacklisted
+[Mi Sep 16 23:49:30 2026] RAS: Correctable Errors collector initialized.
+[Mi Sep 16 23:49:30 2026] clk: Disabling unused clocks
+[Mi Sep 16 23:49:30 2026] PM: genpd: Disabling unused power domains
+[Mi Sep 16 23:49:30 2026] Freeing unused decrypted memory: 2036K
+[Mi Sep 16 23:49:30 2026] Freeing unused kernel image (initmem) memory: 5296K
+[Mi Sep 16 23:49:30 2026] Write protecting the kernel read-only data: 40960k
+[Mi Sep 16 23:49:30 2026] Freeing unused kernel image (text/rodata gap) memory: 1056K
+[Mi Sep 16 23:49:30 2026] Freeing unused kernel image (rodata/data gap) memory: 48K
+[Mi Sep 16 23:49:30 2026] x86/mm: Checked W+X mappings: passed, no W+X pages found.
+[Mi Sep 16 23:49:30 2026] Run /init as init process
+[Mi Sep 16 23:49:30 2026]   with arguments:
+[Mi Sep 16 23:49:30 2026]     /init
+[Mi Sep 16 23:49:30 2026]   with environment:
+[Mi Sep 16 23:49:30 2026]     HOME=/
+[Mi Sep 16 23:49:30 2026]     TERM=linux
+[Mi Sep 16 23:49:30 2026]     mem_encrypt=on
+[Mi Sep 16 23:49:30 2026] usb 3-1: new full-speed USB device number 2 using xhci_hcd
+[Mi Sep 16 23:49:30 2026] usb 1-3: new full-speed USB device number 2 using xhci_hcd
+[Mi Sep 16 23:49:30 2026] usb 5-1: new high-speed USB device number 2 using xhci_hcd
+[Mi Sep 16 23:49:30 2026] Key type psk registered
+[Mi Sep 16 23:49:30 2026] usb 5-1: New USB device found, idVendor=28de, idProduct=2613, bcdDevice= 1.82
+[Mi Sep 16 23:49:30 2026] usb 5-1: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+[Mi Sep 16 23:49:30 2026] dca service started, version 1.12.1
+[Mi Sep 16 23:49:30 2026] usb 1-3: New USB device found, idVendor=28de, idProduct=1142, bcdDevice= 0.01
+[Mi Sep 16 23:49:30 2026] usb 3-1: New USB device found, idVendor=28de, idProduct=1304, bcdDevice= 0.02
+[Mi Sep 16 23:49:30 2026] usb 1-3: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[Mi Sep 16 23:49:30 2026] usb 1-3: Product: Steam Controller
+[Mi Sep 16 23:49:30 2026] usb 1-3: Manufacturer: Valve Software
+[Mi Sep 16 23:49:30 2026] igb: Intel(R) Gigabit Ethernet Network Driver
+[Mi Sep 16 23:49:30 2026] igb: Copyright (c) 2007-2014 Intel Corporation.
+[Mi Sep 16 23:49:30 2026] igb 0000:06:00.0: enabling device (0000 -> 0002)
+[Mi Sep 16 23:49:30 2026] ahci 0000:08:00.0: AHCI vers 0001.0301, 32 command slots, 6 Gbps, SATA mode
+[Mi Sep 16 23:49:30 2026] ahci 0000:08:00.0: 1/1 ports implemented (port mask 0x2)
+[Mi Sep 16 23:49:30 2026] ahci 0000:08:00.0: flags: 64bit ncq sntf ilck led clo only pmp fbs pio slum part 
+[Mi Sep 16 23:49:30 2026] nvme nvme2: pci function 0000:04:00.0
+[Mi Sep 16 23:49:30 2026] nvme nvme0: pci function 0000:03:00.0
+[Mi Sep 16 23:49:30 2026] nvme nvme1: pci function 0000:0a:00.0
+[Mi Sep 16 23:49:30 2026] scsi host0: ahci
+[Mi Sep 16 23:49:30 2026] scsi host1: ahci
+[Mi Sep 16 23:49:30 2026] ata1: DUMMY
+[Mi Sep 16 23:49:30 2026] ata2: SATA max UDMA/133 abar m2048@0xfc400000 port 0xfc400180 irq 64 lpm-pol 3
+[Mi Sep 16 23:49:30 2026] ahci 0000:09:00.0: AHCI vers 0001.0301, 32 command slots, 6 Gbps, SATA mode
+[Mi Sep 16 23:49:30 2026] ahci 0000:09:00.0: 1/1 ports implemented (port mask 0x1)
+[Mi Sep 16 23:49:30 2026] ahci 0000:09:00.0: flags: 64bit ncq sntf ilck led clo only pmp fbs pio slum part 
+[Mi Sep 16 23:49:30 2026] scsi host2: ahci
+[Mi Sep 16 23:49:30 2026] ata3: SATA max UDMA/133 abar m2048@0xfc300000 port 0xfc300100 irq 88 lpm-pol 3
+[Mi Sep 16 23:49:30 2026] usb 3-1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[Mi Sep 16 23:49:30 2026] usb 3-1: Product: Steam Controller Puck
+[Mi Sep 16 23:49:30 2026] usb 3-1: Manufacturer: Valve Software
+[Mi Sep 16 23:49:30 2026] usb 3-1: SerialNumber: FXB995530026A
+[Mi Sep 16 23:49:30 2026] nvme nvme0: missing or invalid SUBNQN field.
+[Mi Sep 16 23:49:30 2026] nvme nvme0: D3 entry latency set to 10 seconds
+[Mi Sep 16 23:49:30 2026] nvme nvme0: passthrough uses implicit buffer lengths
+[Mi Sep 16 23:49:30 2026] nvme nvme1: D3 entry latency set to 10 seconds
+[Mi Sep 16 23:49:30 2026] nvme nvme0: 8/0/0 default/read/poll queues
+[Mi Sep 16 23:49:30 2026] nvme nvme2: missing or invalid SUBNQN field.
+[Mi Sep 16 23:49:30 2026] nvme nvme1: passthrough uses implicit buffer lengths
+[Mi Sep 16 23:49:30 2026] nvme nvme0: Ignoring bogus Namespace Identifiers
+[Mi Sep 16 23:49:30 2026] hub 5-1:1.0: USB hub found
+[Mi Sep 16 23:49:30 2026] hub 5-1:1.0: 3 ports detected
+[Mi Sep 16 23:49:30 2026] nvme nvme1: 16/0/0 default/read/poll queues
+[Mi Sep 16 23:49:30 2026]  nvme1n1: p1 p2 p3
+[Mi Sep 16 23:49:30 2026] igb 0000:06:00.0: added PHC on eth0
+[Mi Sep 16 23:49:30 2026] igb 0000:06:00.0: Intel(R) Gigabit Ethernet Network Connection
+[Mi Sep 16 23:49:30 2026] igb 0000:06:00.0: eth0: (PCIe:2.5Gb/s:Width x1) a8:a1:59:1e:4c:22
+[Mi Sep 16 23:49:30 2026] igb 0000:06:00.0: eth0: PBA No: FFFFFF-0FF
+[Mi Sep 16 23:49:30 2026] igb 0000:06:00.0: Using MSI-X interrupts. 2 rx queue(s), 2 tx queue(s)
+[Mi Sep 16 23:49:30 2026] usb 6-1: new SuperSpeed USB device number 2 using xhci_hcd
+[Mi Sep 16 23:49:30 2026] usb 2-2: new SuperSpeed USB device number 2 using xhci_hcd
+[Mi Sep 16 23:49:30 2026] usb 6-1: New USB device found, idVendor=0424, idProduct=5744, bcdDevice= 2.21
+[Mi Sep 16 23:49:30 2026] usb 6-1: New USB device strings: Mfr=2, Product=3, SerialNumber=0
+[Mi Sep 16 23:49:30 2026] usb 6-1: Product: USB5744
+[Mi Sep 16 23:49:30 2026] usb 6-1: Manufacturer: Microchip Tech
+[Mi Sep 16 23:49:30 2026] usb 2-2: New USB device found, idVendor=05e3, idProduct=0626, bcdDevice= 6.63
+[Mi Sep 16 23:49:30 2026] usb 2-2: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[Mi Sep 16 23:49:30 2026] usb 2-2: Product: USB3.1 Hub
+[Mi Sep 16 23:49:30 2026] usb 2-2: Manufacturer: GenesysLogic
+[Mi Sep 16 23:49:30 2026] hub 6-1:1.0: USB hub found
+[Mi Sep 16 23:49:30 2026] hub 6-1:1.0: 4 ports detected
+[Mi Sep 16 23:49:30 2026] hub 2-2:1.0: USB hub found
+[Mi Sep 16 23:49:30 2026] hub 2-2:1.0: 4 ports detected
+[Mi Sep 16 23:49:30 2026] nvme nvme2: passthrough uses implicit buffer lengths
+[Mi Sep 16 23:49:30 2026] nvme nvme2: allocated 32 MiB host memory buffer (1 segment).
+[Mi Sep 16 23:49:30 2026] nvme nvme2: 8/0/0 default/read/poll queues
+[Mi Sep 16 23:49:30 2026] usb 1-4: new high-speed USB device number 3 using xhci_hcd
+[Mi Sep 16 23:49:30 2026] ata3: SATA link down (SStatus 0 SControl 300)
+[Mi Sep 16 23:49:30 2026] usb 5-1.3: new high-speed USB device number 3 using xhci_hcd
+[Mi Sep 16 23:49:30 2026] tsc: Refined TSC clocksource calibration: 3593.249 MHz
+[Mi Sep 16 23:49:30 2026] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x33cb698e952, max_idle_ns: 440795267109 ns
+[Mi Sep 16 23:49:30 2026] clocksource: Switched to clocksource tsc
+[Mi Sep 16 23:49:30 2026] usb 5-1.3: New USB device found, idVendor=0424, idProduct=2744, bcdDevice= 2.21
+[Mi Sep 16 23:49:30 2026] usb 5-1.3: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[Mi Sep 16 23:49:30 2026] usb 5-1.3: Product: USB2744
+[Mi Sep 16 23:49:30 2026] usb 5-1.3: Manufacturer: Microchip Tech
+[Mi Sep 16 23:49:30 2026] ata2: SATA link up 6.0 Gbps (SStatus 133 SControl 300)
+[Mi Sep 16 23:49:30 2026] ata2.00: Model 'Samsung SSD 870 QVO 4TB', rev 'SVQ02B6Q', applying quirks: noncqtrim zeroaftertrim noncqonati nolpmonati
+[Mi Sep 16 23:49:30 2026] ata2.00: supports DRM functions and may not be fully accessible
+[Mi Sep 16 23:49:30 2026] ata2.00: ATA-11: Samsung SSD 870 QVO 4TB, SVQ02B6Q, max UDMA/133
+[Mi Sep 16 23:49:30 2026] ata2.00: 7814037168 sectors, multi 1: LBA48 NCQ (depth 32), AA
+[Mi Sep 16 23:49:30 2026] ata2.00: Features: Trust Dev-Sleep DIPM NCQ-sndrcv
+[Mi Sep 16 23:49:30 2026] ata2.00: supports DRM functions and may not be fully accessible
+[Mi Sep 16 23:49:30 2026] ata2.00: configured for UDMA/133
+[Mi Sep 16 23:49:30 2026] scsi 1:0:0:0: Direct-Access     ATA      Samsung SSD 870  2B6Q PQ: 0 ANSI: 5
+[Mi Sep 16 23:49:30 2026] sd 1:0:0:0: Attached scsi generic sg0 type 0
+[Mi Sep 16 23:49:30 2026] ata2.00: Enabling discard_zeroes_data
+[Mi Sep 16 23:49:30 2026] sd 1:0:0:0: [sda] 7814037168 512-byte logical blocks: (4.00 TB/3.64 TiB)
+[Mi Sep 16 23:49:30 2026] sd 1:0:0:0: [sda] Write Protect is off
+[Mi Sep 16 23:49:30 2026] sd 1:0:0:0: [sda] Mode Sense: 00 3a 00 00
+[Mi Sep 16 23:49:30 2026] sd 1:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[Mi Sep 16 23:49:30 2026] sd 1:0:0:0: [sda] Preferred minimum I/O size 512 bytes
+[Mi Sep 16 23:49:30 2026] ata2.00: Enabling discard_zeroes_data
+[Mi Sep 16 23:49:30 2026]  sda: sda1 sda2 sda3
+[Mi Sep 16 23:49:30 2026] sd 1:0:0:0: [sda] supports TCG Opal
+[Mi Sep 16 23:49:30 2026] sd 1:0:0:0: [sda] Attached SCSI disk
+[Mi Sep 16 23:49:30 2026] igb 0000:06:00.0 enp6s0: renamed from eth0
+[Mi Sep 16 23:49:30 2026] usb 3-6: new high-speed USB device number 3 using xhci_hcd
+[Mi Sep 16 23:49:30 2026] usb 6-1.1: new SuperSpeed USB device number 3 using xhci_hcd
+[Mi Sep 16 23:49:30 2026] hub 5-1.3:1.0: USB hub found
+[Mi Sep 16 23:49:30 2026] hub 5-1.3:1.0: 5 ports detected
+[Mi Sep 16 23:49:30 2026] usb 6-1.1: New USB device found, idVendor=28de, idProduct=2400, bcdDevice= 0.09
+[Mi Sep 16 23:49:30 2026] usb 3-6: New USB device found, idVendor=05e3, idProduct=0610, bcdDevice= 6.63
+[Mi Sep 16 23:49:30 2026] usb 3-6: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[Mi Sep 16 23:49:30 2026] usb 3-6: Product: USB2.1 Hub
+[Mi Sep 16 23:49:30 2026] usb 3-6: Manufacturer: GenesysLogic
+[Mi Sep 16 23:49:31 2026] usb 6-1.1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[Mi Sep 16 23:49:31 2026] usb 6-1.1: Product: 3D Camera
+[Mi Sep 16 23:49:31 2026] usb 6-1.1: Manufacturer: Etron Technology, Inc.
+[Mi Sep 16 23:49:31 2026] usb 6-1.1: SerialNumber: 00000001
+[Mi Sep 16 23:49:31 2026] hub 3-6:1.0: USB hub found
+[Mi Sep 16 23:49:31 2026] hub 3-6:1.0: 4 ports detected
+[Mi Sep 16 23:49:31 2026] hid: raw HID events driver (C) Jiri Kosina
+[Mi Sep 16 23:49:31 2026] usbcore: registered new interface driver usbhid
+[Mi Sep 16 23:49:31 2026] usbhid: USB HID core driver
+[Mi Sep 16 23:49:31 2026] input: Valve Software Steam Controller Keyboard as /devices/pci0000:00/0000:00:01.2/0000:01:00.0/0000:02:08.0/0000:07:00.1/usb1/1-3/1-3:1.0/0003:28DE:1142.0001/input/input2
+[Mi Sep 16 23:49:31 2026] input: Valve Software Steam Controller Mouse as /devices/pci0000:00/0000:00:01.2/0000:01:00.0/0000:02:08.0/0000:07:00.1/usb1/1-3/1-3:1.0/0003:28DE:1142.0001/input/input3
+[Mi Sep 16 23:49:31 2026] hid-generic 0003:28DE:1142.0001: input,hidraw0: USB HID v1.11 Keyboard [Valve Software Steam Controller] on usb-0000:07:00.1-3/input0
+[Mi Sep 16 23:49:31 2026] hid-generic 0003:28DE:1142.0002: hiddev0,hidraw1: USB HID v1.11 Device [Valve Software Steam Controller] on usb-0000:07:00.1-3/input1
+[Mi Sep 16 23:49:31 2026] hid-generic 0003:28DE:1142.0003: hiddev1,hidraw2: USB HID v1.11 Device [Valve Software Steam Controller] on usb-0000:07:00.1-3/input2
+[Mi Sep 16 23:49:31 2026] hid-generic 0003:28DE:1142.0004: hiddev2,hidraw3: USB HID v1.11 Device [Valve Software Steam Controller] on usb-0000:07:00.1-3/input3
+[Mi Sep 16 23:49:31 2026] hid-generic 0003:28DE:1142.0005: hiddev3,hidraw4: USB HID v1.11 Device [Valve Software Steam Controller] on usb-0000:07:00.1-3/input4
+[Mi Sep 16 23:49:31 2026] input: Valve Software Steam Controller Puck Mouse as /devices/pci0000:00/0000:00:01.2/0000:01:00.0/0000:02:08.0/0000:07:00.3/usb3/3-1/3-1:1.2/0003:28DE:1304.0006/input/input4
+[Mi Sep 16 23:49:31 2026] input: Valve Software Steam Controller Puck Keyboard as /devices/pci0000:00/0000:00:01.2/0000:01:00.0/0000:02:08.0/0000:07:00.3/usb3/3-1/3-1:1.2/0003:28DE:1304.0006/input/input5
+[Mi Sep 16 23:49:31 2026] usb 5-1.3.1: new full-speed USB device number 4 using xhci_hcd
+[Mi Sep 16 23:49:31 2026] hid-generic 0003:28DE:1304.0006: input,hiddev4,hidraw5: USB HID v1.11 Mouse [Valve Software Steam Controller Puck] on usb-0000:07:00.3-1/input2
+[Mi Sep 16 23:49:31 2026] input: Valve Software Steam Controller Puck Mouse as /devices/pci0000:00/0000:00:01.2/0000:01:00.0/0000:02:08.0/0000:07:00.3/usb3/3-1/3-1:1.3/0003:28DE:1304.0007/input/input7
+[Mi Sep 16 23:49:31 2026] input: Valve Software Steam Controller Puck Keyboard as /devices/pci0000:00/0000:00:01.2/0000:01:00.0/0000:02:08.0/0000:07:00.3/usb3/3-1/3-1:1.3/0003:28DE:1304.0007/input/input8
+[Mi Sep 16 23:49:31 2026] hid-generic 0003:28DE:1304.0007: input,hiddev5,hidraw6: USB HID v1.11 Mouse [Valve Software Steam Controller Puck] on usb-0000:07:00.3-1/input3
+[Mi Sep 16 23:49:31 2026] input: Valve Software Steam Controller Puck Mouse as /devices/pci0000:00/0000:00:01.2/0000:01:00.0/0000:02:08.0/0000:07:00.3/usb3/3-1/3-1:1.4/0003:28DE:1304.0008/input/input10
+[Mi Sep 16 23:49:31 2026] input: Valve Software Steam Controller Puck Keyboard as /devices/pci0000:00/0000:00:01.2/0000:01:00.0/0000:02:08.0/0000:07:00.3/usb3/3-1/3-1:1.4/0003:28DE:1304.0008/input/input11
+[Mi Sep 16 23:49:31 2026] usb 5-1.3.1: New USB device found, idVendor=28de, idProduct=2300, bcdDevice= 2.00
+[Mi Sep 16 23:49:31 2026] hid-generic 0003:28DE:1304.0008: input,hiddev6,hidraw7: USB HID v1.11 Mouse [Valve Software Steam Controller Puck] on usb-0000:07:00.3-1/input4
+[Mi Sep 16 23:49:31 2026] input: Valve Software Steam Controller Puck Mouse as /devices/pci0000:00/0000:00:01.2/0000:01:00.0/0000:02:08.0/0000:07:00.3/usb3/3-1/3-1:1.5/0003:28DE:1304.0009/input/input13
+[Mi Sep 16 23:49:31 2026] input: Valve Software Steam Controller Puck Keyboard as /devices/pci0000:00/0000:00:01.2/0000:01:00.0/0000:02:08.0/0000:07:00.3/usb3/3-1/3-1:1.5/0003:28DE:1304.0009/input/input14
+[Mi Sep 16 23:49:31 2026] usb 5-1.3.1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[Mi Sep 16 23:49:31 2026] usb 5-1.3.1: Product: Index HMD
+[Mi Sep 16 23:49:31 2026] usb 5-1.3.1: Manufacturer: Valve
+[Mi Sep 16 23:49:31 2026] usb 5-1.3.1: SerialNumber: LHR-6618A42D
+[Mi Sep 16 23:49:31 2026] usb 3-6.1: new high-speed USB device number 4 using xhci_hcd
+[Mi Sep 16 23:49:31 2026] hid-generic 0003:28DE:1304.0009: input,hiddev7,hidraw8: USB HID v1.11 Mouse [Valve Software Steam Controller Puck] on usb-0000:07:00.3-1/input5
+[Mi Sep 16 23:49:31 2026] hid-generic 0003:28DE:1304.000A: hiddev8,hidraw9: USB HID v1.11 Device [Valve Software Steam Controller Puck] on usb-0000:07:00.3-1/input6
+[Mi Sep 16 23:49:31 2026] input: Valve Software Steam Controller as /devices/pci0000:00/0000:00:01.2/0000:01:00.0/0000:02:08.0/0000:07:00.1/usb1/1-3/1-3:1.0/0003:28DE:1142.0001/input/input16
+[Mi Sep 16 23:49:31 2026] usb 1-6: new full-speed USB device number 4 using xhci_hcd
+[Mi Sep 16 23:49:31 2026] usb 3-6.1: New USB device found, idVendor=05e3, idProduct=0610, bcdDevice=92.26
+[Mi Sep 16 23:49:31 2026] hid-steam 0003:28DE:1142.0001: input,hidraw0: USB HID v1.11 Keyboard [Valve Software Steam Controller] on usb-0000:07:00.1-3/input0
+[Mi Sep 16 23:49:31 2026] hid-steam 0003:28DE:1142.0002: hiddev0: USB HID v1.11 Device [Valve Software Steam Controller] on usb-0000:07:00.1-3/input1
+[Mi Sep 16 23:49:31 2026] usb 3-6.1: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[Mi Sep 16 23:49:31 2026] usb 3-6.1: Product: USB2.0 Hub
+[Mi Sep 16 23:49:31 2026] usb 3-6.1: Manufacturer: GenesysLogic
+[Mi Sep 16 23:49:31 2026] hid-steam 0003:28DE:1142.0002: Steam wireless receiver connected
+[Mi Sep 16 23:49:31 2026] hid-steam 0003:28DE:1142.000B: hidraw1: USB HID v1.11 Device [Valve Software Steam Controller] on usb-0000:07:00.1-3/input1
+[Mi Sep 16 23:49:31 2026] hid-steam 0003:28DE:1142.0003: hiddev1: USB HID v1.11 Device [Valve Software Steam Controller] on usb-0000:07:00.1-3/input2
+[Mi Sep 16 23:49:31 2026] hid-generic 0003:28DE:2300.000C: hiddev9,hidraw2: USB HID v1.11 Device [Valve Index HMD] on usb-0000:0f:00.3-1.3.1/input0
+[Mi Sep 16 23:49:31 2026] hid-generic 0003:28DE:2300.000D: hiddev10,hidraw10: USB HID v1.11 Device [Valve Index HMD] on usb-0000:0f:00.3-1.3.1/input1
+[Mi Sep 16 23:49:31 2026] hub 3-6.1:1.0: USB hub found
+[Mi Sep 16 23:49:31 2026] hid-generic 0003:28DE:2300.000E: hiddev11,hidraw11: USB HID v1.11 Device [Valve Index HMD] on usb-0000:0f:00.3-1.3.1/input2
+[Mi Sep 16 23:49:31 2026] hub 3-6.1:1.0: 4 ports detected
+[Mi Sep 16 23:49:31 2026] hid-steam 0003:28DE:1142.0003: Steam wireless receiver connected
+[Mi Sep 16 23:49:31 2026] hid-steam 0003:28DE:1142.000F: hidraw12: USB HID v1.11 Device [Valve Software Steam Controller] on usb-0000:07:00.1-3/input2
+[Mi Sep 16 23:49:31 2026] hid-steam 0003:28DE:1142.0004: hiddev2: USB HID v1.11 Device [Valve Software Steam Controller] on usb-0000:07:00.1-3/input3
+[Mi Sep 16 23:49:31 2026] usb 1-6: New USB device found, idVendor=8087, idProduct=0032, bcdDevice= 0.00
+[Mi Sep 16 23:49:31 2026] usb 1-6: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+[Mi Sep 16 23:49:31 2026] usb 5-1.3.2: new full-speed USB device number 5 using xhci_hcd
+[Mi Sep 16 23:49:31 2026] hid-steam 0003:28DE:1142.0004: Steam wireless receiver connected
+[Mi Sep 16 23:49:31 2026] hid-steam 0003:28DE:1142.0010: hidraw3: USB HID v1.11 Device [Valve Software Steam Controller] on usb-0000:07:00.1-3/input3
+[Mi Sep 16 23:49:31 2026] hid-steam 0003:28DE:1142.0005: hiddev3: USB HID v1.11 Device [Valve Software Steam Controller] on usb-0000:07:00.1-3/input4
+[Mi Sep 16 23:49:31 2026] usb 2-2.1: new SuperSpeed USB device number 3 using xhci_hcd
+[Mi Sep 16 23:49:31 2026] usb 2-2.1: New USB device found, idVendor=05e3, idProduct=0616, bcdDevice=92.26
+[Mi Sep 16 23:49:31 2026] usb 2-2.1: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[Mi Sep 16 23:49:31 2026] usb 2-2.1: Product: USB3.0 Hub
+[Mi Sep 16 23:49:31 2026] usb 2-2.1: Manufacturer: GenesysLogic
+[Mi Sep 16 23:49:31 2026] hid-steam 0003:28DE:1142.0005: Steam wireless receiver connected
+[Mi Sep 16 23:49:31 2026] hub 2-2.1:1.0: USB hub found
+[Mi Sep 16 23:49:31 2026] hub 2-2.1:1.0: 4 ports detected
+[Mi Sep 16 23:49:31 2026] hid-steam 0003:28DE:1142.0011: hidraw4: USB HID v1.11 Device [Valve Software Steam Controller] on usb-0000:07:00.1-3/input4
+[Mi Sep 16 23:49:31 2026] usb 5-1.3.2: New USB device found, idVendor=28de, idProduct=2102, bcdDevice= 1.00
+[Mi Sep 16 23:49:31 2026] usb 5-1.3.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[Mi Sep 16 23:49:31 2026] usb 5-1.3.2: Product: Valve VR Radio
+[Mi Sep 16 23:49:31 2026] usb 5-1.3.2: Manufacturer: Valve Corporation
+[Mi Sep 16 23:49:31 2026] usb 5-1.3.2: SerialNumber: 47040988E1-RYB
+[Mi Sep 16 23:49:31 2026] usb 3-6.4: new high-speed USB device number 5 using xhci_hcd
+[Mi Sep 16 23:49:31 2026] input: Valve Software Steam Controller Puck as /devices/pci0000:00/0000:00:01.2/0000:01:00.0/0000:02:08.0/0000:07:00.3/usb3/3-1/3-1:1.2/0003:28DE:1304.0006/input/input17
+[Mi Sep 16 23:49:31 2026] hid-steam 0003:28DE:1304.0006: input,hiddev4: USB HID v1.11 Mouse [Valve Software Steam Controller Puck] on usb-0000:07:00.3-1/input2
+[Mi Sep 16 23:49:31 2026] hid-steam 0003:28DE:1304.0006: Steam wireless receiver connected
+[Mi Sep 16 23:49:31 2026] hid-steam 0003:28DE:1304.0012: hidraw5: USB HID v1.11 Mouse [Valve Software Steam Controller Puck] on usb-0000:07:00.3-1/input2
+[Mi Sep 16 23:49:31 2026] input: Valve Software Steam Controller Puck as /devices/pci0000:00/0000:00:01.2/0000:01:00.0/0000:02:08.0/0000:07:00.3/usb3/3-1/3-1:1.3/0003:28DE:1304.0007/input/input18
+[Mi Sep 16 23:49:31 2026] usb 3-6.4: New USB device found, idVendor=2109, idProduct=2211, bcdDevice= 5.33
+[Mi Sep 16 23:49:31 2026] usb 3-6.4: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[Mi Sep 16 23:49:31 2026] usb 3-6.4: Product: USB2.0 Hub             
+[Mi Sep 16 23:49:31 2026] usb 3-6.4: Manufacturer: VIA Labs, Inc.         
+[Mi Sep 16 23:49:31 2026] hid-generic 0003:28DE:2102.0013: hiddev5,hidraw6: USB HID v1.11 Device [Valve Corporation Valve VR Radio] on usb-0000:0f:00.3-1.3.2/input0
+[Mi Sep 16 23:49:31 2026] hid-steam 0003:28DE:1304.0007: input,hiddev12: USB HID v1.11 Mouse [Valve Software Steam Controller Puck] on usb-0000:07:00.3-1/input3
+[Mi Sep 16 23:49:31 2026] hid-steam 0003:28DE:1304.0007: Steam wireless receiver connected
+[Mi Sep 16 23:49:31 2026] hid-steam 0003:28DE:1304.0014: hidraw13: USB HID v1.11 Mouse [Valve Software Steam Controller Puck] on usb-0000:07:00.3-1/input3
+[Mi Sep 16 23:49:31 2026] hub 3-6.4:1.0: USB hub found
+[Mi Sep 16 23:49:31 2026] hub 3-6.4:1.0: 4 ports detected
+[Mi Sep 16 23:49:31 2026] usb 5-1.3.3: new full-speed USB device number 6 using xhci_hcd
+[Mi Sep 16 23:49:31 2026] usb 3-6.1.1: new full-speed USB device number 6 using xhci_hcd
+[Mi Sep 16 23:49:31 2026] input: Valve Software Steam Controller Puck as /devices/pci0000:00/0000:00:01.2/0000:01:00.0/0000:02:08.0/0000:07:00.3/usb3/3-1/3-1:1.4/0003:28DE:1304.0008/input/input19
+[Mi Sep 16 23:49:31 2026] usb 2-2.1.3: new SuperSpeed USB device number 4 using xhci_hcd
+[Mi Sep 16 23:49:31 2026] usb 2-2.1.3: New USB device found, idVendor=05e3, idProduct=0749, bcdDevice=15.35
+[Mi Sep 16 23:49:31 2026] usb 2-2.1.3: New USB device strings: Mfr=3, Product=4, SerialNumber=2
+[Mi Sep 16 23:49:31 2026] usb 2-2.1.3: Product: USB3.0 Card Reader
+[Mi Sep 16 23:49:31 2026] usb 2-2.1.3: Manufacturer: Generic
+[Mi Sep 16 23:49:31 2026] usb 2-2.1.3: SerialNumber: 000000001536
+[Mi Sep 16 23:49:31 2026] usb-storage 2-2.1.3:1.0: USB Mass Storage device detected
+[Mi Sep 16 23:49:31 2026] scsi host3: usb-storage 2-2.1.3:1.0
+[Mi Sep 16 23:49:31 2026] usbcore: registered new interface driver usb-storage
+[Mi Sep 16 23:49:31 2026] usbcore: registered new interface driver uas
+[Mi Sep 16 23:49:31 2026] hid-steam 0003:28DE:1304.0008: input,hiddev6: USB HID v1.11 Mouse [Valve Software Steam Controller Puck] on usb-0000:07:00.3-1/input4
+[Mi Sep 16 23:49:31 2026] hid-steam 0003:28DE:1304.0008: Steam wireless receiver connected
+[Mi Sep 16 23:49:31 2026] hid-steam 0003:28DE:1304.0015: hidraw7: USB HID v1.11 Mouse [Valve Software Steam Controller Puck] on usb-0000:07:00.3-1/input4
+[Mi Sep 16 23:49:32 2026] usb 5-1.3.3: New USB device found, idVendor=28de, idProduct=2102, bcdDevice= 1.00
+[Mi Sep 16 23:49:32 2026] usb 5-1.3.3: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[Mi Sep 16 23:49:32 2026] usb 5-1.3.3: Product: Valve VR Radio & HMD Mic
+[Mi Sep 16 23:49:32 2026] usb 5-1.3.3: Manufacturer: Valve Corporation
+[Mi Sep 16 23:49:32 2026] usb 5-1.3.3: SerialNumber: 0255D022E3-LYM
+[Mi Sep 16 23:49:32 2026] input: Valve Software Steam Controller Puck as /devices/pci0000:00/0000:00:01.2/0000:01:00.0/0000:02:08.0/0000:07:00.3/usb3/3-1/3-1:1.5/0003:28DE:1304.0009/input/input20
+[Mi Sep 16 23:49:32 2026] usb 3-6.1.1: New USB device found, idVendor=28bd, idProduct=0930, bcdDevice= 0.00
+[Mi Sep 16 23:49:32 2026] usb 3-6.1.1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[Mi Sep 16 23:49:32 2026] usb 3-6.1.1: Product: 4 inch PenTablet
+[Mi Sep 16 23:49:32 2026] usb 3-6.1.1: Manufacturer: UGTABLET
+[Mi Sep 16 23:49:32 2026] usb 3-6.1.1: SerialNumber: 000000
+[Mi Sep 16 23:49:32 2026] hid-steam 0003:28DE:1304.0009: input,hiddev7: USB HID v1.11 Mouse [Valve Software Steam Controller Puck] on usb-0000:07:00.3-1/input5
+[Mi Sep 16 23:49:32 2026] hid-steam 0003:28DE:1304.0009: Steam wireless receiver connected
+[Mi Sep 16 23:49:32 2026] hid-steam 0003:28DE:1304.0016: hidraw8: USB HID v1.11 Mouse [Valve Software Steam Controller Puck] on usb-0000:07:00.3-1/input5
+[Mi Sep 16 23:49:32 2026] hid-steam 0003:28DE:1304.000A: hiddev8,hidraw9: USB HID v1.11 Device [Valve Software Steam Controller Puck] on usb-0000:07:00.3-1/input6
+[Mi Sep 16 23:49:32 2026] hid-generic 0003:28DE:2102.0017: hiddev13,hidraw14: USB HID v1.11 Device [Valve Corporation Valve VR Radio & HMD Mic] on usb-0000:0f:00.3-1.3.3/input0
+[Mi Sep 16 23:49:32 2026] usb 5-1.3.5: new high-speed USB device number 7 using xhci_hcd
+[Mi Sep 16 23:49:32 2026] input: UGTABLET 4 inch PenTablet Mouse as /devices/pci0000:00/0000:00:01.2/0000:01:00.0/0000:02:08.0/0000:07:00.3/usb3/3-6/3-6.1/3-6.1.1/3-6.1.1:1.0/0003:28BD:0930.0018/input/input21
+[Mi Sep 16 23:49:32 2026] input: UGTABLET 4 inch PenTablet Keyboard as /devices/pci0000:00/0000:00:01.2/0000:01:00.0/0000:02:08.0/0000:07:00.3/usb3/3-6/3-6.1/3-6.1.1/3-6.1.1:1.0/0003:28BD:0930.0018/input/input22
+[Mi Sep 16 23:49:32 2026] hid-generic 0003:28BD:0930.0018: input,hidraw15: USB HID v1.00 Mouse [UGTABLET 4 inch PenTablet] on usb-0000:07:00.3-6.1.1/input0
+[Mi Sep 16 23:49:32 2026] input: UGTABLET 4 inch PenTablet Pen as /devices/pci0000:00/0000:00:01.2/0000:01:00.0/0000:02:08.0/0000:07:00.3/usb3/3-6/3-6.1/3-6.1.1/3-6.1.1:1.1/0003:28BD:0930.0019/input/input23
+[Mi Sep 16 23:49:32 2026] hid-generic 0003:28BD:0930.0019: input,hiddev14,hidraw16: USB HID v1.00 Device [UGTABLET 4 inch PenTablet] on usb-0000:07:00.3-6.1.1/input1
+[Mi Sep 16 23:49:32 2026] usb 5-1.3.5: New USB device found, idVendor=0424, idProduct=2740, bcdDevice= 2.00
+[Mi Sep 16 23:49:32 2026] usb 5-1.3.5: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[Mi Sep 16 23:49:32 2026] usb 5-1.3.5: Product: Hub Controller
+[Mi Sep 16 23:49:32 2026] usb 5-1.3.5: Manufacturer: Microchip Tech
+[Mi Sep 16 23:49:32 2026] hid-generic 0003:28BD:0930.001A: hiddev15,hidraw17: USB HID v1.00 Device [UGTABLET 4 inch PenTablet] on usb-0000:07:00.3-6.1.1/input2
+[Mi Sep 16 23:49:32 2026] usb 3-6.1.4: new high-speed USB device number 7 using xhci_hcd
+[Mi Sep 16 23:49:32 2026] usb 3-6.1.4: New USB device found, idVendor=1235, idProduct=8210, bcdDevice= 6.45
+[Mi Sep 16 23:49:32 2026] usb 3-6.1.4: New USB device strings: Mfr=1, Product=3, SerialNumber=2
+[Mi Sep 16 23:49:32 2026] usb 3-6.1.4: Product: Scarlett 2i2 USB
+[Mi Sep 16 23:49:32 2026] usb 3-6.1.4: Manufacturer: Focusrite
+[Mi Sep 16 23:49:32 2026] usb 3-6.1.4: SerialNumber: Y8CDZY42431EFE
+[Mi Sep 16 23:49:32 2026] clocksource: Watchdog remote CPU 4 read timed out
+[Mi Sep 16 23:49:32 2026] xor: automatically using best checksumming function   avx       
+[Mi Sep 16 23:49:32 2026] raid6: using avx2x2 recovery algorithm
+[Mi Sep 16 23:49:32 2026] raid6: avx2x1   gen() 29451 MB/s
+[Mi Sep 16 23:49:32 2026] raid6: avx2x2   gen() 37508 MB/s
+[Mi Sep 16 23:49:32 2026] raid6: avx2x4   gen() 37130 MB/s
+[Mi Sep 16 23:49:32 2026] raid6: using algorithm avx2x2 gen() 37508 MB/s
+[Mi Sep 16 23:49:32 2026] raid6: .... xor() 26435 MB/s, rmw enabled
+[Mi Sep 16 23:49:32 2026] async_tx: api initialized (async)
+[Mi Sep 16 23:49:32 2026] usb 3-6.4.1: new low-speed USB device number 8 using xhci_hcd
+[Mi Sep 16 23:49:32 2026] usb 3-6.4.1: New USB device found, idVendor=046d, idProduct=c051, bcdDevice=30.00
+[Mi Sep 16 23:49:32 2026] usb 3-6.4.1: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[Mi Sep 16 23:49:32 2026] usb 3-6.4.1: Product: USB-PS/2 Optical Mouse
+[Mi Sep 16 23:49:32 2026] usb 3-6.4.1: Manufacturer: Logitech
+[Mi Sep 16 23:49:32 2026] input: Logitech USB-PS/2 Optical Mouse as /devices/pci0000:00/0000:00:01.2/0000:01:00.0/0000:02:08.0/0000:07:00.3/usb3/3-6/3-6.4/3-6.4.1/3-6.4.1:1.0/0003:046D:C051.001B/input/input24
+[Mi Sep 16 23:49:32 2026] hid-generic 0003:046D:C051.001B: input,hidraw18: USB HID v1.10 Mouse [Logitech USB-PS/2 Optical Mouse] on usb-0000:07:00.3-6.4.1/input0
+[Mi Sep 16 23:49:32 2026] usb 3-6.4.2: new low-speed USB device number 9 using xhci_hcd
+[Mi Sep 16 23:49:32 2026] scsi 3:0:0:0: Direct-Access     Generic  MassStorageClass 1536 PQ: 0 ANSI: 6
+[Mi Sep 16 23:49:32 2026] scsi 3:0:0:1: Direct-Access     Generic  MassStorageClass 1536 PQ: 0 ANSI: 6
+[Mi Sep 16 23:49:32 2026] sd 3:0:0:0: Attached scsi generic sg1 type 0
+[Mi Sep 16 23:49:32 2026] sd 3:0:0:1: Attached scsi generic sg2 type 0
+[Mi Sep 16 23:49:33 2026] usb 3-6.4.2: New USB device found, idVendor=046a, idProduct=0011, bcdDevice= 1.00
+[Mi Sep 16 23:49:33 2026] usb 3-6.4.2: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+[Mi Sep 16 23:49:33 2026] sd 3:0:0:0: [sdb] Media removed, stopped polling
+[Mi Sep 16 23:49:33 2026] sd 3:0:0:1: [sdc] Media removed, stopped polling
+[Mi Sep 16 23:49:33 2026] sd 3:0:0:0: [sdb] Attached SCSI removable disk
+[Mi Sep 16 23:49:33 2026] sd 3:0:0:1: [sdc] Attached SCSI removable disk
+[Mi Sep 16 23:49:33 2026] input: HID 046a:0011 as /devices/pci0000:00/0000:00:01.2/0000:01:00.0/0000:02:08.0/0000:07:00.3/usb3/3-6/3-6.4/3-6.4.2/3-6.4.2:1.0/0003:046A:0011.001C/input/input25
+[Mi Sep 16 23:49:33 2026] hid-generic 0003:046A:0011.001C: input,hidraw19: USB HID v1.11 Keyboard [HID 046a:0011] on usb-0000:07:00.3-6.4.2/input0
+[Mi Sep 16 23:49:33 2026] usb 3-6.4.3: new full-speed USB device number 10 using xhci_hcd
+[Mi Sep 16 23:49:33 2026] usb 3-6.4.3: New USB device found, idVendor=1462, idProduct=3fa4, bcdDevice= 0.00
+[Mi Sep 16 23:49:33 2026] usb 3-6.4.3: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[Mi Sep 16 23:49:33 2026] usb 3-6.4.3: Product: MSI Gaming Controller
+[Mi Sep 16 23:49:33 2026] usb 3-6.4.3: Manufacturer: MS
+[Mi Sep 16 23:49:33 2026] usb 3-6.4.3: SerialNumber: A02019010700
+[Mi Sep 16 23:49:33 2026] input: MS MSI Gaming Controller as /devices/pci0000:00/0000:00:01.2/0000:01:00.0/0000:02:08.0/0000:07:00.3/usb3/3-6/3-6.4/3-6.4.3/3-6.4.3:1.0/0003:1462:3FA4.001D/input/input26
+[Mi Sep 16 23:49:33 2026] hid-generic 0003:1462:3FA4.001D: input,hiddev16,hidraw20: USB HID v1.10 Device [MS MSI Gaming Controller] on usb-0000:07:00.3-6.4.3/input0
+[Mi Sep 16 23:49:48 2026] EXT4-fs (dm-0): mounted filesystem ba18f908-4e35-46d1-bbfc-46d7dc709c14 ro with ordered data mode. Quota mode: none.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Inserted module 'autofs4'
+[Mi Sep 16 23:49:48 2026] systemd[1]: systemd 259.5-0ubuntu3.4 running in system mode (+PAM +AUDIT +SELINUX +APPARMOR +IMA +IPE +SMACK +SECCOMP +GCRYPT -GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 -IDN +KMOD +LIBCRYPTSETUP +LIBCRYPTSETUP_PLUGINS +LIBFDISK +PCRE2 +PWQUALITY +P11KIT +QRENCODE +TPM2 +BZIP2 +LZ4 +XZ +ZLIB +ZSTD +BPF_FRAMEWORK +BTF -XKBCOMMON -UTMP +SYSVINIT +LIBARCHIVE)
+[Mi Sep 16 23:49:48 2026] systemd[1]: Detected architecture x86-64.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Hostname set to <egal-12>.
+[Mi Sep 16 23:49:48 2026] systemd[1]: bpf-restrict-fs: BPF LSM hook not enabled in the kernel, BPF LSM not supported.
+[Mi Sep 16 23:49:48 2026] systemd-sysv-generator[485]: SysV service '/etc/init.d/neard' lacks a native systemd unit file, automatically generating a unit file for compatibility.
+[Mi Sep 16 23:49:48 2026] systemd-sysv-generator[485]: Please update package to include a native systemd unit file.
+[Mi Sep 16 23:49:48 2026] systemd-sysv-generator[485]: ! This compatibility logic is deprecated, expect removal soon. !
+[Mi Sep 16 23:49:48 2026] systemd-sysv-generator[485]: SysV service '/etc/init.d/grub-common' lacks a native systemd unit file, automatically generating a unit file for compatibility.
+[Mi Sep 16 23:49:48 2026] systemd-sysv-generator[485]: Please update package to include a native systemd unit file.
+[Mi Sep 16 23:49:48 2026] systemd-sysv-generator[485]: ! This compatibility logic is deprecated, expect removal soon. !
+[Mi Sep 16 23:49:48 2026] systemd[1]: Queued start job for default target graphical.target.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Created slice machine.slice - Virtual Machine and Container Slice.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Created slice system-cups.slice - CUPS Slice.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Created slice system-modprobe.slice - Slice /system/modprobe.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Created slice system-systemd\x2dcryptsetup.slice - Encrypted Volume Units Service Slice.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Created slice system-systemd\x2dfsck.slice - Slice /system/systemd-fsck.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Created slice user.slice - User and Session Slice.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Started systemd-ask-password-wall.path - Forward Password Requests to Wall Directory Watch.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Set up automount proc-sys-fs-binfmt_misc.automount - Arbitrary Executable File Formats File System Automount Point.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Expecting device dev-disk-by\x2duuid-0795e0dc\x2d7f13\x2d4c7e\x2d9e36\x2da65fac3c6a2c.device - /dev/disk/by-uuid/0795e0dc-7f13-4c7e-9e36-a65fac3c6a2c...
+[Mi Sep 16 23:49:48 2026] systemd[1]: Expecting device dev-disk-by\x2duuid-3E24\x2d967F.device - /dev/disk/by-uuid/3E24-967F...
+[Mi Sep 16 23:49:48 2026] systemd[1]: Expecting device dev-disk-by\x2duuid-59577b2e\x2d451b\x2d11e9\x2d81cb\x2d6b580fb8aaff.device - /dev/disk/by-uuid/59577b2e-451b-11e9-81cb-6b580fb8aaff...
+[Mi Sep 16 23:49:48 2026] systemd[1]: Expecting device dev-disk-by\x2duuid-a56321f2\x2dd581\x2d4a8b\x2db0ec\x2de2278d9e9ab4.device - /dev/disk/by-uuid/a56321f2-d581-4a8b-b0ec-e2278d9e9ab4...
+[Mi Sep 16 23:49:48 2026] systemd[1]: Expecting device dev-disk-by\x2duuid-e3a33375\x2d081e\x2d4d74\x2d91c9\x2d07b9d3dc1330.device - /dev/disk/by-uuid/e3a33375-081e-4d74-91c9-07b9d3dc1330...
+[Mi Sep 16 23:49:48 2026] systemd[1]: Expecting device dev-mapper-cryptdata.device - /dev/mapper/cryptdata...
+[Mi Sep 16 23:49:48 2026] systemd[1]: Expecting device dev-mapper-cryptdata2.device - /dev/mapper/cryptdata2...
+[Mi Sep 16 23:49:48 2026] systemd[1]: Reached target imports.target - Image Downloads.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Reached target integritysetup.target - Local Integrity Protected Volumes.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Reached target slices.target - Slice Units.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Reached target swap.target - Swaps.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Reached target veritysetup.target - Local Verity Protected Volumes.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Reached target virt-guest-shutdown.target - libvirt guests shutdown target.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Listening on dm-event.socket - Device-mapper event daemon FIFOs.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Listening on lvm2-lvmpolld.socket - LVM2 poll daemon socket.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Listening on syslog.socket - Syslog Socket.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Listening on systemd-ask-password.socket - Query the User Interactively for a Password.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Listening on systemd-coredump.socket - Process Core Dump Socket.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Listening on systemd-creds.socket - Credential Encryption/Decryption.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Listening on systemd-factory-reset.socket - Factory Reset Management.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Listening on systemd-journald-dev-log.socket - Journal Socket (/dev/log).
+[Mi Sep 16 23:49:48 2026] systemd[1]: Listening on systemd-journald.socket - Journal Sockets.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Listening on systemd-mute-console.socket - Console Output Muting Service Socket.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Listening on systemd-oomd.socket - Userspace Out-Of-Memory (OOM) Killer Socket.
+[Mi Sep 16 23:49:48 2026] systemd[1]: systemd-pcrextend.socket - TPM PCR Measurements skipped, unmet condition check ConditionSecurity=measured-uki
+[Mi Sep 16 23:49:48 2026] systemd[1]: systemd-pcrlock.socket - Make TPM PCR Policy skipped, unmet condition check ConditionSecurity=measured-uki
+[Mi Sep 16 23:49:48 2026] systemd[1]: Listening on systemd-resolved-monitor.socket - Resolve Monitor Varlink Socket.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Listening on systemd-resolved-varlink.socket - Resolve Service Varlink Socket.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Listening on systemd-udevd-control.socket - udev Control Socket.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Listening on systemd-udevd-kernel.socket - udev Kernel Socket.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Listening on systemd-udevd-varlink.socket - udev Varlink Socket.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Listening on systemd-userdbd.socket - User Database Manager Socket.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Mounting dev-hugepages.mount - Huge Pages File System...
+[Mi Sep 16 23:49:48 2026] systemd[1]: Mounting dev-mqueue.mount - POSIX Message Queue File System...
+[Mi Sep 16 23:49:48 2026] systemd[1]: Mounting sys-kernel-debug.mount - Kernel Debug File System...
+[Mi Sep 16 23:49:48 2026] systemd[1]: Mounting sys-kernel-tracing.mount - Kernel Trace File System...
+[Mi Sep 16 23:49:48 2026] systemd[1]: tmp.mount: Directory /tmp to mount over is not empty, mounting anyway.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Mounting tmp.mount - Temporary Directory /tmp...
+[Mi Sep 16 23:49:48 2026] systemd[1]: Starting systemd-journald.service - Journal Service...
+[Mi Sep 16 23:49:48 2026] systemd[1]: Starting keyboard-setup.service - Set the console keyboard layout...
+[Mi Sep 16 23:49:48 2026] systemd[1]: Starting kmod-static-nodes.service - Create List of Static Device Nodes...
+[Mi Sep 16 23:49:48 2026] systemd[1]: Starting lvm2-monitor.service - Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling...
+[Mi Sep 16 23:49:48 2026] systemd[1]: modprobe@configfs.service - Load Kernel Module configfs skipped, unmet condition check ConditionKernelModuleLoaded=!configfs
+[Mi Sep 16 23:49:48 2026] systemd[1]: Mounting sys-kernel-config.mount - Kernel Configuration File System...
+[Mi Sep 16 23:49:48 2026] systemd[1]: modprobe@drm.service - Load Kernel Module drm skipped, unmet condition check ConditionKernelModuleLoaded=!drm
+[Mi Sep 16 23:49:48 2026] systemd[1]: Starting modprobe@efi_pstore.service - Load Kernel Module efi_pstore...
+[Mi Sep 16 23:49:48 2026] systemd[1]: modprobe@fuse.service - Load Kernel Module fuse skipped, unmet condition check ConditionKernelModuleLoaded=!fuse
+[Mi Sep 16 23:49:48 2026] systemd[1]: Mounting sys-fs-fuse-connections.mount - FUSE Control File System...
+[Mi Sep 16 23:49:48 2026] systemd[1]: Starting modprobe@nvme_fabrics.service - Load Kernel Module nvme_fabrics...
+[Mi Sep 16 23:49:48 2026] systemd[1]: systemd-hibernate-clear.service - Clear Stale Hibernate Storage Info skipped, unmet condition check ConditionPathExists=/sys/firmware/efi/efivars/HibernateLocation-8cf2644b-4b0b-428f-9387-6d876050dc67
+[Mi Sep 16 23:49:48 2026] systemd[1]: Starting systemd-modules-load.service - Load Kernel Modules...
+[Mi Sep 16 23:49:48 2026] systemd[1]: systemd-pcrmachine.service - TPM PCR Machine ID Measurement skipped, unmet condition check ConditionSecurity=measured-uki
+[Mi Sep 16 23:49:48 2026] systemd[1]: systemd-pcrproduct.service - TPM NvPCR Product ID Measurement skipped, unmet condition check ConditionSecurity=measured-uki
+[Mi Sep 16 23:49:48 2026] systemd[1]: Starting systemd-remount-fs.service - Remount Root and Kernel File Systems...
+[Mi Sep 16 23:49:48 2026] systemd[1]: systemd-tpm2-setup-early.service - Early TPM SRK Setup skipped, unmet condition check ConditionSecurity=measured-uki
+[Mi Sep 16 23:49:48 2026] systemd[1]: Starting systemd-udev-load-credentials.service - Load udev Rules from Credentials...
+[Mi Sep 16 23:49:48 2026] systemd[1]: Starting systemd-udev-trigger.service - Coldplug All udev Devices...
+[Mi Sep 16 23:49:48 2026] systemd[1]: Mounted dev-hugepages.mount - Huge Pages File System.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Mounted dev-mqueue.mount - POSIX Message Queue File System.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Mounted sys-kernel-debug.mount - Kernel Debug File System.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Mounted sys-kernel-tracing.mount - Kernel Trace File System.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Mounted tmp.mount - Temporary Directory /tmp.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Finished kmod-static-nodes.service - Create List of Static Device Nodes.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Mounted sys-kernel-config.mount - Kernel Configuration File System.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Mounted sys-fs-fuse-connections.mount - FUSE Control File System.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Starting systemd-tmpfiles-setup-dev-early.service - Create Static Device Nodes in /dev gracefully...
+[Mi Sep 16 23:49:48 2026] pstore: Using crash dump compression: deflate
+[Mi Sep 16 23:49:48 2026] pstore: Registered efi_pstore as persistent store backend
+[Mi Sep 16 23:49:48 2026] systemd[1]: Finished systemd-udev-load-credentials.service - Load udev Rules from Credentials.
+[Mi Sep 16 23:49:48 2026] systemd[1]: modprobe@efi_pstore.service: Deactivated successfully.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Finished modprobe@efi_pstore.service - Load Kernel Module efi_pstore.
+[Mi Sep 16 23:49:48 2026] systemd[1]: modprobe@nvme_fabrics.service: Deactivated successfully.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Finished modprobe@nvme_fabrics.service - Load Kernel Module nvme_fabrics.
+[Mi Sep 16 23:49:48 2026] systemd-journald[509]: Collecting audit messages is disabled.
+[Mi Sep 16 23:49:48 2026] ppdev: user-space parallel port driver
+[Mi Sep 16 23:49:48 2026] lp: driver loaded but no devices found
+[Mi Sep 16 23:49:48 2026] nct6775: Found NCT6798D/NCT5585D or compatible chip at 0x2e:0x290
+[Mi Sep 16 23:49:48 2026] systemd[1]: Finished systemd-tmpfiles-setup-dev-early.service - Create Static Device Nodes in /dev gracefully.
+[Mi Sep 16 23:49:48 2026] EXT4-fs (dm-0): re-mounted ba18f908-4e35-46d1-bbfc-46d7dc709c14 r/w.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Finished systemd-remount-fs.service - Remount Root and Kernel File Systems.
+[Mi Sep 16 23:49:48 2026] systemd[1]: systemd-hwdb-update.service - Rebuild Hardware Database skipped, unmet condition check ConditionNeedsUpdate=/etc
+[Mi Sep 16 23:49:48 2026] systemd[1]: systemd-pstore.service - Platform Persistent Storage Archival skipped, unmet condition check ConditionDirectoryNotEmpty=/sys/fs/pstore
+[Mi Sep 16 23:49:48 2026] systemd[1]: Starting systemd-random-seed.service - Load/Save OS Random Seed...
+[Mi Sep 16 23:49:48 2026] systemd[1]: systemd-sysusers.service - Create System Users skipped, no trigger condition checks were met.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Starting systemd-oomd.service - Userspace Out-Of-Memory (OOM) Killer...
+[Mi Sep 16 23:49:48 2026] systemd[1]: Starting systemd-timesyncd.service - Network Time Synchronization...
+[Mi Sep 16 23:49:48 2026] bridge: filtering via arp/ip/ip6tables is no longer available by default. Update your scripts to load br_netfilter if you need this.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Starting systemd-tmpfiles-setup-dev.service - Create Static Device Nodes in /dev...
+[Mi Sep 16 23:49:48 2026] systemd[1]: systemd-tpm2-setup.service - TPM SRK Setup skipped, unmet condition check ConditionSecurity=measured-uki
+[Mi Sep 16 23:49:48 2026] systemd[1]: systemd-pcrnvdone.service - TPM PCR NvPCR Initialization Separator skipped, unmet condition check ConditionSecurity=measured-uki
+[Mi Sep 16 23:49:48 2026] Bridge firewalling registered
+[Mi Sep 16 23:49:48 2026] systemd[1]: Starting systemd-userdbd.service - User Database Manager...
+[Mi Sep 16 23:49:48 2026] systemd[1]: Finished systemd-modules-load.service - Load Kernel Modules.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Starting systemd-sysctl.service - Apply Kernel Variables...
+[Mi Sep 16 23:49:48 2026] systemd[1]: Finished systemd-tmpfiles-setup-dev.service - Create Static Device Nodes in /dev.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Starting systemd-udevd.service - Rule-based Manager for Device Events and Files...
+[Mi Sep 16 23:49:48 2026] systemd[1]: Finished keyboard-setup.service - Set the console keyboard layout.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Finished systemd-random-seed.service - Load/Save OS Random Seed.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Finished systemd-sysctl.service - Apply Kernel Variables.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Starting systemd-resolved.service - Network Name Resolution...
+[Mi Sep 16 23:49:48 2026] systemd[1]: Started systemd-userdbd.service - User Database Manager.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Started systemd-oomd.service - Userspace Out-Of-Memory (OOM) Killer.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Started systemd-timesyncd.service - Network Time Synchronization.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Reached target time-set.target - System Time Set.
+[Mi Sep 16 23:49:48 2026] systemd[1]: Started systemd-journald.service - Journal Service.
+[Mi Sep 16 23:49:48 2026] systemd-journald[509]: Received client request to flush runtime journal.
+[Mi Sep 16 23:49:48 2026] systemd-journald[509]: File /var/log/journal/03d5aaec060548b38116c78569901e10/system.journal corrupted or uncleanly shut down, renaming and replacing.
+[Mi Sep 16 23:49:49 2026] cdc_acm 3-1:1.0: ttyACM0: USB ACM device
+[Mi Sep 16 23:49:49 2026] cdc_acm 5-1.3.2:1.1: ttyACM1: USB ACM device
+[Mi Sep 16 23:49:49 2026] usbcore: registered new interface driver cdc_acm
+[Mi Sep 16 23:49:49 2026] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+[Mi Sep 16 23:49:49 2026] cfg80211: Loading compiled-in X.509 certificates for regulatory database
+[Mi Sep 16 23:49:49 2026] Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+[Mi Sep 16 23:49:49 2026] Loaded X.509 cert 'wens: 61c038651aabdcf94bd0ac7ff06c7248db18c600'
+[Mi Sep 16 23:49:49 2026] mc: Linux media interface: v0.10
+[Mi Sep 16 23:49:49 2026] Bluetooth: Core ver 2.22
+[Mi Sep 16 23:49:49 2026] ccp 0000:0f:00.1: enabling device (0000 -> 0002)
+[Mi Sep 16 23:49:49 2026] RAPL PMU: API unit is 2^-32 Joules, 2 fixed counters, 163840 ms ovfl timer
+[Mi Sep 16 23:49:49 2026] RAPL PMU: hw unit of domain package 2^-16 Joules
+[Mi Sep 16 23:49:49 2026] RAPL PMU: hw unit of domain core 2^-16 Joules
+[Mi Sep 16 23:49:49 2026] ccp 0000:0f:00.1: ccp: unable to access the device: you might be running a broken BIOS.
+[Mi Sep 16 23:49:49 2026] ccp 0000:0f:00.1: psp enabled
+[Mi Sep 16 23:49:49 2026] piix4_smbus 0000:00:14.0: SMBus Host Controller at 0xb00, revision 0
+[Mi Sep 16 23:49:49 2026] piix4_smbus 0000:00:14.0: Using register 0x02 for SMBus port selection
+[Mi Sep 16 23:49:49 2026] NET: Registered PF_BLUETOOTH protocol family
+[Mi Sep 16 23:49:49 2026] Bluetooth: HCI device and connection manager initialized
+[Mi Sep 16 23:49:49 2026] Bluetooth: HCI socket layer initialized
+[Mi Sep 16 23:49:49 2026] Bluetooth: L2CAP socket layer initialized
+[Mi Sep 16 23:49:49 2026] Bluetooth: SCO socket layer initialized
+[Mi Sep 16 23:49:49 2026] i2c i2c-0: Successfully instantiated SPD at 0x50
+[Mi Sep 16 23:49:49 2026] videodev: Linux video capture interface: v2.00
+[Mi Sep 16 23:49:49 2026] i2c i2c-0: Successfully instantiated SPD at 0x51
+[Mi Sep 16 23:49:49 2026] i2c i2c-0: Successfully instantiated SPD at 0x52
+[Mi Sep 16 23:49:49 2026] i2c i2c-0: Successfully instantiated SPD at 0x53
+[Mi Sep 16 23:49:49 2026] piix4_smbus 0000:00:14.0: Auxiliary SMBus Host Controller at 0xb20
+[Mi Sep 16 23:49:49 2026] iwlwifi 0000:05:00.0: enabling device (0000 -> 0002)
+[Mi Sep 16 23:49:49 2026] iwlwifi 0000:05:00.0: Detected crf-id 0x400410, cnv-id 0x400410 wfpm id 0x80000000
+[Mi Sep 16 23:49:49 2026] iwlwifi 0000:05:00.0: PCI dev 2725/0020, rev=0x420, rfid=0x10d000
+[Mi Sep 16 23:49:49 2026] iwlwifi 0000:05:00.0: Detected Intel(R) Wi-Fi 6E AX210 160MHz
+[Mi Sep 16 23:49:49 2026] iwlwifi 0000:05:00.0: loaded firmware version 89.4d42c933.0 ty-a0-gf-a0-89.ucode op_mode iwlmvm
+[Mi Sep 16 23:49:49 2026] usbcore: registered new interface driver btusb
+[Mi Sep 16 23:49:49 2026] Bluetooth: hci0: Firmware timestamp 2024.48 buildtype 1 build 81864
+[Mi Sep 16 23:49:49 2026] Bluetooth: hci0: Firmware SHA1: 0xc115e35a
+[Mi Sep 16 23:49:49 2026] Bluetooth: hci0: No support for _PRR ACPI method
+[Mi Sep 16 23:49:49 2026] Bluetooth: hci0: Found device firmware: intel/ibt-0041-0041.sfi
+[Mi Sep 16 23:49:49 2026] Bluetooth: hci0: Boot Address: 0x100800
+[Mi Sep 16 23:49:49 2026] Bluetooth: hci0: Firmware Version: 200-48.24
+[Mi Sep 16 23:49:49 2026] Bluetooth: hci0: Firmware already loaded
+[Mi Sep 16 23:49:49 2026] Bluetooth: hci0: Fseq status: Success (0x00)
+[Mi Sep 16 23:49:49 2026] Bluetooth: hci0: Fseq executed: 00.00.02.41
+[Mi Sep 16 23:49:49 2026] Bluetooth: hci0: Fseq BT Top: 00.00.02.41
+[Mi Sep 16 23:49:49 2026] ee1004 0-0050: 512 byte EE1004-compliant SPD EEPROM, read-only
+[Mi Sep 16 23:49:49 2026] kvm_amd: TSC scaling supported
+[Mi Sep 16 23:49:49 2026] kvm_amd: Nested Virtualization enabled
+[Mi Sep 16 23:49:49 2026] kvm_amd: Nested Paging enabled
+[Mi Sep 16 23:49:49 2026] kvm_amd: LBR virtualization supported
+[Mi Sep 16 23:49:49 2026] kvm_amd: SEV disabled (ASIDs 1 - 509)
+[Mi Sep 16 23:49:49 2026] kvm_amd: SEV-ES disabled (ASIDs 0 - 0)
+[Mi Sep 16 23:49:49 2026] kvm_amd: Virtual VMLOAD VMSAVE supported
+[Mi Sep 16 23:49:49 2026] kvm_amd: Virtual GIF supported
+[Mi Sep 16 23:49:49 2026] ee1004 0-0051: 512 byte EE1004-compliant SPD EEPROM, read-only
+[Mi Sep 16 23:49:49 2026] ee1004 0-0052: 512 byte EE1004-compliant SPD EEPROM, read-only
+[Mi Sep 16 23:49:49 2026] ee1004 0-0053: 512 byte EE1004-compliant SPD EEPROM, read-only
+[Mi Sep 16 23:49:49 2026] MCE: In-kernel MCE decoding enabled.
+[Mi Sep 16 23:49:49 2026] uvcvideo 6-1.1:1.0: Found UVC 1.00 device 3D Camera (28de:2400)
+[Mi Sep 16 23:49:49 2026] intel_rapl_common: Found RAPL domain package
+[Mi Sep 16 23:49:49 2026] intel_rapl_common: Found RAPL domain core
+[Mi Sep 16 23:49:49 2026] snd_hda_intel 0000:0d:00.1: enabling device (0000 -> 0002)
+[Mi Sep 16 23:49:49 2026] snd_hda_intel 0000:0d:00.1: Force to non-snoop mode
+[Mi Sep 16 23:49:49 2026] snd_hda_intel 0000:0f:00.4: enabling device (0000 -> 0002)
+[Mi Sep 16 23:49:49 2026] input: HDA ATI HDMI HDMI/DP,pcm=3 as /devices/pci0000:00/0000:00:03.1/0000:0b:00.0/0000:0c:00.0/0000:0d:00.1/sound/card1/input27
+[Mi Sep 16 23:49:49 2026] input: HDA ATI HDMI HDMI/DP,pcm=7 as /devices/pci0000:00/0000:00:03.1/0000:0b:00.0/0000:0c:00.0/0000:0d:00.1/sound/card1/input28
+[Mi Sep 16 23:49:49 2026] input: HDA ATI HDMI HDMI/DP,pcm=8 as /devices/pci0000:00/0000:00:03.1/0000:0b:00.0/0000:0c:00.0/0000:0d:00.1/sound/card1/input29
+[Mi Sep 16 23:49:49 2026] input: HDA ATI HDMI HDMI/DP,pcm=9 as /devices/pci0000:00/0000:00:03.1/0000:0b:00.0/0000:0c:00.0/0000:0d:00.1/sound/card1/input30
+[Mi Sep 16 23:49:49 2026] snd_hda_codec_alc882 hdaudioC2D0: ALCS1200A: SKU not ready 0x00000000
+[Mi Sep 16 23:49:49 2026] snd_hda_codec_alc882 hdaudioC2D0: autoconfig for ALCS1200A: line_outs=1 (0x14/0x0/0x0/0x0/0x0) type:line
+[Mi Sep 16 23:49:49 2026] snd_hda_codec_alc882 hdaudioC2D0:    speaker_outs=0 (0x0/0x0/0x0/0x0/0x0)
+[Mi Sep 16 23:49:49 2026] snd_hda_codec_alc882 hdaudioC2D0:    hp_outs=1 (0x1b/0x0/0x0/0x0/0x0)
+[Mi Sep 16 23:49:49 2026] snd_hda_codec_alc882 hdaudioC2D0:    mono: mono_out=0x0
+[Mi Sep 16 23:49:49 2026] snd_hda_codec_alc882 hdaudioC2D0:    inputs:
+[Mi Sep 16 23:49:49 2026] snd_hda_codec_alc882 hdaudioC2D0:      Rear Mic=0x18
+[Mi Sep 16 23:49:49 2026] snd_hda_codec_alc882 hdaudioC2D0:      Front Mic=0x19
+[Mi Sep 16 23:49:49 2026] snd_hda_codec_alc882 hdaudioC2D0:      Line=0x1a
+[Mi Sep 16 23:49:49 2026] input: HD-Audio Generic Rear Mic as /devices/pci0000:00/0000:00:08.1/0000:0f:00.4/sound/card2/input31
+[Mi Sep 16 23:49:49 2026] input: HD-Audio Generic Front Mic as /devices/pci0000:00/0000:00:08.1/0000:0f:00.4/sound/card2/input32
+[Mi Sep 16 23:49:49 2026] input: HD-Audio Generic Line as /devices/pci0000:00/0000:00:08.1/0000:0f:00.4/sound/card2/input33
+[Mi Sep 16 23:49:49 2026] input: HD-Audio Generic Line Out as /devices/pci0000:00/0000:00:08.1/0000:0f:00.4/sound/card2/input34
+[Mi Sep 16 23:49:49 2026] input: HD-Audio Generic Front Headphone as /devices/pci0000:00/0000:00:08.1/0000:0f:00.4/sound/card2/input35
+[Mi Sep 16 23:49:49 2026] input: 3D Camera: eTronVideo as /devices/pci0000:00/0000:00:08.1/0000:0f:00.3/usb6/6-1/6-1.1/6-1.1:1.0/input/input36
+[Mi Sep 16 23:49:49 2026] usbcore: registered new interface driver uvcvideo
+[Mi Sep 16 23:49:49 2026] usb 3-6.1.4: Focusrite Scarlett Gen 3 Mixer Driver enabled (pid=0x8210); report any issues to https://github.com/geoffreybennett/scarlett-gen2/issues
+[Mi Sep 16 23:49:49 2026] usb 3-6.1.4: Firmware version 1605
+[Mi Sep 16 23:49:49 2026] usbcore: registered new interface driver snd-usb-audio
+[Mi Sep 16 23:49:49 2026] iwlwifi 0000:05:00.0: WFPM_UMAC_PD_NOTIFICATION: 0x20
+[Mi Sep 16 23:49:49 2026] iwlwifi 0000:05:00.0: WFPM_LMAC2_PD_NOTIFICATION: 0x1f
+[Mi Sep 16 23:49:49 2026] iwlwifi 0000:05:00.0: WFPM_AUTH_KEY_0: 0x90
+[Mi Sep 16 23:49:49 2026] iwlwifi 0000:05:00.0: CNVI_SCU_SEQ_DATA_DW9: 0x0
+[Mi Sep 16 23:49:49 2026] iwlwifi 0000:05:00.0: Detected RF GF, rfid=0x10d000
+[Mi Sep 16 23:49:49 2026] iwlwifi 0000:05:00.0: base HW address: 4c:77:cb:ed:ab:11
+[Mi Sep 16 23:49:49 2026] iwlwifi 0000:05:00.0 wlp5s0: renamed from wlan0
+[Mi Sep 16 23:49:49 2026] EXT4-fs (nvme1n1p2): mounted filesystem 0795e0dc-7f13-4c7e-9e36-a65fac3c6a2c r/w with ordered data mode. Quota mode: none.
+[Mi Sep 16 23:49:53 2026] amdgpu: Virtual CRAT table created for CPU
+[Mi Sep 16 23:49:53 2026] amdgpu: Topology: Add CPU node
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: enabling device (0006 -> 0007)
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: initializing kernel modesetting (IP DISCOVERY 0x1002:0x747E 0x1043:0x05FD 0xC8).
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: register mmio base: 0xFCC00000
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: register mmio size: 1048576
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: detected ip block number 0 <common_v1_0_0> (soc21_common)
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: detected ip block number 1 <gmc_v11_0_0> (gmc_v11_0)
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: detected ip block number 2 <ih_v6_0_0> (ih_v6_0)
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: detected ip block number 3 <psp_v13_0_0> (psp)
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: detected ip block number 4 <smu_v13_0_0> (smu)
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: detected ip block number 5 <dce_v1_0_0> (dm)
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: detected ip block number 6 <gfx_v11_0_0> (gfx_v11_0)
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: detected ip block number 7 <sdma_v6_0_0> (sdma_v6_0)
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: detected ip block number 8 <vcn_v4_0_0> (vcn_v4_0)
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: detected ip block number 9 <jpeg_v4_0_0> (jpeg_v4_0)
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: detected ip block number 10 <mes_v11_0_0> (mes_v11_0)
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: Fetched VBIOS from VFCT
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: [drm] ATOM BIOS: 115-D712BP2-100, build: 00080395, ver: 022.002.001.024.000001, 2023/10/18
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: CP RS64 enable
+[Mi Sep 16 23:49:53 2026] Console: switching to colour dummy device 80x25
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: vgaarb: deactivate vga console
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: Trusted Memory Zone (TMZ) feature not supported
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: MEM ECC is not presented.
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: SRAM ECC is not presented.
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: DF poison setting is inconsistent(1:0:0:0)!
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: Poison setting is inconsistent in DF/UMC(0:1)!
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: vm size is 262144 GB, 4 levels, block size is 9-bit, fragment size is 9-bit
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: VRAM: 16368M 0x0000008000000000 - 0x00000083FEFFFFFF (16368M used)
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: GART: 512M 0x00007FFF00000000 - 0x00007FFF1FFFFFFF
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: [drm] Detected VRAM RAM=16368M, BAR=16384M
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: [drm] RAM width 256bits GDDR6
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0:  16368M of VRAM memory ready
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0:  23536M of GTT memory ready.
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: [drm] GART: num cpu pages 131072, num gpu pages 131072
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: [drm] PCIE GART of 512M enabled (table at 0x0000008000300000).
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: [drm] Loading DMUB firmware via PSP: version=0x07002D00
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: [VCN instance 0] Found VCN firmware Version ENC: 1.23 DEC: 9 VEP: 0 Revision: 16
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: [VCN instance 1] Found VCN firmware Version ENC: 1.23 DEC: 9 VEP: 0 Revision: 16
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: MES: vmid_mask_mmhub 0x0000ff00, vmid_mask_gfxhub 0x0000ff00
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: MES: gfx_hqd_mask 0x00000002, compute_hqd_mask 0x0000000c, sdma_hqd_mask 0x000000fc
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: reserve 0xa700000 from 0x83e0000000 for PSP TMR
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: RAP: optional rap ta ucode is not available
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: SECUREDISPLAY: optional securedisplay ta ucode is not available
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: smu driver if version = 0x0000003d, smu fw if version = 0x00000040, smu fw program = 0, smu fw version = 0x00505300 (80.83.0)
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: SMU is initialized successfully!
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: [drm] Display Core v3.2.392 initialized on DCN 3.2
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: [drm] DP-HDMI FRL PCON supported
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: [drm] DMUB hardware initialized: version=0x07002D00
+[Mi Sep 16 23:49:53 2026] workqueue: name exceeds WQ_NAME_LEN. Truncating to: hdmi_frl_status_polling_workque
+[Mi Sep 16 23:49:53 2026] snd_hda_intel 0000:0d:00.1: bound 0000:0d:00.0 (ops amdgpu_dm_audio_component_bind_ops [amdgpu])
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: [drm] DP-1: PSR support 0, DC PSR ver -1, sink PSR ver 0 DPCD caps 0x0 su_y_granularity 0
+[Mi Sep 16 23:49:53 2026] amdgpu 0000:0d:00.0: [drm] DP-2: PSR support 0, DC PSR ver -1, sink PSR ver 0 DPCD caps 0x0 su_y_granularity 0
+[Mi Sep 16 23:49:54 2026] amdgpu 0000:0d:00.0: [drm] DP-3: PSR support 0, DC PSR ver -1, sink PSR ver 0 DPCD caps 0x0 su_y_granularity 0
+[Mi Sep 16 23:49:54 2026] amdgpu 0000:0d:00.0: [drm] HDMI-A-1: PSR support 0, DC PSR ver -1, sink PSR ver 0 DPCD caps 0x0 su_y_granularity 0
+[Mi Sep 16 23:49:54 2026] kfd kfd: Allocated 3969056 bytes on gart
+[Mi Sep 16 23:49:54 2026] kfd kfd: Total number of KFD nodes to be created: 1
+[Mi Sep 16 23:49:54 2026] amdgpu: Virtual CRAT table created for GPU
+[Mi Sep 16 23:49:54 2026] amdgpu: Topology: Add GPU node [0x1002:0x747e]
+[Mi Sep 16 23:49:54 2026] kfd kfd: added device 1002:747e
+[Mi Sep 16 23:49:54 2026] amdgpu 0000:0d:00.0: SE 3, SH per SE 2, CU per SH 10, active_cu_number 60
+[Mi Sep 16 23:49:54 2026] amdgpu 0000:0d:00.0: ring gfx_0.0.0 uses VM inv eng 0 on hub 0
+[Mi Sep 16 23:49:54 2026] amdgpu 0000:0d:00.0: ring comp_1.0.0 uses VM inv eng 1 on hub 0
+[Mi Sep 16 23:49:54 2026] amdgpu 0000:0d:00.0: ring comp_1.1.0 uses VM inv eng 4 on hub 0
+[Mi Sep 16 23:49:54 2026] amdgpu 0000:0d:00.0: ring comp_1.2.0 uses VM inv eng 6 on hub 0
+[Mi Sep 16 23:49:54 2026] amdgpu 0000:0d:00.0: ring comp_1.3.0 uses VM inv eng 7 on hub 0
+[Mi Sep 16 23:49:54 2026] amdgpu 0000:0d:00.0: ring comp_1.0.1 uses VM inv eng 8 on hub 0
+[Mi Sep 16 23:49:54 2026] amdgpu 0000:0d:00.0: ring comp_1.1.1 uses VM inv eng 9 on hub 0
+[Mi Sep 16 23:49:54 2026] amdgpu 0000:0d:00.0: ring comp_1.2.1 uses VM inv eng 10 on hub 0
+[Mi Sep 16 23:49:54 2026] amdgpu 0000:0d:00.0: ring comp_1.3.1 uses VM inv eng 11 on hub 0
+[Mi Sep 16 23:49:54 2026] amdgpu 0000:0d:00.0: ring sdma0 uses VM inv eng 12 on hub 0
+[Mi Sep 16 23:49:54 2026] amdgpu 0000:0d:00.0: ring sdma1 uses VM inv eng 13 on hub 0
+[Mi Sep 16 23:49:54 2026] amdgpu 0000:0d:00.0: ring vcn_unified_0 uses VM inv eng 0 on hub 8
+[Mi Sep 16 23:49:54 2026] amdgpu 0000:0d:00.0: ring vcn_unified_1 uses VM inv eng 1 on hub 8
+[Mi Sep 16 23:49:54 2026] amdgpu 0000:0d:00.0: ring jpeg_dec uses VM inv eng 4 on hub 8
+[Mi Sep 16 23:49:54 2026] amdgpu 0000:0d:00.0: ring mes_kiq_3.1.0 uses VM inv eng 14 on hub 0
+[Mi Sep 16 23:49:54 2026] amdgpu: HMM registered 16368MB device memory
+[Mi Sep 16 23:49:54 2026] amdgpu 0000:0d:00.0: Using BACO for runtime pm
+[Mi Sep 16 23:49:54 2026] amdgpu 0000:0d:00.0: [drm] [PLANE:44:plane-0] pixel format with alpha exposed but blend mode not setup. Please fix.
+[Mi Sep 16 23:49:54 2026] amdgpu 0000:0d:00.0: [drm] [PLANE:98:plane-1] pixel format with alpha exposed but blend mode not setup. Please fix.
+[Mi Sep 16 23:49:54 2026] amdgpu 0000:0d:00.0: [drm] [PLANE:152:plane-2] pixel format with alpha exposed but blend mode not setup. Please fix.
+[Mi Sep 16 23:49:54 2026] amdgpu 0000:0d:00.0: [drm] [PLANE:206:plane-3] pixel format with alpha exposed but blend mode not setup. Please fix.
+[Mi Sep 16 23:49:54 2026] amdgpu 0000:0d:00.0: [drm] [PLANE:372:plane-6] pixel format with alpha exposed but blend mode not setup. Please fix.
+[Mi Sep 16 23:49:54 2026] amdgpu 0000:0d:00.0: [drm] [PLANE:377:plane-7] pixel format with alpha exposed but blend mode not setup. Please fix.
+[Mi Sep 16 23:49:54 2026] amdgpu 0000:0d:00.0: [drm] [PLANE:382:plane-8] pixel format with alpha exposed but blend mode not setup. Please fix.
+[Mi Sep 16 23:49:54 2026] amdgpu 0000:0d:00.0: [drm] [PLANE:387:plane-9] pixel format with alpha exposed but blend mode not setup. Please fix.
+[Mi Sep 16 23:49:54 2026] amdgpu 0000:0d:00.0: [drm] Registered 4 planes with drm panic
+[Mi Sep 16 23:49:54 2026] [drm] Initialized amdgpu 3.64.0 for 0000:0d:00.0 on minor 1
+[Mi Sep 16 23:49:54 2026] fbcon: amdgpudrmfb (fb0) is primary device
+[Mi Sep 16 23:49:54 2026] [drm] pre_validate_dsc:1796 MST_DSC dsc precompute is not needed
+[Mi Sep 16 23:49:54 2026] Console: switching to colour frame buffer device 240x67
+[Mi Sep 16 23:49:54 2026] amdgpu 0000:0d:00.0: [drm] fb0: amdgpudrmfb frame buffer device
+[Mi Sep 16 23:49:55 2026] EXT4-fs (dm-1): mounted filesystem fedad232-7047-4b2a-883e-55eb72bbc2f8 r/w with ordered data mode. Quota mode: none.
+[Mi Sep 16 23:49:57 2026] EXT4-fs (dm-2): mounted filesystem 59d170e1-0f4c-4fb0-8b40-12fa6bda1ebe r/w with ordered data mode. Quota mode: none.
+[Mi Sep 16 23:49:57 2026] audit: type=1400 audit(1789595395.795:2): apparmor="STATUS" operation="profile_load" profile="unconfined" name="1password" pid=1696 comm="apparmor_parser"
+[Mi Sep 16 23:49:57 2026] audit: type=1400 audit(1789595395.795:3): apparmor="STATUS" operation="profile_load" profile="unconfined" name="balena-etcher" pid=1703 comm="apparmor_parser"
+[Mi Sep 16 23:49:57 2026] audit: type=1400 audit(1789595395.795:4): apparmor="STATUS" operation="profile_load" profile="unconfined" name="buildah" pid=1707 comm="apparmor_parser"
+[Mi Sep 16 23:49:57 2026] audit: type=1400 audit(1789595395.795:5): apparmor="STATUS" operation="profile_load" profile="unconfined" name=4D6F6E676F444220436F6D70617373 pid=1698 comm="apparmor_parser"
+[Mi Sep 16 23:49:57 2026] audit: type=1400 audit(1789595395.795:6): apparmor="STATUS" operation="profile_load" profile="unconfined" name="brave" pid=1706 comm="apparmor_parser"
+[Mi Sep 16 23:49:57 2026] audit: type=1400 audit(1789595395.795:7): apparmor="STATUS" operation="profile_load" profile="unconfined" name="Discord" pid=1697 comm="apparmor_parser"
+[Mi Sep 16 23:49:57 2026] audit: type=1400 audit(1789595395.795:8): apparmor="STATUS" operation="profile_load" profile="unconfined" name="QtWebEngineProcess" pid=1699 comm="apparmor_parser"
+[Mi Sep 16 23:49:57 2026] audit: type=1400 audit(1789595395.795:9): apparmor="STATUS" operation="profile_load" profile="unconfined" name="ch-checkns" pid=1712 comm="apparmor_parser"
+[Mi Sep 16 23:49:57 2026] audit: type=1400 audit(1789595395.795:10): apparmor="STATUS" operation="profile_load" profile="unconfined" name="cam" pid=1711 comm="apparmor_parser"
+[Mi Sep 16 23:49:57 2026] audit: type=1400 audit(1789595395.795:11): apparmor="STATUS" operation="profile_load" profile="unconfined" name="busybox" pid=1709 comm="apparmor_parser"
+[Mi Sep 16 23:49:57 2026] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+[Mi Sep 16 23:49:57 2026] Bluetooth: BNEP filters: protocol multicast
+[Mi Sep 16 23:49:57 2026] Bluetooth: BNEP socket layer initialized
+[Mi Sep 16 23:49:57 2026] Bluetooth: MGMT ver 1.23
+[Mi Sep 16 23:49:57 2026] NET: Registered PF_ALG protocol family
+[Mi Sep 16 23:49:57 2026] evm: overlay not supported
+[Mi Sep 16 23:49:57 2026] NET: Registered PF_QIPCRTR protocol family
+[Mi Sep 16 23:49:57 2026] iwlwifi 0000:05:00.0: WFPM_UMAC_PD_NOTIFICATION: 0x20
+[Mi Sep 16 23:49:57 2026] iwlwifi 0000:05:00.0: WFPM_LMAC2_PD_NOTIFICATION: 0x1f
+[Mi Sep 16 23:49:57 2026] iwlwifi 0000:05:00.0: WFPM_AUTH_KEY_0: 0x90
+[Mi Sep 16 23:49:57 2026] iwlwifi 0000:05:00.0: CNVI_SCU_SEQ_DATA_DW9: 0x0
+[Mi Sep 16 23:49:57 2026] nfc: nfc_init: NFC Core ver 0.1
+[Mi Sep 16 23:49:57 2026] NET: Registered PF_NFC protocol family
+[Mi Sep 16 23:49:57 2026] Initializing XFRM netlink socket
+[Mi Sep 16 23:49:57 2026] IPsec XFRM device driver
+[Mi Sep 16 23:49:58 2026] overlayfs: fs on '/home/spacy/.local/share/containers/storage/overlay/compat3177460879/lower1' does not support file handles, falling back to xino=off.
+[Mi Sep 16 23:49:58 2026] overlayfs: fs on '/home/spacy/.local/share/containers/storage/overlay/metacopy-check1597052247/l1' does not support file handles, falling back to xino=off.
+[Mi Sep 16 23:49:58 2026] overlayfs: fs on '/home/spacy/.local/share/containers/storage/overlay/opaque-bug-check621612250/l2' does not support file handles, falling back to xino=off.
+[Mi Sep 16 23:49:58 2026] overlayfs: fs on '/var/lib/sddm/.local/share/containers/storage/overlay/compat4101212251/lower1' does not support file handles, falling back to xino=off.
+[Mi Sep 16 23:49:58 2026] overlayfs: fs on '/var/lib/sddm/.local/share/containers/storage/overlay/metacopy-check276502540/l1' does not support file handles, falling back to xino=off.
+[Mi Sep 16 23:49:58 2026] overlayfs: fs on '/var/lib/sddm/.local/share/containers/storage/overlay/opaque-bug-check2861873796/l2' does not support file handles, falling back to xino=off.
+[Mi Sep 16 23:49:58 2026] overlayfs: fs on '/home/spacy/.local/share/containers/storage/overlay/l/PWNASE2JOK75UHZ6JAOEIOXIXW' does not support file handles, falling back to xino=off.
+[Mi Sep 16 23:50:00 2026] igb 0000:06:00.0 enp6s0: igb: enp6s0 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+[Mi Sep 16 23:50:04 2026] kauditd_printk_skb: 216 callbacks suppressed
+[Mi Sep 16 23:50:04 2026] audit: type=1400 audit(1789595403.131:228): apparmor="DENIED" operation="capable" class="cap" profile="fusermount3" pid=3624 comm="fusermount3" capability=1  capname="dac_override"
+[Mi Sep 16 23:50:04 2026] audit: type=1400 audit(1789595403.131:229): apparmor="DENIED" operation="capable" class="cap" profile="fusermount3" pid=3624 comm="fusermount3" capability=7  capname="setuid"
+[Mi Sep 16 23:50:04 2026] HDR SB:01 1a 02 00 84 85 82 3b af 2f 79 8a 0a 1c df 0a
+[Mi Sep 16 23:50:04 2026] HDR SB:3a 3d 47 40 c8 01 03 00 c8 01 c8 01 00 00 00 00
+[Mi Sep 16 23:50:04 2026] HDR SB:01 1a 02 00 84 85 82 3b af 2f 79 8a 0a 1c df 0a
+[Mi Sep 16 23:50:04 2026] HDR SB:3a 3d 47 40 c8 01 03 00 c8 01 c8 01 00 00 00 00
+[Mi Sep 16 23:50:04 2026] HDR SB:01 1a 02 00 84 85 82 3b af 2f 79 8a 0a 1c df 0a
+[Mi Sep 16 23:50:04 2026] HDR SB:3a 3d 47 40 c8 01 03 00 c8 01 c8 01 00 00 00 00
+[Mi Sep 16 23:50:04 2026] HDR SB:01 1a 02 00 84 85 82 3b af 2f 79 8a 0a 1c df 0a
+[Mi Sep 16 23:50:04 2026] HDR SB:3a 3d 47 40 c8 01 03 00 c8 01 c8 01 00 00 00 00
+[Mi Sep 16 23:50:05 2026] HDR SB:01 1a 02 00 84 85 82 3b af 2f 79 8a 0a 1c df 0a
+[Mi Sep 16 23:50:05 2026] HDR SB:3a 3d 47 40 c8 01 03 00 c8 01 c8 01 00 00 00 00
+[Mi Sep 16 23:50:05 2026] HDR SB:01 1a 02 00 84 85 82 3b af 2f 79 8a 0a 1c df 0a
+[Mi Sep 16 23:50:05 2026] HDR SB:3a 3d 47 40 c8 01 03 00 c8 01 c8 01 00 00 00 00
+[Mi Sep 16 23:50:06 2026] audit: type=1400 audit(1789595404.578:230): apparmor="DENIED" operation="capable" class="cap" profile="fusermount3" pid=4090 comm="fusermount3" capability=1  capname="dac_override"
+[Mi Sep 16 23:50:06 2026] audit: type=1400 audit(1789595404.578:231): apparmor="DENIED" operation="capable" class="cap" profile="fusermount3" pid=4090 comm="fusermount3" capability=7  capname="setuid"
+[Mi Sep 16 23:50:06 2026] warning: `kdeconnectd' uses wireless extensions which will stop working for Wi-Fi 7 hardware; use nl80211
+[Mi Sep 16 23:50:06 2026] Bluetooth: RFCOMM TTY layer initialized
+[Mi Sep 16 23:50:06 2026] Bluetooth: RFCOMM socket layer initialized
+[Mi Sep 16 23:50:06 2026] Bluetooth: RFCOMM ver 1.11
+[Mi Sep 16 23:50:06 2026] input: OpenTabletDriver Virtual Tablet as /devices/virtual/input/input37
+[Mi Sep 16 23:50:09 2026] audit: type=1400 audit(1789595408.354:232): apparmor="AUDIT" operation="exec" class="file" info="conflicting profile attachments" profile="unconfined" name="/opt/google/chrome-unstable/chrome" pid=4504 comm="google-chrome-u" requested_mask="x" fsuid=1000 ouid=0
+[Mi Sep 16 23:50:09 2026] audit: type=1400 audit(1789595408.474:233): apparmor="AUDIT" operation="exec" class="file" info="conflicting profile attachments" profile="unconfined" name="/opt/google/chrome-unstable/chrome" pid=4528 comm="chrome" requested_mask="x" fsuid=1000 ouid=0
+[Mi Sep 16 23:50:09 2026] audit: type=1400 audit(1789595408.476:234): apparmor="AUDIT" operation="exec" class="file" info="conflicting profile attachments" profile="unconfined" name="/opt/google/chrome-unstable/chrome" pid=4529 comm="chrome" requested_mask="x" fsuid=1000 ouid=0
+[Mi Sep 16 23:50:10 2026] audit: type=1400 audit(1789595408.786:235): apparmor="AUDIT" operation="exec" class="file" info="conflicting profile attachments" profile="unconfined" name="/opt/google/chrome-unstable/chrome" pid=4583 comm="ThreadPoolSingl" requested_mask="x" fsuid=1000 ouid=0
+[Mi Sep 16 23:50:15 2026] audit: type=1400 audit(1789595414.120:236): apparmor="AUDIT" operation="exec" class="file" info="conflicting profile attachments" profile="unconfined" name="/opt/google/chrome-unstable/chrome" pid=5028 comm="ThreadPoolSingl" requested_mask="x" fsuid=1000 ouid=0
+[Mi Sep 16 23:50:15 2026] audit: type=1400 audit(1789595414.364:237): apparmor="AUDIT" operation="exec" class="file" info="conflicting profile attachments" profile="unconfined" name="/opt/google/chrome-unstable/chrome" pid=5062 comm="ThreadPoolSingl" requested_mask="x" fsuid=1000 ouid=0
+[Mi Sep 16 23:50:20 2026] audit: type=1400 audit(1789595419.269:238): apparmor="AUDIT" operation="exec" class="file" info="conflicting profile attachments" profile="unconfined" name="/opt/google/chrome-unstable/chrome" pid=5108 comm="google-chrome-u" requested_mask="x" fsuid=1000 ouid=0
+[Mi Sep 16 23:50:44 2026] audit: type=1400 audit(1789595444.536:239): apparmor="AUDIT" operation="exec" class="file" info="conflicting profile attachments" profile="unconfined" name="/opt/google/chrome-unstable/chrome" pid=5394 comm="ThreadPoolSingl" requested_mask="x" fsuid=1000 ouid=0
+[Mi Sep 16 23:51:05 2026] audit: type=1400 audit(1789595465.037:240): apparmor="AUDIT" operation="exec" class="file" info="conflicting profile attachments" profile="unconfined" name="/opt/google/chrome-unstable/chrome" pid=5693 comm="ThreadPoolSingl" requested_mask="x" fsuid=1000 ouid=0
+[Mi Sep 16 23:51:23 2026] audit: type=1400 audit(1789595483.890:241): apparmor="AUDIT" operation="exec" class="file" info="conflicting profile attachments" profile="unconfined" name="/opt/google/chrome-unstable/chrome" pid=6003 comm="ThreadPoolSingl" requested_mask="x" fsuid=1000 ouid=0
+[Mi Sep 16 23:55:07 2026] audit: type=1400 audit(1789595707.685:242): apparmor="DENIED" operation="open" class="file" profile="ubuntu_pro_apt_news" name="/opt/rocm-7.2.3/lib/" pid=7163 comm="python3" requested_mask="r" denied_mask="r" fsuid=0 ouid=0
+[Mi Sep 16 23:55:07 2026] audit: type=1400 audit(1789595707.685:243): apparmor="DENIED" operation="open" class="file" profile="ubuntu_pro_esm_cache" name="/opt/rocm-7.2.3/lib/" pid=7166 comm="python3" requested_mask="r" denied_mask="r" fsuid=0 ouid=0
+[Mi Sep 16 23:58:40 2026] audit: type=1400 audit(1789595920.187:244): apparmor="AUDIT" operation="exec" class="file" info="conflicting profile attachments" profile="unconfined" name="/opt/google/chrome-unstable/chrome" pid=8221 comm="ThreadPoolSingl" requested_mask="x" fsuid=1000 ouid=0
+[Do Sep 17 00:00:06 2026] audit: type=1400 audit(1789596006.433:245): apparmor="DENIED" operation="open" class="file" profile="/usr/sbin/cupsd" name="/etc/paperspecs" pid=8609 comm="cupsd" requested_mask="r" denied_mask="r" fsuid=0 ouid=0
+[Do Sep 17 00:00:06 2026] audit: type=1400 audit(1789596006.442:246): apparmor="DENIED" operation="capable" class="cap" profile="/usr/sbin/cupsd" pid=8609 comm="cupsd" capability=12  capname="net_admin"
+[Do Sep 17 00:06:55 2026] audit: type=1400 audit(1789596415.083:247): apparmor="AUDIT" operation="exec" class="file" info="conflicting profile attachments" profile="unconfined" name="/opt/google/chrome-unstable/chrome" pid=10954 comm="ThreadPoolSingl" requested_mask="x" fsuid=1000 ouid=0
+[Do Sep 17 00:11:15 2026] systemd-sysv-generator[12571]: SysV service '/etc/init.d/neard' lacks a native systemd unit file, automatically generating a unit file for compatibility.
+[Do Sep 17 00:11:15 2026] systemd-sysv-generator[12571]: Please update package to include a native systemd unit file.
+[Do Sep 17 00:11:15 2026] systemd-sysv-generator[12571]: ! This compatibility logic is deprecated, expect removal soon. !
+[Do Sep 17 00:11:15 2026] systemd-sysv-generator[12571]: SysV service '/etc/init.d/grub-common' lacks a native systemd unit file, automatically generating a unit file for compatibility.
+[Do Sep 17 00:11:15 2026] systemd-sysv-generator[12571]: Please update package to include a native systemd unit file.
+[Do Sep 17 00:11:15 2026] systemd-sysv-generator[12571]: ! This compatibility logic is deprecated, expect removal soon. !
+[Do Sep 17 00:11:15 2026] systemd-sysv-generator[12765]: SysV service '/etc/init.d/neard' lacks a native systemd unit file, automatically generating a unit file for compatibility.
+[Do Sep 17 00:11:15 2026] systemd-sysv-generator[12765]: Please update package to include a native systemd unit file.
+[Do Sep 17 00:11:15 2026] systemd-sysv-generator[12765]: ! This compatibility logic is deprecated, expect removal soon. !
+[Do Sep 17 00:11:15 2026] systemd-sysv-generator[12765]: SysV service '/etc/init.d/grub-common' lacks a native systemd unit file, automatically generating a unit file for compatibility.
+[Do Sep 17 00:11:15 2026] systemd-sysv-generator[12765]: Please update package to include a native systemd unit file.
+[Do Sep 17 00:11:15 2026] systemd-sysv-generator[12765]: ! This compatibility logic is deprecated, expect removal soon. !
+[Do Sep 17 01:02:26 2026] audit: type=1400 audit(1789599746.440:248): apparmor="AUDIT" operation="exec" class="file" info="conflicting profile attachments" profile="unconfined" name="/opt/google/chrome-unstable/chrome" pid=27881 comm="ThreadPoolSingl" requested_mask="x" fsuid=1000 ouid=0
+[Do Sep 17 01:12:19 2026] audit: type=1400 audit(1789600339.935:249): apparmor="AUDIT" operation="exec" class="file" info="conflicting profile attachments" profile="unconfined" name="/opt/google/chrome-unstable/chrome" pid=30776 comm="ThreadPoolSingl" requested_mask="x" fsuid=1000 ouid=0
+[Do Sep 17 01:13:32 2026] audit: type=1400 audit(1789600412.327:250): apparmor="AUDIT" operation="exec" class="file" info="conflicting profile attachments" profile="unconfined" name="/opt/google/chrome-unstable/chrome" pid=31156 comm="ThreadPoolSingl" requested_mask="x" fsuid=1000 ouid=0
+[Do Sep 17 01:16:35 2026] audit: type=1400 audit(1789600595.562:251): apparmor="AUDIT" operation="exec" class="file" info="conflicting profile attachments" profile="unconfined" name="/opt/google/chrome-unstable/chrome" pid=32001 comm="ThreadPoolSingl" requested_mask="x" fsuid=1000 ouid=0
+[Do Sep 17 01:26:10 2026] audit: type=1400 audit(1789601170.525:252): apparmor="AUDIT" operation="exec" class="file" info="conflicting profile attachments" profile="unconfined" name="/opt/google/chrome-unstable/chrome" pid=34481 comm="ThreadPoolSingl" requested_mask="x" fsuid=1000 ouid=0
+[Do Sep 17 01:50:20 2026] audit: type=1400 audit(1789602620.774:253): apparmor="AUDIT" operation="exec" class="file" info="conflicting profile attachments" profile="unconfined" name="/opt/google/chrome-unstable/chrome" pid=41024 comm="google-chrome-u" requested_mask="x" fsuid=1000 ouid=0
+[Do Sep 17 01:51:29 2026] audit: type=1400 audit(1789602689.982:254): apparmor="AUDIT" operation="exec" class="file" info="conflicting profile attachments" profile="unconfined" name="/opt/google/chrome-unstable/chrome" pid=41380 comm="ThreadPoolSingl" requested_mask="x" fsuid=1000 ouid=0
+[Do Sep 17 02:30:27 2026] amdgpu 0000:0d:00.0: [drm] *ERROR* dc_stream_state is NULL for crtc '1'!
+[Do Sep 17 02:30:27 2026] amdgpu 0000:0d:00.0: [drm] *ERROR* dc_stream_state is NULL for crtc '1'!
+[Do Sep 17 02:30:27 2026] amdgpu 0000:0d:00.0: [drm] *ERROR* dc_stream_state is NULL for crtc '1'!
+[Do Sep 17 02:30:27 2026] amdgpu 0000:0d:00.0: [drm] *ERROR* dc_stream_state is NULL for crtc '1'!
+[Do Sep 17 02:30:27 2026] amdgpu 0000:0d:00.0: [drm] *ERROR* dc_stream_state is NULL for crtc '1'!
+[Do Sep 17 02:30:27 2026] amdgpu 0000:0d:00.0: [drm] *ERROR* dc_stream_state is NULL for crtc '1'!
+[Do Sep 17 02:30:27 2026] amdgpu 0000:0d:00.0: [drm] *ERROR* dc_stream_state is NULL for crtc '1'!
+[Do Sep 17 02:30:37 2026] amdgpu 0000:0d:00.0: [drm] *ERROR* [CRTC:381:crtc-1] flip_done timed out
+[Do Sep 17 02:30:43 2026] amdgpu 0000:0d:00.0: [drm] *ERROR* [CRTC:381:crtc-1] hw_done or flip_done timed out
+[Do Sep 17 02:30:53 2026] amdgpu 0000:0d:00.0: [drm] *ERROR* flip_done timed out
+[Do Sep 17 02:30:53 2026] amdgpu 0000:0d:00.0: [drm] *ERROR* [CRTC:381:crtc-1] commit wait timed out
+[Do Sep 17 02:31:04 2026] amdgpu 0000:0d:00.0: [drm] *ERROR* flip_done timed out
+[Do Sep 17 02:31:04 2026] amdgpu 0000:0d:00.0: [drm] *ERROR* [PLANE:152:plane-2] commit wait timed out
+[Do Sep 17 02:31:41 2026] amdgpu 0000:0d:00.0: [gfxhub] page fault (src_id:0 ring:24 vmid:5 pasid:365)
+[Do Sep 17 02:31:41 2026] amdgpu 0000:0d:00.0:  Process vrcompositor pid 53981 thread RenderThread pid 54045
+[Do Sep 17 02:31:41 2026] amdgpu 0000:0d:00.0:   in page starting at address 0x00000080013c3000 from client 10
+[Do Sep 17 02:31:41 2026] amdgpu 0000:0d:00.0: GCVM_L2_PROTECTION_FAULT_STATUS:0x00501430
+[Do Sep 17 02:31:41 2026] amdgpu 0000:0d:00.0: 	 Faulty UTCL2 client ID: SQC (data) (0xa)
+[Do Sep 17 02:31:41 2026] amdgpu 0000:0d:00.0: 	 MORE_FAULTS: 0x0
+[Do Sep 17 02:31:41 2026] amdgpu 0000:0d:00.0: 	 WALKER_ERROR: 0x0
+[Do Sep 17 02:31:41 2026] amdgpu 0000:0d:00.0: 	 PERMISSION_FAULTS: 0x3
+[Do Sep 17 02:31:41 2026] amdgpu 0000:0d:00.0: 	 MAPPING_ERROR: 0x0
+[Do Sep 17 02:31:41 2026] amdgpu 0000:0d:00.0: 	 RW: 0x0
+[Do Sep 17 02:31:43 2026] amdgpu 0000:0d:00.0: Dumping IP State
+[Do Sep 17 02:31:43 2026] amdgpu 0000:0d:00.0: Dumping IP State Completed
+[Do Sep 17 02:31:43 2026] amdgpu 0000:0d:00.0: [drm] AMDGPU device coredump file has been created
+[Do Sep 17 02:31:43 2026] amdgpu 0000:0d:00.0: [drm] Check your /sys/class/drm/card1/device/devcoredump/data
+[Do Sep 17 02:31:43 2026] amdgpu 0000:0d:00.0: ring gfx_0.0.0 timeout, signaled seq=4470481, emitted seq=4470484
+[Do Sep 17 02:31:43 2026] amdgpu 0000:0d:00.0:  Process vrcompositor pid 53981 thread RenderThread pid 54045
+[Do Sep 17 02:31:43 2026] amdgpu 0000:0d:00.0: Starting gfx_0.0.0 ring reset
+[Do Sep 17 02:31:43 2026] amdgpu 0000:0d:00.0: Ring gfx_0.0.0 reset succeeded
+[Do Sep 17 02:31:43 2026] amdgpu 0000:0d:00.0: [drm] device wedged, but no recovery needed
+[Do Sep 17 02:49:31 2026] amdgpu 0000:0d:00.0: [gfxhub] page fault (src_id:0 ring:24 vmid:5 pasid:421)
+[Do Sep 17 02:49:31 2026] amdgpu 0000:0d:00.0:  Process vrcompositor pid 60618 thread RenderThread pid 60676
+[Do Sep 17 02:49:31 2026] amdgpu 0000:0d:00.0:   in page starting at address 0x00000080013c3000 from client 10
+[Do Sep 17 02:49:31 2026] amdgpu 0000:0d:00.0: GCVM_L2_PROTECTION_FAULT_STATUS:0x00501430
+[Do Sep 17 02:49:31 2026] amdgpu 0000:0d:00.0: 	 Faulty UTCL2 client ID: SQC (data) (0xa)
+[Do Sep 17 02:49:31 2026] amdgpu 0000:0d:00.0: 	 MORE_FAULTS: 0x0
+[Do Sep 17 02:49:31 2026] amdgpu 0000:0d:00.0: 	 WALKER_ERROR: 0x0
+[Do Sep 17 02:49:31 2026] amdgpu 0000:0d:00.0: 	 PERMISSION_FAULTS: 0x3
+[Do Sep 17 02:49:31 2026] amdgpu 0000:0d:00.0: 	 MAPPING_ERROR: 0x0
+[Do Sep 17 02:49:31 2026] amdgpu 0000:0d:00.0: 	 RW: 0x0
+[Do Sep 17 02:49:33 2026] amdgpu 0000:0d:00.0: Dumping IP State
+[Do Sep 17 02:49:33 2026] amdgpu 0000:0d:00.0: Dumping IP State Completed
+[Do Sep 17 02:49:33 2026] amdgpu 0000:0d:00.0: [drm] AMDGPU device coredump file has been created
+[Do Sep 17 02:49:33 2026] amdgpu 0000:0d:00.0: [drm] Check your /sys/class/drm/card1/device/devcoredump/data
+[Do Sep 17 02:49:33 2026] amdgpu 0000:0d:00.0: ring gfx_0.0.0 timeout, signaled seq=4623496, emitted seq=4623498
+[Do Sep 17 02:49:33 2026] amdgpu 0000:0d:00.0:  Process vrcompositor pid 60618 thread RenderThread pid 60676
+[Do Sep 17 02:49:33 2026] amdgpu 0000:0d:00.0: Starting gfx_0.0.0 ring reset
+[Do Sep 17 02:49:33 2026] amdgpu 0000:0d:00.0: Ring gfx_0.0.0 reset succeeded
+[Do Sep 17 02:49:33 2026] amdgpu 0000:0d:00.0: [drm] device wedged, but no recovery needed
+[Do Sep 17 02:50:20 2026] audit: type=1400 audit(1789606220.809:255): apparmor="AUDIT" operation="exec" class="file" info="conflicting profile attachments" profile="unconfined" name="/opt/google/chrome-unstable/chrome" pid=61631 comm="ThreadPoolSingl" requested_mask="x" fsuid=1000 ouid=0
+[Do Sep 17 02:50:30 2026] audit: type=1400 audit(1789606230.286:256): apparmor="AUDIT" operation="exec" class="file" info="conflicting profile attachments" profile="unconfined" name="/opt/google/chrome-unstable/chrome" pid=61709 comm="ThreadPoolSingl" requested_mask="x" fsuid=1000 ouid=0
+[Do Sep 17 03:06:47 2026] workqueue: drm_mode_rmfb_work_fn hogged CPU for >10000us 4 times, consider switching to WQ_UNBOUND
+[Do Sep 17 03:08:20 2026] workqueue: drm_mode_rmfb_work_fn hogged CPU for >10000us 5 times, consider switching to WQ_UNBOUND
+[Do Sep 17 03:19:36 2026] audit: type=1400 audit(1789607977.076:257): apparmor="AUDIT" operation="exec" class="file" info="conflicting profile attachments" profile="unconfined" name="/opt/google/chrome-unstable/chrome" pid=78609 comm="ThreadPoolSingl" requested_mask="x" fsuid=1000 ouid=0
+[Do Sep 17 03:20:04 2026] audit: type=1400 audit(1789608004.844:258): apparmor="AUDIT" operation="exec" class="file" info="conflicting profile attachments" profile="unconfined" name="/opt/google/chrome-unstable/chrome" pid=79033 comm="ThreadPoolSingl" requested_mask="x" fsuid=1000 ouid=0
+[Do Sep 17 03:23:39 2026] amdgpu 0000:0d:00.0: [gfxhub] page fault (src_id:0 ring:24 vmid:5 pasid:537)
+[Do Sep 17 03:23:39 2026] amdgpu 0000:0d:00.0:  Process vrcompositor pid 80667 thread RenderThread pid 80730
+[Do Sep 17 03:23:39 2026] amdgpu 0000:0d:00.0:   in page starting at address 0x0000008001391000 from client 10
+[Do Sep 17 03:23:39 2026] amdgpu 0000:0d:00.0: GCVM_L2_PROTECTION_FAULT_STATUS:0x00501430
+[Do Sep 17 03:23:39 2026] amdgpu 0000:0d:00.0: 	 Faulty UTCL2 client ID: SQC (data) (0xa)
+[Do Sep 17 03:23:39 2026] amdgpu 0000:0d:00.0: 	 MORE_FAULTS: 0x0
+[Do Sep 17 03:23:39 2026] amdgpu 0000:0d:00.0: 	 WALKER_ERROR: 0x0
+[Do Sep 17 03:23:39 2026] amdgpu 0000:0d:00.0: 	 PERMISSION_FAULTS: 0x3
+[Do Sep 17 03:23:39 2026] amdgpu 0000:0d:00.0: 	 MAPPING_ERROR: 0x0
+[Do Sep 17 03:23:39 2026] amdgpu 0000:0d:00.0: 	 RW: 0x0
+[Do Sep 17 03:23:41 2026] amdgpu 0000:0d:00.0: Dumping IP State
+[Do Sep 17 03:23:41 2026] amdgpu 0000:0d:00.0: Dumping IP State Completed
+[Do Sep 17 03:23:41 2026] amdgpu 0000:0d:00.0: [drm] AMDGPU device coredump file has been created
+[Do Sep 17 03:23:41 2026] amdgpu 0000:0d:00.0: [drm] Check your /sys/class/drm/card1/device/devcoredump/data
+[Do Sep 17 03:23:41 2026] amdgpu 0000:0d:00.0: ring gfx_0.0.0 timeout, signaled seq=4916616, emitted seq=4916619
+[Do Sep 17 03:23:41 2026] amdgpu 0000:0d:00.0:  Process vrcompositor pid 80667 thread RenderThread pid 80730
+[Do Sep 17 03:23:41 2026] amdgpu 0000:0d:00.0: Starting gfx_0.0.0 ring reset
+[Do Sep 17 03:23:41 2026] amdgpu 0000:0d:00.0: Ring gfx_0.0.0 reset succeeded
+[Do Sep 17 03:23:41 2026] amdgpu 0000:0d:00.0: [drm] device wedged, but no recovery needed
+[Do Sep 17 03:23:47 2026] workqueue: drm_mode_rmfb_work_fn hogged CPU for >10000us 7 times, consider switching to WQ_UNBOUND
+[Do Sep 17 03:28:56 2026] amdgpu 0000:0d:00.0: [gfxhub] page fault (src_id:0 ring:24 vmid:5 pasid:573)
+[Do Sep 17 03:28:56 2026] amdgpu 0000:0d:00.0:  Process vrcompositor pid 84549 thread RenderThread pid 84615
+[Do Sep 17 03:28:56 2026] amdgpu 0000:0d:00.0:   in page starting at address 0x0000008001391000 from client 10
+[Do Sep 17 03:28:56 2026] amdgpu 0000:0d:00.0: GCVM_L2_PROTECTION_FAULT_STATUS:0x00501430
+[Do Sep 17 03:28:56 2026] amdgpu 0000:0d:00.0: 	 Faulty UTCL2 client ID: SQC (data) (0xa)
+[Do Sep 17 03:28:56 2026] amdgpu 0000:0d:00.0: 	 MORE_FAULTS: 0x0
+[Do Sep 17 03:28:56 2026] amdgpu 0000:0d:00.0: 	 WALKER_ERROR: 0x0
+[Do Sep 17 03:28:56 2026] amdgpu 0000:0d:00.0: 	 PERMISSION_FAULTS: 0x3
+[Do Sep 17 03:28:56 2026] amdgpu 0000:0d:00.0: 	 MAPPING_ERROR: 0x0
+[Do Sep 17 03:28:56 2026] amdgpu 0000:0d:00.0: 	 RW: 0x0
+[Do Sep 17 03:28:58 2026] amdgpu 0000:0d:00.0: Dumping IP State
+[Do Sep 17 03:28:58 2026] amdgpu 0000:0d:00.0: Dumping IP State Completed
+[Do Sep 17 03:28:58 2026] amdgpu 0000:0d:00.0: [drm] AMDGPU device coredump file has been created
+[Do Sep 17 03:28:58 2026] amdgpu 0000:0d:00.0: [drm] Check your /sys/class/drm/card1/device/devcoredump/data
+[Do Sep 17 03:28:58 2026] amdgpu 0000:0d:00.0: ring gfx_0.0.0 timeout, signaled seq=4998865, emitted seq=4998867
+[Do Sep 17 03:28:58 2026] amdgpu 0000:0d:00.0:  Process vrcompositor pid 84549 thread RenderThread pid 84615
+[Do Sep 17 03:28:58 2026] amdgpu 0000:0d:00.0: Starting gfx_0.0.0 ring reset
+[Do Sep 17 03:28:58 2026] amdgpu 0000:0d:00.0: Ring gfx_0.0.0 reset succeeded
+[Do Sep 17 03:28:58 2026] amdgpu 0000:0d:00.0: [drm] device wedged, but no recovery needed
+[Do Sep 17 03:33:42 2026] amdgpu 0000:0d:00.0: [gfxhub] page fault (src_id:0 ring:24 vmid:5 pasid:598)
+[Do Sep 17 03:33:42 2026] amdgpu 0000:0d:00.0:  Process vrcompositor pid 87365 thread RenderThread pid 87426
+[Do Sep 17 03:33:42 2026] amdgpu 0000:0d:00.0:   in page starting at address 0x00000080013a0000 from client 10
+[Do Sep 17 03:33:42 2026] amdgpu 0000:0d:00.0: GCVM_L2_PROTECTION_FAULT_STATUS:0x00501430
+[Do Sep 17 03:33:42 2026] amdgpu 0000:0d:00.0: 	 Faulty UTCL2 client ID: SQC (data) (0xa)
+[Do Sep 17 03:33:42 2026] amdgpu 0000:0d:00.0: 	 MORE_FAULTS: 0x0
+[Do Sep 17 03:33:42 2026] amdgpu 0000:0d:00.0: 	 WALKER_ERROR: 0x0
+[Do Sep 17 03:33:42 2026] amdgpu 0000:0d:00.0: 	 PERMISSION_FAULTS: 0x3
+[Do Sep 17 03:33:42 2026] amdgpu 0000:0d:00.0: 	 MAPPING_ERROR: 0x0
+[Do Sep 17 03:33:42 2026] amdgpu 0000:0d:00.0: 	 RW: 0x0
+[Do Sep 17 03:33:44 2026] amdgpu 0000:0d:00.0: Dumping IP State
+[Do Sep 17 03:33:44 2026] amdgpu 0000:0d:00.0: Dumping IP State Completed
+[Do Sep 17 03:33:44 2026] amdgpu 0000:0d:00.0: [drm] AMDGPU device coredump file has been created
+[Do Sep 17 03:33:44 2026] amdgpu 0000:0d:00.0: [drm] Check your /sys/class/drm/card1/device/devcoredump/data
+[Do Sep 17 03:33:44 2026] amdgpu 0000:0d:00.0: ring gfx_0.0.0 timeout, signaled seq=5045532, emitted seq=5045534
+[Do Sep 17 03:33:44 2026] amdgpu 0000:0d:00.0:  Process vrcompositor pid 87365 thread RenderThread pid 87426
+[Do Sep 17 03:33:44 2026] amdgpu 0000:0d:00.0: Starting gfx_0.0.0 ring reset
+[Do Sep 17 03:33:44 2026] amdgpu 0000:0d:00.0: Ring gfx_0.0.0 reset succeeded
+[Do Sep 17 03:33:44 2026] amdgpu 0000:0d:00.0: [drm] device wedged, but no recovery needed
+[Do Sep 17 03:36:46 2026] amdgpu 0000:0d:00.0: [gfxhub] page fault (src_id:0 ring:24 vmid:6 pasid:618)
+[Do Sep 17 03:36:46 2026] amdgpu 0000:0d:00.0:  Process vrcompositor pid 89148 thread RenderThread pid 89210
+[Do Sep 17 03:36:46 2026] amdgpu 0000:0d:00.0:   in page starting at address 0x0000008001414000 from client 10
+[Do Sep 17 03:36:46 2026] amdgpu 0000:0d:00.0: GCVM_L2_PROTECTION_FAULT_STATUS:0x00601430
+[Do Sep 17 03:36:46 2026] amdgpu 0000:0d:00.0: 	 Faulty UTCL2 client ID: SQC (data) (0xa)
+[Do Sep 17 03:36:46 2026] amdgpu 0000:0d:00.0: 	 MORE_FAULTS: 0x0
+[Do Sep 17 03:36:46 2026] amdgpu 0000:0d:00.0: 	 WALKER_ERROR: 0x0
+[Do Sep 17 03:36:46 2026] amdgpu 0000:0d:00.0: 	 PERMISSION_FAULTS: 0x3
+[Do Sep 17 03:36:46 2026] amdgpu 0000:0d:00.0: 	 MAPPING_ERROR: 0x0
+[Do Sep 17 03:36:46 2026] amdgpu 0000:0d:00.0: 	 RW: 0x0
+[Do Sep 17 03:36:48 2026] amdgpu 0000:0d:00.0: Dumping IP State
+[Do Sep 17 03:36:48 2026] amdgpu 0000:0d:00.0: Dumping IP State Completed
+[Do Sep 17 03:36:48 2026] amdgpu 0000:0d:00.0: [drm] AMDGPU device coredump file has been created
+[Do Sep 17 03:36:48 2026] amdgpu 0000:0d:00.0: [drm] Check your /sys/class/drm/card1/device/devcoredump/data
+[Do Sep 17 03:36:48 2026] amdgpu 0000:0d:00.0: ring gfx_0.0.0 timeout, signaled seq=5180065, emitted seq=5180067
+[Do Sep 17 03:36:48 2026] amdgpu 0000:0d:00.0:  Process vrcompositor pid 89148 thread RenderThread pid 89210
+[Do Sep 17 03:36:48 2026] amdgpu 0000:0d:00.0: Starting gfx_0.0.0 ring reset
+[Do Sep 17 03:36:48 2026] amdgpu 0000:0d:00.0: Ring gfx_0.0.0 reset succeeded
+[Do Sep 17 03:36:48 2026] amdgpu 0000:0d:00.0: [drm] device wedged, but no recovery needed
+[Do Sep 17 03:37:33 2026] amdgpu 0000:0d:00.0: [gfxhub] page fault (src_id:0 ring:24 vmid:7 pasid:638)
+[Do Sep 17 03:37:33 2026] amdgpu 0000:0d:00.0:  Process vrcompositor pid 90409 thread RenderThread pid 90476
+[Do Sep 17 03:37:33 2026] amdgpu 0000:0d:00.0:   in page starting at address 0x0000008001405000 from client 10
+[Do Sep 17 03:37:33 2026] amdgpu 0000:0d:00.0: GCVM_L2_PROTECTION_FAULT_STATUS:0x00701430
+[Do Sep 17 03:37:33 2026] amdgpu 0000:0d:00.0: 	 Faulty UTCL2 client ID: SQC (data) (0xa)
+[Do Sep 17 03:37:33 2026] amdgpu 0000:0d:00.0: 	 MORE_FAULTS: 0x0
+[Do Sep 17 03:37:33 2026] amdgpu 0000:0d:00.0: 	 WALKER_ERROR: 0x0
+[Do Sep 17 03:37:33 2026] amdgpu 0000:0d:00.0: 	 PERMISSION_FAULTS: 0x3
+[Do Sep 17 03:37:33 2026] amdgpu 0000:0d:00.0: 	 MAPPING_ERROR: 0x0
+[Do Sep 17 03:37:33 2026] amdgpu 0000:0d:00.0: 	 RW: 0x0
+[Do Sep 17 03:37:36 2026] amdgpu 0000:0d:00.0: Dumping IP State
+[Do Sep 17 03:37:36 2026] amdgpu 0000:0d:00.0: Dumping IP State Completed
+[Do Sep 17 03:37:36 2026] amdgpu 0000:0d:00.0: [drm] AMDGPU device coredump file has been created
+[Do Sep 17 03:37:36 2026] amdgpu 0000:0d:00.0: [drm] Check your /sys/class/drm/card1/device/devcoredump/data
+[Do Sep 17 03:37:36 2026] amdgpu 0000:0d:00.0: ring gfx_0.0.0 timeout, signaled seq=5249562, emitted seq=5249564
+[Do Sep 17 03:37:36 2026] amdgpu 0000:0d:00.0:  Process vrcompositor pid 90409 thread RenderThread pid 90476
+[Do Sep 17 03:37:36 2026] amdgpu 0000:0d:00.0: Starting gfx_0.0.0 ring reset
+[Do Sep 17 03:37:36 2026] amdgpu 0000:0d:00.0: Ring gfx_0.0.0 reset succeeded
+[Do Sep 17 03:37:36 2026] amdgpu 0000:0d:00.0: [drm] device wedged, but no recovery needed
+[Do Sep 17 03:46:47 2026] amdgpu 0000:0d:00.0: [gfxhub] page fault (src_id:0 ring:24 vmid:5 pasid:665)
+[Do Sep 17 03:46:47 2026] amdgpu 0000:0d:00.0:  Process vrcompositor pid 94049 thread RenderThread pid 94107
+[Do Sep 17 03:46:47 2026] amdgpu 0000:0d:00.0:   in page starting at address 0x00000080013f8000 from client 10
+[Do Sep 17 03:46:47 2026] amdgpu 0000:0d:00.0: GCVM_L2_PROTECTION_FAULT_STATUS:0x00501430
+[Do Sep 17 03:46:47 2026] amdgpu 0000:0d:00.0: 	 Faulty UTCL2 client ID: SQC (data) (0xa)
+[Do Sep 17 03:46:47 2026] amdgpu 0000:0d:00.0: 	 MORE_FAULTS: 0x0
+[Do Sep 17 03:46:47 2026] amdgpu 0000:0d:00.0: 	 WALKER_ERROR: 0x0
+[Do Sep 17 03:46:47 2026] amdgpu 0000:0d:00.0: 	 PERMISSION_FAULTS: 0x3
+[Do Sep 17 03:46:47 2026] amdgpu 0000:0d:00.0: 	 MAPPING_ERROR: 0x0
+[Do Sep 17 03:46:47 2026] amdgpu 0000:0d:00.0: 	 RW: 0x0
+[Do Sep 17 03:46:49 2026] amdgpu 0000:0d:00.0: Dumping IP State
+[Do Sep 17 03:46:49 2026] amdgpu 0000:0d:00.0: Dumping IP State Completed
+[Do Sep 17 03:46:49 2026] amdgpu 0000:0d:00.0: [drm] AMDGPU device coredump file has been created
+[Do Sep 17 03:46:49 2026] amdgpu 0000:0d:00.0: [drm] Check your /sys/class/drm/card1/device/devcoredump/data
+[Do Sep 17 03:46:49 2026] amdgpu 0000:0d:00.0: ring gfx_0.0.0 timeout, signaled seq=5334355, emitted seq=5334357
+[Do Sep 17 03:46:49 2026] amdgpu 0000:0d:00.0:  Process vrcompositor pid 94049 thread RenderThread pid 94107
+[Do Sep 17 03:46:49 2026] amdgpu 0000:0d:00.0: Starting gfx_0.0.0 ring reset
+[Do Sep 17 03:46:49 2026] amdgpu 0000:0d:00.0: Ring gfx_0.0.0 reset succeeded
+[Do Sep 17 03:46:49 2026] amdgpu 0000:0d:00.0: [drm] device wedged, but no recovery needed
+[Do Sep 17 03:50:20 2026] audit: type=1400 audit(1789609820.824:259): apparmor="AUDIT" operation="exec" class="file" info="conflicting profile attachments" profile="unconfined" name="/opt/google/chrome-unstable/chrome" pid=96424 comm="google-chrome-u" requested_mask="x" fsuid=1000 ouid=0
+[Do Sep 17 03:50:30 2026] amdgpu 0000:0d:00.0: [gfxhub] page fault (src_id:0 ring:24 vmid:6 pasid:685)
+[Do Sep 17 03:50:30 2026] amdgpu 0000:0d:00.0:  Process vrcompositor pid 96064 thread RenderThread pid 96133
+[Do Sep 17 03:50:30 2026] amdgpu 0000:0d:00.0:   in page starting at address 0x00000080013f8000 from client 10
+[Do Sep 17 03:50:30 2026] amdgpu 0000:0d:00.0: GCVM_L2_PROTECTION_FAULT_STATUS:0x00601430
+[Do Sep 17 03:50:30 2026] amdgpu 0000:0d:00.0: 	 Faulty UTCL2 client ID: SQC (data) (0xa)
+[Do Sep 17 03:50:30 2026] amdgpu 0000:0d:00.0: 	 MORE_FAULTS: 0x0
+[Do Sep 17 03:50:30 2026] amdgpu 0000:0d:00.0: 	 WALKER_ERROR: 0x0
+[Do Sep 17 03:50:30 2026] amdgpu 0000:0d:00.0: 	 PERMISSION_FAULTS: 0x3
+[Do Sep 17 03:50:30 2026] amdgpu 0000:0d:00.0: 	 MAPPING_ERROR: 0x0
+[Do Sep 17 03:50:30 2026] amdgpu 0000:0d:00.0: 	 RW: 0x0
+[Do Sep 17 03:50:32 2026] amdgpu 0000:0d:00.0: Dumping IP State
+[Do Sep 17 03:50:32 2026] amdgpu 0000:0d:00.0: Dumping IP State Completed
+[Do Sep 17 03:50:32 2026] amdgpu 0000:0d:00.0: [drm] AMDGPU device coredump file has been created
+[Do Sep 17 03:50:32 2026] amdgpu 0000:0d:00.0: [drm] Check your /sys/class/drm/card1/device/devcoredump/data
+[Do Sep 17 03:50:32 2026] amdgpu 0000:0d:00.0: ring gfx_0.0.0 timeout, signaled seq=5387872, emitted seq=5387874
+[Do Sep 17 03:50:32 2026] amdgpu 0000:0d:00.0:  Process vrcompositor pid 96064 thread RenderThread pid 96133
+[Do Sep 17 03:50:32 2026] amdgpu 0000:0d:00.0: Starting gfx_0.0.0 ring reset
+[Do Sep 17 03:50:32 2026] amdgpu 0000:0d:00.0: Ring gfx_0.0.0 reset succeeded
+[Do Sep 17 03:50:32 2026] amdgpu 0000:0d:00.0: [drm] device wedged, but no recovery needed
+[Do Sep 17 04:01:56 2026] audit: type=1400 audit(1789610516.265:260): apparmor="AUDIT" operation="exec" class="file" info="conflicting profile attachments" profile="unconfined" name="/opt/google/chrome-unstable/chrome" pid=100349 comm="google-chrome-u" requested_mask="x" fsuid=1000 ouid=0
+[Do Sep 17 04:01:56 2026] audit: type=1400 audit(1789610516.312:261): apparmor="AUDIT" operation="exec" class="file" info="conflicting profile attachments" profile="unconfined" name="/opt/google/chrome-unstable/chrome" pid=100371 comm="chrome" requested_mask="x" fsuid=1000 ouid=0
+[Do Sep 17 04:01:56 2026] audit: type=1400 audit(1789610516.313:262): apparmor="AUDIT" operation="exec" class="file" info="conflicting profile attachments" profile="unconfined" name="/opt/google/chrome-unstable/chrome" pid=100372 comm="chrome" requested_mask="x" fsuid=1000 ouid=0
