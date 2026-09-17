@@ -57,11 +57,37 @@ faults within ~10-40 s (entering Theater mode makes it deterministic).
   VA against real mappings.
 
 Conclusion: the texture unit dereferenced an address that is not a valid
-mapping — i.e. a **bogus image/sampler descriptor address** for `Binding 9`
-(or 25). The fault VA is consistently far below RADV's BO heap
-(`0x800000000000-0x8001445d9000`), e.g. `0x80012f6000` where BOs live near
-`0x80012f600000` — i.e. the address looks **mangled/shifted**, not a normal
+mapping — i.e. a **bogus address reached from the draw**, not a normal
 out-of-bounds access.
+
+## Fix found by shader patching (2026-09-17)
+
+Patching the shaders by hand isolated the fault:
+
+1. `unlit_gaussian_blur_u_ps.spv` (the fragment shader RADV blamed): replaced
+   all three `OpImageSampleExplicitLod` with a constant colour (zero texture
+   fetches), via `spirv-dis`/`spirv-as`. The compositor loaded the patched
+   module (RADV's new hang dump shows the patched md5 `f585efc2…`) but the
+   **same page fault still happened** in the same pass. So the fragment texture
+   fetch is *not* the dereference.
+2. `unlit_vs.spv` (the vertex shader present in both hang dumps): it writes
+   `gl_Layer` from a UBO load —
+   `%107 = OpAccessChain %_ptr_Uniform_uint %49 %int_19` (Set 0 / Binding 0),
+   `%108 = OpLoad %uint %107`, `OpStore %gl_Layer %108`. Replacing the load with
+   a constant 0 (`%108 = OpCopyObject %uint %uint_0`) makes the crash **go
+   away**: no `gfxhub` fault, no RADV hang dump, no watchdog abort, SteamVR runs.
+
+Patch artifacts: `spirv-dumps/unlit_vs.noubo.spv` (+`.dis`) and
+`spirv-dumps/unlit_vs.spv.orig` (md5 `cc85c34c…`); the attempted fragment patch
+is `spirv-dumps/unlit_gaussian_blur_u_ps.nosample.spv` (+`.orig`).
+
+Interpretation: the vertex shader writes an invalid `gl_Layer` (the value comes
+from a UBO, and the framebuffer is single-layer — see the
+`Undefined-Value-Layer-Written` warning in the validation runs). Forcing the
+layer to 0 removes the out-of-range layered access and the fault. (A second
+possibility — that the UBO/descriptor-set global load itself was the faulting
+access — is not fully excluded, since the same patch removes both; a follow-up
+run that keeps the UBO load but forces `gl_Layer = 0` would disambiguate.)
 
 ## Hypotheses eliminated by experiment
 
@@ -95,6 +121,8 @@ out-of-bounds access.
 | `spirv-dumps/` | `VS_DISTORT`/`PS_DISTORT` dumps + disassembly; `distort_ps_layered.spv.orig` / `.patched.*` (the index-2 experiment) |
 | `spirv-dumps/radv-hang/` | Guilty shaders from the GPU-AV-instrumented hang dump (`inst_post_process_descriptor_index`, BDA pointer array) |
 | `spirv-dumps/radv-hang-clean/` | Guilty shaders from the clean hang dump (application `VS_MAIN` / `PS_MAIN`) |
+| `spirv-dumps/unlit_vs.*` | `unlit_vs.spv` original (`cc85c34c…`), patched `.noubo.spv`/`.dis` (crash goes away), md5 |
+| `spirv-dumps/unlit_gaussian_blur_u_ps.*` | `unlit_gaussian_blur_u_ps.spv` original (`d7456caa…`) and the no-sample patch that did *not* help |
 | `vrcompositor-linux.txt` | Compositor stdout/stderr with validation interleaved (one crashing run) |
 | `vrcompositor-linux_no_sync_layers.txt`, `vrcompositor-linux_no_shadersdump.txt` | Earlier runs |
 | `vvl-compositor-core.log`, `vvl-compositor.log` | Earlier runs with VVL `log_filename` redirection |
