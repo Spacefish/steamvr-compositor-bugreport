@@ -60,36 +60,37 @@ Conclusion: the texture unit dereferenced an address that is not a valid
 mapping — i.e. a **bogus address reached from the draw**, not a normal
 out-of-bounds access.
 
-## Fix found by shader patching (2026-09-17)
+## Root cause: vertex shader UBO read (`Set 0 / Binding 0`)
 
-Patching the shaders by hand isolated the fault:
+Hand-patching `unlit_vs.spv` isolated the faulting dereference. Three variants
+(all confirmed by running SteamVR and checking dmesg/RADV hang dumps):
 
-1. `unlit_gaussian_blur_u_ps.spv` (the fragment shader RADV blamed): replaced
-   all three `OpImageSampleExplicitLod` with a constant colour (zero texture
-   fetches), via `spirv-dis`/`spirv-as`. The compositor loaded the patched
-   module (RADV's new hang dump shows the patched md5 `f585efc2…`) but the
-   **same page fault still happened** in the same pass. So the fragment texture
-   fetch is *not* the dereference.
-2. `unlit_vs.spv` (the vertex shader present in both hang dumps): it writes
-   `gl_Layer` from a UBO load —
-   `%107 = OpAccessChain %_ptr_Uniform_uint %49 %int_19` (Set 0 / Binding 0),
-   `%108 = OpLoad %uint %107`, `OpStore %gl_Layer %108`. Replacing the load with
-   a constant 0 (`%108 = OpCopyObject %uint %uint_0`) makes the crash **go
-   away**: no `gfxhub` fault, no RADV hang dump, no watchdog abort, SteamVR runs.
+| Variant | UBO read (`Set 0/Binding 0`) | `gl_Layer` stored | Result |
+|---|---|---|---|
+| original | yes (`%108 = OpLoad %uint %107`) | value from UBO | crash |
+| A: `%108 = OpCopyObject %uint %uint_0` | removed | 0 | **no crash** |
+| B: `%108 = OpLoad` kept, store `%108 >> 31` | kept | ~0 | **crash** |
+| C: `%108 = OpCopyObject %uint %uint_1` | removed | 1 | **no crash** |
 
-Patch artifacts: `spirv-dumps/unlit_vs.noubo.spv` (+`.dis`) and
-`spirv-dumps/unlit_vs.spv.orig` (md5 `cc85c34c…`); the attempted fragment patch
-is `spirv-dumps/unlit_gaussian_blur_u_ps.nosample.spv` (+`.orig`).
+So the fault is the **vertex shader's UBO access itself** — the descriptor /
+buffer address behind `Set 0 / Binding 0` — and *not* the `gl_Layer` value:
+`gl_Layer = 0` and `gl_Layer = 1` both survive, and only keeping the UBO load
+brings the fault back. It is also not the fragment texture fetch: patching
+`unlit_gaussian_blur_u_ps.spv` to drop all three `OpImageSampleExplicitLod` made
+no difference (same fault, same pass, patched module confirmed in the new RADV
+hang dump).
 
-Interpretation: the vertex shader writes an invalid `gl_Layer` (the value comes
-from a UBO, and the framebuffer is single-layer — see the
-`Undefined-Value-Layer-Written` warning in the validation runs). Forcing the
-layer to 0 removes the out-of-range layered access and the fault. (A second
-possibility — that the UBO/descriptor-set global load itself was the faulting
-access — is not fully excluded, since the same patch removes both; a follow-up
-run that keeps the UBO load but forces `gl_Layer = 0` would disambiguate.)
+Workaround: patch `unlit_vs.spv` so it no longer reads `Set 0 / Binding 0`
+(`unlit_vs.noubo.spv`, stores a constant 0 to `gl_Layer`). With it installed the
+compositor runs with no `gfxhub` fault and no watchdog abort.
 
-## Hypotheses eliminated by experiment
+- original `unlit_vs.spv`: md5 `cc85c34c275ffe34462753a36abb47a3`
+- patched (workaround): md5 `4feb612cac1a8b052ec6e0d44f47070e`
+
+Artifacts: `spirv-dumps/unlit_vs.noubo.spv` (+`.dis`), `unlit_vs.shift0.spv`,
+`unlit_vs.layer1.spv`, and `unlit_vs.spv.orig` for restoring the shipped shader.
+
+## Earlier shader-patch experiments
 
 - **Binding 9 descriptor index 2 (GPU-AV `10068`) is not the crash.** Patching
   the selected shader so every `Binding 9` access uses index 0 removed `10068`
