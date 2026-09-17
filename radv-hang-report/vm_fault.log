@@ -1,0 +1,13 @@
+VM fault report.
+
+Failing VM page: 0x80012f6000
+GCVM_L2_PROTECTION_FAULT_STATUS: 0x601430
+	 CLIENT_ID: (SQC (data)) 0xa
+	 MORE_FAULTS: 0
+	 WALKER_ERROR: 0
+	 PERMISSION_FAULTS: 3
+	 MAPPING_ERROR: 0
+	 RW: 0
+
+Performing some verifications with address binding report...
+VA not found!

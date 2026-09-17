@@ -1,0 +1,2683 @@
+AMD_IP_GFX:
+Pipeline hash: 9195c63ab8497eb5
+Vertex Shader as ESGS:
+
+SPIRV (see 73830eb6e4e417b905757fac9f092c861fbecee9bd46b616707d7907f4326e89.spv)
+
+NIR:
+shader: MESA_SHADER_VERTEX
+source_blake3: {0xb60e8373, 0xb917e4e4, 0xac7f7505, 0x862c099f, 0xe9cebe1f, 0x16b646bd, 0x07797d70, 0x896e32f4}
+next_stage: MESA_SHADER_FRAGMENT
+num_ubos: 1
+num_ssbos: 12
+inputs_read: 15-16
+outputs_written: 0,22,32
+system_values_read: 0x00000000'00000000'00000000'00015400
+api_subgroup_size: 64
+max_subgroup_size: 64
+min_subgroup_size: 64
+uses_resource_info_query: true
+bit_sizes_int: 0x61
+separate_shader: true
+flrp_lowered: true
+writes_memory: true
+decl_var ubo INTERP_MODE_NONE none block #0 (~0, 0, 0)
+decl_var ssbo INTERP_MODE_NONE restrict block#2 #1 (~0, 0, 3)
+decl_var ssbo INTERP_MODE_NONE restrict block#4 #3 (~0, 0, 2)
+decl_var ssbo INTERP_MODE_NONE restrict block#6 #5 (~0, 0, 6)
+decl_var ssbo INTERP_MODE_NONE restrict readonly block#8 #7 (~0, 0, 8)
+decl_var ssbo INTERP_MODE_NONE restrict block#6 #9 (~0, 0, 6)
+decl_var ssbo INTERP_MODE_NONE restrict block#6 #10 (~0, 0, 7)
+decl_var ssbo INTERP_MODE_NONE restrict block#12 #11 (~0, 0, 1)
+decl_var ssbo INTERP_MODE_NONE restrict block#6 #13 (~0, 0, 5)
+decl_var ssbo INTERP_MODE_NONE restrict block#6 #14 (~0, 0, 6)
+decl_var ssbo INTERP_MODE_NONE restrict block#6 #15 (~0, 0, 7)
+decl_var ssbo INTERP_MODE_NONE restrict block#12 #16 (~0, 0, 1)
+decl_var ssbo INTERP_MODE_NONE restrict block#6 #17 (~0, 0, 5)
+decl_function VS_MAIN () (entrypoint)
+
+impl VS_MAIN {
+    con block b0:        // preds:
+    div 32      %0 = @load_vector_arg_amd (base=22, arg_upper_bound_u32_amd=0)
+    div 32      %1 = @load_vector_arg_amd (base=19, arg_upper_bound_u32_amd=0)
+    con 32      %2 = @load_scalar_arg_amd (base=2, arg_upper_bound_u32_amd=0)
+    div 32      %3 = @load_vector_arg_amd (base=14, arg_upper_bound_u32_amd=0)
+    div 1       %4 = @is_subgroup_invocation_lt_amd (%2) (base=0)
+                     // succs: b1 b32
+    if %4 {
+        div block b1:        // preds: b0
+        con 32      %5 = @load_scalar_arg_amd (base=7, arg_upper_bound_u32_amd=0)
+        con 32      %6 = load_const (0x00000000)
+        con 32      %7 = load_const (0xffff8000 = -32768 = 4294934528)
+        con 64      %8 = pack_64_2x32_split %5, %7 (0xffff8000)
+        con 32x4    %9 = @load_global_amd (%8, %6 (0x0)) (base=0, access=readonly|reorderable|speculatable|smem-amd, align_mul=4, align_offset=0)
+        con 32     %10 = @load_scalar_arg_amd (base=8, arg_upper_bound_u32_amd=0)
+        div 32     %11 = iadd %10, %1
+        div 32x4   %12 = @load_buffer_amd (%9, %6 (0x0), %6 (0x0), %11) (base=0, mem_modes=shader_in, access=reorderable|speculatable, align_mul=4, align_offset=0)
+        con 32     %13 = @load_scalar_arg_amd (base=9, arg_upper_bound_u32_amd=0)
+        div 32     %14 = iadd %0, %13
+        con 32     %15 = @load_scalar_arg_amd (base=11, arg_upper_bound_u32_amd=0)
+        con 64     %16 = pack_64_2x32_split %15, %7 (0xffff8000)
+        con 32x4   %17 = @load_global_amd (%16, %6 (0x0)) (base=96, access=readonly|reorderable|smem-amd, align_mul=4, align_offset=0)
+        con 32     %18 = @load_ssbo (%17, %6 (0x0)) (access=readonly|reorderable|speculatable|smem-amd, align_mul=1073741824, align_offset=0, offset_shift=0)
+        con 32     %19 = load_const (0x00000004)
+        con 32     %20 = @load_ssbo (%17, %19 (0x4)) (access=readonly|reorderable|speculatable|smem-amd, align_mul=1073741824, align_offset=4, offset_shift=0)
+        con 32     %21 = load_const (0x00000001)
+        con 1      %22 = ine %18, %21 (0x1)
+        div 1      %23 = ult %11, %20
+        div 1      %24 = ior %22, %23
+        con 32     %25 = load_const (0x00000008)
+        con 32     %26 = @load_ssbo (%17, %25 (0x8)) (access=readonly|reorderable|speculatable|smem-amd, align_mul=1073741824, align_offset=8, offset_shift=0)
+        con 32     %27 = load_const (0x0000000c = 12)
+        con 32     %28 = @load_ssbo (%17, %27 (0xc)) (access=readonly|reorderable|speculatable|smem-amd, align_mul=1073741824, align_offset=12, offset_shift=0)
+        con 1      %29 = ine %26, %21 (0x1)
+        div 1      %30 = ult %14, %28
+        div 1      %31 = ior %29, %30
+        div 1      %32 = iand %24, %31
+        con 1      %33 = load_const (true)
+        div 1      %34 = inot %32
+                         // succs: b2 b15
+        if %34 {
+            div block b2:        // preds: b1
+            con 32     %35 = @load_scalar_arg_amd (base=12, arg_upper_bound_u32_amd=0)
+            con 64     %36 = pack_64_2x32_split %35, %7 (0xffff8000)
+            con 32x4   %37 = @load_global_amd (%36, %6 (0x0)) (base=16, access=readonly|reorderable|smem-amd, align_mul=4, align_offset=0)
+            con 32     %38 = @load_ssbo (%37, %6 (0x0)) (access=none, align_mul=1073741824, align_offset=0, offset_shift=0)
+            con 32x4   %39 = @load_global_amd (%16, %6 (0x0)) (base=80, access=readonly|reorderable|smem-amd, align_mul=4, align_offset=0)
+            con 64     %40 = @ballot (%33 (true))
+            con 32     %41 = bit_count %40
+            div 1      %42 = @elect
+            con 32     %43 = load_const (0x00000002)
+                             // succs: b3 b4
+            if %42 {
+                div block b3:        // preds: b2
+                con 32     %44 = ishl %38, %43 (0x2)
+                div 32     %45 = @ssbo_atomic (%39, %44, %41) (access=coherent, atomic_op=iadd, offset_shift=0)
+                                 // succs: b5
+            } else {
+                div block b4:        // preds: b2
+                con 32     %46 = undefined
+                                 // succs: b5
+            }
+            div block b5:        // preds: b3 b4
+            div 32     %47 = phi b3: %45, b4: %46
+            con 32     %48 = @read_first_invocation (%47)
+            con 64     %49 = @ballot (%33 (true))
+            div 32     %50 = @mbcnt_amd (%49, %6 (0x0))
+            div 32     %51 = iadd %48, %50
+            con 32     %52 = load_const (0x00000006)
+            div 1      %53 = ult %51, %52 (0x6)
+                             // succs: b6 b13
+            if %53 {
+                div block b6:        // preds: b5
+                con 32x4   %54 = @load_global_amd (%16, %6 (0x0)) (base=16, access=readonly|reorderable|smem-amd, align_mul=4, align_offset=0)
+                con 64     %55 = @ballot (%33 (true))
+                con 32     %56 = bit_count %55
+                div 1      %57 = @elect
+                                 // succs: b7 b8
+                if %57 {
+                    div block b7:        // preds: b6
+                    con 32     %58 = imul %56, %27 (0xc)
+                    div 32     %59 = @ssbo_atomic (%54, %19 (0x4), %58) (access=coherent, atomic_op=iadd, offset_shift=0)
+                                     // succs: b9
+                } else {
+                    div block b8:        // preds: b6
+                    con 32     %60 = undefined
+                                     // succs: b9
+                }
+                div block b9:        // preds: b7 b8
+                div 32     %61 = phi b7: %59, b8: %60
+                con 32     %62 = @read_first_invocation (%61)
+                con 64     %63 = @ballot (%33 (true))
+                div 32     %64 = @mbcnt_amd (%63, %6 (0x0))
+                div 32     %65 = imul %64, %27 (0xc)
+                div 32     %66 = iadd %62, %65
+                con 32     %67 = usub_sat %54.z, %25 (0x8)
+                con 32     %68 = ushr %67, %43 (0x2)
+                div 32     %69 = iadd %66, %27 (0xc)
+                div 1      %70 = uge %68, %69
+                                 // succs: b10 b11
+                if %70 {
+                    div block b10:       // preds: b9
+                    con 32     %71 = load_const (0x0900003d = 150995005)
+                    div 32     %72 = bcsel %24, %43 (0x2), %21 (0x1)
+                    con 32     %73 = load_const (0x00000012 = 18)
+                    div 32     %74 = ishl %72, %73 (0x12)
+                    div 32     %75 = ior %71 (0x900003d), %74
+                    div 32x4   %76 = vec4 %27 (0xc), %75, %6 (0x0), %11
+                    div 32     %77 = ishl %66, %43 (0x2)
+                    div 32     %78 = iadd %25 (0x8), %77
+                                     @store_ssbo (%76, %54, %78) (wrmask=xyzw, access=none, align_mul=4, align_offset=0, offset_shift=0)
+                    div 32x2   %79 = vec2 %14, %6 (0x0)
+                    con 32     %80 = load_const (0x00000018 = 24)
+                    div 32     %81 = iadd %80 (0x18), %77
+                                     @store_ssbo (%79, %54, %81) (wrmask=xy, access=none, align_mul=4, align_offset=0, offset_shift=0)
+                    con 32x4   %82 = @load_global_amd (%36, %6 (0x0)) (base=0, access=readonly|reorderable|smem-amd, align_mul=4, align_offset=0)
+                    con 32     %83 = @load_ssbo (%82, %6 (0x0)) (access=none, align_mul=1073741824, align_offset=0, offset_shift=0)
+                    con 32     %84 = @load_ssbo (%37, %6 (0x0)) (access=none, align_mul=1073741824, align_offset=0, offset_shift=0)
+                    con 32     %85 = insert_u16 %83, %21 (0x1)
+                    con 32     %86 = ior %85, %84
+                    con 32     %87 = load_const (0x00000020 = 32)
+                    div 32     %88 = iadd %87 (0x20), %77
+                                     @store_ssbo (%86, %54, %88) (wrmask=x, access=none, align_mul=4, align_offset=0, offset_shift=0)
+                                     // succs: b12
+                } else {
+                    div block b11:  // preds: b9, succs: b12
+                }
+                div block b12:  // preds: b10 b11, succs: b14
+            } else {
+                div block b13:  // preds: b5, succs: b14
+            }
+            div block b14:  // preds: b12 b13, succs: b16
+        } else {
+            div block b15:  // preds: b1, succs: b16
+        }
+        div block b16:       // preds: b14 b15
+        con 32     %89 = @load_scalar_arg_amd (base=10, arg_upper_bound_u32_amd=0)
+        con 32x8   %90 = @load_global_amd (%16, %6 (0x0)) (base=32, access=readonly|reorderable|smem-amd, align_mul=4, align_offset=0)
+        con 32x4   %91 = vec4 %90.e, %90.f, %90.g, %90.h
+        con 64     %92 = @load_ssbo (%91, %25 (0x8)) (access=none, align_mul=1073741824, align_offset=8, offset_shift=0)
+        con 32     %93 = @load_global_amd (%92, %6 (0x0)) (base=4, access=none, align_mul=4, align_offset=0)
+        con 32x4   %94 = vec4 %90.a, %90.b, %90.c, %90.d
+        con 64     %95 = @load_ssbo (%94, %6 (0x0)) (access=none, align_mul=1073741824, align_offset=0, offset_shift=0)
+        con 32     %96 = @load_scalar_arg_amd (base=12, arg_upper_bound_u32_amd=0)
+        con 64     %97 = pack_64_2x32_split %96, %7 (0xffff8000)
+        con 32x4   %98 = @load_global_amd (%97, %6 (0x0)) (base=16, access=readonly|reorderable|smem-amd, align_mul=4, align_offset=0)
+        con 32     %99 = @load_ssbo (%98, %6 (0x0)) (access=none, align_mul=1073741824, align_offset=0, offset_shift=0)
+        con 32    %100 = load_const (0x00000031 = 49)
+        con 32    %101 = load_const (0x00000012 = 18)
+        con 32    %102 = ishl %99, %101 (0x12)
+        con 32    %103 = load_const (0x8000003d = -2147483587 = 2147483709)
+        con 32    %104 = ior %103 (0x8000003d), %102
+        con 32    %105 = load_const (0x00000172 = 370)
+        con 32x3  %106 = vec3 %104, %100 (0x31), %105 (0x172)
+                         @store_global_amd (%106, %95, %6 (0x0)) (base=0, access=none, align_mul=4, align_offset=0, wrmask=xyz)
+        con 64    %107 = pack_64_2x32_split %89, %7 (0xffff8000)
+        con 32x4  %108 = @load_global_amd (%107, %6 (0x0)) (base=0, access=readonly|reorderable|smem-amd, align_mul=4, align_offset=0)
+        con 32    %109 = load_const (0x00000103 = 259)
+        con 1     %110 = uge %109 (0x103), %93
+                         // succs: b17 b30
+        if %110 {
+            div block b17:       // preds: b16
+            con 32    %111 = @load_ssbo (%98, %6 (0x0)) (access=none, align_mul=1073741824, align_offset=0, offset_shift=0)
+            con 32x4  %112 = @load_global_amd (%16, %6 (0x0)) (base=80, access=readonly|reorderable|smem-amd, align_mul=4, align_offset=0)
+            con 64    %113 = @ballot (%33 (true))
+            con 32    %114 = bit_count %113
+            div 1     %115 = @elect
+            con 32    %116 = load_const (0x00000002)
+                             // succs: b18 b19
+            if %115 {
+                div block b18:       // preds: b17
+                con 32    %117 = ishl %111, %116 (0x2)
+                div 32    %118 = @ssbo_atomic (%112, %117, %114) (access=coherent, atomic_op=iadd, offset_shift=0)
+                                 // succs: b20
+            } else {
+                div block b19:       // preds: b17
+                con 32    %119 = undefined
+                                 // succs: b20
+            }
+            div block b20:       // preds: b18 b19
+            div 32    %120 = phi b18: %118, b19: %119
+            con 32    %121 = @read_first_invocation (%120)
+            con 64    %122 = @ballot (%33 (true))
+            div 32    %123 = @mbcnt_amd (%122, %6 (0x0))
+            div 32    %124 = iadd %121, %123
+            con 32    %125 = load_const (0x00000006)
+            div 1     %126 = ult %124, %125 (0x6)
+                             // succs: b21 b28
+            if %126 {
+                div block b21:       // preds: b20
+                con 32x4  %127 = @load_global_amd (%16, %6 (0x0)) (base=16, access=readonly|reorderable|smem-amd, align_mul=4, align_offset=0)
+                con 64    %128 = @ballot (%33 (true))
+                con 32    %129 = bit_count %128
+                div 1     %130 = @elect
+                                 // succs: b22 b23
+                if %130 {
+                    div block b22:       // preds: b21
+                    con 32    %131 = imul %129, %27 (0xc)
+                    div 32    %132 = @ssbo_atomic (%127, %19 (0x4), %131) (access=coherent, atomic_op=iadd, offset_shift=0)
+                                     // succs: b24
+                } else {
+                    div block b23:       // preds: b21
+                    con 32    %133 = undefined
+                                     // succs: b24
+                }
+                div block b24:       // preds: b22 b23
+                div 32    %134 = phi b22: %132, b23: %133
+                con 32    %135 = @read_first_invocation (%134)
+                con 64    %136 = @ballot (%33 (true))
+                div 32    %137 = @mbcnt_amd (%136, %6 (0x0))
+                div 32    %138 = imul %137, %27 (0xc)
+                div 32    %139 = iadd %135, %138
+                con 32    %140 = usub_sat %127.z, %25 (0x8)
+                con 32    %141 = ushr %140, %116 (0x2)
+                div 32    %142 = iadd %139, %27 (0xc)
+                div 1     %143 = uge %141, %142
+                                 // succs: b25 b26
+                if %143 {
+                    div block b25:       // preds: b24
+                    con 32    %144 = load_const (0x0804003d = 134479933)
+                    div 32x4  %145 = vec4 %27 (0xc), %144 (0x804003d), %105 (0x172), %11
+                    div 32    %146 = ishl %139, %116 (0x2)
+                    div 32    %147 = iadd %25 (0x8), %146
+                                     @store_ssbo (%145, %127, %147) (wrmask=xyzw, access=none, align_mul=4, align_offset=0, offset_shift=0)
+                    div 32x2  %148 = vec2 %14, %6 (0x0)
+                    con 32    %149 = load_const (0x00000018 = 24)
+                    div 32    %150 = iadd %149 (0x18), %146
+                                     @store_ssbo (%148, %127, %150) (wrmask=xy, access=none, align_mul=4, align_offset=0, offset_shift=0)
+                    con 32x4  %151 = @load_global_amd (%97, %6 (0x0)) (base=0, access=readonly|reorderable|smem-amd, align_mul=4, align_offset=0)
+                    con 32    %152 = @load_ssbo (%151, %6 (0x0)) (access=none, align_mul=1073741824, align_offset=0, offset_shift=0)
+                    con 32    %153 = @load_ssbo (%98, %6 (0x0)) (access=none, align_mul=1073741824, align_offset=0, offset_shift=0)
+                    con 32    %154 = insert_u16 %152, %21 (0x1)
+                    con 32    %155 = ior %154, %153
+                    con 32x4  %156 = vec4 %155, %6 (0x0), %109 (0x103), %93
+                    con 32    %157 = load_const (0x00000020 = 32)
+                    div 32    %158 = iadd %157 (0x20), %146
+                                     @store_ssbo (%156, %127, %158) (wrmask=xyzw, access=none, align_mul=4, align_offset=0, offset_shift=0)
+                                     // succs: b27
+                } else {
+                    div block b26:  // preds: b24, succs: b27
+                }
+                div block b27:  // preds: b25 b26, succs: b29
+            } else {
+                div block b28:  // preds: b20, succs: b29
+            }
+            div block b29:  // preds: b27 b28, succs: b31
+        } else {
+            div block b30:  // preds: b16, succs: b31
+        }
+        div block b31:       // preds: b29 b30
+        div 32    %159 = mov %12.w
+        con 32    %160 = load_const (0x00000100 = 256)
+        con 32    %161 = @load_ubo (%108, %160 (0x100)) (access=speculatable|smem-amd, align_mul=1073741824, align_offset=256, range_base=256, range=4)
+        div 32    %162 = mov %12.x
+        div 32    %163 = mov %12.y
+        div 32    %164 = mov %12.z
+                         // succs: b33
+    } else {
+        div block b32:       // preds: b0
+        con 32    %165 = undefined
+                         // succs: b33
+    }
+    con block b33:       // preds: b31 b32
+    div 32    %166 = phi b31: %162, b32: %165
+    div 32    %167 = phi b31: %163, b32: %165
+    con 32    %168 = phi b31: %161, b32: %165
+    div 32    %169 = phi b31: %164, b32: %165
+    div 32    %170 = phi b31: %159, b32: %165
+    div 1     %171 = @is_subgroup_invocation_lt_amd (%2) (base=8)
+                     // succs: b34 b35
+    if %171 {
+        div block b34:       // preds: b33
+        con 32    %172 = undefined
+        div 32x4  %173 = vec4 %3, %172, %172, %172
+                         @export_amd (%173) (base=20, wrmask=x, flags=2)
+                         // succs: b36
+    } else {
+        div block b35:  // preds: b33, succs: b36
+    }
+    con block b36:       // preds: b34 b35
+    con 32x2  %174 = @load_scalar_arg_amd (base=0, arg_upper_bound_u32_amd=0)
+    con 64    %175 = pack_64_2x32_split %174.x, %174.y
+    con 32    %176 = load_const (0x00000000)
+    con 32x4  %177 = @load_global_amd (%175, %176 (0x0)) (base=160, access=readonly|reorderable|speculatable|smem-amd, align_mul=4, align_offset=0)
+    con 32    %178 = load_const (0xfffffff8 = -8 = 4294967288)
+    con 32    %179 = load_const (0x00000007)
+    con 32    %180 = iadd %2, %179 (0x7)
+    con 32    %181 = iand %180, %178 (0xfffffff8)
+    div 1     %182 = @is_subgroup_invocation_lt_amd (%181) (base=0)
+                     // succs: b37 b38
+    if %182 {
+        div block b37:       // preds: b36
+        con 32    %183 = @load_scalar_arg_amd (base=4, arg_upper_bound_u32_amd=0)
+        con 64    %184 = load_const (0xffffffffffffffff = -nan = -1 = 18446744073709551615)
+        con 32    %185 = load_const (0x00000004)
+        con 32    %186 = load_const (0x00000018 = 24)
+        con 32    %187 = ubfe %2, %186 (0x18), %185 (0x4)
+        con 32    %188 = load_const (0x00000006)
+        con 32    %189 = ishl %187, %188 (0x6)
+        div 32    %190 = @mbcnt_amd (%184 (0xffffffffffffffff), %189)
+        con 32    %191 = undefined
+        div 32x4  %192 = vec4 %169, %170, %191, %191
+        con 32    %193 = load_const (0x00200000 = 2097152)
+        con 32    %194 = ior %177.y, %193 (0x200000)
+        con 32x4  %195 = vec4 %177.x, %194, %177.z, %177.w
+        con 32    %196 = load_const (0x00007fff = 32767)
+        con 32    %197 = iand %183, %196 (0x7fff)
+        con 32    %198 = load_const (0x00000009)
+        con 32    %199 = ishl %197, %198 (0x9)
+                         @store_buffer_amd (%192, %195, %176 (0x0), %199, %190) (base=16, wrmask=xyzw, mem_modes=shader_out, access=coherent|is-swizzled-amd, align_mul=16, align_offset=0)
+                         // succs: b39
+    } else {
+        div block b38:  // preds: b36, succs: b39
+    }
+    con block b39:// preds: b37 b38
+    @barrier (execution_scope=SUBGROUP, memory_scope=DEVICE, mem_semantics=REL, mem_modes=shader_out|image|ssbo|global)
+    // succs: b40 b41
+    if %4 {
+        div block b40:       // preds: b39
+        con 32    %200 = load_const (0x3f800000 = 1.000000 = 1065353216)
+        div 32x4  %201 = vec4 %166, %167, %176 (0x0), %200 (0x3f800000)
+                         @export_amd (%201) (base=12, wrmask=xyzw, flags=0)
+        con 32x4  %202 = vec4 %176 (0x0), %176 (0x0), %168, %176 (0x0)
+                         @export_amd (%202) (base=13, wrmask=z, flags=2)
+                         // succs: b42
+    } else {
+        div block b41:  // preds: b39, succs: b42
+    }
+    con block b42:  // preds: b40 b41, succs: b43
+    block b43:
+}
+
+
+ACO IR:
+After Spilling:
+ACO shader stage: SW (VS), HW (NEXT_GEN_GEOMETRY_SHADER)
+BB0
+/* logical preds: / linear preds: / kind: top-level, branch, */
+	 s2: %204:s[0-1],  s1: (kill)%205:s[2],  s1: %206:s[3],  s1: (kill)%207:s[4],  s1: %208:s[5],  s1: (kill)%209:s[6],  s1: (kill)%210:s[7],  s1: %211:s[8],  s1: %212:s[9],  s1: %213:s[10],  s1: %214:s[11],  s1: %215:s[12],  s1: %216:s[13],  s1: (kill)%217:s[14],  v1: %218:v[0],  v1: (kill)%219:v[1],  v1: (kill)%220:v[2],  v1: (kill)%221:v[3],  v1: (kill)%222:v[4],  v1: %223:v[5],  v1: (kill)%224:v[6],  v1: (kill)%225:v[7],  v1: %226:v[8] = p_startpgm
+	s_setprio imm:3
+	 s2: %0:exec = p_parallelcopy -1
+	p_logical_start
+	 s1: %227 = s_pack_ll_b32_b16 0, %206
+	 s2: %229,  s1: (kill)%228:scc = s_bfe_u64 -1, (kill)%227
+	p_logical_end
+	 s2: %0:exec = p_parallelcopy %229
+	p_cbranch_z %0:exec BB59, BB1
+BB1
+/* logical preds: BB0, / linear preds: BB0, / kind: branch, */
+	p_logical_start
+	 s2: %9 = p_create_vector (kill)%211, 0xffff8000
+	 s4: %10 = s_load_dwordx4 (kill)%9, 0 storage:buffer semantics:private,reorder
+	 v1: %12 = v_add_u32 (kill)%212, (kill)%223
+	 v4: %13 = buffer_load_dwordx4 (kill)%10, %12, 0 idxen
+	 v1: %234,  v1: %235,  v1: %236,  v1: %237 = p_split_vector (kill)%13
+	 v1: %15 = v_add_u32 (kill)%213, (kill)%226
+	 s2: %17 = p_create_vector (kill)%215, 0xffff8000
+	 s4: %18 = s_load_dwordx4 %17, 0x60 storage:buffer semantics:private,reorder
+	 s1: %19 = s_buffer_load_dword %18, 0 storage:buffer semantics:private,reorder
+	 s1: %21 = s_buffer_load_dword %18, 4 storage:buffer semantics:private,reorder
+	 s1: %242:scc = s_cmp_lg_i32 (kill)%19, 1
+	 s2: %23 = s_cselect_b64 -1, 0, (kill)%242:scc
+	 s2: %24 = v_cmp_gt_u32 (lateKill)%21, %12
+	 s2: %25,  s1: (kill)%243:scc = s_or_b64 (kill)%23, (kill)%24
+	 s1: %27 = s_buffer_load_dword %18, 8 storage:buffer semantics:private,reorder
+	 s1: %29 = s_buffer_load_dword (kill)%18, 12 storage:buffer semantics:private,reorder
+	 s1: %244:scc = s_cmp_lg_i32 (kill)%27, 1
+	 s2: %30 = s_cselect_b64 -1, 0, (kill)%244:scc
+	 s2: %31 = v_cmp_gt_u32 (lateKill)%29, %15
+	 s2: %32,  s1: (kill)%245:scc = s_or_b64 (kill)%30, (kill)%31
+	 s2: %35,  s1: (kill)%247:scc = s_nand_b64 %25, (kill)%32
+	p_logical_end
+	 s2: %391,  s1: (kill)%390:scc,  s2: %0:exec = s_and_saveexec_b64 (kill)%35, %0:exec
+	p_cbranch_z %0:exec BB27, BB2
+BB2
+/* logical preds: BB1, / linear preds: BB1, / kind: branch, */
+	p_logical_start
+	 s2: %37 = p_create_vector %216, 0xffff8000
+	 s4: %38 = s_load_dwordx4 %37, 16 storage:buffer semantics:private,reorder
+	 v1: %252 = buffer_load_dword %38,  v1: undef, 0 storage:buffer
+	 s1: %253 = p_as_uniform (kill)%252
+	 s4: %40 = s_load_dwordx4 %17, 0x50 storage:buffer semantics:private,reorder
+	 s1: %42,  s1: (kill)%258:scc = s_bcnt1_i32_b64 %0:exec
+	 s1: %392 = s_ff1_i32_b64 %0:exec
+	 s2: %43,  s1: (kill)%393:scc = s_lshl_b64 1, (kill)%392
+	p_logical_end
+	 s2: %395,  s1: (kill)%394:scc,  s2: %0:exec = s_and_saveexec_b64 (kill)%43, %0:exec
+	p_cbranch_z %0:exec BB4, BB3
+BB3
+/* logical preds: BB2, / linear preds: BB2, / kind: uniform, */
+	p_logical_start
+	 s1: %45,  s1: (kill)%259:scc = s_lshl_b32 (kill)%253, 2
+	 v1: %260 = p_parallelcopy (kill)%42
+	 v1: %46 = buffer_atomic_add (kill)%40,  v1: undef, (kill)%45, (kill)%260 glc storage:buffer semantics:volatile,atomic,rmw
+	p_logical_end
+	p_branch BB5
+BB4
+/* logical preds: / linear preds: BB2, / kind: uniform, */
+	p_branch BB5
+BB5
+/* logical preds: / linear preds: BB3, BB4, / kind: invert, */
+	 s2: %0:exec,  s1: (kill)%396:scc = s_andn2_b64 %395, %0:exec
+	p_cbranch_z %0:exec BB7, BB6
+BB6
+/* logical preds: BB2, / linear preds: BB5, / kind: uniform, */
+	p_logical_start
+	p_logical_end
+	p_branch BB8
+BB7
+/* logical preds: / linear preds: BB5, / kind: uniform, */
+	p_branch BB8
+BB8
+/* logical preds: BB3, BB6, / linear preds: BB6, BB7, / kind: branch, merge, */
+	 v1: %48 = p_phi (kill)%46,  v1: undef
+	 s2: %0:exec = p_parallelcopy %395
+	p_logical_start
+	 s1: %49 = v_readfirstlane_b32 (kill)%48
+	 v1: %264 = v_mbcnt_lo_u32_b32 %0:exec_lo, 0
+	 v1: %51 = v_mbcnt_hi_u32_b32_e64 %0:exec_hi, (kill)%264
+	 v1: %52 = v_add_u32 (kill)%49, (kill)%51
+	 s2: %54 = v_cmp_gt_u32 6, (kill)%52
+	p_logical_end
+	 s2: %0:exec,  s1: (kill)%397:scc = s_and_b64 (kill)%54, %0:exec
+	p_cbranch_z %0:exec BB22, BB9
+BB9
+/* logical preds: BB8, / linear preds: BB8, / kind: branch, */
+	p_logical_start
+	 s4: %55 = s_load_dwordx4 %17, 16 storage:buffer semantics:private,reorder
+	 s1: %267 = p_extract_vector %55, 2
+	 s1: %57,  s1: (kill)%269:scc = s_bcnt1_i32_b64 %0:exec
+	 s1: %398 = s_ff1_i32_b64 %0:exec
+	 s2: %58,  s1: (kill)%399:scc = s_lshl_b64 1, (kill)%398
+	p_logical_end
+	 s2: %401,  s1: (kill)%400:scc,  s2: %0:exec = s_and_saveexec_b64 (kill)%58, %0:exec
+	p_cbranch_z %0:exec BB11, BB10
+BB10
+/* logical preds: BB9, / linear preds: BB9, / kind: uniform, */
+	p_logical_start
+	 s1: %59 = s_mul_i32 (is16bit)(kill)%57, 12
+	 v1: %270 = p_parallelcopy (kill)%59
+	 v1: %60 = buffer_atomic_add %55,  v1: undef, 0, (kill)%270 offset:4 glc storage:buffer semantics:volatile,atomic,rmw
+	p_logical_end
+	p_branch BB12
+BB11
+/* logical preds: / linear preds: BB9, / kind: uniform, */
+	p_branch BB12
+BB12
+/* logical preds: / linear preds: BB10, BB11, / kind: invert, */
+	 s2: %0:exec,  s1: (kill)%402:scc = s_andn2_b64 %401, %0:exec
+	p_cbranch_z %0:exec BB14, BB13
+BB13
+/* logical preds: BB9, / linear preds: BB12, / kind: uniform, */
+	p_logical_start
+	p_logical_end
+	p_branch BB15
+BB14
+/* logical preds: / linear preds: BB12, / kind: uniform, */
+	p_branch BB15
+BB15
+/* logical preds: BB10, BB13, / linear preds: BB13, BB14, / kind: branch, merge, */
+	 v1: %62 = p_phi (kill)%60,  v1: undef
+	 s2: %0:exec = p_parallelcopy %401
+	p_logical_start
+	 s1: %63 = v_readfirstlane_b32 (kill)%62
+	 v1: %274 = v_mbcnt_lo_u32_b32 %0:exec_lo, 0
+	 v1: %65 = v_mbcnt_hi_u32_b32_e64 %0:exec_hi, (kill)%274
+	 v1: %67 = v_mad_u32_u24 12, (is16bit)(kill)%65, (kill)%63
+	 s1: %275,  s1: %276:scc = s_sub_u32 (kill)%267, 8
+	 s1: %68 = s_cselect_b32 0, (kill)%275, (kill)%276:scc
+	 s1: %69,  s1: (kill)%277:scc = s_lshr_b32 (kill)%68, 2
+	 v1: %70 = v_add_u32 12, %67
+	 s2: %71 = v_cmp_ge_u32 (lateKill)%69, (kill)%70
+	p_logical_end
+	 s2: %0:exec,  s1: (kill)%403:scc = s_and_b64 (kill)%71, %0:exec
+	p_cbranch_z %0:exec BB17, BB16
+BB16
+/* logical preds: BB15, / linear preds: BB15, / kind: uniform, */
+	p_logical_start
+	 v1: %73 = v_cndmask_b32 1, 2, (kill)%25
+	 v1: %76 = v_lshl_or_b32 (is16bit)(kill)%73, 18, 0x900003d
+	 v4: %77 = p_create_vector 12, (kill)%76, 0, %12
+	 v1: %78 = v_lshlrev_b32 2, (kill)%67
+	buffer_store_dwordx4 %55, %78, 0, (kill)%77 offset:8 offen storage:buffer
+	 v2: %80 = p_create_vector %15, 0
+	buffer_store_dwordx2 %55, %78, 0, (kill)%80 offset:24 offen storage:buffer
+	 s4: %83 = s_load_dwordx4 (kill)%37, 0 storage:buffer semantics:private,reorder
+	 v1: %284 = buffer_load_dword (kill)%83,  v1: undef, 0 storage:buffer
+	 s1: %285 = p_as_uniform (kill)%284
+	 v1: %286 = buffer_load_dword (kill)%38,  v1: undef, 0 storage:buffer
+	 s1: %287 = p_as_uniform (kill)%286
+	 s1: %86,  s1: (kill)%288:scc = p_insert (kill)%285, 1, 16
+	 s1: %87,  s1: (kill)%289:scc = s_or_b32 (kill)%86, (kill)%287
+	 v1: %290 = p_parallelcopy (kill)%87
+	buffer_store_dword (kill)%55, (kill)%78, 0, (kill)%290 offset:32 offen storage:buffer
+	p_logical_end
+	p_branch BB18
+BB17
+/* logical preds: / linear preds: BB15, / kind: uniform, */
+	p_branch BB18
+BB18
+/* logical preds: / linear preds: BB16, BB17, / kind: invert, */
+	 s2: %0:exec,  s1: (kill)%404:scc = s_andn2_b64 %401, %0:exec
+	p_cbranch_z %0:exec BB20, BB19
+BB19
+/* logical preds: BB15, / linear preds: BB18, / kind: uniform, */
+	p_logical_start
+	p_logical_end
+	p_branch BB21
+BB20
+/* logical preds: / linear preds: BB18, / kind: uniform, */
+	p_branch BB21
+BB21
+/* logical preds: BB16, BB19, / linear preds: BB19, BB20, / kind: uniform, merge, */
+	 s2: %0:exec = p_parallelcopy (kill)%401
+	p_logical_start
+	p_logical_end
+	p_branch BB23
+BB22
+/* logical preds: / linear preds: BB8, / kind: uniform, */
+	p_branch BB23
+BB23
+/* logical preds: / linear preds: BB21, BB22, / kind: invert, */
+	 s2: %0:exec,  s1: (kill)%405:scc = s_andn2_b64 %395, %0:exec
+	p_cbranch_z %0:exec BB25, BB24
+BB24
+/* logical preds: BB8, / linear preds: BB23, / kind: uniform, */
+	p_logical_start
+	p_logical_end
+	p_branch BB26
+BB25
+/* logical preds: / linear preds: BB23, / kind: uniform, */
+	p_branch BB26
+BB26
+/* logical preds: BB21, BB24, / linear preds: BB24, BB25, / kind: uniform, merge, */
+	 s2: %0:exec = p_parallelcopy (kill)%395
+	p_logical_start
+	p_logical_end
+	p_branch BB28
+BB27
+/* logical preds: / linear preds: BB1, / kind: uniform, */
+	p_branch BB28
+BB28
+/* logical preds: / linear preds: BB26, BB27, / kind: invert, */
+	 s2: %0:exec,  s1: (kill)%406:scc = s_andn2_b64 %391, %0:exec
+	p_cbranch_z %0:exec BB30, BB29
+BB29
+/* logical preds: BB1, / linear preds: BB28, / kind: uniform, */
+	p_logical_start
+	p_logical_end
+	p_branch BB31
+BB30
+/* logical preds: / linear preds: BB28, / kind: uniform, */
+	p_branch BB31
+BB31
+/* logical preds: BB26, BB29, / linear preds: BB29, BB30, / kind: uniform, merge, */
+	 s2: %0:exec = p_parallelcopy %391
+	p_logical_start
+	 s8: %91 = s_load_dwordx8 %17, 32 storage:buffer semantics:private,reorder
+	 s1: %291,  s1: %292,  s1: %293,  s1: %294,  s1: %295,  s1: %296,  s1: %297,  s1: %298 = p_split_vector (kill)%91
+	 s4: %92 = p_create_vector (kill)%295, (kill)%296, (kill)%297, (kill)%298
+	 v2: %299 = buffer_load_dwordx2 (kill)%92,  v1: undef, 0 offset:8 storage:buffer
+	 s2: %300 = p_as_uniform (kill)%299
+	 v1: %302 = p_parallelcopy 0
+	 v1: %303 = global_load_dword %302, (kill)%300 offset:4 storage:buffer
+	 s1: %304 = p_as_uniform %303
+	 s4: %95 = p_create_vector (kill)%291, (kill)%292, (kill)%293, (kill)%294
+	 v2: %305 = buffer_load_dwordx2 (kill)%95,  v1: undef, 0 storage:buffer
+	 s2: %306 = p_as_uniform (kill)%305
+	 s2: %98 = p_create_vector (kill)%216, 0xffff8000
+	 s4: %99 = s_load_dwordx4 %98, 16 storage:buffer semantics:private,reorder
+	 v1: %311 = buffer_load_dword %99,  v1: undef, 0 storage:buffer
+	 s1: %312 = p_as_uniform (kill)%311
+	 s1: %103,  s1: (kill)%313:scc = s_lshl_b32 (kill)%312, 18
+	 s1: %105,  s1: (kill)%314:scc = s_or_b32 0x8000003d, (kill)%103
+	 v3: %315 = p_create_vector (kill)%105, 49, 0x172
+	global_store_dwordx3 (kill)%302, (kill)%306, (kill)%315 storage:buffer
+	 s2: %108 = p_create_vector (kill)%214, 0xffff8000
+	 s4: %109 = s_load_dwordx4 (kill)%108, 0 storage:buffer semantics:private,reorder
+	 s1: %322:scc = s_cmpk_le_u32 (kill)%304 imm:259
+	p_logical_end
+	p_cbranch_z (kill)%322:scc BB57, BB32
+BB32
+/* logical preds: BB31, / linear preds: BB31, / kind: branch, */
+	p_logical_start
+	 v1: %325 = buffer_load_dword %99,  v1: undef, 0 storage:buffer
+	 s1: %326 = p_as_uniform (kill)%325
+	 s4: %113 = s_load_dwordx4 %17, 0x50 storage:buffer semantics:private,reorder
+	 s1: %115,  s1: (kill)%331:scc = s_bcnt1_i32_b64 %0:exec
+	 s1: %407 = s_ff1_i32_b64 %0:exec
+	 s2: %116,  s1: (kill)%408:scc = s_lshl_b64 1, (kill)%407
+	p_logical_end
+	 s2: %0:exec,  s1: (kill)%409:scc = s_and_b64 (kill)%116, %0:exec
+	p_cbranch_z %0:exec BB34, BB33
+BB33
+/* logical preds: BB32, / linear preds: BB32, / kind: uniform, */
+	p_logical_start
+	 s1: %118,  s1: (kill)%332:scc = s_lshl_b32 (kill)%326, 2
+	 v1: %333 = p_parallelcopy (kill)%115
+	 v1: %119 = buffer_atomic_add (kill)%113,  v1: undef, (kill)%118, (kill)%333 glc storage:buffer semantics:volatile,atomic,rmw
+	p_logical_end
+	p_branch BB35
+BB34
+/* logical preds: / linear preds: BB32, / kind: uniform, */
+	p_branch BB35
+BB35
+/* logical preds: / linear preds: BB33, BB34, / kind: invert, */
+	 s2: %0:exec,  s1: (kill)%410:scc = s_andn2_b64 %391, %0:exec
+	p_cbranch_z %0:exec BB37, BB36
+BB36
+/* logical preds: BB32, / linear preds: BB35, / kind: uniform, */
+	p_logical_start
+	p_logical_end
+	p_branch BB38
+BB37
+/* logical preds: / linear preds: BB35, / kind: uniform, */
+	p_branch BB38
+BB38
+/* logical preds: BB33, BB36, / linear preds: BB36, BB37, / kind: branch, merge, */
+	 v1: %121 = p_phi (kill)%119,  v1: undef
+	 s2: %0:exec = p_parallelcopy %391
+	p_logical_start
+	 s1: %122 = v_readfirstlane_b32 (kill)%121
+	 v1: %337 = v_mbcnt_lo_u32_b32 %0:exec_lo, 0
+	 v1: %124 = v_mbcnt_hi_u32_b32_e64 %0:exec_hi, (kill)%337
+	 v1: %125 = v_add_u32 (kill)%122, (kill)%124
+	 s2: %127 = v_cmp_gt_u32 6, (kill)%125
+	p_logical_end
+	 s2: %0:exec,  s1: (kill)%411:scc = s_and_b64 (kill)%127, %0:exec
+	p_cbranch_z %0:exec BB52, BB39
+BB39
+/* logical preds: BB38, / linear preds: BB38, / kind: branch, */
+	p_logical_start
+	 s4: %128 = s_load_dwordx4 (kill)%17, 16 storage:buffer semantics:private,reorder
+	 s1: %340 = p_extract_vector %128, 2
+	 s1: %130,  s1: (kill)%342:scc = s_bcnt1_i32_b64 %0:exec
+	 s1: %412 = s_ff1_i32_b64 %0:exec
+	 s2: %131,  s1: (kill)%413:scc = s_lshl_b64 1, (kill)%412
+	p_logical_end
+	 s2: %415,  s1: (kill)%414:scc,  s2: %0:exec = s_and_saveexec_b64 (kill)%131, %0:exec
+	p_cbranch_z %0:exec BB41, BB40
+BB40
+/* logical preds: BB39, / linear preds: BB39, / kind: uniform, */
+	p_logical_start
+	 s1: %132 = s_mul_i32 (is16bit)(kill)%130, 12
+	 v1: %343 = p_parallelcopy (kill)%132
+	 v1: %133 = buffer_atomic_add %128,  v1: undef, 0, (kill)%343 offset:4 glc storage:buffer semantics:volatile,atomic,rmw
+	p_logical_end
+	p_branch BB42
+BB41
+/* logical preds: / linear preds: BB39, / kind: uniform, */
+	p_branch BB42
+BB42
+/* logical preds: / linear preds: BB40, BB41, / kind: invert, */
+	 s2: %0:exec,  s1: (kill)%416:scc = s_andn2_b64 %415, %0:exec
+	p_cbranch_z %0:exec BB44, BB43
+BB43
+/* logical preds: BB39, / linear preds: BB42, / kind: uniform, */
+	p_logical_start
+	p_logical_end
+	p_branch BB45
+BB44
+/* logical preds: / linear preds: BB42, / kind: uniform, */
+	p_branch BB45
+BB45
+/* logical preds: BB40, BB43, / linear preds: BB43, BB44, / kind: branch, merge, */
+	 v1: %135 = p_phi (kill)%133,  v1: undef
+	 s2: %0:exec = p_parallelcopy %415
+	p_logical_start
+	 s1: %136 = v_readfirstlane_b32 (kill)%135
+	 v1: %347 = v_mbcnt_lo_u32_b32 %0:exec_lo, 0
+	 v1: %138 = v_mbcnt_hi_u32_b32_e64 %0:exec_hi, (kill)%347
+	 v1: %140 = v_mad_u32_u24 12, (is16bit)(kill)%138, (kill)%136
+	 s1: %348,  s1: %349:scc = s_sub_u32 (kill)%340, 8
+	 s1: %141 = s_cselect_b32 0, (kill)%348, (kill)%349:scc
+	 s1: %142,  s1: (kill)%350:scc = s_lshr_b32 (kill)%141, 2
+	 v1: %143 = v_add_u32 12, %140
+	 s2: %144 = v_cmp_ge_u32 (lateKill)%142, (kill)%143
+	p_logical_end
+	 s2: %0:exec,  s1: (kill)%417:scc = s_and_b64 (kill)%144, %0:exec
+	p_cbranch_z %0:exec BB47, BB46
+BB46
+/* logical preds: BB45, / linear preds: BB45, / kind: uniform, */
+	p_logical_start
+	 v4: %146 = p_create_vector 12, 0x804003d, 0x172, (kill)%12
+	 v1: %147 = v_lshlrev_b32 2, (kill)%140
+	buffer_store_dwordx4 %128, %147, 0, (kill)%146 offset:8 offen storage:buffer
+	 v2: %149 = p_create_vector (kill)%15, 0
+	buffer_store_dwordx2 %128, %147, 0, (kill)%149 offset:24 offen storage:buffer
+	 s4: %152 = s_load_dwordx4 (kill)%98, 0 storage:buffer semantics:private,reorder
+	 v1: %355 = buffer_load_dword (kill)%152,  v1: undef, 0 storage:buffer
+	 s1: %356 = p_as_uniform (kill)%355
+	 v1: %357 = buffer_load_dword (kill)%99,  v1: undef, 0 storage:buffer
+	 s1: %358 = p_as_uniform (kill)%357
+	 s1: %155,  s1: (kill)%359:scc = p_insert (kill)%356, 1, 16
+	 s1: %156,  s1: (kill)%360:scc = s_or_b32 (kill)%155, (kill)%358
+	 v4: %361 = p_create_vector (kill)%156, 0, 0x103, (kill)%303
+	buffer_store_dwordx4 (kill)%128, (kill)%147, 0, (kill)%361 offset:32 offen storage:buffer
+	p_logical_end
+	p_branch BB48
+BB47
+/* logical preds: / linear preds: BB45, / kind: uniform, */
+	p_branch BB48
+BB48
+/* logical preds: / linear preds: BB46, BB47, / kind: invert, */
+	 s2: %0:exec,  s1: (kill)%418:scc = s_andn2_b64 %415, %0:exec
+	p_cbranch_z %0:exec BB50, BB49
+BB49
+/* logical preds: BB45, / linear preds: BB48, / kind: uniform, */
+	p_logical_start
+	p_logical_end
+	p_branch BB51
+BB50
+/* logical preds: / linear preds: BB48, / kind: uniform, */
+	p_branch BB51
+BB51
+/* logical preds: BB46, BB49, / linear preds: BB49, BB50, / kind: uniform, merge, */
+	 s2: %0:exec = p_parallelcopy (kill)%415
+	p_logical_start
+	p_logical_end
+	p_branch BB53
+BB52
+/* logical preds: / linear preds: BB38, / kind: uniform, */
+	p_branch BB53
+BB53
+/* logical preds: / linear preds: BB51, BB52, / kind: invert, */
+	 s2: %0:exec,  s1: (kill)%419:scc = s_andn2_b64 %391, %0:exec
+	p_cbranch_z %0:exec BB55, BB54
+BB54
+/* logical preds: BB38, / linear preds: BB53, / kind: uniform, */
+	p_logical_start
+	p_logical_end
+	p_branch BB56
+BB55
+/* logical preds: / linear preds: BB53, / kind: uniform, */
+	p_branch BB56
+BB56
+/* logical preds: BB51, BB54, / linear preds: BB54, BB55, / kind: uniform, merge, */
+	 s2: %0:exec = p_parallelcopy (kill)%391
+	p_logical_start
+	p_logical_end
+	p_branch BB58
+BB57
+/* logical preds: BB31, / linear preds: BB31, / kind: uniform, */
+	p_logical_start
+	p_logical_end
+	p_branch BB58
+BB58
+/* logical preds: BB56, BB57, / linear preds: BB56, BB57, / kind: uniform, */
+	p_logical_start
+	 s1: %162 = s_buffer_load_dword (kill)%109, 0x100
+	p_logical_end
+	p_branch BB60
+BB59
+/* logical preds: / linear preds: BB0, / kind: uniform, */
+	p_branch BB60
+BB60
+/* logical preds: / linear preds: BB58, BB59, / kind: invert, */
+	 s1: %389 = p_linear_phi (kill)%162,  s1: undef
+	 s2: %0:exec,  s1: (kill)%420:scc = s_andn2_b64 -1, %0:exec
+	p_cbranch_z %0:exec BB62, BB61
+BB61
+/* logical preds: BB0, / linear preds: BB60, / kind: uniform, */
+	p_logical_start
+	p_logical_end
+	p_branch BB63
+BB62
+/* logical preds: / linear preds: BB60, / kind: uniform, */
+	p_branch BB63
+BB63
+/* logical preds: BB58, BB61, / linear preds: BB61, BB62, / kind: top-level, branch, merge, */
+	 v1: %171 = p_phi (kill)%237,  v1: undef
+	 v1: %170 = p_phi (kill)%236,  v1: undef
+	 v1: %168 = p_phi (kill)%235,  v1: undef
+	 v1: %167 = p_phi (kill)%234,  v1: undef
+	 s2: %0:exec = p_parallelcopy -1
+	p_logical_start
+	 s1: %363,  s1: (kill)%362:scc = s_lshl_b32 %206, 8
+	 s2: %365,  s1: (kill)%364:scc = s_bfe_u64 -1, (kill)%363
+	p_logical_end
+	 s2: %0:exec = p_parallelcopy (kill)%365
+	p_cbranch_z %0:exec BB65, BB64
+BB64
+/* logical preds: BB63, / linear preds: BB63, / kind: uniform, */
+	p_logical_start
+	exp (kill)%218,  v1: undef,  v1: undef,  v1: undef en:r*** done
+	p_logical_end
+	p_branch BB66
+BB65
+/* logical preds: / linear preds: BB63, / kind: uniform, */
+	p_branch BB66
+BB66
+/* logical preds: / linear preds: BB64, BB65, / kind: invert, */
+	 s2: %0:exec,  s1: (kill)%421:scc = s_andn2_b64 -1, %0:exec
+	p_cbranch_z %0:exec BB68, BB67
+BB67
+/* logical preds: BB63, / linear preds: BB66, / kind: uniform, */
+	p_logical_start
+	p_logical_end
+	p_branch BB69
+BB68
+/* logical preds: / linear preds: BB66, / kind: uniform, */
+	p_branch BB69
+BB69
+/* logical preds: BB64, BB67, / linear preds: BB67, BB68, / kind: top-level, branch, merge, */
+	 s2: %0:exec = p_parallelcopy -1
+	p_logical_start
+	 s4: %178 = s_load_dwordx4 (kill)%204, 0xa0 storage:buffer semantics:private,reorder
+	 s1: %368,  s1: %369,  s1: %370,  s1: %371 = p_split_vector (kill)%178
+	 s1: %181,  s1: (kill)%372:scc = s_add_u32 %206, 7
+	 s1: %182,  s1: (kill)%373:scc = s_and_b32 (kill)%181, -8
+	 s1: %374 = s_pack_ll_b32_b16 0, (kill)%182
+	 s2: %376,  s1: (kill)%375:scc = s_bfe_u64 -1, (kill)%374
+	p_logical_end
+	 s2: %0:exec = p_parallelcopy (kill)%376
+	p_cbranch_z %0:exec BB71, BB70
+BB70
+/* logical preds: BB69, / linear preds: BB69, / kind: uniform, */
+	p_logical_start
+	 s1: %188,  s1: (kill)%377:scc = s_bfe_u32 (kill)%206, 0x40018
+	 s1: %190,  s1: (kill)%378:scc = s_lshl_b32 (is16bit)(kill)%188, 6
+	 v1: %382 = v_mbcnt_lo_u32_b32 -1, (kill)%190
+	 v1: %191 = v_mbcnt_hi_u32_b32_e64 -1, (kill)%382
+	 v4: %193 = p_create_vector (kill)%170, (kill)%171,  v1: undef,  v1: undef
+	 s1: %195,  s1: (kill)%383:scc = s_or_b32 (kill)%369, 0x200000
+	 s4: %196 = p_create_vector (kill)%368, (kill)%195, (kill)%370, (kill)%371
+	 s1: %198,  s1: (kill)%384:scc = s_and_b32 (kill)%208, 0x7fff
+	 s1: %200,  s1: (kill)%385:scc = s_lshl_b32 (is16bit)(kill)%198, 9
+	buffer_store_dwordx4 (kill)%196, (kill)%191, (kill)%200, (kill)%193 offset:16 idxen swizzled storage:vmem_output
+	p_logical_end
+	p_branch BB72
+BB71
+/* logical preds: / linear preds: BB69, / kind: uniform, */
+	p_branch BB72
+BB72
+/* logical preds: / linear preds: BB70, BB71, / kind: invert, */
+	 s2: %0:exec,  s1: (kill)%422:scc = s_andn2_b64 -1, %0:exec
+	p_cbranch_z %0:exec BB74, BB73
+BB73
+/* logical preds: BB69, / linear preds: BB72, / kind: uniform, */
+	p_logical_start
+	p_logical_end
+	p_branch BB75
+BB74
+/* logical preds: / linear preds: BB72, / kind: uniform, */
+	p_branch BB75
+BB75
+/* logical preds: BB70, BB73, / linear preds: BB73, BB74, / kind: top-level, branch, merge, */
+	 s2: %0:exec = p_parallelcopy -1
+	p_logical_start
+	p_barrier storage:buffer,image,vmem_output semantics:release scope:device exec_scope:subgroup
+	p_logical_end
+	 s2: %0:exec = p_parallelcopy (kill)%229
+	p_cbranch_z %0:exec BB77, BB76
+BB76
+/* logical preds: BB75, / linear preds: BB75, / kind: uniform, export_end, */
+	p_logical_start
+	 v1: %386 = p_parallelcopy 0
+	 v1: %387 = p_parallelcopy 1.0
+	exp (kill)%167, (kill)%168, (kill)%386, (kill)%387 pos0
+	 v1: %388 = p_parallelcopy (kill)%389
+	exp  v1: undef,  v1: undef, (kill)%388,  v1: undef en:**b* pos1
+	p_logical_end
+	p_branch BB78
+BB77
+/* logical preds: / linear preds: BB75, / kind: uniform, */
+	p_branch BB78
+BB78
+/* logical preds: / linear preds: BB76, BB77, / kind: invert, */
+	 s2: %0:exec,  s1: (kill)%423:scc = s_andn2_b64 -1, %0:exec
+	p_cbranch_z %0:exec BB80, BB79
+BB79
+/* logical preds: BB75, / linear preds: BB78, / kind: uniform, */
+	p_logical_start
+	p_logical_end
+	p_branch BB81
+BB80
+/* logical preds: / linear preds: BB78, / kind: uniform, */
+	p_branch BB81
+BB81
+/* logical preds: BB76, BB79, / linear preds: BB79, BB80, / kind: uniform, top-level, merge, */
+	 s2: %0:exec = p_parallelcopy -1
+	p_logical_start
+	p_logical_end
+	s_endpgm
+
+
+DISASM:
+BB0:
+	s_setprio 3                                                 ; bfb50003
+	s_pack_ll_b32_b16 s2, 0, s3                                 ; 99020380
+	s_delay_alu instid0(SALU_CYCLE_1) | instskip(NEXT) | instid1(SALU_CYCLE_1) ; bf870499
+	s_bfe_u64 exec, -1, s2                                      ; 947e02c1
+	s_mov_b64 s[6:7], exec                                      ; be86017e
+	s_cbranch_execz BB63                                        ; bfa50118
+BB1:
+	s_mov_b32 s2, s13                                           ; be82000d
+	s_movk_i32 s13, 0x8000                                      ; b00d8000
+	s_mov_b32 s4, s9                                            ; be840009
+	s_movk_i32 s9, 0x8000                                       ; b0098000
+	s_clause 0x1                                                ; bf850001
+	s_load_b128 s[16:19], s[12:13], 0x60                        ; f4080406 f8000060
+	s_load_b128 s[20:23], s[8:9], null                          ; f4080504 f8000000
+	v_add_nc_u32_e32 v7, s4, v5                                 ; 4a0e0a04
+	s_waitcnt lgkmcnt(0)                                        ; bf89fc07
+	buffer_load_b128 v[12:15], v7, s[20:23], 0 idxen            ; e05c0000 80850c07
+	s_clause 0x3                                                ; bf850003
+	s_buffer_load_b32 s8, s[16:19], null                        ; f4200208 f8000000
+	s_buffer_load_b32 s9, s[16:19], 0x4                         ; f4200248 f8000004
+	s_buffer_load_b32 s14, s[16:19], 0x8                        ; f4200388 f8000008
+	s_buffer_load_b32 s15, s[16:19], 0xc                        ; f42003c8 f800000c
+	v_add_nc_u32_e32 v2, s10, v8                                ; 4a04100a
+	s_waitcnt lgkmcnt(0)                                        ; bf89fc07
+	s_cmp_lg_i32 s8, 1                                          ; bf018108
+	v_cmp_gt_u32_e32 vcc, s9, v7                                ; 7c980e09
+	s_cselect_b64 s[16:17], -1, 0                               ; 989080c1
+	s_or_b64 s[8:9], s[16:17], vcc                              ; 8c886a10
+	s_cmp_lg_i32 s14, 1                                         ; bf01810e
+	v_cmp_gt_u32_e32 vcc, s15, v2                               ; 7c98040f
+	s_cselect_b64 s[16:17], -1, 0                               ; 989080c1
+	s_or_b64 s[14:15], s[16:17], vcc                            ; 8c8e6a10
+	s_delay_alu instid0(SALU_CYCLE_1) | instskip(NEXT) | instid1(SALU_CYCLE_1) ; bf870499
+	s_nand_b64 s[14:15], s[8:9], s[14:15]                       ; 8e8e0e08
+	s_and_saveexec_b64 s[14:15], s[14:15]                       ; be8e210e
+	s_cbranch_execz BB31                                        ; bfa50065
+BB2:
+	s_mov_b32 s20, s2                                           ; be940002
+	s_movk_i32 s21, 0x8000                                      ; b0158000
+	s_clause 0x1                                                ; bf850001
+	s_load_b128 s[16:19], s[12:13], 0x50                        ; f4080406 f8000050
+	s_load_b128 s[24:27], s[20:21], 0x10                        ; f408060a f8000010
+	s_waitcnt lgkmcnt(0)                                        ; bf89fc07
+	buffer_load_b32 v1, off, s[24:27], 0                        ; e0500000 80060180
+	s_bcnt1_i32_b64 s4, exec                                    ; be84197e
+	s_ctz_i32_b64 s10, exec                                     ; be8a097e
+	s_delay_alu instid0(SALU_CYCLE_1)                           ; bf870009
+	s_lshl_b64 s[22:23], 1, s10                                 ; 84960a81
+	s_waitcnt vmcnt(0)                                          ; bf8903f7
+	v_readfirstlane_b32 s28, v1                                 ; 7e380501
+	s_and_saveexec_b64 s[22:23], s[22:23]                       ; be962116
+	s_cbranch_execz BB8                                         ; bfa50004
+BB3:
+	s_lshl_b32 s28, s28, 2                                      ; 841c821c
+	v_mov_b32_e32 v1, s4                                        ; 7e020204
+	buffer_atomic_add_u32 v1, off, s[16:19], s28 glc            ; e0d44000 1c040180
+BB8:
+	s_mov_b64 exec, s[22:23]                                    ; befe0116
+	s_waitcnt vmcnt(0)                                          ; bf8903f7
+	v_readfirstlane_b32 s4, v1                                  ; 7e080501
+	v_mbcnt_lo_u32_b32 v1, exec_lo, 0                           ; d71f0001 0001007e
+	s_delay_alu instid0(VALU_DEP_1) | instskip(NEXT) | instid1(VALU_DEP_1) ; bf870091
+	v_mbcnt_hi_u32_b32 v1, exec_hi, v1                          ; d7200001 0002027f
+	v_add_nc_u32_e32 v1, s4, v1                                 ; 4a020204
+	s_delay_alu instid0(VALU_DEP_1)                             ; bf870001
+	v_cmpx_gt_u32_e32 6, v1                                     ; 7d980286
+	s_cbranch_execz BB31                                        ; bfa50043
+BB9:
+	s_load_b128 s[16:19], s[12:13], 0x10                        ; f4080406 f8000010
+	s_bcnt1_i32_b64 s4, exec                                    ; be84197e
+	s_ctz_i32_b64 s10, exec                                     ; be8a097e
+	s_delay_alu instid0(SALU_CYCLE_1) | instskip(NEXT) | instid1(SALU_CYCLE_1) ; bf870499
+	s_lshl_b64 s[28:29], 1, s10                                 ; 849c0a81
+	s_and_saveexec_b64 s[28:29], s[28:29]                       ; be9c211c
+	s_cbranch_execz BB15                                        ; bfa50006
+BB10:
+	s_mul_i32 s4, s4, 12                                        ; 96048c04
+	s_delay_alu instid0(SALU_CYCLE_1)                           ; bf870009
+	v_mov_b32_e32 v1, s4                                        ; 7e020204
+	s_waitcnt lgkmcnt(0)                                        ; bf89fc07
+	buffer_atomic_add_u32 v1, off, s[16:19], 0 offset:4 glc     ; e0d44004 80040180
+BB15:
+	s_mov_b64 exec, s[28:29]                                    ; befe011c
+	s_waitcnt lgkmcnt(0)                                        ; bf89fc07
+	s_sub_u32 s30, s18, 8                                       ; 809e8812
+	s_delay_alu instid0(SALU_CYCLE_1) | instskip(NEXT) | instid1(SALU_CYCLE_1) ; bf870499
+	s_cselect_b32 s30, 0, s30                                   ; 981e1e80
+	s_lshr_b32 s30, s30, 2                                      ; 851e821e
+	s_waitcnt vmcnt(0)                                          ; bf8903f7
+	v_readfirstlane_b32 s4, v1                                  ; 7e080501
+	v_mbcnt_lo_u32_b32 v1, exec_lo, 0                           ; d71f0001 0001007e
+	s_delay_alu instid0(VALU_DEP_1) | instskip(NEXT) | instid1(VALU_DEP_1) ; bf870091
+	v_mbcnt_hi_u32_b32 v1, exec_hi, v1                          ; d7200001 0002027f
+	v_mad_u32_u24 v1, 12, v1, s4                                ; d60b0001 0012028c
+	s_delay_alu instid0(VALU_DEP_1) | instskip(NEXT) | instid1(VALU_DEP_1) ; bf870091
+	v_add_nc_u32_e32 v3, 12, v1                                 ; 4a06028c
+	v_cmpx_ge_u32_e32 s30, v3                                   ; 7d9c061e
+	s_cbranch_execz BB31                                        ; bfa50022
+BB16:
+	s_load_b128 s[32:35], s[20:21], null                        ; f408080a f8000000
+	v_cndmask_b32_e64 v3, 1, 2, s[8:9]                          ; d5010003 00210481
+	v_mov_b32_e32 v4, 12                                        ; 7e08028c
+	v_mov_b32_e32 v6, 0                                         ; 7e0c0280
+	v_lshlrev_b32_e32 v1, 2, v1                                 ; 30020282
+	v_mov_b32_e32 v8, v2                                        ; 7e100302
+	v_mov_b32_e32 v9, 0                                         ; 7e120280
+	v_lshl_or_b32 v5, v3, 18, 0x900003d                         ; d6560005 03fd2503 0900003d
+	v_mov_b32_e32 v3, v7                                        ; 7e060307
+	s_clause 0x1                                                ; bf850001
+	buffer_store_b128 v[4:7], v1, s[16:19], 0 offen offset:8    ; e0740008 80440401
+	buffer_store_b64 v[8:9], v1, s[16:19], 0 offen offset:24    ; e06c0018 80440801
+	s_waitcnt lgkmcnt(0)                                        ; bf89fc07
+	buffer_load_b32 v4, off, s[32:35], 0                        ; e0500000 80080480
+	buffer_load_b32 v5, off, s[24:27], 0                        ; e0500000 80060580
+	s_waitcnt vmcnt(1)                                          ; bf8907f7
+	v_readfirstlane_b32 s4, v4                                  ; 7e080504
+	s_waitcnt vmcnt(0)                                          ; bf8903f7
+	v_readfirstlane_b32 s8, v5                                  ; 7e100505
+	s_pack_ll_b32_b16 s4, 0, s4                                 ; 99040480
+	s_delay_alu instid0(SALU_CYCLE_1) | instskip(NEXT) | instid1(SALU_CYCLE_1) ; bf870499
+	s_or_b32 s4, s4, s8                                         ; 8c040804
+	v_mov_b32_e32 v6, s4                                        ; 7e0c0204
+	buffer_store_b32 v6, v1, s[16:19], 0 offen offset:32        ; e0680020 80440601
+	v_mov_b32_e32 v7, v3                                        ; 7e0e0303
+BB31:
+	s_mov_b32 s8, s11                                           ; be88000b
+	s_movk_i32 s9, 0x8000                                       ; b0098000
+	s_mov_b32 s4, s3                                            ; be840003
+	s_movk_i32 s3, 0x8000                                       ; b0038000
+	s_clause 0x2                                                ; bf850002
+	s_load_b128 s[8:11], s[8:9], null                           ; f4080204 f8000000
+	s_load_b128 s[16:19], s[2:3], 0x10                          ; f4080401 f8000010
+	s_load_b256 s[24:31], s[12:13], 0x20                        ; f40c0606 f8000020
+	s_mov_b64 exec, s[14:15]                                    ; befe010e
+	s_waitcnt lgkmcnt(0)                                        ; bf89fc07
+	buffer_load_b64 v[4:5], off, s[28:31], 0 offset:8           ; e0540008 80070480
+	v_mov_b32_e32 v1, 0                                         ; 7e020280
+	s_waitcnt vmcnt(0)                                          ; bf8903f7
+	v_readfirstlane_b32 s20, v4                                 ; 7e280504
+	v_readfirstlane_b32 s21, v5                                 ; 7e2a0505
+	global_load_b32 v11, v1, s[20:21] offset:4                  ; dc520004 0b140001
+	buffer_load_b64 v[4:5], off, s[24:27], 0                    ; e0540000 80060480
+	buffer_load_b32 v3, off, s[16:19], 0                        ; e0500000 80040380
+	v_mov_b32_e32 v6, 0x172                                     ; 7e0c02ff 00000172
+	s_waitcnt vmcnt(2)                                          ; bf890bf7
+	v_readfirstlane_b32 s20, v11                                ; 7e28050b
+	s_waitcnt vmcnt(1)                                          ; bf8907f7
+	v_readfirstlane_b32 s21, v5                                 ; 7e2a0505
+	v_mov_b32_e32 v5, 49                                        ; 7e0a02b1
+	s_waitcnt vmcnt(0)                                          ; bf8903f7
+	v_readfirstlane_b32 s22, v3                                 ; 7e2c0503
+	s_cmpk_le_u32 s20, 0x103                                    ; b7140103
+	v_readfirstlane_b32 s20, v4                                 ; 7e280504
+	s_mov_b32 s23, src_scc                                      ; be9700fd
+	s_lshl_b32 s22, s22, 18                                     ; 84169216
+	s_delay_alu instid0(SALU_CYCLE_1) | instskip(NEXT) | instid1(SALU_CYCLE_1) ; bf870499
+	s_or_b32 s22, 0x8000003d, s22                               ; 8c1616ff 8000003d
+	v_mov_b32_e32 v4, s22                                       ; 7e080216
+	global_store_b96 v1, v[4:6], s[20:21]                       ; dc720000 00140401
+	s_cmp_lg_i32 s23, 0                                         ; bf018017
+	s_cbranch_scc0 BB58                                         ; bfa1005e
+BB32:
+	s_load_b128 s[20:23], s[12:13], 0x50                        ; f4080506 f8000050
+	buffer_load_b32 v1, off, s[16:19], 0                        ; e0500000 80040180
+	s_bcnt1_i32_b64 s24, exec                                   ; be98197e
+	s_ctz_i32_b64 s25, exec                                     ; be99097e
+	s_delay_alu instid0(SALU_CYCLE_1)                           ; bf870009
+	s_lshl_b64 s[26:27], 1, s25                                 ; 849a1981
+	s_waitcnt vmcnt(0)                                          ; bf8903f7
+	v_readfirstlane_b32 s28, v1                                 ; 7e380501
+	s_and_b64 exec, s[26:27], exec                              ; 8bfe7e1a
+	s_cbranch_execz BB38                                        ; bfa50005
+BB33:
+	s_lshl_b32 s28, s28, 2                                      ; 841c821c
+	v_mov_b32_e32 v1, s24                                       ; 7e020218
+	s_waitcnt lgkmcnt(0)                                        ; bf89fc07
+	buffer_atomic_add_u32 v1, off, s[20:23], s28 glc            ; e0d44000 1c050180
+BB38:
+	s_mov_b64 exec, s[14:15]                                    ; befe010e
+	s_waitcnt vmcnt(0) lgkmcnt(0)                               ; bf890007
+	v_readfirstlane_b32 s20, v1                                 ; 7e280501
+	v_mbcnt_lo_u32_b32 v1, exec_lo, 0                           ; d71f0001 0001007e
+	s_delay_alu instid0(VALU_DEP_1) | instskip(NEXT) | instid1(VALU_DEP_1) ; bf870091
+	v_mbcnt_hi_u32_b32 v1, exec_hi, v1                          ; d7200001 0002027f
+	v_add_nc_u32_e32 v1, s20, v1                                ; 4a020214
+	s_delay_alu instid0(VALU_DEP_1)                             ; bf870001
+	v_cmpx_gt_u32_e32 6, v1                                     ; 7d980286
+	s_cbranch_execz BB58                                        ; bfa50041
+BB39:
+	s_load_b128 s[20:23], s[12:13], 0x10                        ; f4080506 f8000010
+	s_bcnt1_i32_b64 s12, exec                                   ; be8c197e
+	s_ctz_i32_b64 s13, exec                                     ; be8d097e
+	s_delay_alu instid0(SALU_CYCLE_1) | instskip(NEXT) | instid1(SALU_CYCLE_1) ; bf870499
+	s_lshl_b64 s[24:25], 1, s13                                 ; 84980d81
+	s_and_saveexec_b64 s[24:25], s[24:25]                       ; be982118
+	s_cbranch_execz BB45                                        ; bfa50006
+BB40:
+	s_mul_i32 s12, s12, 12                                      ; 960c8c0c
+	s_delay_alu instid0(SALU_CYCLE_1)                           ; bf870009
+	v_mov_b32_e32 v1, s12                                       ; 7e02020c
+	s_waitcnt lgkmcnt(0)                                        ; bf89fc07
+	buffer_atomic_add_u32 v1, off, s[20:23], 0 offset:4 glc     ; e0d44004 80050180
+BB45:
+	s_mov_b64 exec, s[24:25]                                    ; befe0118
+	s_waitcnt lgkmcnt(0)                                        ; bf89fc07
+	s_sub_u32 s26, s22, 8                                       ; 809a8816
+	s_delay_alu instid0(SALU_CYCLE_1) | instskip(NEXT) | instid1(SALU_CYCLE_1) ; bf870499
+	s_cselect_b32 s26, 0, s26                                   ; 981a1a80
+	s_lshr_b32 s26, s26, 2                                      ; 851a821a
+	s_waitcnt vmcnt(0)                                          ; bf8903f7
+	v_readfirstlane_b32 s12, v1                                 ; 7e180501
+	v_mbcnt_lo_u32_b32 v1, exec_lo, 0                           ; d71f0001 0001007e
+	s_delay_alu instid0(VALU_DEP_1) | instskip(NEXT) | instid1(VALU_DEP_1) ; bf870091
+	v_mbcnt_hi_u32_b32 v1, exec_hi, v1                          ; d7200001 0002027f
+	v_mad_u32_u24 v1, 12, v1, s12                               ; d60b0001 0032028c
+	s_delay_alu instid0(VALU_DEP_1) | instskip(NEXT) | instid1(VALU_DEP_1) ; bf870091
+	v_add_nc_u32_e32 v3, 12, v1                                 ; 4a06028c
+	v_cmpx_ge_u32_e32 s26, v3                                   ; 7d9c061a
+	s_cbranch_execz BB58                                        ; bfa50020
+BB46:
+	s_load_b128 s[28:31], s[2:3], null                          ; f4080701 f8000000
+	v_mov_b32_e32 v4, 12                                        ; 7e08028c
+	v_mov_b32_e32 v5, 0x804003d                                 ; 7e0a02ff 0804003d
+	v_mov_b32_e32 v6, 0x172                                     ; 7e0c02ff 00000172
+	v_lshlrev_b32_e32 v1, 2, v1                                 ; 30020282
+	v_mov_b32_e32 v3, 0                                         ; 7e060280
+	s_clause 0x1                                                ; bf850001
+	buffer_store_b128 v[4:7], v1, s[20:23], 0 offen offset:8    ; e0740008 80450401
+	buffer_store_b64 v[2:3], v1, s[20:23], 0 offen offset:24    ; e06c0018 80450201
+	s_waitcnt lgkmcnt(0)                                        ; bf89fc07
+	buffer_load_b32 v2, off, s[28:31], 0                        ; e0500000 80070280
+	buffer_load_b32 v3, off, s[16:19], 0                        ; e0500000 80040380
+	v_mov_b32_e32 v9, 0                                         ; 7e120280
+	v_mov_b32_e32 v10, 0x103                                    ; 7e1402ff 00000103
+	s_waitcnt vmcnt(1)                                          ; bf8907f7
+	v_readfirstlane_b32 s2, v2                                  ; 7e040502
+	s_waitcnt vmcnt(0)                                          ; bf8903f7
+	v_readfirstlane_b32 s3, v3                                  ; 7e060503
+	s_pack_ll_b32_b16 s2, 0, s2                                 ; 99020280
+	s_delay_alu instid0(SALU_CYCLE_1) | instskip(NEXT) | instid1(SALU_CYCLE_1) ; bf870499
+	s_or_b32 s2, s2, s3                                         ; 8c020302
+	v_mov_b32_e32 v8, s2                                        ; 7e100202
+	buffer_store_b128 v[8:11], v1, s[20:23], 0 offen offset:32  ; e0740020 80450801
+BB58:
+	s_buffer_load_b32 s2, s[8:11], 0x100                        ; f4200084 f8000100
+	s_mov_b32 s3, s4                                            ; be830004
+BB63:
+	s_delay_alu instid0(SALU_CYCLE_1) | instskip(NEXT) | instid1(SALU_CYCLE_1) ; bf870499
+	s_lshl_b32 s4, s3, 8                                        ; 84048803
+	s_bfe_u64 exec, -1, s4                                      ; 947e04c1
+	s_cbranch_execz BB69                                        ; bfa50002
+BB64:
+	exp prim v0, off, off, off done                             ; f8000941 80808000
+BB69:
+	s_load_b128 s[8:11], s[0:1], 0xa0                           ; f4080200 f80000a0
+	s_add_u32 s0, s3, 7                                         ; 80008703
+	s_delay_alu instid0(SALU_CYCLE_1) | instskip(NEXT) | instid1(SALU_CYCLE_1) ; bf870499
+	s_and_b32 s0, s0, -8                                        ; 8b00c800
+	s_pack_ll_b32_b16 s0, 0, s0                                 ; 99000080
+	s_waitcnt expcnt(0)                                         ; bf89fff0
+	s_delay_alu instid0(SALU_CYCLE_1)                           ; bf870009
+	s_bfe_u64 exec, -1, s0                                      ; 947e00c1
+	s_cbranch_execz BB75                                        ; bfa50011
+BB70:
+	s_bfe_u32 s3, s3, 0x40018                                   ; 9303ff03 00040018
+	s_delay_alu instid0(SALU_CYCLE_1) | instskip(NEXT) | instid1(SALU_CYCLE_1) ; bf870499
+	s_lshl_b32 s3, s3, 6                                        ; 84038603
+	v_mbcnt_lo_u32_b32 v0, -1, s3                               ; d71f0000 000006c1
+	s_delay_alu instid0(VALU_DEP_1) | instskip(SKIP_3) | instid1(SALU_CYCLE_1) ; bf8704c1
+	v_mbcnt_hi_u32_b32 v0, -1, v0                               ; d7200000 000200c1
+	s_waitcnt lgkmcnt(0)                                        ; bf89fc07
+	s_or_b32 s9, s9, 0x200000                                   ; 8c09ff09 00200000
+	s_and_b32 s5, s5, 0x7fff                                    ; 8b05ff05 00007fff
+	s_lshl_b32 s5, s5, 9                                        ; 84058905
+	buffer_store_b128 v[14:17], v0, s[8:11], s5 idxen offset:16 ; e0740010 05820e00
+BB75:
+	s_waitcnt_vscnt null, 0x0                                   ; bc7c0000
+	s_mov_b64 exec, s[6:7]                                      ; befe0106
+	s_cbranch_execz BB81                                        ; bfa50008
+BB76:
+	v_mov_b32_e32 v0, 0                                         ; 7e000280
+	v_mov_b32_e32 v1, 1.0                                       ; 7e0202f2
+	s_waitcnt lgkmcnt(0)                                        ; bf89fc07
+	v_mov_b32_e32 v2, s2                                        ; 7e040202
+	exp pos0 v12, v13, v0, v1                                   ; f80000cf 01000d0c
+	exp pos1 off, off, v2, off done                             ; f80008d4 80028080
+BB81:
+	s_endpgm                                                    ; bfb00000
+
+
+Vertex Shader as ESGS:
+*** SHADER STATS ***
+Driver pipeline hash: 10490508862531665589
+SGPRs: 108
+VGPRs: 24
+Spilled SGPRs: 0
+Spilled VGPRs: 0
+Code size: 1324
+LDS size: 0
+Scratch size: 0
+Subgroups per SIMD: 32
+Combined inputs: 2
+Combined outputs: 2
+Hash: 1768879379
+Instructions: 264
+Copies: 54
+Branches: 14
+Latency: 1912
+Inverse Throughput: 120
+VMEM Clause: 21
+SMEM Clause: 11
+Pre-Sched SGPRs: 31
+Pre-Sched VGPRs: 12
+VALU: 69
+SALU: 74
+VMEM: 23
+SMEM: 18
+VOPD: 0
+********************
+
+
+Pixel Shader:
+
+SPIRV (see a7e02ac8874f2e1944df279395cbf2d1889f103208c9ccb318f9a35a4d72eab6.spv)
+
+NIR:
+shader: MESA_SHADER_FRAGMENT
+source_blake3: {0xc82ae0a7, 0x192e4f87, 0x9327df44, 0xd1f2cb95, 0x32109f88, 0xb3ccc908, 0x5aa3f918, 0xb6ea724d}
+prev_stage: MESA_SHADER_VERTEX
+num_textures: 2
+num_ssbos: 2
+inputs_read: 32
+outputs_written: 4
+perspective_varyings: 32
+system_values_read: 0x00000000'00000000'02000000'00000000
+api_subgroup_size: 64
+max_subgroup_size: 64
+min_subgroup_size: 64
+uses_resource_info_query: true
+bit_sizes_float: 0x20
+bit_sizes_int: 0x20
+separate_shader: true
+known_interpolation_qualifiers: true
+flrp_lowered: true
+writes_memory: true
+origin_upper_left: true
+decl_var uniform INTERP_MODE_NONE restrict texture2D #0 (~0, 0, 9)
+decl_var uniform INTERP_MODE_NONE restrict sampler #1 (~0, 0, 25)
+decl_var ssbo INTERP_MODE_NONE restrict readonly block #2 (~0, 0, 2)
+decl_var ssbo INTERP_MODE_NONE restrict readonly block#4 #3 (~0, 0, 6)
+decl_function PS_MAIN () (entrypoint)
+
+impl PS_MAIN {
+    con block b0:       // preds:
+    div 32x2   %0 = @load_vector_arg_amd (base=6, arg_upper_bound_u32_amd=0)
+    con 32     %1 = @load_scalar_arg_amd (base=2, arg_upper_bound_u32_amd=0)
+    con 32     %2 = load_const (0xffff8000 = -32768 = 4294934528)
+    con 64     %3 = pack_64_2x32_split %1, %2 (0xffff8000)
+    con 32     %4 = load_const (0x00000000 = 0.000000)
+    con 32x4   %5 = @load_global_amd (%3, %4 (0x0)) (base=32, access=readonly|reorderable|smem-amd, align_mul=4, align_offset=0)
+    con 64     %6 = @load_ssbo (%5, %4 (0x0)) (access=readonly|reorderable|speculatable|smem-amd, align_mul=1073741824, align_offset=0, offset_shift=0)
+    con 32     %7 = @load_scalar_arg_amd (base=3, arg_upper_bound_u32_amd=0)
+    con 64     %8 = pack_64_2x32_split %7, %2 (0xffff8000)
+    con 32x4   %9 = @load_global_amd (%8, %4 (0x0)) (base=16, access=readonly|reorderable|smem-amd, align_mul=4, align_offset=0)
+    con 32    %10 = @load_ssbo (%9, %4 (0x0)) (access=readonly|reorderable|speculatable|smem-amd, align_mul=1073741824, align_offset=0, offset_shift=0)
+    con 32    %11 = @load_scalar_arg_amd (base=1, arg_upper_bound_u32_amd=0)
+    con 64    %12 = pack_64_2x32_split %11, %2 (0xffff8000)
+    con 32x8  %13 = @load_global_amd (%12, %4 (0x0)) (base=0, access=readonly|reorderable|smem-amd, align_mul=32, align_offset=0)
+    con 32    %14 = load_const (0x00000001)
+    con 32    %15 = load_const (0x0000001e = 30)
+    con 32    %16 = load_const (0x00000002)
+    con 32    %17 = ubfe %13.b, %15 (0x1e), %16 (0x2)
+    con 32    %18 = iadd %17, %14 (0x1)
+    con 32    %19 = load_const (0x00003fff = 16383)
+    con 32    %20 = iand %13.c, %19 (0x3fff)
+    con 32    %21 = ishl %20, %16 (0x2)
+    con 32    %22 = iadd %18, %21
+    con 32    %23 = load_const (0x00000004)
+    con 32    %24 = load_const (0x0000000c = 12)
+    con 32    %25 = ubfe %13.d, %24 (0xc), %23 (0x4)
+    con 32    %26 = ushr %22, %25
+    con 32    %27 = umax %26, %14 (0x1)
+    con 1     %28 = ieq %13.b, %4 (0x0)
+    con 32    %29 = bcsel %28, %4 (0x0), %27
+    con 32x4  %30 = @load_global_amd (%12, %4 (0x0)) (base=32, access=readonly|reorderable|smem-amd, align_mul=16, align_offset=0)
+    div 32    %31 = @load_interpolated_input (%0, %4 (0x0)) (base=0, component=1, dest_type=float32, io location=VARYING_SLOT_VAR0 slots=1)
+    div 32    %32 = @load_interpolated_input (%0, %4 (0x0)) (base=0, component=0, dest_type=float32, io location=VARYING_SLOT_VAR0 slots=1)
+    div 32x2  %33 = vec2 %32, %31
+    div 32x4  %34 = (float32)txl %13 (texture_handle), %30 (sampler_handle), %33 (coord), %4 (0.000000) (lod), 0 (texture), 0 (sampler), skip_helpers, 2D
+    con 32    %35 = load_const (0x3fb13b14 = 1.384615)
+    con 32    %36 = u2f32 %29
+    con 32    %37 = frcp %36
+    con 32    %38 = fmul %35 (1.384615), %37
+    div 32    %39 = fadd %32, %38
+    div 32x2  %40 = vec2 %39, %31
+    div 32x4  %41 = (float32)txl %13 (texture_handle), %30 (sampler_handle), %40 (coord), %4 (0.000000) (lod), 0 (texture), 0 (sampler), skip_helpers, 2D
+    con 32    %42 = load_const (0x3ea1e718 = 0.316216)
+    div 32    %43 = fmul %41.x, %42 (0.316216)
+    con 32    %44 = load_const (0x3e6879c6 = 0.227027)
+    div 32    %45 = fmul %34.x, %44 (0.227027)
+    div 32    %46 = fadd %45, %43
+    div 32    %47 = fmul %34.y, %44 (0.227027)
+    div 32    %48 = fmul %41.y, %42 (0.316216)
+    div 32    %49 = fadd %47, %48
+    div 32    %50 = fmul %34.z, %44 (0.227027)
+    div 32    %51 = fmul %41.z, %42 (0.316216)
+    div 32    %52 = fadd %50, %51
+    div 32    %53 = fsub %32, %38
+    div 32x2  %54 = vec2 %53, %31
+    div 32x4  %55 = (float32)txl %13 (texture_handle), %30 (sampler_handle), %54 (coord), %4 (0.000000) (lod), 0 (texture), 0 (sampler), skip_helpers, 2D
+    div 32    %56 = fmul %55.x, %42 (0.316216)
+    div 32    %57 = fadd %46, %56
+    div 32    %58 = fmul %55.y, %42 (0.316216)
+    div 32    %59 = fadd %49, %58
+    div 32    %60 = fmul %55.z, %42 (0.316216)
+    div 32    %61 = fadd %52, %60
+    con 32    %62 = load_const (0x404ec4ec = 3.230769)
+    con 32    %63 = fmul %62 (3.230769), %37
+    div 32    %64 = fadd %32, %63
+    con 32    %65 = load_const (0x000001ac = 428)
+    con 32    %66 = load_const (0x00000012 = 18)
+    con 32    %67 = ishl %10, %66 (0x12)
+    con 32    %68 = load_const (0x8000003e = -2147483586 = 2147483710)
+    con 32    %69 = ior %68 (0x8000003e), %67
+    con 32x3  %70 = vec3 %69, %15 (0x1e), %65 (0x1ac)
+                    @store_global_amd (%70, %6, %4 (0x0)) (base=0, access=none, align_mul=4, align_offset=0, wrmask=xyz)
+    div 32x2  %71 = vec2 %64, %31
+    div 32x4  %72 = (float32)txl %13 (texture_handle), %30 (sampler_handle), %71 (coord), %4 (0.000000) (lod), 0 (texture), 0 (sampler), skip_helpers, 2D
+    con 32    %73 = load_const (0x3d8fe9dc = 0.070270)
+    div 32    %74 = fmul %72.x, %73 (0.070270)
+    div 32    %75 = fadd %57, %74
+    div 32    %76 = fmul %72.y, %73 (0.070270)
+    div 32    %77 = fadd %59, %76
+    div 32    %78 = fmul %72.z, %73 (0.070270)
+    div 32    %79 = fadd %61, %78
+    div 32    %80 = fsub %32, %63
+    div 32x2  %81 = vec2 %80, %31
+    div 32x4  %82 = (float32)txl %13 (texture_handle), %30 (sampler_handle), %81 (coord), %4 (0.000000) (lod), 0 (texture), 0 (sampler), skip_helpers, 2D
+    div 32    %83 = fmul %82.x, %73 (0.070270)
+    div 32    %84 = fadd %75, %83
+    div 32    %85 = fmul %82.y, %73 (0.070270)
+    div 32    %86 = fadd %77, %85
+    div 32    %87 = fmul %82.z, %73 (0.070270)
+    div 32    %88 = fadd %79, %87
+    div 32    %89 = pack_half_2x16_rtz_split %84, %86
+    con 32    %90 = load_const (0x3f800000 = 1.000000)
+    div 32    %91 = pack_half_2x16_rtz_split %88, %90 (1.000000)
+    con 32    %92 = undefined
+    div 32x4  %93 = vec4 %89, %91, %92, %92
+                    @export_amd (%93) (base=0, wrmask=xy, flags=6)
+                    // succs: b1
+    block b1:
+}
+
+
+ACO IR:
+After Spilling:
+ACO shader stage: SW (FS), HW (PIXEL_SHADER)
+BB0
+/* logical preds: / linear preds: / kind: uniform, top-level, export_end, */
+	 s2: (kill)%95:s[0-1],  s1: %96:s[2],  s1: %97:s[3],  s1: %98:s[4],  s1: %99:s[5],  v2: %100:v[0-1] = p_startpgm
+	 s2: %166 = p_parallelcopy %0:exec
+	 s2: %0:exec,  s1: (kill)%167:scc = s_wqm_b64 %0:exec
+	p_logical_start
+	 v1: %103,  v1: %104 = p_split_vector (kill)%100
+	 s2: %4 = p_create_vector (kill)%97, 0xffff8000
+	 s4: %6 = s_load_dwordx4 (kill)%4, 32 storage:buffer semantics:private,reorder
+	 s2: %7 = s_buffer_load_dwordx2 (kill)%6, 0 storage:buffer semantics:private,reorder
+	 s2: %9 = p_create_vector (kill)%98, 0xffff8000
+	 s4: %10 = s_load_dwordx4 (kill)%9, 16 storage:buffer semantics:private,reorder
+	 s1: %11 = s_buffer_load_dword (kill)%10, 0 storage:buffer semantics:private,reorder
+	 s2: %13 = p_create_vector (kill)%96, 0xffff8000
+	 s8: %14 = s_load_dwordx8 %13, 0 storage:buffer semantics:private,reorder
+	 s1: (kill)%113,  s1: %114,  s1: %115,  s1: %116,  s1: (kill)%117,  s1: (kill)%118,  s1: (kill)%119,  s1: (kill)%120 = p_split_vector %14
+	 s1: %18,  s1: (kill)%121:scc = s_bfe_u32 %114, 0x2001e
+	 s1: %19,  s1: (kill)%122:scc = s_add_u32 (kill)%18, 1
+	 s1: %21,  s1: (kill)%123:scc = s_and_b32 (kill)%115, 0x3fff
+	 s1: %23,  s1: (kill)%125:scc = s_lshl2_add_u32 (is16bit)(kill)%21, (kill)%19
+	 s1: %26,  s1: (kill)%126:scc = s_bfe_u32 (kill)%116, 0x4000c
+	 s1: %27,  s1: (kill)%127:scc = s_lshr_b32 (kill)%23, (kill)%26
+	 s1: %28,  s1: (kill)%128:scc = s_max_u32 (kill)%27, 1
+	 s1: %129:scc = s_cmp_eq_i32 (kill)%114, 0
+	 s1: %30 = s_cselect_b32 0, (kill)%28, (kill)%129:scc
+	 s4: %31 = s_load_dwordx4 (kill)%13, 32 storage:buffer semantics:private,reorder
+	 v1: %136 = lds_param_load %99:m0 attr0.y
+	 v1: %137 = v_interp_p10_f32_inreg %136, %103, %136
+	 v1: %32 = v_interp_p2_f32_inreg (kill)%136, %104, (kill)%137
+	 v1: %138 = lds_param_load (kill)%99:m0 attr0.x
+	 v1: %139 = v_interp_p10_f32_inreg %138, (kill)%103, %138
+	 v1: %33 = v_interp_p2_f32_inreg (kill)%138, (kill)%104, (kill)%139
+	 s2: %168 = p_parallelcopy %0:exec
+	 v3: %140 = image_sample_lz %14, %31,  v1: undef, %33, %32, %166, %168 2d disable_wqm
+	 v1: %141,  v1: %142,  v1: %143 = p_split_vector (kill)%140
+	 v1: %37 = v_cvt_f32_u32 (kill)%30
+	 v1: %38 = v_rcp_f32 (kill)%37
+	 v1: %40 = v_fmamk_f32 %38, %33, 0x3fb13b14
+	 v3: %144 = image_sample_lz %14, %31,  v1: undef, (kill)%40, %32, %166, %168 2d disable_wqm
+	 v1: %145,  v1: %146,  v1: %147 = p_split_vector (kill)%144
+	 s1: %43 = p_parallelcopy 0x3ea1e718
+	 v1: %44 = v_mul_f32 %43, (kill)%145
+	 v1: %47 = v_fmamk_f32 (kill)%141, (kill)%44, 0x3e6879c6
+	 v1: %48 = v_mul_f32 0x3e6879c6, (kill)%142
+	 v1: %50 = v_fma_f32 %43, (kill)%146, (kill)%48
+	 v1: %51 = v_mul_f32 0x3e6879c6, (kill)%143
+	 v1: %53 = v_fma_f32 %43, (kill)%147, (kill)%51
+	 v1: %54 = v_fmamk_f32 %38, %33, 0xbfb13b14
+	 v3: %148 = image_sample_lz %14, %31,  v1: undef, (kill)%54, %32, %166, %168 2d disable_wqm
+	 v1: %149,  v1: %150,  v1: %151 = p_split_vector (kill)%148
+	 v1: %58 = v_fma_f32 %43, (kill)%149, (kill)%47
+	 v1: %60 = v_fma_f32 %43, (kill)%150, (kill)%50
+	 v1: %62 = v_fma_f32 (kill)%43, (kill)%151, (kill)%53
+	 v1: %65 = v_fmamk_f32 %38, %33, 0x404ec4ec
+	 s1: %68,  s1: (kill)%152:scc = s_lshl_b32 (kill)%11, 18
+	 s1: %70,  s1: (kill)%153:scc = s_or_b32 0x8000003e, (kill)%68
+	 v3: %154 = p_create_vector (kill)%70, 30, 0x1ac
+	 v1: %156 = p_parallelcopy 0
+	global_store_dwordx3 (kill)%156, (kill)%7, (kill)%154, %166, %168 disable_wqm storage:buffer
+	 v3: %157 = image_sample_lz %14, %31,  v1: undef, (kill)%65, %32, %166, %168 2d disable_wqm
+	 v1: %158,  v1: %159,  v1: %160 = p_split_vector (kill)%157
+	 s1: %74 = p_parallelcopy 0x3d8fe9dc
+	 v1: %76 = v_fma_f32 %74, (kill)%158, (kill)%58
+	 v1: %78 = v_fma_f32 %74, (kill)%159, (kill)%60
+	 v1: %80 = v_fma_f32 %74, (kill)%160, (kill)%62
+	 v1: %81 = v_fmamk_f32 (kill)%38, (kill)%33, 0xc04ec4ec
+	 v3: %161 = image_sample_lz (kill)%14, (kill)%31,  v1: undef, (kill)%81, (kill)%32, %166, (kill)%168 2d disable_wqm
+	 v1: %162,  v1: %163,  v1: %164 = p_split_vector (kill)%161
+	 v2b: %85 = p_v_fma_mixlo_f16_rtz %74, (kill)%162, (kill)%76
+	 v2b: %87 = p_v_fma_mixlo_f16_rtz %74, (kill)%163, (kill)%78
+	 v1: %89 = v_fma_f32 (kill)%74, (kill)%164, (kill)%80
+	 v1: (SzInfNaNPreserve)%90 = p_create_vector (kill)%85, (kill)%87
+	 v1: (SzInfNaNPreserve)%92 = v_cvt_pkrtz_f16_f32 (kill)%89, 1.0
+	 s2: %0:exec = p_parallelcopy (kill)%166
+	exp (kill)%90, (kill)%92,  v1: undef,  v1: undef en:rg** mrt0
+	p_logical_end
+	s_endpgm
+
+
+DISASM:
+BB0:
+	s_mov_b32 s6, s3                                            ; be860003
+	s_movk_i32 s3, 0x8000                                       ; b0038000
+	s_clause 0x1                                                ; bf850001
+	s_load_b256 s[8:15], s[2:3], null                           ; f40c0201 f8000000
+	s_load_b128 s[16:19], s[2:3], 0x20                          ; f4080401 f8000020
+	s_mov_b64 s[0:1], exec                                      ; be80017e
+	s_wqm_b64 exec, exec                                        ; befe1d7e
+	s_mov_b32 m0, s5                                            ; befd0005
+	lds_param_load v2, attr0.y wait_vdst:15                     ; ce0f0102
+	lds_param_load v3, attr0.x wait_vdst:15                     ; ce0f0003
+	s_mov_b64 s[2:3], exec                                      ; be82017e
+	v_interp_p10_f32 v4, v2, v0, v2 wait_exp:1                  ; cd000104 040a0102
+	v_interp_p10_f32 v0, v3, v0, v3 wait_exp:0                  ; cd000000 040e0103
+	s_delay_alu instid0(VALU_DEP_2) | instskip(SKIP_3) | instid1(SALU_CYCLE_1) ; bf8704c2
+	v_interp_p2_f32 v5, v2, v1, v4 wait_exp:7                   ; cd010705 04120302
+	v_interp_p2_f32 v4, v3, v1, v0 wait_exp:7                   ; cd010704 04020303
+	s_waitcnt lgkmcnt(0)                                        ; bf89fc07
+	s_bfe_u32 s7, s9, 0x2001e                                   ; 9307ff09 0002001e
+	s_add_u32 s7, s7, 1                                         ; 80078107
+	s_and_b32 s26, s10, 0x3fff                                  ; 8b1aff0a 00003fff
+	s_delay_alu instid0(SALU_CYCLE_1) | instskip(SKIP_1) | instid1(SALU_CYCLE_1) ; bf8704a9
+	s_lshl2_add_u32 s26, s26, s7                                ; 879a071a
+	s_bfe_u32 s27, s11, 0x4000c                                 ; 931bff0b 0004000c
+	s_lshr_b32 s26, s26, s27                                    ; 851a1b1a
+	s_delay_alu instid0(SALU_CYCLE_1) | instskip(SKIP_1) | instid1(SALU_CYCLE_1) ; bf8704a9
+	s_max_u32 s26, s26, 1                                       ; 8a9a811a
+	s_cmp_eq_i32 s9, 0                                          ; bf008009
+	s_cselect_b32 s26, 0, s26                                   ; 981a1a80
+	s_delay_alu instid0(SALU_CYCLE_1) | instskip(NEXT) | instid1(VALU_DEP_1) ; bf870099
+	v_cvt_f32_u32_e32 v6, s26                                   ; 7e0c0c1a
+	v_rcp_f32_e32 v6, v6                                        ; 7e0c5506
+	s_waitcnt_depctr 0xfff                                      ; bf880fff
+	v_fmamk_f32 v7, v6, 0x3fb13b14, v4                          ; 580e0906 3fb13b14
+	v_fmamk_f32 v8, v6, 0xbfb13b14, v4                          ; 58100906 bfb13b14
+	v_fmamk_f32 v9, v6, 0x404ec4ec, v4                          ; 58120906 404ec4ec
+	s_mov_b64 exec, s[0:1]                                      ; befe0100
+	s_clause 0x3                                                ; bf850003
+	image_sample_lz v[10:12], v[4:5], s[8:15], s[16:19] dmask:0x7 dim:SQ_RSRC_IMG_2D ; f07c0704 10020a04
+	image_sample_lz  v[13:15], [v7, v5], s[8:15], s[16:19] dmask:0x7 dim:SQ_RSRC_IMG_2D ; f07c0705 10020d07 00000005
+	image_sample_lz  v[16:18], [v8, v5], s[8:15], s[16:19] dmask:0x7 dim:SQ_RSRC_IMG_2D ; f07c0705 10021008 00000005
+	image_sample_lz  v[19:21], [v9, v5], s[8:15], s[16:19] dmask:0x7 dim:SQ_RSRC_IMG_2D ; f07c0705 10021309 00000005
+	s_mov_b64 exec, s[2:3]                                      ; befe0102
+	s_movk_i32 s7, 0x8000                                       ; b0078000
+	s_movk_i32 s5, 0x8000                                       ; b0058000
+	s_clause 0x1                                                ; bf850001
+	s_load_b128 s[20:23], s[6:7], 0x20                          ; f4080503 f8000020
+	s_load_b128 s[4:7], s[4:5], 0x10                            ; f4080102 f8000010
+	s_waitcnt lgkmcnt(0)                                        ; bf89fc07
+	s_buffer_load_b64 s[20:21], s[20:23], null                  ; f424050a f8000000
+	s_buffer_load_b32 s22, s[4:7], null                         ; f4200582 f8000000
+	v_mov_b32_e32 v22, 0                                        ; 7e2c0280
+	v_mov_b32_e32 v24, 30                                       ; 7e30029e
+	v_mov_b32_e32 v25, 0x1ac                                    ; 7e3202ff 000001ac
+	s_waitcnt lgkmcnt(0)                                        ; bf89fc07
+	s_lshl_b32 s22, s22, 18                                     ; 84169216
+	s_delay_alu instid0(SALU_CYCLE_1) | instskip(NEXT) | instid1(SALU_CYCLE_1) ; bf870499
+	s_or_b32 s22, 0x8000003e, s22                               ; 8c1616ff 8000003e
+	v_mov_b32_e32 v23, s22                                      ; 7e2e0216
+	s_mov_b64 exec, s[0:1]                                      ; befe0100
+	global_store_b96 v22, v[23:25], s[20:21]                    ; dc720000 00141716
+	s_mov_b64 exec, s[2:3]                                      ; befe0102
+	v_fmamk_f32 v4, v6, 0xc04ec4ec, v4                          ; 58080906 c04ec4ec
+	s_mov_b64 exec, s[0:1]                                      ; befe0100
+	image_sample_lz v[26:28], v[4:5], s[8:15], s[16:19] dmask:0x7 dim:SQ_RSRC_IMG_2D ; f07c0704 10021a04
+	s_mov_b64 exec, s[2:3]                                      ; befe0102
+	s_mov_b32 s23, 0x3ea1e718                                   ; be9700ff 3ea1e718
+	s_mov_b32 s24, 0x3d8fe9dc                                   ; be9800ff 3d8fe9dc
+	s_waitcnt vmcnt(4)                                          ; bf8913f7
+	v_mul_f32_e32 v12, 0x3e6879c6, v12                          ; 101818ff 3e6879c6
+	v_mul_f32_e32 v11, 0x3e6879c6, v11                          ; 101616ff 3e6879c6
+	s_waitcnt vmcnt(3)                                          ; bf890ff7
+	v_mul_f32_e32 v13, s23, v13                                 ; 101a1a17
+	s_delay_alu instid0(VALU_DEP_3) | instskip(SKIP_3) | instid1(VALU_DEP_3) ; bf8701c3
+	v_fmac_f32_e32 v12, s23, v15                                ; 56181e17
+	v_fmac_f32_e32 v11, s23, v14                                ; 56161c17
+	v_fmamk_f32 v10, v10, 0x3e6879c6, v13                       ; 58141b0a 3e6879c6
+	s_waitcnt vmcnt(2)                                          ; bf890bf7
+	v_fmac_f32_e32 v12, s23, v18                                ; 56182417
+	v_fmac_f32_e32 v11, s23, v17                                ; 56162217
+	v_fmac_f32_e32 v10, s23, v16                                ; 56142017
+	s_waitcnt vmcnt(1)                                          ; bf8907f7
+	s_delay_alu instid0(VALU_DEP_3) | instskip(SKIP_3) | instid1(VALU_DEP_1) ; bf8700c3
+	v_fmac_f32_e32 v12, s24, v21                                ; 56182a18
+	v_fmac_f32_e32 v11, s24, v20                                ; 56162818
+	v_fmac_f32_e32 v10, s24, v19                                ; 56142618
+	s_waitcnt vmcnt(0)                                          ; bf8903f7
+	v_fma_mixlo_f16 v29, s24, v26, v10                          ; cc21001d 042a3418
+	v_fma_mixhi_f16 v29, s24, v27, v11                          ; cc22001d 042e3618
+	v_fmac_f32_e32 v12, s24, v28                                ; 56183818
+	s_delay_alu instid0(VALU_DEP_1)                             ; bf870001
+	v_cvt_pk_rtz_f16_f32_e64 v12, v12, 1.0                      ; d52f000c 0001e50c
+	s_mov_b64 exec, s[0:1]                                      ; befe0100
+	exp mrt0 v29, v12, off, off done                            ; f8000803 80800c1d
+	s_endpgm                                                    ; bfb00000
+
+
+Pixel Shader:
+*** SHADER STATS ***
+Driver pipeline hash: 10490508862531665589
+SGPRs: 108
+VGPRs: 36
+Spilled SGPRs: 0
+Spilled VGPRs: 0
+Code size: 524
+LDS size: 0
+Scratch size: 0
+Subgroups per SIMD: 32
+Combined inputs: 1
+Combined outputs: 1
+Hash: 1247991780
+Instructions: 94
+Copies: 14
+Branches: 0
+Latency: 528
+Inverse Throughput: 39
+VMEM Clause: 3
+SMEM Clause: 4
+Pre-Sched SGPRs: 24
+Pre-Sched VGPRs: 11
+VALU: 30
+SALU: 28
+VMEM: 6
+SMEM: 6
+VOPD: 0
+********************
+
+
+[1;36mThe number of active waves = 0[0m
+
+Num vertex bindings: 1
+VBO#0:
+	VA: 0x8001358c0000
+	Stride: 20
+	Num records: 4 (0x4)
+Descriptors:
+(set=0 binding=0 offset=0x0) [1;36mSampler state:[0m
+        [1;33mSQ_IMG_SAMP_WORD0[0m <- 0x0135a800
+                             CLAMP_X = 0
+                             CLAMP_Y = 0
+                             CLAMP_Z = 0
+                             MAX_ANISO_RATIO = 4
+                             DEPTH_COMPARE_FUNC = 2
+                             FORCE_UNNORMALIZED = 1
+                             ANISO_THRESHOLD = 5
+                             MC_COORD_TRUNC = 0
+                             FORCE_DEGAMMA = 1
+                             ANISO_BIAS = 9
+                             TRUNC_COORD = 0
+                             DISABLE_CUBE_WRAP = 0
+                             FILTER_MODE = 0
+                             SKIP_DEGAMMA = 0
+        [1;33mSQ_IMG_SAMP_WORD1[0m <- 0xc4270080
+                             MIN_LOD = 128 (0x080)
+                             MAX_LOD = 624 (0x270)
+                             PERF_MIP = 4
+                             PERF_Z = 12 (0xc)
+        [1;33mSQ_IMG_SAMP_WORD2[0m <- 0x007fc07f
+                             LOD_BIAS = 127 (0x07f)
+                             LOD_BIAS_SEC = 63 (0x3f)
+                             XY_MAG_FILTER = 3
+                             XY_MIN_FILTER = 1
+                             Z_FILTER = 0
+                             MIP_FILTER = 0
+                             ANISO_OVERRIDE = 0
+                             BLEND_PRT = 0
+        [1;33mSQ_IMG_SAMP_WORD3[0m <- 0x91b00fac
+                             BORDER_COLOR_PTR = 1132 (0x46c)
+                             BORDER_COLOR_TYPE = 2
+
+(set=0 binding=1 offset=0x0) [1;36mSampler state:[0m
+        [1;33mSQ_IMG_SAMP_WORD0[0m <- 0x0135a800
+                             CLAMP_X = 0
+                             CLAMP_Y = 0
+                             CLAMP_Z = 0
+                             MAX_ANISO_RATIO = 4
+                             DEPTH_COMPARE_FUNC = 2
+                             FORCE_UNNORMALIZED = 1
+                             ANISO_THRESHOLD = 5
+                             MC_COORD_TRUNC = 0
+                             FORCE_DEGAMMA = 1
+                             ANISO_BIAS = 9
+                             TRUNC_COORD = 0
+                             DISABLE_CUBE_WRAP = 0
+                             FILTER_MODE = 0
+                             SKIP_DEGAMMA = 0
+        [1;33mSQ_IMG_SAMP_WORD1[0m <- 0xc4270080
+                             MIN_LOD = 128 (0x080)
+                             MAX_LOD = 624 (0x270)
+                             PERF_MIP = 4
+                             PERF_Z = 12 (0xc)
+        [1;33mSQ_IMG_SAMP_WORD2[0m <- 0x007fc07f
+                             LOD_BIAS = 127 (0x07f)
+                             LOD_BIAS_SEC = 63 (0x3f)
+                             XY_MAG_FILTER = 3
+                             XY_MIN_FILTER = 1
+                             Z_FILTER = 0
+                             MIP_FILTER = 0
+                             ANISO_OVERRIDE = 0
+                             BLEND_PRT = 0
+        [1;33mSQ_IMG_SAMP_WORD3[0m <- 0x91b00fac
+                             BORDER_COLOR_PTR = 1132 (0x46c)
+                             BORDER_COLOR_TYPE = 2
+
+(set=0 binding=2 offset=0x0) [1;36mSampler state:[0m
+        [1;33mSQ_IMG_SAMP_WORD0[0m <- 0x0135a800
+                             CLAMP_X = 0
+                             CLAMP_Y = 0
+                             CLAMP_Z = 0
+                             MAX_ANISO_RATIO = 4
+                             DEPTH_COMPARE_FUNC = 2
+                             FORCE_UNNORMALIZED = 1
+                             ANISO_THRESHOLD = 5
+                             MC_COORD_TRUNC = 0
+                             FORCE_DEGAMMA = 1
+                             ANISO_BIAS = 9
+                             TRUNC_COORD = 0
+                             DISABLE_CUBE_WRAP = 0
+                             FILTER_MODE = 0
+                             SKIP_DEGAMMA = 0
+        [1;33mSQ_IMG_SAMP_WORD1[0m <- 0xc4270080
+                             MIN_LOD = 128 (0x080)
+                             MAX_LOD = 624 (0x270)
+                             PERF_MIP = 4
+                             PERF_Z = 12 (0xc)
+        [1;33mSQ_IMG_SAMP_WORD2[0m <- 0x007fc07f
+                             LOD_BIAS = 127 (0x07f)
+                             LOD_BIAS_SEC = 63 (0x3f)
+                             XY_MAG_FILTER = 3
+                             XY_MIN_FILTER = 1
+                             Z_FILTER = 0
+                             MIP_FILTER = 0
+                             ANISO_OVERRIDE = 0
+                             BLEND_PRT = 0
+        [1;33mSQ_IMG_SAMP_WORD3[0m <- 0x91b00fac
+                             BORDER_COLOR_PTR = 1132 (0x46c)
+                             BORDER_COLOR_TYPE = 2
+
+(set=0 binding=3 offset=0x0) [1;36mSampler state:[0m
+        [1;33mSQ_IMG_SAMP_WORD0[0m <- 0x0135a800
+                             CLAMP_X = 0
+                             CLAMP_Y = 0
+                             CLAMP_Z = 0
+                             MAX_ANISO_RATIO = 4
+                             DEPTH_COMPARE_FUNC = 2
+                             FORCE_UNNORMALIZED = 1
+                             ANISO_THRESHOLD = 5
+                             MC_COORD_TRUNC = 0
+                             FORCE_DEGAMMA = 1
+                             ANISO_BIAS = 9
+                             TRUNC_COORD = 0
+                             DISABLE_CUBE_WRAP = 0
+                             FILTER_MODE = 0
+                             SKIP_DEGAMMA = 0
+        [1;33mSQ_IMG_SAMP_WORD1[0m <- 0xc4270080
+                             MIN_LOD = 128 (0x080)
+                             MAX_LOD = 624 (0x270)
+                             PERF_MIP = 4
+                             PERF_Z = 12 (0xc)
+        [1;33mSQ_IMG_SAMP_WORD2[0m <- 0x007fc07f
+                             LOD_BIAS = 127 (0x07f)
+                             LOD_BIAS_SEC = 63 (0x3f)
+                             XY_MAG_FILTER = 3
+                             XY_MIN_FILTER = 1
+                             Z_FILTER = 0
+                             MIP_FILTER = 0
+                             ANISO_OVERRIDE = 0
+                             BLEND_PRT = 0
+        [1;33mSQ_IMG_SAMP_WORD3[0m <- 0x91b00fac
+                             BORDER_COLOR_PTR = 1132 (0x46c)
+                             BORDER_COLOR_TYPE = 2
+
+(set=0 binding=4 offset=0x0) [1;36mSampler state:[0m
+        [1;33mSQ_IMG_SAMP_WORD0[0m <- 0x0135a800
+                             CLAMP_X = 0
+                             CLAMP_Y = 0
+                             CLAMP_Z = 0
+                             MAX_ANISO_RATIO = 4
+                             DEPTH_COMPARE_FUNC = 2
+                             FORCE_UNNORMALIZED = 1
+                             ANISO_THRESHOLD = 5
+                             MC_COORD_TRUNC = 0
+                             FORCE_DEGAMMA = 1
+                             ANISO_BIAS = 9
+                             TRUNC_COORD = 0
+                             DISABLE_CUBE_WRAP = 0
+                             FILTER_MODE = 0
+                             SKIP_DEGAMMA = 0
+        [1;33mSQ_IMG_SAMP_WORD1[0m <- 0xc4270080
+                             MIN_LOD = 128 (0x080)
+                             MAX_LOD = 624 (0x270)
+                             PERF_MIP = 4
+                             PERF_Z = 12 (0xc)
+        [1;33mSQ_IMG_SAMP_WORD2[0m <- 0x007fc07f
+                             LOD_BIAS = 127 (0x07f)
+                             LOD_BIAS_SEC = 63 (0x3f)
+                             XY_MAG_FILTER = 3
+                             XY_MIN_FILTER = 1
+                             Z_FILTER = 0
+                             MIP_FILTER = 0
+                             ANISO_OVERRIDE = 0
+                             BLEND_PRT = 0
+        [1;33mSQ_IMG_SAMP_WORD3[0m <- 0x91b00fac
+                             BORDER_COLOR_PTR = 1132 (0x46c)
+                             BORDER_COLOR_TYPE = 2
+
+(set=0 binding=5 offset=0x0) [1;36mSampler state:[0m
+        [1;33mSQ_IMG_SAMP_WORD0[0m <- 0x0135a800
+                             CLAMP_X = 0
+                             CLAMP_Y = 0
+                             CLAMP_Z = 0
+                             MAX_ANISO_RATIO = 4
+                             DEPTH_COMPARE_FUNC = 2
+                             FORCE_UNNORMALIZED = 1
+                             ANISO_THRESHOLD = 5
+                             MC_COORD_TRUNC = 0
+                             FORCE_DEGAMMA = 1
+                             ANISO_BIAS = 9
+                             TRUNC_COORD = 0
+                             DISABLE_CUBE_WRAP = 0
+                             FILTER_MODE = 0
+                             SKIP_DEGAMMA = 0
+        [1;33mSQ_IMG_SAMP_WORD1[0m <- 0xc4270080
+                             MIN_LOD = 128 (0x080)
+                             MAX_LOD = 624 (0x270)
+                             PERF_MIP = 4
+                             PERF_Z = 12 (0xc)
+        [1;33mSQ_IMG_SAMP_WORD2[0m <- 0x007fc07f
+                             LOD_BIAS = 127 (0x07f)
+                             LOD_BIAS_SEC = 63 (0x3f)
+                             XY_MAG_FILTER = 3
+                             XY_MIN_FILTER = 1
+                             Z_FILTER = 0
+                             MIP_FILTER = 0
+                             ANISO_OVERRIDE = 0
+                             BLEND_PRT = 0
+        [1;33mSQ_IMG_SAMP_WORD3[0m <- 0x91b00fac
+                             BORDER_COLOR_PTR = 1132 (0x46c)
+                             BORDER_COLOR_TYPE = 2
+
+(set=0 binding=6 offset=0x0) [1;36mSampler state:[0m
+        [1;33mSQ_IMG_SAMP_WORD0[0m <- 0x0135a800
+                             CLAMP_X = 0
+                             CLAMP_Y = 0
+                             CLAMP_Z = 0
+                             MAX_ANISO_RATIO = 4
+                             DEPTH_COMPARE_FUNC = 2
+                             FORCE_UNNORMALIZED = 1
+                             ANISO_THRESHOLD = 5
+                             MC_COORD_TRUNC = 0
+                             FORCE_DEGAMMA = 1
+                             ANISO_BIAS = 9
+                             TRUNC_COORD = 0
+                             DISABLE_CUBE_WRAP = 0
+                             FILTER_MODE = 0
+                             SKIP_DEGAMMA = 0
+        [1;33mSQ_IMG_SAMP_WORD1[0m <- 0xc4270080
+                             MIN_LOD = 128 (0x080)
+                             MAX_LOD = 624 (0x270)
+                             PERF_MIP = 4
+                             PERF_Z = 12 (0xc)
+        [1;33mSQ_IMG_SAMP_WORD2[0m <- 0x007fc07f
+                             LOD_BIAS = 127 (0x07f)
+                             LOD_BIAS_SEC = 63 (0x3f)
+                             XY_MAG_FILTER = 3
+                             XY_MIN_FILTER = 1
+                             Z_FILTER = 0
+                             MIP_FILTER = 0
+                             ANISO_OVERRIDE = 0
+                             BLEND_PRT = 0
+        [1;33mSQ_IMG_SAMP_WORD3[0m <- 0x91b00fac
+                             BORDER_COLOR_PTR = 1132 (0x46c)
+                             BORDER_COLOR_TYPE = 2
+
+(set=0 binding=7 offset=0x0) [1;36mSampler state:[0m
+        [1;33mSQ_IMG_SAMP_WORD0[0m <- 0x0135a800
+                             CLAMP_X = 0
+                             CLAMP_Y = 0
+                             CLAMP_Z = 0
+                             MAX_ANISO_RATIO = 4
+                             DEPTH_COMPARE_FUNC = 2
+                             FORCE_UNNORMALIZED = 1
+                             ANISO_THRESHOLD = 5
+                             MC_COORD_TRUNC = 0
+                             FORCE_DEGAMMA = 1
+                             ANISO_BIAS = 9
+                             TRUNC_COORD = 0
+                             DISABLE_CUBE_WRAP = 0
+                             FILTER_MODE = 0
+                             SKIP_DEGAMMA = 0
+        [1;33mSQ_IMG_SAMP_WORD1[0m <- 0xc4270080
+                             MIN_LOD = 128 (0x080)
+                             MAX_LOD = 624 (0x270)
+                             PERF_MIP = 4
+                             PERF_Z = 12 (0xc)
+        [1;33mSQ_IMG_SAMP_WORD2[0m <- 0x007fc07f
+                             LOD_BIAS = 127 (0x07f)
+                             LOD_BIAS_SEC = 63 (0x3f)
+                             XY_MAG_FILTER = 3
+                             XY_MIN_FILTER = 1
+                             Z_FILTER = 0
+                             MIP_FILTER = 0
+                             ANISO_OVERRIDE = 0
+                             BLEND_PRT = 0
+        [1;33mSQ_IMG_SAMP_WORD3[0m <- 0x91b00fac
+                             BORDER_COLOR_PTR = 1132 (0x46c)
+                             BORDER_COLOR_TYPE = 2
+
+(set=0 binding=8 offset=0x0) [1;36mSampler state:[0m
+        [1;33mSQ_IMG_SAMP_WORD0[0m <- 0x0135a800
+                             CLAMP_X = 0
+                             CLAMP_Y = 0
+                             CLAMP_Z = 0
+                             MAX_ANISO_RATIO = 4
+                             DEPTH_COMPARE_FUNC = 2
+                             FORCE_UNNORMALIZED = 1
+                             ANISO_THRESHOLD = 5
+                             MC_COORD_TRUNC = 0
+                             FORCE_DEGAMMA = 1
+                             ANISO_BIAS = 9
+                             TRUNC_COORD = 0
+                             DISABLE_CUBE_WRAP = 0
+                             FILTER_MODE = 0
+                             SKIP_DEGAMMA = 0
+        [1;33mSQ_IMG_SAMP_WORD1[0m <- 0xc4270080
+                             MIN_LOD = 128 (0x080)
+                             MAX_LOD = 624 (0x270)
+                             PERF_MIP = 4
+                             PERF_Z = 12 (0xc)
+        [1;33mSQ_IMG_SAMP_WORD2[0m <- 0x007fc07f
+                             LOD_BIAS = 127 (0x07f)
+                             LOD_BIAS_SEC = 63 (0x3f)
+                             XY_MAG_FILTER = 3
+                             XY_MIN_FILTER = 1
+                             Z_FILTER = 0
+                             MIP_FILTER = 0
+                             ANISO_OVERRIDE = 0
+                             BLEND_PRT = 0
+        [1;33mSQ_IMG_SAMP_WORD3[0m <- 0x91b00fac
+                             BORDER_COLOR_PTR = 1132 (0x46c)
+                             BORDER_COLOR_TYPE = 2
+
+(set=0 binding=9 offset=0x0) [1;36mImage:[0m
+        [1;33mSQ_IMG_RSRC_WORD0[0m <- 0x0135a800
+        [1;33mSQ_IMG_RSRC_WORD1[0m <- 0xc4270080
+                             BASE_ADDRESS_HI = 128 (0x80)
+                             LLC_NOALLOC = 0
+                             BIG_PAGE = 0
+                             MAX_MIP = 7
+                             FORMAT = GFX11_FORMAT_8_8_8_8_SRGB
+                             WIDTH_LO = 3
+        [1;33mSQ_IMG_RSRC_WORD2[0m <- 0x007fc07f
+                             WIDTH_HI = 127 (0x07f)
+                             HEIGHT = 511 (0x1ff)
+        [1;33mSQ_IMG_RSRC_WORD3[0m <- 0x91b00fac
+                             DST_SEL_X = 4
+                             DST_SEL_Y = 5
+                             DST_SEL_Z = 6
+                             DST_SEL_W = 7
+                             BASE_LEVEL = 0
+                             LAST_LEVEL = 0
+                             SW_MODE = 27 (0x1b)
+                             BC_SWIZZLE = BC_SWIZZLE_XYZW
+                             TYPE = 9
+        [1;33mSQ_IMG_RSRC_WORD4[0m <- 0
+                             DEPTH = 0
+                             PITCH_MSB = 0
+                             BASE_ARRAY = 0
+        [1;33mSQ_IMG_RSRC_WORD5[0m <- 0x00400000
+                             ARRAY_PITCH = 0
+                             MIN_LOD_WARN = 0
+                             PERF_MOD = 4
+                             CORNER_SAMPLES = 0
+                             PRT_DEFAULT = 0
+                             MIN_LOD_LO = 0
+        [1;33mSQ_IMG_RSRC_WORD6[0m <- 0
+                             MIN_LOD_HI = 0
+                             ITERATE_256 = 0
+                             SAMPLE_PATTERN_OFFSET = 0
+                             MAX_UNCOMPRESSED_BLOCK_SIZE = 0
+                             MAX_COMPRESSED_BLOCK_SIZE = 0
+                             META_PIPE_ALIGNED = 0
+                             WRITE_COMPRESS_ENABLE = 0
+                             COMPRESSION_EN = 0
+                             ALPHA_IS_ON_MSB = 0
+                             COLOR_TRANSFORM = 0
+                             META_DATA_ADDRESS_LO = 0
+        [1;33mSQ_IMG_RSRC_WORD7[0m <- 0
+[1;36m    FMASK:[0m
+        [1;33mSQ_IMG_RSRC_WORD0[0m <- 0x08000012
+        [1;33mSQ_IMG_RSRC_WORD1[0m <- 0x00f00000
+                             BASE_ADDRESS_HI = 0
+                             LLC_NOALLOC = 0
+                             BIG_PAGE = 0
+                             MAX_MIP = 0
+                             FORMAT = GFX11_FORMAT_8_8_SNORM
+                             WIDTH_LO = 0
+        [1;33mSQ_IMG_RSRC_WORD2[0m <- 0x04500000
+                             WIDTH_HI = 0
+                             HEIGHT = 4416 (0x1140)
+        [1;33mSQ_IMG_RSRC_WORD3[0m <- 0
+                             DST_SEL_X = 0
+                             DST_SEL_Y = 0
+                             DST_SEL_Z = 0
+                             DST_SEL_W = 0
+                             BASE_LEVEL = 0
+                             LAST_LEVEL = 0
+                             SW_MODE = 0
+                             BC_SWIZZLE = BC_SWIZZLE_XYZW
+                             TYPE = 0
+        [1;33mSQ_IMG_RSRC_WORD4[0m <- 0
+                             DEPTH = 0
+                             PITCH_MSB = 0
+                             BASE_ARRAY = 0
+        [1;33mSQ_IMG_RSRC_WORD5[0m <- 0
+                             ARRAY_PITCH = 0
+                             MIN_LOD_WARN = 0
+                             PERF_MOD = 0
+                             CORNER_SAMPLES = 0
+                             PRT_DEFAULT = 0
+                             MIN_LOD_LO = 0
+        [1;33mSQ_IMG_RSRC_WORD6[0m <- 0
+                             MIN_LOD_HI = 0
+                             ITERATE_256 = 0
+                             SAMPLE_PATTERN_OFFSET = 0
+                             MAX_UNCOMPRESSED_BLOCK_SIZE = 0
+                             MAX_COMPRESSED_BLOCK_SIZE = 0
+                             META_PIPE_ALIGNED = 0
+                             WRITE_COMPRESS_ENABLE = 0
+                             COMPRESSION_EN = 0
+                             ALPHA_IS_ON_MSB = 0
+                             COLOR_TRANSFORM = 0
+                             META_DATA_ADDRESS_LO = 0
+        [1;33mSQ_IMG_RSRC_WORD7[0m <- 0
+
+(set=0 binding=10 offset=0x0) [1;36mSampler state:[0m
+        [1;33mSQ_IMG_SAMP_WORD0[0m <- 0x0135a800
+                             CLAMP_X = 0
+                             CLAMP_Y = 0
+                             CLAMP_Z = 0
+                             MAX_ANISO_RATIO = 4
+                             DEPTH_COMPARE_FUNC = 2
+                             FORCE_UNNORMALIZED = 1
+                             ANISO_THRESHOLD = 5
+                             MC_COORD_TRUNC = 0
+                             FORCE_DEGAMMA = 1
+                             ANISO_BIAS = 9
+                             TRUNC_COORD = 0
+                             DISABLE_CUBE_WRAP = 0
+                             FILTER_MODE = 0
+                             SKIP_DEGAMMA = 0
+        [1;33mSQ_IMG_SAMP_WORD1[0m <- 0xc4270080
+                             MIN_LOD = 128 (0x080)
+                             MAX_LOD = 624 (0x270)
+                             PERF_MIP = 4
+                             PERF_Z = 12 (0xc)
+        [1;33mSQ_IMG_SAMP_WORD2[0m <- 0x007fc07f
+                             LOD_BIAS = 127 (0x07f)
+                             LOD_BIAS_SEC = 63 (0x3f)
+                             XY_MAG_FILTER = 3
+                             XY_MIN_FILTER = 1
+                             Z_FILTER = 0
+                             MIP_FILTER = 0
+                             ANISO_OVERRIDE = 0
+                             BLEND_PRT = 0
+        [1;33mSQ_IMG_SAMP_WORD3[0m <- 0x91b00fac
+                             BORDER_COLOR_PTR = 1132 (0x46c)
+                             BORDER_COLOR_TYPE = 2
+
+(set=0 binding=11 offset=0x0) [1;36mSampler state:[0m
+        [1;33mSQ_IMG_SAMP_WORD0[0m <- 0x0135a800
+                             CLAMP_X = 0
+                             CLAMP_Y = 0
+                             CLAMP_Z = 0
+                             MAX_ANISO_RATIO = 4
+                             DEPTH_COMPARE_FUNC = 2
+                             FORCE_UNNORMALIZED = 1
+                             ANISO_THRESHOLD = 5
+                             MC_COORD_TRUNC = 0
+                             FORCE_DEGAMMA = 1
+                             ANISO_BIAS = 9
+                             TRUNC_COORD = 0
+                             DISABLE_CUBE_WRAP = 0
+                             FILTER_MODE = 0
+                             SKIP_DEGAMMA = 0
+        [1;33mSQ_IMG_SAMP_WORD1[0m <- 0xc4270080
+                             MIN_LOD = 128 (0x080)
+                             MAX_LOD = 624 (0x270)
+                             PERF_MIP = 4
+                             PERF_Z = 12 (0xc)
+        [1;33mSQ_IMG_SAMP_WORD2[0m <- 0x007fc07f
+                             LOD_BIAS = 127 (0x07f)
+                             LOD_BIAS_SEC = 63 (0x3f)
+                             XY_MAG_FILTER = 3
+                             XY_MIN_FILTER = 1
+                             Z_FILTER = 0
+                             MIP_FILTER = 0
+                             ANISO_OVERRIDE = 0
+                             BLEND_PRT = 0
+        [1;33mSQ_IMG_SAMP_WORD3[0m <- 0x91b00fac
+                             BORDER_COLOR_PTR = 1132 (0x46c)
+                             BORDER_COLOR_TYPE = 2
+
+(set=0 binding=12 offset=0x0) [1;36mSampler state:[0m
+        [1;33mSQ_IMG_SAMP_WORD0[0m <- 0x0135a800
+                             CLAMP_X = 0
+                             CLAMP_Y = 0
+                             CLAMP_Z = 0
+                             MAX_ANISO_RATIO = 4
+                             DEPTH_COMPARE_FUNC = 2
+                             FORCE_UNNORMALIZED = 1
+                             ANISO_THRESHOLD = 5
+                             MC_COORD_TRUNC = 0
+                             FORCE_DEGAMMA = 1
+                             ANISO_BIAS = 9
+                             TRUNC_COORD = 0
+                             DISABLE_CUBE_WRAP = 0
+                             FILTER_MODE = 0
+                             SKIP_DEGAMMA = 0
+        [1;33mSQ_IMG_SAMP_WORD1[0m <- 0xc4270080
+                             MIN_LOD = 128 (0x080)
+                             MAX_LOD = 624 (0x270)
+                             PERF_MIP = 4
+                             PERF_Z = 12 (0xc)
+        [1;33mSQ_IMG_SAMP_WORD2[0m <- 0x007fc07f
+                             LOD_BIAS = 127 (0x07f)
+                             LOD_BIAS_SEC = 63 (0x3f)
+                             XY_MAG_FILTER = 3
+                             XY_MIN_FILTER = 1
+                             Z_FILTER = 0
+                             MIP_FILTER = 0
+                             ANISO_OVERRIDE = 0
+                             BLEND_PRT = 0
+        [1;33mSQ_IMG_SAMP_WORD3[0m <- 0x91b00fac
+                             BORDER_COLOR_PTR = 1132 (0x46c)
+                             BORDER_COLOR_TYPE = 2
+
+(set=0 binding=13 offset=0x0) [1;36mSampler state:[0m
+        [1;33mSQ_IMG_SAMP_WORD0[0m <- 0x0135a800
+                             CLAMP_X = 0
+                             CLAMP_Y = 0
+                             CLAMP_Z = 0
+                             MAX_ANISO_RATIO = 4
+                             DEPTH_COMPARE_FUNC = 2
+                             FORCE_UNNORMALIZED = 1
+                             ANISO_THRESHOLD = 5
+                             MC_COORD_TRUNC = 0
+                             FORCE_DEGAMMA = 1
+                             ANISO_BIAS = 9
+                             TRUNC_COORD = 0
+                             DISABLE_CUBE_WRAP = 0
+                             FILTER_MODE = 0
+                             SKIP_DEGAMMA = 0
+        [1;33mSQ_IMG_SAMP_WORD1[0m <- 0xc4270080
+                             MIN_LOD = 128 (0x080)
+                             MAX_LOD = 624 (0x270)
+                             PERF_MIP = 4
+                             PERF_Z = 12 (0xc)
+        [1;33mSQ_IMG_SAMP_WORD2[0m <- 0x007fc07f
+                             LOD_BIAS = 127 (0x07f)
+                             LOD_BIAS_SEC = 63 (0x3f)
+                             XY_MAG_FILTER = 3
+                             XY_MIN_FILTER = 1
+                             Z_FILTER = 0
+                             MIP_FILTER = 0
+                             ANISO_OVERRIDE = 0
+                             BLEND_PRT = 0
+        [1;33mSQ_IMG_SAMP_WORD3[0m <- 0x91b00fac
+                             BORDER_COLOR_PTR = 1132 (0x46c)
+                             BORDER_COLOR_TYPE = 2
+
+(set=0 binding=14 offset=0x0) [1;36mSampler state:[0m
+        [1;33mSQ_IMG_SAMP_WORD0[0m <- 0x0135a800
+                             CLAMP_X = 0
+                             CLAMP_Y = 0
+                             CLAMP_Z = 0
+                             MAX_ANISO_RATIO = 4
+                             DEPTH_COMPARE_FUNC = 2
+                             FORCE_UNNORMALIZED = 1
+                             ANISO_THRESHOLD = 5
+                             MC_COORD_TRUNC = 0
+                             FORCE_DEGAMMA = 1
+                             ANISO_BIAS = 9
+                             TRUNC_COORD = 0
+                             DISABLE_CUBE_WRAP = 0
+                             FILTER_MODE = 0
+                             SKIP_DEGAMMA = 0
+        [1;33mSQ_IMG_SAMP_WORD1[0m <- 0xc4270080
+                             MIN_LOD = 128 (0x080)
+                             MAX_LOD = 624 (0x270)
+                             PERF_MIP = 4
+                             PERF_Z = 12 (0xc)
+        [1;33mSQ_IMG_SAMP_WORD2[0m <- 0x007fc07f
+                             LOD_BIAS = 127 (0x07f)
+                             LOD_BIAS_SEC = 63 (0x3f)
+                             XY_MAG_FILTER = 3
+                             XY_MIN_FILTER = 1
+                             Z_FILTER = 0
+                             MIP_FILTER = 0
+                             ANISO_OVERRIDE = 0
+                             BLEND_PRT = 0
+        [1;33mSQ_IMG_SAMP_WORD3[0m <- 0x91b00fac
+                             BORDER_COLOR_PTR = 1132 (0x46c)
+                             BORDER_COLOR_TYPE = 2
+
+(set=0 binding=15 offset=0x0) [1;36mSampler state:[0m
+        [1;33mSQ_IMG_SAMP_WORD0[0m <- 0x0135a800
+                             CLAMP_X = 0
+                             CLAMP_Y = 0
+                             CLAMP_Z = 0
+                             MAX_ANISO_RATIO = 4
+                             DEPTH_COMPARE_FUNC = 2
+                             FORCE_UNNORMALIZED = 1
+                             ANISO_THRESHOLD = 5
+                             MC_COORD_TRUNC = 0
+                             FORCE_DEGAMMA = 1
+                             ANISO_BIAS = 9
+                             TRUNC_COORD = 0
+                             DISABLE_CUBE_WRAP = 0
+                             FILTER_MODE = 0
+                             SKIP_DEGAMMA = 0
+        [1;33mSQ_IMG_SAMP_WORD1[0m <- 0xc4270080
+                             MIN_LOD = 128 (0x080)
+                             MAX_LOD = 624 (0x270)
+                             PERF_MIP = 4
+                             PERF_Z = 12 (0xc)
+        [1;33mSQ_IMG_SAMP_WORD2[0m <- 0x007fc07f
+                             LOD_BIAS = 127 (0x07f)
+                             LOD_BIAS_SEC = 63 (0x3f)
+                             XY_MAG_FILTER = 3
+                             XY_MIN_FILTER = 1
+                             Z_FILTER = 0
+                             MIP_FILTER = 0
+                             ANISO_OVERRIDE = 0
+                             BLEND_PRT = 0
+        [1;33mSQ_IMG_SAMP_WORD3[0m <- 0x91b00fac
+                             BORDER_COLOR_PTR = 1132 (0x46c)
+                             BORDER_COLOR_TYPE = 2
+
+(set=0 binding=16 offset=0x0) [1;36mSampler state:[0m
+        [1;33mSQ_IMG_SAMP_WORD0[0m <- 0x0135a800
+                             CLAMP_X = 0
+                             CLAMP_Y = 0
+                             CLAMP_Z = 0
+                             MAX_ANISO_RATIO = 4
+                             DEPTH_COMPARE_FUNC = 2
+                             FORCE_UNNORMALIZED = 1
+                             ANISO_THRESHOLD = 5
+                             MC_COORD_TRUNC = 0
+                             FORCE_DEGAMMA = 1
+                             ANISO_BIAS = 9
+                             TRUNC_COORD = 0
+                             DISABLE_CUBE_WRAP = 0
+                             FILTER_MODE = 0
+                             SKIP_DEGAMMA = 0
+        [1;33mSQ_IMG_SAMP_WORD1[0m <- 0xc4270080
+                             MIN_LOD = 128 (0x080)
+                             MAX_LOD = 624 (0x270)
+                             PERF_MIP = 4
+                             PERF_Z = 12 (0xc)
+        [1;33mSQ_IMG_SAMP_WORD2[0m <- 0x007fc07f
+                             LOD_BIAS = 127 (0x07f)
+                             LOD_BIAS_SEC = 63 (0x3f)
+                             XY_MAG_FILTER = 3
+                             XY_MIN_FILTER = 1
+                             Z_FILTER = 0
+                             MIP_FILTER = 0
+                             ANISO_OVERRIDE = 0
+                             BLEND_PRT = 0
+        [1;33mSQ_IMG_SAMP_WORD3[0m <- 0x91b00fac
+                             BORDER_COLOR_PTR = 1132 (0x46c)
+                             BORDER_COLOR_TYPE = 2
+
+(set=0 binding=17 offset=0x0) [1;36mSampler state:[0m
+        [1;33mSQ_IMG_SAMP_WORD0[0m <- 0x0135a800
+                             CLAMP_X = 0
+                             CLAMP_Y = 0
+                             CLAMP_Z = 0
+                             MAX_ANISO_RATIO = 4
+                             DEPTH_COMPARE_FUNC = 2
+                             FORCE_UNNORMALIZED = 1
+                             ANISO_THRESHOLD = 5
+                             MC_COORD_TRUNC = 0
+                             FORCE_DEGAMMA = 1
+                             ANISO_BIAS = 9
+                             TRUNC_COORD = 0
+                             DISABLE_CUBE_WRAP = 0
+                             FILTER_MODE = 0
+                             SKIP_DEGAMMA = 0
+        [1;33mSQ_IMG_SAMP_WORD1[0m <- 0xc4270080
+                             MIN_LOD = 128 (0x080)
+                             MAX_LOD = 624 (0x270)
+                             PERF_MIP = 4
+                             PERF_Z = 12 (0xc)
+        [1;33mSQ_IMG_SAMP_WORD2[0m <- 0x007fc07f
+                             LOD_BIAS = 127 (0x07f)
+                             LOD_BIAS_SEC = 63 (0x3f)
+                             XY_MAG_FILTER = 3
+                             XY_MIN_FILTER = 1
+                             Z_FILTER = 0
+                             MIP_FILTER = 0
+                             ANISO_OVERRIDE = 0
+                             BLEND_PRT = 0
+        [1;33mSQ_IMG_SAMP_WORD3[0m <- 0x91b00fac
+                             BORDER_COLOR_PTR = 1132 (0x46c)
+                             BORDER_COLOR_TYPE = 2
+
+(set=0 binding=18 offset=0x0) [1;36mSampler state:[0m
+        [1;33mSQ_IMG_SAMP_WORD0[0m <- 0x0135a800
+                             CLAMP_X = 0
+                             CLAMP_Y = 0
+                             CLAMP_Z = 0
+                             MAX_ANISO_RATIO = 4
+                             DEPTH_COMPARE_FUNC = 2
+                             FORCE_UNNORMALIZED = 1
+                             ANISO_THRESHOLD = 5
+                             MC_COORD_TRUNC = 0
+                             FORCE_DEGAMMA = 1
+                             ANISO_BIAS = 9
+                             TRUNC_COORD = 0
+                             DISABLE_CUBE_WRAP = 0
+                             FILTER_MODE = 0
+                             SKIP_DEGAMMA = 0
+        [1;33mSQ_IMG_SAMP_WORD1[0m <- 0xc4270080
+                             MIN_LOD = 128 (0x080)
+                             MAX_LOD = 624 (0x270)
+                             PERF_MIP = 4
+                             PERF_Z = 12 (0xc)
+        [1;33mSQ_IMG_SAMP_WORD2[0m <- 0x007fc07f
+                             LOD_BIAS = 127 (0x07f)
+                             LOD_BIAS_SEC = 63 (0x3f)
+                             XY_MAG_FILTER = 3
+                             XY_MIN_FILTER = 1
+                             Z_FILTER = 0
+                             MIP_FILTER = 0
+                             ANISO_OVERRIDE = 0
+                             BLEND_PRT = 0
+        [1;33mSQ_IMG_SAMP_WORD3[0m <- 0x91b00fac
+                             BORDER_COLOR_PTR = 1132 (0x46c)
+                             BORDER_COLOR_TYPE = 2
+
+(set=0 binding=19 offset=0x0) [1;36mSampler state:[0m
+        [1;33mSQ_IMG_SAMP_WORD0[0m <- 0x0135a800
+                             CLAMP_X = 0
+                             CLAMP_Y = 0
+                             CLAMP_Z = 0
+                             MAX_ANISO_RATIO = 4
+                             DEPTH_COMPARE_FUNC = 2
+                             FORCE_UNNORMALIZED = 1
+                             ANISO_THRESHOLD = 5
+                             MC_COORD_TRUNC = 0
+                             FORCE_DEGAMMA = 1
+                             ANISO_BIAS = 9
+                             TRUNC_COORD = 0
+                             DISABLE_CUBE_WRAP = 0
+                             FILTER_MODE = 0
+                             SKIP_DEGAMMA = 0
+        [1;33mSQ_IMG_SAMP_WORD1[0m <- 0xc4270080
+                             MIN_LOD = 128 (0x080)
+                             MAX_LOD = 624 (0x270)
+                             PERF_MIP = 4
+                             PERF_Z = 12 (0xc)
+        [1;33mSQ_IMG_SAMP_WORD2[0m <- 0x007fc07f
+                             LOD_BIAS = 127 (0x07f)
+                             LOD_BIAS_SEC = 63 (0x3f)
+                             XY_MAG_FILTER = 3
+                             XY_MIN_FILTER = 1
+                             Z_FILTER = 0
+                             MIP_FILTER = 0
+                             ANISO_OVERRIDE = 0
+                             BLEND_PRT = 0
+        [1;33mSQ_IMG_SAMP_WORD3[0m <- 0x91b00fac
+                             BORDER_COLOR_PTR = 1132 (0x46c)
+                             BORDER_COLOR_TYPE = 2
+
+(set=0 binding=20 offset=0x0) [1;36mSampler state:[0m
+        [1;33mSQ_IMG_SAMP_WORD0[0m <- 0x0135a800
+                             CLAMP_X = 0
+                             CLAMP_Y = 0
+                             CLAMP_Z = 0
+                             MAX_ANISO_RATIO = 4
+                             DEPTH_COMPARE_FUNC = 2
+                             FORCE_UNNORMALIZED = 1
+                             ANISO_THRESHOLD = 5
+                             MC_COORD_TRUNC = 0
+                             FORCE_DEGAMMA = 1
+                             ANISO_BIAS = 9
+                             TRUNC_COORD = 0
+                             DISABLE_CUBE_WRAP = 0
+                             FILTER_MODE = 0
+                             SKIP_DEGAMMA = 0
+        [1;33mSQ_IMG_SAMP_WORD1[0m <- 0xc4270080
+                             MIN_LOD = 128 (0x080)
+                             MAX_LOD = 624 (0x270)
+                             PERF_MIP = 4
+                             PERF_Z = 12 (0xc)
+        [1;33mSQ_IMG_SAMP_WORD2[0m <- 0x007fc07f
+                             LOD_BIAS = 127 (0x07f)
+                             LOD_BIAS_SEC = 63 (0x3f)
+                             XY_MAG_FILTER = 3
+                             XY_MIN_FILTER = 1
+                             Z_FILTER = 0
+                             MIP_FILTER = 0
+                             ANISO_OVERRIDE = 0
+                             BLEND_PRT = 0
+        [1;33mSQ_IMG_SAMP_WORD3[0m <- 0x91b00fac
+                             BORDER_COLOR_PTR = 1132 (0x46c)
+                             BORDER_COLOR_TYPE = 2
+
+(set=0 binding=21 offset=0x0) [1;36mSampler state:[0m
+        [1;33mSQ_IMG_SAMP_WORD0[0m <- 0x0135a800
+                             CLAMP_X = 0
+                             CLAMP_Y = 0
+                             CLAMP_Z = 0
+                             MAX_ANISO_RATIO = 4
+                             DEPTH_COMPARE_FUNC = 2
+                             FORCE_UNNORMALIZED = 1
+                             ANISO_THRESHOLD = 5
+                             MC_COORD_TRUNC = 0
+                             FORCE_DEGAMMA = 1
+                             ANISO_BIAS = 9
+                             TRUNC_COORD = 0
+                             DISABLE_CUBE_WRAP = 0
+                             FILTER_MODE = 0
+                             SKIP_DEGAMMA = 0
+        [1;33mSQ_IMG_SAMP_WORD1[0m <- 0xc4270080
+                             MIN_LOD = 128 (0x080)
+                             MAX_LOD = 624 (0x270)
+                             PERF_MIP = 4
+                             PERF_Z = 12 (0xc)
+        [1;33mSQ_IMG_SAMP_WORD2[0m <- 0x007fc07f
+                             LOD_BIAS = 127 (0x07f)
+                             LOD_BIAS_SEC = 63 (0x3f)
+                             XY_MAG_FILTER = 3
+                             XY_MIN_FILTER = 1
+                             Z_FILTER = 0
+                             MIP_FILTER = 0
+                             ANISO_OVERRIDE = 0
+                             BLEND_PRT = 0
+        [1;33mSQ_IMG_SAMP_WORD3[0m <- 0x91b00fac
+                             BORDER_COLOR_PTR = 1132 (0x46c)
+                             BORDER_COLOR_TYPE = 2
+
+(set=0 binding=22 offset=0x0) [1;36mSampler state:[0m
+        [1;33mSQ_IMG_SAMP_WORD0[0m <- 0x0135a800
+                             CLAMP_X = 0
+                             CLAMP_Y = 0
+                             CLAMP_Z = 0
+                             MAX_ANISO_RATIO = 4
+                             DEPTH_COMPARE_FUNC = 2
+                             FORCE_UNNORMALIZED = 1
+                             ANISO_THRESHOLD = 5
+                             MC_COORD_TRUNC = 0
+                             FORCE_DEGAMMA = 1
+                             ANISO_BIAS = 9
+                             TRUNC_COORD = 0
+                             DISABLE_CUBE_WRAP = 0
+                             FILTER_MODE = 0
+                             SKIP_DEGAMMA = 0
+        [1;33mSQ_IMG_SAMP_WORD1[0m <- 0xc4270080
+                             MIN_LOD = 128 (0x080)
+                             MAX_LOD = 624 (0x270)
+                             PERF_MIP = 4
+                             PERF_Z = 12 (0xc)
+        [1;33mSQ_IMG_SAMP_WORD2[0m <- 0x007fc07f
+                             LOD_BIAS = 127 (0x07f)
+                             LOD_BIAS_SEC = 63 (0x3f)
+                             XY_MAG_FILTER = 3
+                             XY_MIN_FILTER = 1
+                             Z_FILTER = 0
+                             MIP_FILTER = 0
+                             ANISO_OVERRIDE = 0
+                             BLEND_PRT = 0
+        [1;33mSQ_IMG_SAMP_WORD3[0m <- 0x91b00fac
+                             BORDER_COLOR_PTR = 1132 (0x46c)
+                             BORDER_COLOR_TYPE = 2
+
+(set=0 binding=23 offset=0x0) [1;36mSampler state:[0m
+        [1;33mSQ_IMG_SAMP_WORD0[0m <- 0x0135a800
+                             CLAMP_X = 0
+                             CLAMP_Y = 0
+                             CLAMP_Z = 0
+                             MAX_ANISO_RATIO = 4
+                             DEPTH_COMPARE_FUNC = 2
+                             FORCE_UNNORMALIZED = 1
+                             ANISO_THRESHOLD = 5
+                             MC_COORD_TRUNC = 0
+                             FORCE_DEGAMMA = 1
+                             ANISO_BIAS = 9
+                             TRUNC_COORD = 0
+                             DISABLE_CUBE_WRAP = 0
+                             FILTER_MODE = 0
+                             SKIP_DEGAMMA = 0
+        [1;33mSQ_IMG_SAMP_WORD1[0m <- 0xc4270080
+                             MIN_LOD = 128 (0x080)
+                             MAX_LOD = 624 (0x270)
+                             PERF_MIP = 4
+                             PERF_Z = 12 (0xc)
+        [1;33mSQ_IMG_SAMP_WORD2[0m <- 0x007fc07f
+                             LOD_BIAS = 127 (0x07f)
+                             LOD_BIAS_SEC = 63 (0x3f)
+                             XY_MAG_FILTER = 3
+                             XY_MIN_FILTER = 1
+                             Z_FILTER = 0
+                             MIP_FILTER = 0
+                             ANISO_OVERRIDE = 0
+                             BLEND_PRT = 0
+        [1;33mSQ_IMG_SAMP_WORD3[0m <- 0x91b00fac
+                             BORDER_COLOR_PTR = 1132 (0x46c)
+                             BORDER_COLOR_TYPE = 2
+
+(set=0 binding=24 offset=0x0) [1;36mSampler state:[0m
+        [1;33mSQ_IMG_SAMP_WORD0[0m <- 0x0135a800
+                             CLAMP_X = 0
+                             CLAMP_Y = 0
+                             CLAMP_Z = 0
+                             MAX_ANISO_RATIO = 4
+                             DEPTH_COMPARE_FUNC = 2
+                             FORCE_UNNORMALIZED = 1
+                             ANISO_THRESHOLD = 5
+                             MC_COORD_TRUNC = 0
+                             FORCE_DEGAMMA = 1
+                             ANISO_BIAS = 9
+                             TRUNC_COORD = 0
+                             DISABLE_CUBE_WRAP = 0
+                             FILTER_MODE = 0
+                             SKIP_DEGAMMA = 0
+        [1;33mSQ_IMG_SAMP_WORD1[0m <- 0xc4270080
+                             MIN_LOD = 128 (0x080)
+                             MAX_LOD = 624 (0x270)
+                             PERF_MIP = 4
+                             PERF_Z = 12 (0xc)
+        [1;33mSQ_IMG_SAMP_WORD2[0m <- 0x007fc07f
+                             LOD_BIAS = 127 (0x07f)
+                             LOD_BIAS_SEC = 63 (0x3f)
+                             XY_MAG_FILTER = 3
+                             XY_MIN_FILTER = 1
+                             Z_FILTER = 0
+                             MIP_FILTER = 0
+                             ANISO_OVERRIDE = 0
+                             BLEND_PRT = 0
+        [1;33mSQ_IMG_SAMP_WORD3[0m <- 0x91b00fac
+                             BORDER_COLOR_PTR = 1132 (0x46c)
+                             BORDER_COLOR_TYPE = 2
+
+(set=0 binding=25 offset=0x20) [1;36mSampler state:[0m
+        [1;33mSQ_IMG_SAMP_WORD0[0m <- 0x08000012
+                             CLAMP_X = 2
+                             CLAMP_Y = 2
+                             CLAMP_Z = 0
+                             MAX_ANISO_RATIO = 0
+                             DEPTH_COMPARE_FUNC = 0
+                             FORCE_UNNORMALIZED = 0
+                             ANISO_THRESHOLD = 0
+                             MC_COORD_TRUNC = 0
+                             FORCE_DEGAMMA = 0
+                             ANISO_BIAS = 0
+                             TRUNC_COORD = 1
+                             DISABLE_CUBE_WRAP = 0
+                             FILTER_MODE = 0
+                             SKIP_DEGAMMA = 0
+        [1;33mSQ_IMG_SAMP_WORD1[0m <- 0x00f00000
+                             MIN_LOD = 0
+                             MAX_LOD = 3840 (0xf00)
+                             PERF_MIP = 0
+                             PERF_Z = 0
+        [1;33mSQ_IMG_SAMP_WORD2[0m <- 0x04500000
+                             LOD_BIAS = 0
+                             LOD_BIAS_SEC = 0
+                             XY_MAG_FILTER = 1
+                             XY_MIN_FILTER = 1
+                             Z_FILTER = 0
+                             MIP_FILTER = 1
+                             ANISO_OVERRIDE = 0
+                             BLEND_PRT = 0
+        [1;33mSQ_IMG_SAMP_WORD3[0m <- 0
+                             BORDER_COLOR_PTR = 0
+                             BORDER_COLOR_TYPE = 0
+
+
+
+(set=31 binding=0 offset=0x0) [1;36mBuffer:[0m
+        [1;33mSQ_BUF_RSRC_WORD0[0m <- 0
+        [1;33mSQ_BUF_RSRC_WORD1[0m <- 0
+                             BASE_ADDRESS_HI = 0
+                             STRIDE = 0
+                             SWIZZLE_ENABLE = 0
+        [1;33mSQ_BUF_RSRC_WORD2[0m <- 0
+        [1;33mSQ_BUF_RSRC_WORD3[0m <- 0
+                             DST_SEL_X = 0
+                             DST_SEL_Y = 0
+                             DST_SEL_Z = 0
+                             DST_SEL_W = 0
+                             FORMAT = GFX11_FORMAT_INVALID
+                             INDEX_STRIDE = 0
+                             ADD_TID_ENABLE = 0
+                             LLC_NOALLOC = 0
+                             OOB_SELECT = OOB_SELECT_STRUCTURED_WITH_OFFSET
+                             TYPE = 0
+
+(set=31 binding=1 offset=0x10) [1;36mBuffer:[0m
+        [1;33mSQ_BUF_RSRC_WORD0[0m <- 0x1ce60200
+        [1;33mSQ_BUF_RSRC_WORD1[0m <- 0x00008001
+                             BASE_ADDRESS_HI = 0x8001
+                             STRIDE = 0
+                             SWIZZLE_ENABLE = 0
+        [1;33mSQ_BUF_RSRC_WORD2[0m <- 0x00030008
+        [1;33mSQ_BUF_RSRC_WORD3[0m <- 0x30016fac
+                             DST_SEL_X = 4
+                             DST_SEL_Y = 5
+                             DST_SEL_Z = 6
+                             DST_SEL_W = 7
+                             FORMAT = GFX11_FORMAT_32_FLOAT
+                             INDEX_STRIDE = 0
+                             ADD_TID_ENABLE = 0
+                             LLC_NOALLOC = 0
+                             OOB_SELECT = OOB_SELECT_RAW
+                             TYPE = 0
+
+(set=31 binding=2 offset=0x20) [1;36mBuffer:[0m
+        [1;33mSQ_BUF_RSRC_WORD0[0m <- 0x39002380
+        [1;33mSQ_BUF_RSRC_WORD1[0m <- 0x00008001
+                             BASE_ADDRESS_HI = 0x8001
+                             STRIDE = 0
+                             SWIZZLE_ENABLE = 0
+        [1;33mSQ_BUF_RSRC_WORD2[0m <- 256 (0x00000100)
+        [1;33mSQ_BUF_RSRC_WORD3[0m <- 0x30016fac
+                             DST_SEL_X = 4
+                             DST_SEL_Y = 5
+                             DST_SEL_Z = 6
+                             DST_SEL_W = 7
+                             FORMAT = GFX11_FORMAT_32_FLOAT
+                             INDEX_STRIDE = 0
+                             ADD_TID_ENABLE = 0
+                             LLC_NOALLOC = 0
+                             OOB_SELECT = OOB_SELECT_RAW
+                             TYPE = 0
+
+(set=31 binding=3 offset=0x30) [1;36mBuffer:[0m
+        [1;33mSQ_BUF_RSRC_WORD0[0m <- 0x1d285000
+        [1;33mSQ_BUF_RSRC_WORD1[0m <- 0x00008001
+                             BASE_ADDRESS_HI = 0x8001
+                             STRIDE = 0
+                             SWIZZLE_ENABLE = 0
+        [1;33mSQ_BUF_RSRC_WORD2[0m <- 264 (0x00000108)
+        [1;33mSQ_BUF_RSRC_WORD3[0m <- 0x30016fac
+                             DST_SEL_X = 4
+                             DST_SEL_Y = 5
+                             DST_SEL_Z = 6
+                             DST_SEL_W = 7
+                             FORMAT = GFX11_FORMAT_32_FLOAT
+                             INDEX_STRIDE = 0
+                             ADD_TID_ENABLE = 0
+                             LLC_NOALLOC = 0
+                             OOB_SELECT = OOB_SELECT_RAW
+                             TYPE = 0
+
+(set=31 binding=4 offset=0x40) [1;36mBuffer:[0m
+        [1;33mSQ_BUF_RSRC_WORD0[0m <- 0x39002100
+        [1;33mSQ_BUF_RSRC_WORD1[0m <- 0x00008001
+                             BASE_ADDRESS_HI = 0x8001
+                             STRIDE = 0
+                             SWIZZLE_ENABLE = 0
+        [1;33mSQ_BUF_RSRC_WORD2[0m <- 8
+        [1;33mSQ_BUF_RSRC_WORD3[0m <- 0x30016fac
+                             DST_SEL_X = 4
+                             DST_SEL_Y = 5
+                             DST_SEL_Z = 6
+                             DST_SEL_W = 7
+                             FORMAT = GFX11_FORMAT_32_FLOAT
+                             INDEX_STRIDE = 0
+                             ADD_TID_ENABLE = 0
+                             LLC_NOALLOC = 0
+                             OOB_SELECT = OOB_SELECT_RAW
+                             TYPE = 0
+
+(set=31 binding=5 offset=0x50) 
+(set=31 binding=6 offset=0x50) 
+(set=31 binding=7 offset=0x50) [1;36mBuffer:[0m
+        [1;33mSQ_BUF_RSRC_WORD0[0m <- 0x02218000
+        [1;33mSQ_BUF_RSRC_WORD1[0m <- 0x00008001
+                             BASE_ADDRESS_HI = 0x8001
+                             STRIDE = 0
+                             SWIZZLE_ENABLE = 0
+        [1;33mSQ_BUF_RSRC_WORD2[0m <- 32768 (0x00008000)
+        [1;33mSQ_BUF_RSRC_WORD3[0m <- 0x30016fac
+                             DST_SEL_X = 4
+                             DST_SEL_Y = 5
+                             DST_SEL_Z = 6
+                             DST_SEL_W = 7
+                             FORMAT = GFX11_FORMAT_32_FLOAT
+                             INDEX_STRIDE = 0
+                             ADD_TID_ENABLE = 0
+                             LLC_NOALLOC = 0
+                             OOB_SELECT = OOB_SELECT_RAW
+                             TYPE = 0
+
+(set=31 binding=8 offset=0x60) [1;36mBuffer:[0m
+        [1;33mSQ_BUF_RSRC_WORD0[0m <- 0x022c8000
+        [1;33mSQ_BUF_RSRC_WORD1[0m <- 0x00008001
+                             BASE_ADDRESS_HI = 0x8001
+                             STRIDE = 0
+                             SWIZZLE_ENABLE = 0
+        [1;33mSQ_BUF_RSRC_WORD2[0m <- 16 (0x00000010)
+        [1;33mSQ_BUF_RSRC_WORD3[0m <- 0x30016fac
+                             DST_SEL_X = 4
+                             DST_SEL_Y = 5
+                             DST_SEL_Z = 6
+                             DST_SEL_W = 7
+                             FORMAT = GFX11_FORMAT_32_FLOAT
+                             INDEX_STRIDE = 0
+                             ADD_TID_ENABLE = 0
+                             LLC_NOALLOC = 0
+                             OOB_SELECT = OOB_SELECT_RAW
+                             TYPE = 0
+
+
+

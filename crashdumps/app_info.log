@@ -1,0 +1,6 @@
+Application name: SteamVR compositor
+Application version: 4194304
+Engine name: SteamVR
+Engine version: 4194304
+API version: 1.2.0
+Enabled debug options: syncshaders, hang, bo_history, 

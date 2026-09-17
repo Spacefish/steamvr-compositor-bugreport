@@ -1,0 +1,145 @@
+; SPIR-V
+; Version: 1.0
+; Generator: Khronos Glslang Reference Front End; 10
+; Bound: 352
+; Schema: 0
+               OpCapability Shader
+               OpCapability Geometry
+               OpCapability ImageQuery
+          %1 = OpExtInstImport "GLSL.std.450"
+               OpMemoryModel Logical GLSL450
+               OpEntryPoint Fragment %4 "PS_MAIN" %gl_Layer %gl_FragCoord %171 %175
+               OpExecutionMode %4 OriginUpperLeft
+               OpDecorate %30 DescriptorSet 0
+               OpDecorate %30 Binding 9
+               OpDecorate %52 DescriptorSet 0
+               OpDecorate %52 Binding 25
+               OpDecorate %gl_Layer Flat
+               OpDecorate %gl_Layer BuiltIn Layer
+               OpDecorate %gl_FragCoord BuiltIn FragCoord
+               OpDecorate %171 Location 0
+               OpDecorate %175 Location 0
+       %void = OpTypeVoid
+          %3 = OpTypeFunction %void
+       %uint = OpTypeInt 32 0
+      %float = OpTypeFloat 32
+    %v4float = OpTypeVector %float 4
+    %v2float = OpTypeVector %float 2
+        %int = OpTypeInt 32 1
+      %int_0 = OpConstant %int 0
+    %float_1 = OpConstant %float 1
+         %22 = OpConstantComposite %v4float %float_1 %float_1 %float_1 %float_1
+     %v2uint = OpTypeVector %uint 2
+         %28 = OpTypeImage %float 2D 0 0 0 1 Unknown
+%_ptr_UniformConstant_28 = OpTypePointer UniformConstant %28
+         %30 = OpVariable %_ptr_UniformConstant_28 UniformConstant
+         %50 = OpTypeSampler
+%_ptr_UniformConstant_50 = OpTypePointer UniformConstant %50
+         %52 = OpVariable %_ptr_UniformConstant_50 UniformConstant
+         %54 = OpTypeSampledImage %28
+    %float_0 = OpConstant %float 0
+    %v3float = OpTypeVector %float 3
+%float_0_227027029 = OpConstant %float 0.227027029
+%_ptr_Function_float = OpTypePointer Function %float
+      %int_1 = OpConstant %int 1
+      %int_3 = OpConstant %int 3
+       %bool = OpTypeBool
+     %uint_3 = OpConstant %uint 3
+%_arr_float_uint_3 = OpTypeArray %float %uint_3
+%float_1_38461542 = OpConstant %float 1.38461542
+%float_3_23076916 = OpConstant %float 3.23076916
+         %90 = OpConstantComposite %_arr_float_uint_3 %float_0 %float_1_38461542 %float_3_23076916
+%_ptr_Function__arr_float_uint_3 = OpTypePointer Function %_arr_float_uint_3
+%float_0_31621623 = OpConstant %float 0.31621623
+%float_0_0702702701 = OpConstant %float 0.0702702701
+        %113 = OpConstantComposite %_arr_float_uint_3 %float_0_227027029 %float_0_31621623 %float_0_0702702701
+%_ptr_Input_uint = OpTypePointer Input %uint
+   %gl_Layer = OpVariable %_ptr_Input_uint Input
+%_ptr_Input_v4float = OpTypePointer Input %v4float
+%gl_FragCoord = OpVariable %_ptr_Input_v4float Input
+%_ptr_Input_v2float = OpTypePointer Input %v2float
+        %171 = OpVariable %_ptr_Input_v2float Input
+%_ptr_Output_v4float = OpTypePointer Output %v4float
+        %175 = OpVariable %_ptr_Output_v4float Output
+          %4 = OpFunction %void None %3
+          %5 = OpLabel
+        %195 = OpVariable %_ptr_Function__arr_float_uint_3 Function
+        %196 = OpVariable %_ptr_Function__arr_float_uint_3 Function
+        %197 = OpVariable %_ptr_Function__arr_float_uint_3 Function
+        %172 = OpLoad %v2float %171
+        %201 = OpLoad %28 %30
+        %202 = OpImageQuerySizeLod %v2uint %201 %int_0
+        %204 = OpCompositeExtract %uint %202 0
+        %208 = OpConvertUToF %float %204
+        %212 = OpLoad %28 %30
+        %213 = OpLoad %50 %52
+        %214 = OpSampledImage %54 %212 %213
+        %217 = OpImageSampleExplicitLod %v4float %214 %172 Lod %float_0
+        %218 = OpVectorShuffle %v3float %217 %217 0 1 2
+        %219 = OpVectorTimesScalar %v3float %218 %float_0_227027029
+        %221 = OpCompositeExtract %float %219 0
+        %328 = OpCompositeInsert %v4float %221 %22 0
+        %223 = OpCompositeExtract %float %219 1
+        %330 = OpCompositeInsert %v4float %223 %328 1
+        %225 = OpCompositeExtract %float %219 2
+        %332 = OpCompositeInsert %v4float %225 %330 2
+               OpBranch %226
+        %226 = OpLabel
+        %351 = OpPhi %v4float %332 %5 %349 %230
+        %350 = OpPhi %int %int_1 %5 %291 %230
+        %229 = OpSLessThan %bool %350 %int_3
+               OpLoopMerge %292 %230 Unroll
+               OpBranchConditional %229 %230 %292
+        %230 = OpLabel
+               OpStore %195 %90
+        %232 = OpAccessChain %_ptr_Function_float %195 %350
+        %233 = OpLoad %float %232
+        %236 = OpFDiv %float %233 %208
+        %237 = OpLoad %28 %30
+        %238 = OpLoad %50 %52
+        %239 = OpSampledImage %54 %237 %238
+        %241 = OpCompositeExtract %float %172 0
+        %243 = OpFAdd %float %241 %236
+        %245 = OpCompositeExtract %float %172 1
+        %246 = OpCompositeConstruct %v2float %243 %245
+        %247 = OpImageSampleExplicitLod %v4float %239 %246 Lod %float_0
+        %248 = OpVectorShuffle %v3float %247 %247 0 1 2
+               OpStore %196 %113
+        %250 = OpAccessChain %_ptr_Function_float %196 %350
+        %251 = OpLoad %float %250
+        %252 = OpVectorTimesScalar %v3float %248 %251
+        %255 = OpVectorShuffle %v3float %351 %351 0 1 2
+        %256 = OpFAdd %v3float %255 %252
+        %258 = OpCompositeExtract %float %256 0
+        %337 = OpCompositeInsert %v4float %258 %351 0
+        %260 = OpCompositeExtract %float %256 1
+        %339 = OpCompositeInsert %v4float %260 %337 1
+        %262 = OpCompositeExtract %float %256 2
+        %341 = OpCompositeInsert %v4float %262 %339 2
+        %263 = OpLoad %28 %30
+        %264 = OpLoad %50 %52
+        %265 = OpSampledImage %54 %263 %264
+        %267 = OpCompositeExtract %float %172 0
+        %269 = OpFSub %float %267 %236
+        %271 = OpCompositeExtract %float %172 1
+        %272 = OpCompositeConstruct %v2float %269 %271
+        %273 = OpImageSampleExplicitLod %v4float %265 %272 Lod %float_0
+        %274 = OpVectorShuffle %v3float %273 %273 0 1 2
+               OpStore %197 %113
+        %276 = OpAccessChain %_ptr_Function_float %197 %350
+        %277 = OpLoad %float %276
+        %278 = OpVectorTimesScalar %v3float %274 %277
+        %281 = OpVectorShuffle %v3float %341 %341 0 1 2
+        %282 = OpFAdd %v3float %281 %278
+        %284 = OpCompositeExtract %float %282 0
+        %345 = OpCompositeInsert %v4float %284 %341 0
+        %286 = OpCompositeExtract %float %282 1
+        %347 = OpCompositeInsert %v4float %286 %345 1
+        %288 = OpCompositeExtract %float %282 2
+        %349 = OpCompositeInsert %v4float %288 %347 2
+        %291 = OpIAdd %int %350 %int_1
+               OpBranch %226
+        %292 = OpLabel
+               OpStore %175 %351
+               OpReturn
+               OpFunctionEnd
