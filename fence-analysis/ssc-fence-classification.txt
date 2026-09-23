@@ -1,0 +1,69 @@
+Fence-reset classification — SteamVR compositor run, 2026-09-23 22:21:30–22:22:52
+Instrumented layer: VK_LAYER_steamvr_spec_compliance (diagnostic build) + patched VVL.
+Source: ~/.local/share/Steam/logs/vrcompositor-linux.txt, from line 1697.
+
+Per reset the layer logs:
+  tracked        = fence was submitted and not yet observed signaled (would wait)
+  ever_submitted = the app ever submitted this fence
+  observed       = how many times the app itself observed it signaled (poll/wait)
+  status         = driver vkGetFenceStatus result at reset time (0 = VK_SUCCESS)
+
+--- excerpt: first burst ---
+
+[SSC] active on device 0x5600e84ff090 (wait cap 2000 ms)
+[SSC] vkResetFences fence 0x1180000000118: tracked=0 ever_submitted=0 observed=1 status=0
+[SSC] vkResetFences fence 0x22e000000022e: tracked=0 ever_submitted=0 observed=1 status=0
+[SSC] vkResetFences fence 0x22f000000022f: tracked=0 ever_submitted=0 observed=1 status=0
+[SSC] vkResetFences fence 0x2300000000230: tracked=0 ever_submitted=0 observed=1 status=0
+[SSC] vkResetFences fence 0x2310000000231: tracked=0 ever_submitted=0 observed=1 status=0
+[SSC] vkResetFences fence 0x2320000000232: tracked=0 ever_submitted=0 observed=1 status=0
+[SSC] vkResetFences fence 0x2330000000233: tracked=0 ever_submitted=0 observed=1 status=0
+[SSC] vkResetFences fence 0x2340000000234: tracked=0 ever_submitted=0 observed=1 status=0
+[SSC] vkResetFences fence 0x2350000000235: tracked=0 ever_submitted=0 observed=1 status=0
+[SSC] vkResetFences fence 0x2360000000236: tracked=0 ever_submitted=0 observed=1 status=0
+[SSC] vkResetFences fence 0x2370000000237: tracked=0 ever_submitted=0 observed=1 status=0
+[SSC] vkResetFences fence 0x2380000000238: tracked=0 ever_submitted=0 observed=1 status=0
+[SSC] vkResetFences fence 0x2390000000239: tracked=0 ever_submitted=0 observed=1 status=0
+[SSC] vkResetFences fence 0x22e000000022e: tracked=0 ever_submitted=1 observed=2 status=0
+Validation Error: [ VUID-vkResetFences-pFences-01123 ] | MessageID = 0x68a5074e
+vkResetFences(): pFences[0] (VkFence 0x22e000000022e) is in use.
+The Vulkan spec states: Each element of pFences must not be currently associated with any queue command
+that has not yet completed execution on that queue
+[SSC] vkResetFences fence 0x22f000000022f: tracked=0 ever_submitted=1 observed=2 status=0
+[SSC] vkResetFences fence 0x2300000000230: tracked=0 ever_submitted=1 observed=2 status=0
+[SSC] vkResetFences fence 0x2310000000231: tracked=0 ever_submitted=1 observed=2 status=0
+[SSC] vkResetFences fence 0x2320000000232: tracked=0 ever_submitted=1 observed=2 status=0
+[SSC] vkResetFences fence 0x2330000000233: tracked=0 ever_submitted=1 observed=2 status=0
+[SSC] vkResetFences fence 0x2340000000234: tracked=0 ever_submitted=1 observed=2 status=0
+[SSC] vkResetFences fence 0x2350000000235: tracked=0 ever_submitted=1 observed=2 status=0
+[SSC] vkResetFences fence 0x2360000000236: tracked=0 ever_submitted=1 observed=2 status=0
+[SSC] vkResetFences fence 0x1190000000119: tracked=0 ever_submitted=0 observed=1 status=0
+[SSC] vkResetFences fence 0x11a000000011a: tracked=0 ever_submitted=0 observed=1 status=0
+
+--- distribution over all classified resets (same run) ---
+
+  24  ever_submitted=0 observed=1  status=0
+  21  ever_submitted=1 observed=2  status=0
+  12  ever_submitted=1 observed=3  status=0
+   7  ever_submitted=1 observed=4  status=0
+   1  ever_submitted=1 observed=63  status=0
+   1  ever_submitted=1 observed=84  status=0
+   1  ever_submitted=1 observed=532 status=0
+   1  ever_submitted=1 observed=553 status=0
+   1  ever_submitted=1 observed=575 status=0
+   1  ever_submitted=1 observed=596 status=0
+
+--- run totals ---
+
+  reset fences classified                       : 141
+  resets where the layer had to wait on pending  : 0
+  VUID-vkResetFences-pFences-01123 reports       : 20
+  waits that hit the 2 s cap                     : 0
+  status at reset time                           : VK_SUCCESS for 100% of resets
+  multiple devices / SSC activations             : 1
+
+Interpretation: every reset targeted a fence the driver already reported signaled, and in
+62/86 instrumented cases the application had itself polled that fence to signaled first.
+The layer therefore never waited. The 01123 reports are validation state that lags behind
+the driver (retirement happens on a helper thread), not resets of pending fences.
+See README.md in this directory.

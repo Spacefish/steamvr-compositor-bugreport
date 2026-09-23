@@ -1,0 +1,18 @@
+{
+    "file_format_version": "1.2.0",
+    "layer": {
+        "name": "VK_LAYER_steamvr_spec_compliance",
+        "type": "GLOBAL",
+        "library_path": "/data2/src/steamvr-hotfixlayer/steamvr_spec_compliance/libVkLayer_steamvr_spec_compliance.so",
+        "api_version": "1.4.0",
+        "implementation_version": "1",
+        "description": "Spec-compliance shims for the SteamVR compositor (fence reset while in flight)",
+        "functions": {
+            "vkGetInstanceProcAddr": "ssc_GetInstanceProcAddr",
+            "vkGetDeviceProcAddr": "ssc_GetDeviceProcAddr",
+            "vkNegotiateLoaderLayerInterfaceVersion": "vkNegotiateLoaderLayerInterfaceVersion"
+        },
+        "instance_extensions": [],
+        "device_extensions": []
+    }
+}

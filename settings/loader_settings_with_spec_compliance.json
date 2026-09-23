@@ -1,0 +1,20 @@
+{
+  "file_format_version": "1.0.1",
+  "settings": {
+    "layers": [
+      {
+        "control": "unordered_layer_location"
+      },
+      {
+        "name": "VK_LAYER_steamvr_spec_compliance",
+        "path": "/data2/src/steamvr-hotfixlayer/steamvr_spec_compliance/VkLayer_steamvr_spec_compliance.json",
+        "control": "on"
+      },
+      {
+        "name": "VK_LAYER_KHRONOS_validation",
+        "path": "/data2/src/Vulkan-ValidationLayers/build/layers/VkLayer_khronos_validation.json",
+        "control": "on"
+      }
+    ]
+  }
+}

@@ -137,6 +137,24 @@ The `workaround/` directory packages the patched shader with `apply.sh` /
 | `settings/loader_settings.json`, `settings/vk_layer_settings.txt` | How VVL was enabled / configured (no env reaches the compositor) |
 | `vrcompositor-launcher.sh.orig` | Backup of the original compositor launcher (hash `f210c50b…`) |
 | `vvl-fix.patch` | Local VVL patch (non-blocking `vkGetFenceStatus`) needed so validation doesn't stall the compositor |
+| `fence-analysis/` | `VUID-vkResetFences-pFences-01123` investigation (2026-09-23): the compositor only resets signaled fences; the reports are stale validation state. Raw classifications + layer fix |
+| `spec-compliance-layer/` | `VK_LAYER_steamvr_spec_compliance` source — tracks submitted fences, waits only on pending ones, drains lower-layer bookkeeping before a reset |
+| `settings/loader_settings_with_spec_compliance.json` | Loader settings with the spec-compliance layer enabled above VVL |
+
+## Follow-up: fence reset is not the trigger (2026-09-23)
+
+Instrumented the compositor with `VK_LAYER_steamvr_spec_compliance`: of 141 fence
+resets, **0** targeted pending work — the driver reported `VK_SUCCESS` for every
+one, and the app had already polled most of them to signaled. The 20
+`VUID-vkResetFences-pFences-01123` reports are therefore validation state lagging
+the driver (the local non-blocking-`vkGetFenceStatus` patch skips VVL's
+synchronous fence retirement), not resets of in-flight fences. This matches the
+earlier serialization experiment, which did not prevent the `gfxhub` fault.
+
+The layer now drains lower-layer bookkeeping with `vkDeviceWaitIdle` before
+forwarding a reset, which removes `01123` in the standalone harness. Full details,
+raw evidence and the compositor-re-run blocker (the steamrt3 client update broke
+compositor launch) are in `fence-analysis/README.md`.
 
 ## Notes on running validation / debug options
 
