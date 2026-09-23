@@ -40,8 +40,16 @@ So before forwarding `vkResetFences`, the layer issues `vkDeviceWaitIdle` when
 any fence in the batch was ever submitted, letting the lower layer's bookkeeping
 catch up. `vkDeviceWaitIdle` is deliberate: on the validation side its handling
 (`Queue::NotifyAndWait`) drains the helper thread and has no fence-promise stall
-hazard, unlike `Fence::NotifyAndWait` (the 120 s timeout path). Measured: the 20
-spurious `01123` a compositor run used to report drop to 0 with the drain.
+hazard, unlike `Fence::NotifyAndWait` (the 120 s timeout path).
+
+Measured: this removes the `01123` reports in the standalone harness, but **not**
+in the SteamVR compositor. There, VVL's per-fence state for those fences is
+stuck in `kInflight` (their submissions have already left the queue deque), and
+a queue drain cannot retire them. The compositor reports were eliminated by
+fixing VVL instead (`PostCallRecordGetFenceStatus` calls `Fence::Retire()` when
+the driver reports `VK_SUCCESS`; see `../logs/vvl-fix.patch`, 20 -> 0). The drain
+is kept as a safety net for other lower layers, but it is not what fixed the
+compositor.
 
 This only works if the layer sits **above** `VK_LAYER_KHRONOS_validation` (it
 does when listed before it in the loader settings), so validation sees the reset
