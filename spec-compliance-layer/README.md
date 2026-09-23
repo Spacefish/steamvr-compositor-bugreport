@@ -1,16 +1,50 @@
 # VK_LAYER_steamvr_spec_compliance
 
 A small, cheap Vulkan layer that makes the SteamVR compositor's resource
-recycling spec-correct instead of stalling or faulting because of it.
+recycling spec-correct instead of stalling or faulting because of it. It
+implements the "recycle a resource while it may still be in use" family: before
+forwarding the offending call, wait (bounded, 2 s) for the previous use to
+complete.
 
-Today it implements one shim:
+| Shim | VUIDs | Status |
+|---|---|---|
+| Fence reset while in flight | `vkResetFences-pFences-01123` | mostly handled in VVL now (retire on `vkGetFenceStatus` success); the layer's wait is the safety net for genuinely pending fences |
+| Command buffer reuse | `vkResetCommandBuffer-commandBuffer-00045`, `vkBeginCommandBuffer-commandBuffer-00049`, `vkQueueSubmit-pCommandBuffers-00071` | works - tracked CB -> pending submission fence, waited before reset/begin/submit; verified 0 in the compositor |
+| Binary semaphore reuse | `vkAcquireNextImageKHR-semaphore-01286`/`-01779`, `vkQueueSubmit-pSignalSemaphores-00067` | `01779` was a **VVL false positive**, fixed in VVL (polling a fence left the queue's semaphore refcount raised; `Fence::NotifyAndDrainQueue()` now drains it). `01286`/`00067` remain (startup only) - see below |
 
-**Fence reset while in flight** (`VUID-vkResetFences-pFences-01123`).
-The compositor resets fences that still have GPU work attached. The layer
-tracks which fences were actually submitted and not yet observed signaled, and
-before forwarding `vkResetFences` it waits (bounded) on exactly those. Fences
-with no pending work are skipped, so the common path is a hash lookup and never
-blocks.
+Image-layout violations (`VkImageMemoryBarrier-oldLayout-01197`,
+`vkCmdDraw-None-09600`) are a different family (declared layout vs tracked
+layout) and cannot be fixed by any amount of waiting; they stay visible.
+
+## Semaphores: state lag vs. genuinely signaled
+
+Two different things were conflated at first:
+
+- `01779` ("must not have any pending operations") was **validation state lag**,
+  the same class as `01123`: VVL's `Semaphore::InUse()` refcount is dropped only
+  by the queue thread, so an app that polls a fence to signaled and immediately
+  re-acquires still looked like it had a pending operation (uncapped: ~14,000
+  reports in 62 s). Instrumentation showed the acquire semaphore *is* waited on in
+  submissions (with fences). Fixed in VVL: `Fence::NotifyAndDrainQueue()` drains
+  the queue on `vkGetFenceStatus` success, so the submission's semaphore and
+  command-buffer refcounts are released before the app recycles them.
+- `01286` ("must not be currently signaled") and `00067` (signal while still in
+  use by the swapchain) are the genuinely signaled cases: a fence wait cannot
+  unsignal a binary semaphore. The only legal remedy is an injected consuming
+  submission (empty submit that waits on the semaphore + our fence, then wait for
+  it), which changes execution order and masks a real compositor bug. Deliberately
+  not done; these occur a couple of times at startup.
+
+## Fence reset while in flight (original shim)
+
+The compositor resets fences that still have GPU work attached. The layer tracks
+which fences were actually submitted and not yet observed signaled, and before
+forwarding `vkResetFences` it waits (bounded) on exactly those. Fences with no
+pending work are skipped, so the common path is a hash lookup and never blocks.
+Once the fence is known to be signaled (or the wait succeeded), the command
+buffers and semaphores whose last use was tied to it are released - and on a wait
+*timeout* nothing is released, so a later reuse still synchronizes instead of
+trusting an unverified completion.
 
 ## Why tracking matters
 

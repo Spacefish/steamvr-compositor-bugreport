@@ -1,7 +1,7 @@
 From 3786adc5a6d5e03a6302322c657760d2d512208d Mon Sep 17 00:00:00 2001
 From: Timo Witte <timo.witte@gmail.com>
 Date: Thu, 17 Sep 2026 03:57:39 +0200
-Subject: [PATCH 1/2] state_tracker: do not block in vkGetFenceStatus
+Subject: [PATCH 1/3] state_tracker: do not block in vkGetFenceStatus
 
 DeviceState::PostCallRecordGetFenceStatus() called the blocking
 vvl::Fence::NotifyAndWait(). The generated chassis invokes PostCallRecord
@@ -174,7 +174,7 @@ index 0caf11a..e98cd9c 100644
 From feb8373cabe66793af78632910aea340c932bf34 Mon Sep 17 00:00:00 2001
 From: Timo Witte <timo.witte@gmail.com>
 Date: Wed, 23 Sep 2026 23:25:27 +0200
-Subject: [PATCH 2/2] state_tracker: retire fence on successful
+Subject: [PATCH 2/3] state_tracker: retire fence on successful
  vkGetFenceStatus
 
 vkGetFenceStatus() must not block, so PostCallRecordGetFenceStatus() only notifies the queue and lets the queue thread retire the submission later. Until then the fence state stays kInflight, so an application that polls a fence to signaled and immediately resets it is reported as resetting an in-flight fence (VUID-vkResetFences-pFences-01123). The SteamVR compositor does exactly that ~20 times per run; those reports are false positives, because the driver had just reported the fence signaled, so it cannot still be associated with incomplete work. Retire the fence state when the driver returns VK_SUCCESS. This is non-blocking (no queue wait), so it does not reintroduce the stall the previous commit fixed; the queue thread's own Retire() becomes a no-op.
@@ -219,6 +219,112 @@ index e98cd9c..6113fd0 100644
 +        // resets it immediately).
          fence_state->Notify(record_obj.location);
 +        fence_state->Retire();
+     }
+ }
+ 
+-- 
+2.53.0
+
+
+From 25cbb364f73657d51d28c9e3b7cf90a5ea9a621d Mon Sep 17 00:00:00 2001
+From: Timo Witte <timo.witte@gmail.com>
+Date: Wed, 23 Sep 2026 23:58:28 +0200
+Subject: [PATCH 3/3] state_tracker: drain the queue when vkGetFenceStatus
+ observes a signaled fence
+
+vkGetFenceStatus() must not block on device work, so PostCallRecordGetFenceStatus() only notified the queue and retired the fence. The queue thread is what drops the wait/signal semaphore and command buffer reference counts (Queue::Retire -> QueueSubmission::EndUse), so polling a fence to signaled and then immediately recycling one of those resources still looked like 'pending operations' to validation. Upstream already documents this class at the 01779 check: 'acquire / wait / acquire ... the first acquire (and thus the wait) have completed, but our state isn't aware of it yet. This results in MANY false positives.' The SteamVR compositor hits VUID-vkAcquireNextImageKHR-semaphore-01779 at ~14,000 reports / 62 s because it does acquire/wait/acquire and polls the fence instead of waiting on it. Add Fence::NotifyAndDrainQueue(), which notifies the queue and then calls Queue::Wait(seq): that waits only for the queue thread's bookkeeping (returns immediately when the submission is already retired, never waits on the GPU), so the reference counts are released before the application recycles the resource, without reintroducing the stall the first patch fixed. Verified in the compositor: 01779 20 -> 0, no INTERNAL-ERROR-VkQueue-state-timeout.
+
+Signed-off-by: Timo Witte <timo.witte@gmail.com>
+---
+ layers/state_tracker/fence_state.cpp   | 30 ++++++++++++++++++++++++++
+ layers/state_tracker/fence_state.h     |  7 ++++++
+ layers/state_tracker/state_tracker.cpp | 17 +++++++--------
+ 3 files changed, 45 insertions(+), 9 deletions(-)
+
+diff --git a/layers/state_tracker/fence_state.cpp b/layers/state_tracker/fence_state.cpp
+index 3dab522..85e65e9 100644
+--- a/layers/state_tracker/fence_state.cpp
++++ b/layers/state_tracker/fence_state.cpp
+@@ -115,6 +115,36 @@ void vvl::Fence::Notify(const Location &loc) {
+     }
+ }
+ 
++// Called from vkGetFenceStatus(), which must never block on device work. Notify
++// the queue *and* let its thread retire the submission that references this
++// fence, so the wait/signal semaphore and command buffer reference counts are
++// dropped before the application can recycle them. Without the drain,
++// vkGetFenceStatus() polling leaves those counts raised until the queue thread
++// happens to run, which produces false positives such as
++// VUID-vkAcquireNextImageKHR-semaphore-01779 for an acquire/wait/acquire pattern
++// even though the wait has completed (see the TODO at that check).
++void vvl::Fence::NotifyAndDrainQueue(const Location &loc) {
++    // Capture the submission this fence is waiting on before the state changes.
++    vvl::Queue *queue = nullptr;
++    uint64_t seq = 0;
++    {
++        auto guard = WriteLock();
++        if (state_ == kInflight && queue_ != nullptr) {
++            queue = queue_;
++            seq = seq_;
++        }
++    }
++    std::optional<SubmissionReference> present_submission_ref;
++    NotifyStateUpdate(present_submission_ref);
++    if (present_submission_ref.has_value()) {
++        present_submission_ref->queue->Notify(present_submission_ref->seq);
++    }
++    if (queue != nullptr) {
++        queue->Wait(loc, seq);
++    }
++    Retire();
++}
++
+ // Called from a non-queue operation, such as vkWaitForFences()|
+ void vvl::Fence::NotifyAndWait(const Location &loc) {
+     std::optional<SubmissionReference> present_submission_ref;
+diff --git a/layers/state_tracker/fence_state.h b/layers/state_tracker/fence_state.h
+index 9e13b7e..bb8ba09 100644
+--- a/layers/state_tracker/fence_state.h
++++ b/layers/state_tracker/fence_state.h
+@@ -63,6 +63,13 @@ class Fence : public RefcountedStateObject {
+     // state update. Used by vkGetFenceStatus(), which must not block.
+     void Notify(const Location &loc);
+ 
++    // Like Notify(), but also lets the queue thread retire the submission now
++    // (which drops the wait/signal semaphore and command-buffer reference
++    // counts). Queue::Wait is host bookkeeping only - it returns immediately if
++    // the submission is already retired and never waits on the GPU - so this
++    // stays non-blocking with respect to device work, unlike NotifyAndWait().
++    void NotifyAndDrainQueue(const Location &loc);
++
+     // Update state of the completed fence. Called by Queue when a submission retires, and by
+     // vkGetFenceStatus() when the driver reports the fence signaled (non-blocking path).
+     void Retire();
+diff --git a/layers/state_tracker/state_tracker.cpp b/layers/state_tracker/state_tracker.cpp
+index 6113fd0..6077153 100644
+--- a/layers/state_tracker/state_tracker.cpp
++++ b/layers/state_tracker/state_tracker.cpp
+@@ -1619,15 +1619,14 @@ void DeviceState::PostCallRecordGetFenceStatus(VkDevice device, VkFence fence, c
+         return;
+     }
+     if (auto fence_state = Get<Fence>(fence)) {
+-        // vkGetFenceStatus() must not block. Notify the queue so its thread can retire the
+-        // submission, and retire the fence state now as well: the driver just reported the
+-        // fence signaled, so it cannot still be associated with incomplete work. Without the
+-        // early retire, a subsequent vkResetFences() is flagged as resetting an in-flight
+-        // fence (VUID-vkResetFences-pFences-01123) until the queue thread catches up, which
+-        // shows up as false positives in the SteamVR compositor (it polls a fence and then
+-        // resets it immediately).
+-        fence_state->Notify(record_obj.location);
+-        fence_state->Retire();
++        // vkGetFenceStatus() must not block on device work. Notify the queue and drain its
++        // submission bookkeeping so the semaphore / command buffer reference counts are
++        // released before the application can recycle them - polling a fence to signaled and
++        // then immediately reusing such a resource otherwise looks like a pending operation to
++        // validation (e.g. VUID-vkAcquireNextImageKHR-semaphore-01779, which upstream documents
++        // as a false positive for the acquire/wait/acquire pattern). The drain waits only for
++        // the queue thread's bookkeeping, never for the GPU.
++        fence_state->NotifyAndDrainQueue(record_obj.location);
      }
  }
  
