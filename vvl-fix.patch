@@ -1,7 +1,7 @@
 From 3786adc5a6d5e03a6302322c657760d2d512208d Mon Sep 17 00:00:00 2001
 From: Timo Witte <timo.witte@gmail.com>
 Date: Thu, 17 Sep 2026 03:57:39 +0200
-Subject: [PATCH] state_tracker: do not block in vkGetFenceStatus
+Subject: [PATCH 1/2] state_tracker: do not block in vkGetFenceStatus
 
 DeviceState::PostCallRecordGetFenceStatus() called the blocking
 vvl::Fence::NotifyAndWait(). The generated chassis invokes PostCallRecord
@@ -164,6 +164,61 @@ index 0caf11a..e98cd9c 100644
 +        // submission asynchronously. Calling the blocking NotifyAndWait() here would hold the
 +        // device-wide lock while waiting for the queue thread and can stall the application.
 +        fence_state->Notify(record_obj.location);
+     }
+ }
+ 
+-- 
+2.53.0
+
+
+From feb8373cabe66793af78632910aea340c932bf34 Mon Sep 17 00:00:00 2001
+From: Timo Witte <timo.witte@gmail.com>
+Date: Wed, 23 Sep 2026 23:25:27 +0200
+Subject: [PATCH 2/2] state_tracker: retire fence on successful
+ vkGetFenceStatus
+
+vkGetFenceStatus() must not block, so PostCallRecordGetFenceStatus() only notifies the queue and lets the queue thread retire the submission later. Until then the fence state stays kInflight, so an application that polls a fence to signaled and immediately resets it is reported as resetting an in-flight fence (VUID-vkResetFences-pFences-01123). The SteamVR compositor does exactly that ~20 times per run; those reports are false positives, because the driver had just reported the fence signaled, so it cannot still be associated with incomplete work. Retire the fence state when the driver returns VK_SUCCESS. This is non-blocking (no queue wait), so it does not reintroduce the stall the previous commit fixed; the queue thread's own Retire() becomes a no-op.
+
+Signed-off-by: Timo Witte <timo.witte@gmail.com>
+---
+ layers/state_tracker/fence_state.h     |  3 ++-
+ layers/state_tracker/state_tracker.cpp | 11 ++++++++---
+ 2 files changed, 10 insertions(+), 4 deletions(-)
+
+diff --git a/layers/state_tracker/fence_state.h b/layers/state_tracker/fence_state.h
+index 5ff8d12..9e13b7e 100644
+--- a/layers/state_tracker/fence_state.h
++++ b/layers/state_tracker/fence_state.h
+@@ -63,7 +63,8 @@ class Fence : public RefcountedStateObject {
+     // state update. Used by vkGetFenceStatus(), which must not block.
+     void Notify(const Location &loc);
+ 
+-    // Update state of the completed fence. This should only be called by Queue.
++    // Update state of the completed fence. Called by Queue when a submission retires, and by
++    // vkGetFenceStatus() when the driver reports the fence signaled (non-blocking path).
+     void Retire();
+ 
+     // vkResetFences
+diff --git a/layers/state_tracker/state_tracker.cpp b/layers/state_tracker/state_tracker.cpp
+index e98cd9c..6113fd0 100644
+--- a/layers/state_tracker/state_tracker.cpp
++++ b/layers/state_tracker/state_tracker.cpp
+@@ -1619,10 +1619,15 @@ void DeviceState::PostCallRecordGetFenceStatus(VkDevice device, VkFence fence, c
+         return;
+     }
+     if (auto fence_state = Get<Fence>(fence)) {
+-        // vkGetFenceStatus() must not block. Only notify the queue and let it retire the
+-        // submission asynchronously. Calling the blocking NotifyAndWait() here would hold the
+-        // device-wide lock while waiting for the queue thread and can stall the application.
++        // vkGetFenceStatus() must not block. Notify the queue so its thread can retire the
++        // submission, and retire the fence state now as well: the driver just reported the
++        // fence signaled, so it cannot still be associated with incomplete work. Without the
++        // early retire, a subsequent vkResetFences() is flagged as resetting an in-flight
++        // fence (VUID-vkResetFences-pFences-01123) until the queue thread catches up, which
++        // shows up as false positives in the SteamVR compositor (it polls a fence and then
++        // resets it immediately).
+         fence_state->Notify(record_obj.location);
++        fence_state->Retire();
      }
  }
  
