@@ -28,32 +28,28 @@ set:
 The wait cap is 2 s (SteamVR's Render thread watchdog aborts at ~5 s). On
 timeout the layer logs and forwards the reset anyway.
 
-## Making the reset visible to validation layers
+## The lower-layer device drain was removed
 
-A layer *below* this one (e.g. `VK_LAYER_KHRONOS_validation`) retires a
-submitted fence's "in use" state on a helper thread. If the app polls the fence
-to signaled and resets it immediately, validation can still see the fence as in
-use and report `VUID-vkResetFences-pFences-01123` even though the driver reports
-the fence signaled.
+An earlier revision issued `vkDeviceWaitIdle` before forwarding a reset, hoping
+to make a lower validation layer retire its fence bookkeeping first. Measured in
+the SteamVR compositor it did **not** remove `VUID-vkResetFences-pFences-01123`
+(there VVL's fence state can be stuck `kInflight` with its submission already
+gone from the queue, which a queue drain cannot retire), and it cost a real
+device-wide sync ~2-3 times per second.
 
-So before forwarding `vkResetFences`, the layer issues `vkDeviceWaitIdle` when
-any fence in the batch was ever submitted, letting the lower layer's bookkeeping
-catch up. `vkDeviceWaitIdle` is deliberate: on the validation side its handling
-(`Queue::NotifyAndWait`) drains the helper thread and has no fence-promise stall
-hazard, unlike `Fence::NotifyAndWait` (the 120 s timeout path).
+It was also masking other validation output: with the drain enabled the
+compositor stopped reporting its command-buffer reuse errors
+(`VUID-vkResetCommandBuffer-commandBuffer-00045`,
+`VUID-vkBeginCommandBuffer-commandBuffer-00049`,
+`VUID-vkQueueSubmit-pCommandBuffers-00071`), purely because the device was being
+serialized before every reset. With the drain gone those reports are back
+(20x each), which is the honest state.
 
-Measured: this removes the `01123` reports in the standalone harness, but **not**
-in the SteamVR compositor. There, VVL's per-fence state for those fences is
-stuck in `kInflight` (their submissions have already left the queue deque), and
-a queue drain cannot retire them. The compositor reports were eliminated by
-fixing VVL instead (`PostCallRecordGetFenceStatus` calls `Fence::Retire()` when
-the driver reports `VK_SUCCESS`; see `../logs/vvl-fix.patch`, 20 -> 0). The drain
-is kept as a safety net for other lower layers, but it is not what fixed the
-compositor.
-
-This only works if the layer sits **above** `VK_LAYER_KHRONOS_validation` (it
-does when listed before it in the loader settings), so validation sees the reset
-after the sync.
+`01123` is fixed where it belongs: in VVL — `PostCallRecordGetFenceStatus` now
+calls `Fence::Retire()` when the driver reports `VK_SUCCESS` (see
+`../logs/vvl-fix.patch`, 20 -> 0). The layer is inert at runtime in the
+compositor (0 fence waits, 0 device waits) and only engages if an application
+resets a fence that genuinely still has pending work.
 
 ## Build
 

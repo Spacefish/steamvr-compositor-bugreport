@@ -94,14 +94,6 @@ bool is_in_flight(VkFence fence) {
   return g_in_flight.count(fence) != 0;
 }
 
-bool any_ever_submitted(const VkFence* pFences, uint32_t fenceCount) {
-  std::lock_guard<std::mutex> guard(g_lock);
-  for (uint32_t i = 0; i < fenceCount; ++i) {
-    if (g_ever_submitted.count(pFences[i]) != 0) return true;
-  }
-  return false;
-}
-
 VKAPI_ATTR VkResult VKAPI_CALL SscGetFenceStatus(VkDevice device, VkFence fence) {
   const VkResult result = g_GetFenceStatus(device, fence);
   if (result == VK_SUCCESS) note_signaled(fence, true);
@@ -118,24 +110,13 @@ VKAPI_ATTR VkResult VKAPI_CALL SscWaitForFences(VkDevice device, uint32_t fenceC
 }
 
 VKAPI_ATTR VkResult VKAPI_CALL SscResetFences(VkDevice device, uint32_t fenceCount, const VkFence* pFences) {
-  // A layer below us (Vulkan Validation Layers) retires a submitted fence's
-  // "in use" state on a helper thread. If the app polls the fence to signaled
-  // and then immediately resets it, validation can still see the fence as in
-  // use and report VUID-vkResetFences-pFences-01123 even though the driver says
-  // the fence is signaled. Drain the lower layers' queue bookkeeping before we
-  // forward the reset, so they observe a legal reset.
-  // vkDeviceWaitIdle is deliberate: on the validation side its handling
-  // (Queue::NotifyAndWait) drains the helper thread and has no fence-promise
-  // stall hazard, unlike Fence::NotifyAndWait.
-  if (g_DeviceWaitIdle != nullptr && any_ever_submitted(pFences, fenceCount)) {
-    const unsigned long n = ++g_drains;
-    if (n <= 5 || n % 100 == 0) {
-      fprintf(stderr, "[SSC] vkDeviceWaitIdle before vkResetFences so lower layers retire the fence (#%lu)\n", n);
-      fflush(stderr);
-    }
-    g_DeviceWaitIdle(device);
-  }
-
+  // NOTE: this used to issue vkDeviceWaitIdle here to make a lower validation layer retire its
+  // fence bookkeeping before the reset. That did not work in the SteamVR compositor (the layer's
+  // fence state can be stuck kInflight with its submission already gone from the queue dequeue,
+  // which a queue drain cannot retire) and it cost a real device-wide sync a few times per
+  // second. The correct fix lives in VVL: PostCallRecordGetFenceStatus retires the fence when
+  // the driver reports VK_SUCCESS, which removes the false
+  // VUID-vkResetFences-pFences-01123 reports.
   for (uint32_t i = 0; i < fenceCount; ++i) {
     const VkFence fence = pFences[i];
     const bool tracked = is_in_flight(fence);
