@@ -1,0 +1,28 @@
+SteamVR 2.18.1 (buildid 25466322) — crash with STOCK shader, 2026-09-24T02:20:12+02:00
+
+--- appmanifest ---
+	"LastUpdated"		"1790208373"
+	"buildid"		"25466322"
+
+--- dmesg (amdgpu) ---
+[Mi Sep 23 21:24:55 2026] amdgpu 0000:0d:00.0: MES: vmid_mask_mmhub 0x0000ff00, vmid_mask_gfxhub 0x0000ff00
+[Mi Sep 23 21:24:56 2026] amdgpu 0000:0d:00.0: ring gfx_0.0.0 uses VM inv eng 0 on hub 0
+[Do Sep 24 02:19:00 2026] amdgpu 0000:0d:00.0: [gfxhub] page fault (src_id:0 ring:24 vmid:5 pasid:1305)
+[Do Sep 24 02:19:00 2026] amdgpu 0000:0d:00.0:  Process vrcompositor pid 287087 thread RenderThread pid 287145
+[Do Sep 24 02:19:00 2026] amdgpu 0000:0d:00.0:   in page starting at address 0x00000080013a0000 from client 10
+[Do Sep 24 02:19:00 2026] amdgpu 0000:0d:00.0: 	 Faulty UTCL2 client ID: SQC (data) (0xa)
+[Do Sep 24 02:19:02 2026] amdgpu 0000:0d:00.0: ring gfx_0.0.0 timeout, signaled seq=9931119, emitted seq=9931121
+[Do Sep 24 02:19:02 2026] amdgpu 0000:0d:00.0:  Process vrcompositor pid 287087 thread RenderThread pid 287145
+[Do Sep 24 02:19:02 2026] amdgpu 0000:0d:00.0: [drm] device wedged, but no recovery needed
+
+--- vrcompositor.txt ---
+Thu Sep 24 2026 02:19:03.082056 [Error] - Failed WaitEvent(CompositorPresent)! event=1 vkerror=-4
+Thu Sep 24 2026 02:19:03.082117 [Error] - Failed GetDeltas(Compositor): vkerror=-4
+Thu Sep 24 2026 02:19:03.082131 [Error] - Failed GetDeltas(CompositorPresent): vkerror=-4
+Thu Sep 24 2026 02:19:03.082231 [Error] - WaitForPendingPresent: vkWaitForPresent failed, disabling wait-for-present mode. VkResult = -4
+Thu Sep 24 2026 02:19:03.090672 [Error] - Failed WaitEvent(CompositorPresent)! event=1 vkerror=-4
+Thu Sep 24 2026 02:19:03.090728 [Error] - Failed GetDeltas(Compositor): vkerror=-4
+Thu Sep 24 2026 02:19:03.090741 [Error] - Failed GetDeltas(CompositorPresent): vkerror=-4
+Thu Sep 24 2026 02:19:08.663466 [Info] - Failed Watchdog timeout in thread Render in RenderDistort after 5.532892 seconds. Aborting.
+
+shader at crash time: unlit_vs.spv = cc85c34c275ffe34462753a36abb47a3 (stock, re-downloaded)

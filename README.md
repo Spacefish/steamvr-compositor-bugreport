@@ -10,7 +10,7 @@ Collected 2026-09-17 for a SteamVR / RADV bug report.
 | Kernel | `7.3.0-rc1-spacy2026090103` (custom) |
 | GPU | AMD Radeon RX 7800 XT (Navi 32), `radeon_icd` |
 | Driver | RADV, Mesa 26.0.8-1ubuntu0.3 |
-| SteamVR | 2.17.10 (build 1789498647) |
+| SteamVR | 2.17.10 (build 1789498647); **reproduced again on 2.18.1 (build 25466322)** with stock shaders — see `evidence-2.18.1/` |
 | Validation | Khronos VVL built from `vulkan-sdk-1.4.341.0` + commit `3786adc` |
 | Headset | Valve Index |
 
@@ -119,6 +119,7 @@ The `workaround/` directory packages the patched shader with `apply.sh` /
 | Path | Description |
 |---|---|
 | `workaround/` | Patched `unlit_vs.spv` + `apply.sh` / `restore.sh` / `README.md` (SteamVR-side workaround for the crash) |
+| `evidence-2.18.1/` | Same crash on the newer SteamVR **2.18.1** (build 25466322) with the stock shader: dmesg fault/reset lines, compositor abort lines and a full amdgpu devcoredump. Workaround still fixes it |
 | `radv-hang-report/` | **Clean** RADV hang dump (core validation only): `vm_fault.log`, `trace.log`, `pipeline.log`, `registers.log`, `bo_history.log`, `addr_binding_report.log`, `gpu_info.log`, app `.spv` shaders |
 | `crashdumps/` | breakpad minidumps, `amdgpu-devcoredump.txt` (text coredump: fault VA/status, faulting IB, IP register dump, ring contents), and files from the first (GPU-AV) hang dump |
 | `radv-bo-history.log` | `/tmp/radv_bo_history.log` from `RADV_DEBUG=bo_history` (every BO GPU-VA range) |
